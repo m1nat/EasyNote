@@ -116,6 +116,7 @@ header {
           &:hover::after {
             display: block;
           }
+
         }
 
         .light {
@@ -163,6 +164,7 @@ header {
           &:hover::after {
             display: block;
           }
+
         }
 
         .color {
@@ -210,7 +212,9 @@ header {
           &:hover::after {
             display: block;
           }
+
         }
+
         .add-img {
           background: url(../png/photo.png) no-repeat center center;
           background-size: 40%;
@@ -256,6 +260,7 @@ header {
           &:hover::after {
             display: block;
           }
+
         }
 
         .add-group {
@@ -303,6 +308,7 @@ header {
           &:hover::after {
             display: block;
           }
+
         }
 
         .todo-list {
@@ -350,7 +356,9 @@ header {
           &:hover::after {
             display: block;
           }
+
         }
+
         .music {
           background: url(../png/note.png) no-repeat center center;
           background-size: 40%;
@@ -396,9 +404,13 @@ header {
           &:hover::after {
             display: block;
           }
+
         }
+
       }
+
     }
+
   }
 
   .header-btns-right {
@@ -437,6 +449,7 @@ header {
         background-color: grey;
         border-radius: 4px;
       }
+
     }
 
     .exit {
@@ -453,7 +466,11 @@ header {
           background-color: grey;
           border-radius: 4px;
         }
+
       }
+
     }
+
   }
+  
 }

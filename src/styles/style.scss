@@ -1,5 +1,6 @@
 @import './header-main-page.scss';
-@import './singn-in.scss';d
+@import '../components/sign-in/singn-in.scss';
+@import '../components/sign-up/sign-up.scss';
 
 *,*:after,*:before{
   margin: 0px;
@@ -8,7 +9,7 @@
 }
 
 .wrapper_mainPage {
-  width: 100wh;
+  width: 100vw;
   height: 100vh;
   background-attachment: fixed;
 }
