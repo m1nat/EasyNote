@@ -1,0 +1,14 @@
+@import './header-main-page.scss';
+@import './singn-in.scss';d
+
+*,*:after,*:before{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.wrapper_mainPage {
+  width: 100wh;
+  height: 100vh;
+  background-attachment: fixed;
+}
