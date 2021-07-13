@@ -12,4 +12,5 @@ export const signUpHandler = () => {
     signUp(email, password)
     .then( response => response);
   })
+
 };

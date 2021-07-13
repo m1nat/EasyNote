@@ -32,5 +32,7 @@ window.onload = () => {
       break;
     default:
       break;
+
   }
-}
+  
+};

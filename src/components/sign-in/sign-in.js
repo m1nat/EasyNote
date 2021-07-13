@@ -20,5 +20,7 @@ export const signInHandlers = () => {
         window.location.href = routs.main
       }
     })
+
   })
+
 };
