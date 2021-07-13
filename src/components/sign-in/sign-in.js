@@ -1,4 +1,4 @@
-import { signIn } from "../../api/api-handlers";
+import { signIn } from '../../api/api-handlers';
 
 
 export const signInHandlers = () => {
@@ -11,12 +11,5 @@ export const signInHandlers = () => {
     const password = document.getElementById('password-sign-in').value;
 
     signIn(email, password)
-    .then(response => {
-      if (response) {
-        
-      }
-    })
-      
   })
-
 };

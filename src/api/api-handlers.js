@@ -19,3 +19,9 @@ export const signIn = (email, password) => {
   .catch(err => console.log(err));
 };
 
+export const signUp = async (email, password) => {
+  return firebase
+  .auth()
+  .createUserWithEmailAndPassword(email, password)
+  .then(response => response)
+};
