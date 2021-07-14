@@ -1,0 +1,17 @@
+@import './header-main-page.scss';
+@import '../components/sign-in/singn-in.scss';
+@import '../components/sign-up/sign-up.scss';
+@import '../components/demo-page/demo-page.scss';
+
+*,*:after,*:before{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.wrapper_mainPage {
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
