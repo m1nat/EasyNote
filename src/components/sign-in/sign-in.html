@@ -25,12 +25,15 @@
                 id="email-sign-in"
                 placeholder="Login"
               />
-              <input
-                type="password"
-                name=""
-                id="password-sign-in"
-                placeholder="Password"
-              />
+              <div class="hide-password">
+                <input
+                  type="password"
+                  name=""
+                  id="password-sign-in"
+                  placeholder="Password"
+                />
+                <div class="hidden"></div>
+              </div>
             </div>
             <p>Forgot password ?</p>
             <button type="submit" id="btn-sign-in">Sign in</button>
@@ -38,7 +41,9 @@
         </div>
         <div class="create-account-href">Don't have an account?</div>
         <div class="btn-href-sing-up">
-          <button class="btn-href-sing-up-item"><a href="/sign-up.html">Sign up</a></button>
+          <button class="btn-href-sing-up-item">
+            <a href="/sign-up.html">Sign up</a>
+          </button>
         </div>
       </div>
     </div>

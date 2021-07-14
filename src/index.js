@@ -1,4 +1,5 @@
 import { initAPI } from './api/api-handlers.js';
+import { disableDemoBnts, login, signUpDemo } from './components/demo-page/demo-page.js';
 import { logoutHandlers } from './components/profile/profile.js';
 import { signInHandlers } from './components/sign-in/sign-in.js';
 import { signUpHandler } from './components/sign-up/sign-up.js';
@@ -30,9 +31,14 @@ window.onload = () => {
     case paths.sign_up:
       signUpHandler();
       break;
+    case paths.demo:
+      login();
+      signUpDemo();
+      disableDemoBnts()
+      break;
     default:
       break;
 
   }
-  
+
 };
