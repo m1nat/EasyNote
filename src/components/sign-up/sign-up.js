@@ -1,4 +1,5 @@
 import { signUp } from '../../api/api-handlers.js';
+import { routs } from '../../shared/constants/paths.js';
 
 export const signUpHandler = () => {
   const signUpForm = document.querySelector('.form-sign-up');
@@ -10,7 +11,12 @@ export const signUpHandler = () => {
     const password = document.getElementById('password-sign-up').value;
 
     signUp(email, password)
-    .then( response => response);
+    .then( response => {
+      if (response) {
+        window.location.href = routs.sign_in;
+      } 
+    })
+
   })
 
 };
