@@ -1,4 +1,4 @@
-import { routs } from "../../shared/constants/paths";
+import { routs } from '../../shared/constants/paths';
 
 export const login = () => {
   const loginBtn = document.querySelector('.login-demo');
@@ -15,6 +15,7 @@ export const signUpDemo = () => {
   signUpBtnDemo.onclick = () => {
     window.location.href = routs.sign_up
   }
+  
 };
 
 export const disableDemoBnts = () => {

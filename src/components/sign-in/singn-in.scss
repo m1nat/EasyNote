@@ -75,6 +75,7 @@
               border-top-left-radius: 10px;
               color: black; 
               padding-left: 15px;
+              padding-right: 15px;
 
               &::placeholder {
                 color: black;
@@ -99,6 +100,7 @@
             color: black;
             font-size: 1.1em;
             font-weight: bolder;
+            padding-right: 15px;
 
             @media screen and(max-width: 1600px) {
               width: 80%;
@@ -110,7 +112,9 @@
               font-size: 1em;
               font-weight: bold;
             }
+
           }
+
         }
 
         p {
@@ -124,6 +128,7 @@
           @media screen and(max-width: 1600px) {
             font-size: 0.7em;
           }
+
         }
 
         #btn-sign-in {
@@ -142,8 +147,11 @@
             font-size: 1.2em;
             height: 23%;
           }
+
         }
+
       }
+
     }
 
     .title {
@@ -186,9 +194,13 @@
           text-decoration: none;
           color: black;
         }
+
       }
+
     }
+
   }
+
 }
 .hidden {
   width: 10%;
