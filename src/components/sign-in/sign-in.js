@@ -15,13 +15,26 @@ export const signInHandlers = () => {
     signIn(email, password)
     .then(response => {
       if (response) {
-        const { idToken: token } = response.data
+        const { idToken: token } = response.data;
         setToken(token);
-        window.location.href = routs.main
+        window.location.href = routs.main;
         console.log(response);
-      }
-    })
+      };
+    });
 
-  })
+  });
 
+};
+
+export const showPassword = () => {
+  const hidden = document.querySelector('.hidden');
+  const password = document.getElementById('password-sign-in');
+
+  hidden.onclick = () => {
+    if (password.type == 'password') {
+      password.type = 'text';
+    } else {
+      password.type = 'password';
+    };
+  };
 };
