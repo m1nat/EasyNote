@@ -381,12 +381,16 @@
       text-align: center;
 
       .login-demo {
-        width: 50%;
-        height: 100%;
-        padding: 7%;
+        width: 32%;
+        height: 50%;
         color: black;
         font-size: 1.4em;
         cursor: pointer;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: grey;
+        }
 
         @media screen and(max-width: 1600px) {
           font-size: 1.2em;
@@ -395,12 +399,16 @@
       }
 
       .sign-up-demo {
-        width: 50%;
-        height: 100%;
-        padding: 7%;
+        width: 32%;
+        height: 50%;
         color: black;
         font-size: 1.4em;
         cursor: pointer;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: grey;
+        }
 
         @media screen and(max-width: 1600px) {
           font-size: 1.2em;
