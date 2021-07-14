@@ -121,6 +121,7 @@
             &:hover::after {
               display: block;
             }
+            
           }
 
           .color {
@@ -168,6 +169,7 @@
             &:hover::after {
               display: block;
             }
+
           }
 
           .add-img {
@@ -262,6 +264,7 @@
             &:hover::after {
               display: block;
             }
+
           }
 
           .todo-list {
@@ -356,9 +359,13 @@
             &:hover::after {
               display: block;
             }
+
           }
+
         }
+
       }
+
     }
 
     .header-btns-right {
@@ -400,7 +407,9 @@
         }
 
       }
+
     }
+
   }
   .modal-window-need-login {
     margin-top: 40px;

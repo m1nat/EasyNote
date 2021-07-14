@@ -20,7 +20,7 @@ window.onload = () => {
       const lsToken = getToken();
 
       if (!lsToken) {
-        window.location.href = routs.demo
+        window.location.href = routs.demo;
       } else {
         logoutHandlers();
       };
@@ -35,11 +35,10 @@ window.onload = () => {
     case paths.demo:
       login();
       signUpDemo();
-      disableDemoBnts()
+      disableDemoBnts();
       break;
     default:
       break;
-
-  }
+  };
 
 };
