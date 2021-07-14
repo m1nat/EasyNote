@@ -1,8 +1,9 @@
 import { initAPI } from './api/api-handlers.js';
+import { logoutHandlers } from './components/profile/profile.js';
 import { signInHandlers } from './components/sign-in/sign-in.js';
 import { signUpHandler } from './components/sign-up/sign-up.js';
 import { paths, routs } from './shared/constants/paths.js';
-import { getToken } from './shared/ls-services/localStorage.js';
+import { getToken } from './shared/ls-services/localStorage.js'
 
 import './styles/style.scss';
 
@@ -13,16 +14,15 @@ window.onload = () => {
     (path) => path === window.location.pathname
   );
 
-  console.log(pathname);
   switch (pathname) {
     case paths.main:
-      const token = getToken()
+      const lsToken = getToken();
 
-      if(!token) {
+      if (!lsToken) {
         window.location.href = routs.demo
       } else {
-        console.log('check');
-      }
+        logoutHandlers();
+      };
       break;
     case paths.sign_in:
       signInHandlers();

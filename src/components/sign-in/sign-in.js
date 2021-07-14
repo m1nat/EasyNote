@@ -15,9 +15,10 @@ export const signInHandlers = () => {
     signIn(email, password)
     .then(response => {
       if (response) {
-        const { idToken: token } = response.data;
+        const { idToken: token } = response.data
         setToken(token);
         window.location.href = routs.main
+        console.log(response);
       }
     })
 
