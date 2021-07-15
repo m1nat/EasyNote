@@ -392,6 +392,10 @@
         cursor: pointer;
         border-radius: 5px;
 
+        @media screen and(max-width: 1605px) {
+          font-size: 1.2em;
+        }
+
         @media screen and(max-width: 1405px) {
           font-size: 1.2em;
           height: 40%;
@@ -413,6 +417,10 @@
 
         &:hover {
           background-color: grey;
+        }
+
+        @media screen and(max-width: 1605px) {
+          font-size: 1.2em;
         }
 
         @media screen and(max-width: 1405px) {

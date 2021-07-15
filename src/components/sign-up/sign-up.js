@@ -20,3 +20,27 @@ export const signUpHandler = () => {
   })
 
 };
+
+export const showPasswordSignUP = () => {
+  const firstEye = document.querySelector('.first-eye');
+  const password = document.getElementById('password-su');
+  const secondEye = document.querySelector('.second-eye');
+  const passwordConfirm = document.getElementById('password-confirm')
+
+  firstEye.onclick = () => {
+    if (password.type == 'password') {
+      password.type = 'text';
+    } else {
+      password.type = 'password';
+    };
+  };
+
+  secondEye.onclick = () => {
+    if (passwordConfirm.type == 'password') {
+      passwordConfirm.type = 'text';
+    } else {
+      passwordConfirm.type = 'password';
+    };
+  };
+  
+};

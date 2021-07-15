@@ -18,8 +18,8 @@
     border-radius: 10px;
 
     @media screen and(max-width: 1600px) {
-        width: 33%;
-      }
+      width: 33%;
+    }
 
     .form-wrapper {
       width: 100%;
@@ -41,7 +41,57 @@
           width: 100%;
           height: 60%;
 
-          input {
+          .hide-pass {
+            width: 80%;
+            height: 16%;
+            display: flex;
+            border-radius: 10px;
+            -webkit-box-shadow: -2px 7px 15px -4px #000000;
+            box-shadow: -2px 7px 15px -4px #000000;
+
+            .hidden {
+              width: 10%;
+              height: 100%;
+              border: 1px solid black;
+              border-left: none;
+              background-color: #e5e5e5;
+              border-bottom-right-radius: 10px;
+              border-top-right-radius: 10px;
+              border-left: 1px solid black;
+              background-image: url("../png/eye-2-48.png");
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: 60%;
+              cursor: pointer;
+            }
+
+            .first-inp {
+              width: 90%;
+              height: 100%;
+              border-bottom-left-radius: 10px;
+              border-top-left-radius: 10px;
+              background-color: #e5e5e5;
+              outline: none;
+              padding-left: 15px;
+              border: black 1px solid;
+              -webkit-box-shadow: -2px 7px 15px -4px #000000;
+              box-shadow: -2px 7px 15px -4px #000000;
+              color: black;
+              font-size: 1.1em;
+              font-weight: bolder;
+              padding-right: 25px;
+              border-right: none;
+
+
+              &::placeholder {
+                color: black;
+                font-size: 1em;
+                font-weight: bold;
+              }
+            }
+          }
+
+          .reg {
             width: 80%;
             height: 16%;
             border-radius: 10px;
@@ -57,18 +107,15 @@
             padding-right: 25px;
 
             @media screen and(max-width: 1600px) {
-                height: 17%;
-              }
+              height: 17%;
+            }
 
             &::placeholder {
               color: black;
               font-size: 1em;
               font-weight: bold;
-              
             }
-
           }
-
         }
 
         p {
@@ -96,9 +143,7 @@
             color: #fcfbda;
           }
         }
-
       }
-
     }
 
     .title {
@@ -137,9 +182,7 @@
         border-radius: 5px;
         font-weight: bold;
       }
-
     }
-
   }
   .sing-up-bottom-text {
     width: 80%;
@@ -147,9 +190,7 @@
     font-size: 0.9em;
 
     @media screen and(max-width:1600px) {
-        font-size: 0.7em;
+      font-size: 0.7em;
     }
-    
   }
-
 }

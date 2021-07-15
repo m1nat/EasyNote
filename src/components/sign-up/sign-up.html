@@ -24,32 +24,45 @@
                 name=""
                 id="username"
                 placeholder="Username"
+                class="reg"
               />
               <input
                 type="email"
                 name=""
+                class="reg"
                 id="email-sign-up"
                 placeholder="Email Adress"
               />
-              <input
-                type="password"
-                name=""
-                id="password-sign-up"
-                placeholder="Password"
-              />
-              <input
-              type="password"
-              name=""
-              id="login"
-              placeholder="Confirm your password"
-            />
+              <div class="hide-pass">
+                <input
+                  type="password"
+                  name=""
+                  id="password-su"
+                  class="first-inp pass"
+                  placeholder="Password"
+                />
+                <div class="hidden first-eye"></div>
+              </div>
+              <div class="hide-pass">
+                <input
+                  type="password"
+                  class="first-inp confirm"
+                  name=""
+                  id="password-confirm"
+                  placeholder="Confirm your password"
+                />
+                <div class="hidden second-eye"></div>
+              </div>
             </div>
             <button type="submit" id="btn-sign-up">Sign up</button>
             <a href="/sign-in.html">I have account</a>
           </form>
         </div>
         <div class="sing-up-bottom-text">
-          <p>By registering an account, you accept our Terms of Service and Privacy Policy.</p>
+          <p>
+            By registering an account, you accept our Terms of Service and
+            Privacy Policy.
+          </p>
         </div>
       </div>
     </div>
