@@ -143,6 +143,10 @@
           font-weight: bold;
           border: none;
 
+          &:hover {
+            color: #fcfbda;
+          }
+
           @media screen and(max-width: 1600px) {
             font-size: 1.2em;
             height: 23%;

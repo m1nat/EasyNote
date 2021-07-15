@@ -380,6 +380,10 @@
       font-size: 0.7em;
       text-align: center;
 
+      @media screen and(max-width: 1405px) {
+        width: 15%;
+      }
+
       .login-demo {
         width: 32%;
         height: 50%;
@@ -388,18 +392,19 @@
         cursor: pointer;
         border-radius: 5px;
 
+        @media screen and(max-width: 1405px) {
+          font-size: 1.2em;
+          height: 40%;
+        }
+        
         &:hover {
           background-color: grey;
-        }
-
-        @media screen and(max-width: 1600px) {
-          font-size: 1.2em;
         }
 
       }
 
       .sign-up-demo {
-        width: 32%;
+        width: 42%;
         height: 50%;
         color: black;
         font-size: 1.4em;
@@ -410,8 +415,15 @@
           background-color: grey;
         }
 
-        @media screen and(max-width: 1600px) {
+        @media screen and(max-width: 1405px) {
           font-size: 1.2em;
+          height: 40%;
+        }
+
+        
+        @media screen and(max-width: 1075px) {
+          font-size: 1.2em;
+          width: 50%;
         }
 
       }
@@ -420,7 +432,7 @@
 
   }
   .modal-window-need-login {
-    margin-top: 40px;
+    margin-top: 60px;
     margin-left: 35%;
     position: absolute;
     border: 1px solid black;
