@@ -177,7 +177,7 @@ header {
             content: attr(data-title);
             width: 85px;
             transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-            height: 22px;
+            height: 42px;
             position: absolute;
             text-align: center;
             z-index: 2;
@@ -188,7 +188,6 @@ header {
             color: rgb(0, 0, 0);
             top: 120%;
             right: -14px;
-            color: blanchedalmond;
             font-size: 0.8em;
             transition: 1s;
             opacity: 0.6;
@@ -326,10 +325,9 @@ header {
             padding: 2px;
             border-radius: 3px;
             background-color: grey;
-            color: rgb(107, 104, 100);
+            color: rgb(0, 0, 0);
             top: 120%;
             right: 0px;
-            color: blanchedalmond;
             font-size: 0.8em;
             transition: 1s;
             opacity: 0.6;
