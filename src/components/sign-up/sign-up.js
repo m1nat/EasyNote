@@ -6,13 +6,13 @@ import { singUPEmailValidator } from '../../shared/validators/check-inputs.js';
 export const signUpHandler = () => {
   const signUpForm = document.querySelector('.form-sign-up');
   const emailInput = document.getElementById('email-sign-up');
-  const passwordInput = document.getElementById('password-sign-up');
+  const passwordInput = document.getElementById('password-su');
 
   signUpForm.addEventListener('submit', event => {
     event.preventDefault();
 
-    const email = emailInput.value;
-    const password = passwordInput.value;
+    const email = document.getElementById('email-sign-up').value;
+    const password = document.getElementById('password-su').value;
 
 
     signUp(email, password)
@@ -26,7 +26,7 @@ export const signUpHandler = () => {
 
   emailInput.oninput = () => {
 
-    if (singUPEmailValidator(emailInput.value)){
+    if (singUPEmailValidator(document.getElementById('email-sign-up').value)){
       hideErrorEmailSignUP()
     } else { showErrorEmailSignUP() }
 
