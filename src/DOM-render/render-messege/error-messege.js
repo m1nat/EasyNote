@@ -7,3 +7,14 @@ export const hideErrorEmailSignUP = () => {
   const errorMessege = document.querySelector('.messege-error-email-signup');
   errorMessege.style.display = 'none'
 };
+
+
+export const showErrorMessegePasswordSignUP = () => {
+  const passwordMessege = document.querySelector('.incorrectly-password');
+  passwordMessege.style.display = 'block'
+};
+
+export const hideErrorMessegePasswordSignUP = () => {
+  const passwordMessege = document.querySelector('.incorrectly-password');
+  passwordMessege.style.display = 'none'
+};

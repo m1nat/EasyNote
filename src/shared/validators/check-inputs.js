@@ -2,16 +2,12 @@ import { PASSWORD_STRENGTH, REGEXP } from './regexp.js';
 
 export const singUPEmailValidator = emailinp => emailinp.match(REGEXP.EmailSingUP);
 export const signUpPasswordValidator = password => password.match(REGEXP.PasswordSignUP);
+export const signUpPasswordValidatorMessege= password => password.match(REGEXP.SHOW_ERROR_MESSEGE_PASSWORD);
 
 const lowerCaseCheck = password => REGEXP.LOWER_CASE.test(password);
-
 const upperCaseCheck = password => REGEXP.UPPER_CASE.test(password);
-
 const numberCaseCheck = password => REGEXP.NUMBERS.test(password);
-
-const eightCharacterCaseCheck = password => REGEXP.EIGHT_CHARACTERS.test(password)
-
-
+const eightCharacterCaseCheck = password => REGEXP.EIGHT_CHARACTERS.test(password);
 
 export const passwordStrengthController = password => {
   const messegePassword = document.querySelector('.show-messege-password-strength');
@@ -29,17 +25,11 @@ export const passwordStrengthController = password => {
     numberCaseCheck(password) +
     eightCharacterCaseCheck(password);
 
-  console.log(passwordStrengthNum);
   Object.keys(PASSWORD_STRENGTH).forEach(el => {
     if (PASSWORD_STRENGTH[el] === passwordStrengthNum) {
       passwordStrength = el;
     }
   });
-
-  // passwordStrengthNum == 1? messegePassword.style.display = 'block' : messegePassword.style.display = 'none';
-  // passwordStrengthNum == 2? messegePassword.style.display = 'block' : messegePassword.style.display = 'none';
-  // passwordStrengthNum == 3? messegePassword.style.display = 'block' : messegePassword.style.display = 'none';
-  // passwordStrengthNum == 4? messegePassword.style.display = 'block' : messegePassword.style.display = 'none';
 
   switch (passwordStrengthNum) {
     case 1:

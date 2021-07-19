@@ -1,12 +1,15 @@
 import { signUp } from '../../api/api-handlers.js';
-import { hideErrorEmailSignUP, showErrorEmailSignUP } from '../../DOM-render/render-messege/error-messege.js';
+import { hideErrorEmailSignUP, hideErrorMessegePasswordSignUP, showErrorEmailSignUP, showErrorMessegePasswordSignUP } from '../../DOM-render/render-messege/error-messege.js';
 import { routs } from '../../shared/constants/paths.js';
-import { passwordStrengthController, signUpPasswordValidator, singUPEmailValidator } from '../../shared/validators/check-inputs.js';
+import { passwordStrengthController, showMessegeErrorPassword, signUpPasswordValidator, signUpPasswordValidatorMessege, singUPEmailValidator } from '../../shared/validators/check-inputs.js';
 
 export const signUpHandler = () => {
   const signUpForm = document.querySelector('.form-sign-up');
   const emailInput = document.getElementById('email-sign-up');
   const passwordInput = document.getElementById('password-su');
+  const btnSignUp = document.getElementById('btn-sign-up');
+
+  btnSignUp.setAttribute('disabled', true);
 
   signUpForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -16,25 +19,36 @@ export const signUpHandler = () => {
 
 
     signUp(email, password)
-    .then( response => {
-      if (response) {
-        window.location.href = routs.sign_in;
-      }; 
-    })
+      .then(response => {
+        if (response) {
+          window.location.href = routs.sign_in;
+        }
+      })
 
   });
 
   emailInput.oninput = () => {
 
-    if (singUPEmailValidator(document.getElementById('email-sign-up').value)){
+    if (singUPEmailValidator(document.getElementById('email-sign-up').value)) {
       hideErrorEmailSignUP()
-    } else { showErrorEmailSignUP() }
+      btnSignUp.removeAttribute('disabled')
+    } else {
+      showErrorEmailSignUP()
+      btnSignUp.setAttribute('disabled', true);
+    }
 
   };
 
   passwordInput.oninput = () => {
     if (signUpPasswordValidator(document.getElementById('password-su').value)) {
       passwordStrengthController(document.getElementById('password-su').value);
+    }
+    if (signUpPasswordValidatorMessege(document.getElementById('password-su').value)) {
+      hideErrorMessegePasswordSignUP()
+      btnSignUp.removeAttribute('disabled')
+    } else {
+      showErrorMessegePasswordSignUP()
+      btnSignUp.setAttribute('disabled', true);
     }
   };
 
@@ -61,5 +75,5 @@ export const showPasswordSignUP = () => {
       passwordConfirm.type = 'password';
     };
   };
-  
+
 };

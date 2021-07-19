@@ -42,6 +42,7 @@
             padding-left: 10px;
             color: red;
             display: none;
+            font-weight: bolder;
 
             @media screen and(max-width:1600px) {
               font-size: 0.7em;
@@ -81,7 +82,7 @@
               font-size: 1em;
               padding: 2px;
               background-color: #e5e5e5;
-              display: block;
+              display: none;
 
               .filler {
                 margin: 0 auto;
@@ -163,13 +164,14 @@
               font-weight: bolder;
               padding-right: 25px;
               border-right: none;
-
+              
               &::placeholder {
                 color: black;
                 font-size: 1em;
                 font-weight: bold;
               }
             }
+
           }
 
           .reg {
@@ -280,4 +282,17 @@
   text-align: left;
   width: 80%;
   color: green;
+}
+
+
+.incorrectly-password {
+  font-size: 0.7em;
+  color: red;
+  position: absolute;
+  height: 10px;
+  top: 100%;
+  width: 100%;
+  left: 3%;
+  font-weight: bolder;
+  display: none;
 }
