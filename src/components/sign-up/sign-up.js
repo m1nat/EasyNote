@@ -37,6 +37,7 @@ export const signUpHandler = () => {
         if (response) {
           window.location.href = routs.sign_in;
         }
+
       })
 
   });
@@ -63,7 +64,7 @@ export const signUpHandler = () => {
     } else {
       showErrorMessegePasswordSignUP()
       btnSignUp.setAttribute('disabled', true);
-    }
+    };
   };
 
   usernameInp.oninput = () => {
@@ -73,7 +74,7 @@ export const signUpHandler = () => {
     } else {
       showErrorMessegeUsername();
       btnSignUp.setAttribute('disabled', true);
-    }
+    };
   };
 
 };
@@ -99,5 +100,5 @@ export const showPasswordSignUP = () => {
       passwordConfirm.type = 'password';
     };
   };
-
+  
 };
