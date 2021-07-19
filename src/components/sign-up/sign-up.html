@@ -19,13 +19,17 @@
         <div class="form-wrapper">
           <form class="form-sign-up">
             <div class="block-input">
-              <input
-                type="text"
-                name=""
-                id="username"
-                placeholder="Username"
-                class="reg"
-              />
+              <div class="username-block">
+                <input
+                  type="text"
+                  name=""
+                  id="username"
+                  placeholder="Username"
+                  class="reg"
+                  maxlength="20"
+                />
+                <div class="username-messege">Wrong username</div>
+              </div>
               <div class="error-email-signup">
                 <input
                   type="email"
@@ -47,7 +51,9 @@
                   placeholder="Password"
                   maxlength="20"
                 />
-                <div class="incorrectly-password">Password entered incorrectly</div>
+                <div class="incorrectly-password">
+                  Password entered incorrectly
+                </div>
                 <div class="hidden first-eye"></div>
                 <div class="show-messege-password-strength">
                   <div class="password-stength-current">
@@ -63,7 +69,7 @@
                     <p id="high">Very high level of security</p>
                   </div>
                   <div class="filler">
-                    <div class="lign" id='lign-Str'></div>
+                    <div class="lign" id="lign-Str"></div>
                   </div>
                 </div>
               </div>

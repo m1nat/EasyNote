@@ -3,6 +3,7 @@ import { PASSWORD_STRENGTH, REGEXP } from './regexp.js';
 export const singUPEmailValidator = emailinp => emailinp.match(REGEXP.EmailSingUP);
 export const signUpPasswordValidator = password => password.match(REGEXP.PasswordSignUP);
 export const signUpPasswordValidatorMessege= password => password.match(REGEXP.SHOW_ERROR_MESSEGE_PASSWORD);
+export const signUpUsernameValidator = username => username.match(REGEXP.USERNAME);
 
 const lowerCaseCheck = password => REGEXP.LOWER_CASE.test(password);
 const upperCaseCheck = password => REGEXP.UPPER_CASE.test(password);
@@ -11,9 +12,6 @@ const eightCharacterCaseCheck = password => REGEXP.EIGHT_CHARACTERS.test(passwor
 
 export const passwordStrengthController = password => {
   const messegePassword = document.querySelector('.show-messege-password-strength');
-  const uppercaseMessege = document.getElementById('uppercase');
-  const lowerMessege = document.getElementById('lowerCase');
-  const numberMessege = document.getElementById('number');
   const highSequr = document.getElementById('high');
   const strLength = document.getElementById('lign-Str');
 

@@ -1,13 +1,28 @@
 import { signUp } from '../../api/api-handlers.js';
-import { hideErrorEmailSignUP, hideErrorMessegePasswordSignUP, showErrorEmailSignUP, showErrorMessegePasswordSignUP } from '../../DOM-render/render-messege/error-messege.js';
+import {
+  hideErrorEmailSignUP,
+  hideErrorMessegePasswordSignUP,
+  hideErrorMessegeUsername,
+  showErrorEmailSignUP,
+  showErrorMessegePasswordSignUP,
+  showErrorMessegeUsername
+} from '../../DOM-render/render-messege/error-messege.js';
 import { routs } from '../../shared/constants/paths.js';
-import { passwordStrengthController, showMessegeErrorPassword, signUpPasswordValidator, signUpPasswordValidatorMessege, singUPEmailValidator } from '../../shared/validators/check-inputs.js';
+import {
+  passwordStrengthController,
+  showMessegeErrorPassword,
+  signUpPasswordValidator,
+  signUpPasswordValidatorMessege,
+  signUpUsernameValidator,
+  singUPEmailValidator
+} from '../../shared/validators/check-inputs.js';
 
 export const signUpHandler = () => {
   const signUpForm = document.querySelector('.form-sign-up');
   const emailInput = document.getElementById('email-sign-up');
   const passwordInput = document.getElementById('password-su');
   const btnSignUp = document.getElementById('btn-sign-up');
+  const usernameInp = document.getElementById('username');
 
   btnSignUp.setAttribute('disabled', true);
 
@@ -16,7 +31,6 @@ export const signUpHandler = () => {
 
     const email = document.getElementById('email-sign-up').value;
     const password = document.getElementById('password-su').value;
-
 
     signUp(email, password)
       .then(response => {
@@ -30,10 +44,10 @@ export const signUpHandler = () => {
   emailInput.oninput = () => {
 
     if (singUPEmailValidator(document.getElementById('email-sign-up').value)) {
-      hideErrorEmailSignUP()
-      btnSignUp.removeAttribute('disabled')
+      hideErrorEmailSignUP();
+      btnSignUp.removeAttribute('disabled');
     } else {
-      showErrorEmailSignUP()
+      showErrorEmailSignUP();
       btnSignUp.setAttribute('disabled', true);
     }
 
@@ -45,9 +59,19 @@ export const signUpHandler = () => {
     }
     if (signUpPasswordValidatorMessege(document.getElementById('password-su').value)) {
       hideErrorMessegePasswordSignUP()
-      btnSignUp.removeAttribute('disabled')
+      btnSignUp.removeAttribute('disabled');
     } else {
       showErrorMessegePasswordSignUP()
+      btnSignUp.setAttribute('disabled', true);
+    }
+  };
+
+  usernameInp.oninput = () => {
+    if (signUpUsernameValidator(document.getElementById('username').value)) {
+      btnSignUp.removeAttribute('disabled');
+      hideErrorMessegeUsername();
+    } else {
+      showErrorMessegeUsername();
       btnSignUp.setAttribute('disabled', true);
     }
   };

@@ -18,3 +18,13 @@ export const hideErrorMessegePasswordSignUP = () => {
   const passwordMessege = document.querySelector('.incorrectly-password');
   passwordMessege.style.display = 'none'
 };
+
+export const showErrorMessegeUsername = () => {
+  const usernameMessege = document.querySelector('.username-messege');
+  usernameMessege.style.display = 'block'
+};
+
+export const hideErrorMessegeUsername = () => {
+  const usernameMessege = document.querySelector('.username-messege');
+  usernameMessege.style.display = 'none'
+};
