@@ -1,7 +1,7 @@
 import { signUp } from '../../api/api-handlers.js';
 import { hideErrorEmailSignUP, showErrorEmailSignUP } from '../../DOM-render/render-messege/error-messege.js';
 import { routs } from '../../shared/constants/paths.js';
-import { singUPEmailValidator } from '../../shared/validators/check-inputs.js';
+import { passwordStrengthController, signUpPasswordValidator, singUPEmailValidator } from '../../shared/validators/check-inputs.js';
 
 export const signUpHandler = () => {
   const signUpForm = document.querySelector('.form-sign-up');
@@ -22,7 +22,7 @@ export const signUpHandler = () => {
       }; 
     })
 
-  })
+  });
 
   emailInput.oninput = () => {
 
@@ -30,7 +30,13 @@ export const signUpHandler = () => {
       hideErrorEmailSignUP()
     } else { showErrorEmailSignUP() }
 
-  }
+  };
+
+  passwordInput.oninput = () => {
+    if (signUpPasswordValidator(document.getElementById('password-su').value)) {
+      passwordStrengthController(document.getElementById('password-su').value);
+    }
+  };
 
 };
 

@@ -28,13 +28,15 @@
               />
               <div class="error-email-signup">
                 <input
-                type="email"
-                name=""
-                class="reg"
-                id="email-sign-up"
-                placeholder="Email Adress"
-              />
-              <div class="messege-error-email-signup">Sorry, We don't recognize this email</div>
+                  type="email"
+                  name=""
+                  class="reg"
+                  id="email-sign-up"
+                  placeholder="Email Adress"
+                />
+                <div class="messege-error-email-signup">
+                  Sorry, We don't recognize this email
+                </div>
               </div>
               <div class="hide-pass">
                 <input
@@ -43,8 +45,26 @@
                   id="password-su"
                   class="first-inp pass"
                   placeholder="Password"
+                  maxlength="20"
                 />
                 <div class="hidden first-eye"></div>
+                <div class="show-messege-password-strength">
+                  <div class="password-stength-current">
+                    <p id="uppercase">Lowercase</p>
+                  </div>
+                  <div class="password-stength-current">
+                    <p id="lowerCase">Lowercase</p>
+                  </div>
+                  <div class="password-stength-current">
+                    <p id="number">Numbers</p>
+                  </div>
+                  <div class="password-stength-current">
+                    <p id="high">Very high level of security</p>
+                  </div>
+                  <div class="filler">
+                    <div class="lign" id='lign-Str'></div>
+                  </div>
+                </div>
               </div>
               <div class="hide-pass">
                 <input
