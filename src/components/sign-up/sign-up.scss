@@ -7,7 +7,7 @@
   display: flex;
 
   .sign-up {
-    width: 1000px;
+    width: 800px;
     height: 782px;
     margin: 3% auto;
     border: 1px solid #e5e5e5;
@@ -74,6 +74,7 @@
             #username {
               width: 100%;
               height: 100%;
+              color: black;
             }
 
             .username-messege {
@@ -85,6 +86,7 @@
               left: 3%;
               display: none;
             }
+
           }
 
           .hide-pass {
@@ -174,7 +176,7 @@
               outline: none;
               padding-left: 15px;
               border: #e5e5e5 1px solid;
-              color: #e5e5e5;
+              color: black;
               font-size: 1.1em;
               font-weight: bolder;
               padding-right: 25px;
@@ -194,8 +196,8 @@
             background-color: #ffffff;
             outline: none;
             padding-left: 15px;
+            color: black;
             border: #e5e5e5 1px solid;
-            color: #e5e5e5;
             font-size: 1.1em;
             font-weight: bolder;
             padding-right: 25px;
