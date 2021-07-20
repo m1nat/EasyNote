@@ -3,19 +3,21 @@
   padding: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #e5e5e5;
+  background-color: #ffffff;
   display: flex;
 
   .sign-up {
-    width: 30%;
-    height: 59%;
-    margin: 10% auto;
+    width: 1000px;
+    height: 782px;
+    margin: 3% auto;
+    border: 1px solid #e5e5e5;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
+    box-shadow: 1px 1px 1px ;
 
     @media screen and(max-width: 1600px) {
       width: 33%;
@@ -26,6 +28,7 @@
       height: 73%;
 
       form {
+        margin: 15% auto;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -85,14 +88,10 @@
 
           }
 
-
           .hide-pass {
             width: 80%;
             height: 16%;
             display: flex;
-            border-radius: 10px;
-            -webkit-box-shadow: -2px 7px 15px -4px #000000;
-            box-shadow: -2px 7px 15px -4px #000000;
             position: relative;
 
             .show-messege-password-strength {
@@ -101,7 +100,7 @@
               top: -20px;
               width: 170px;
               height: 90px;
-              border: 1px solid;
+              border: 1px solid #e5e5e5;
               font-size: 1em;
               padding: 2px;
               background-color: #e5e5e5;
@@ -156,40 +155,34 @@
             }
 
             .hidden {
-              width: 10%;
+              width: 6%;
               height: 100%;
-              border: 1px solid black;
+              border: 1px solid #e5e5e5;
               border-left: none;
-              background-color: #e5e5e5;
-              border-bottom-right-radius: 10px;
-              border-top-right-radius: 10px;
-              border-left: 1px solid black;
+              background-color: #ffffff;
+              border-left: 1px solid #e5e5e5;
               background-image: url("../png/eye-2-48.png");
               background-repeat: no-repeat;
               background-position: center;
-              background-size: 60%;
+              background-size: 50%;
               cursor: pointer;
             }
 
             .first-inp {
-              width: 90%;
+              width: 94%;
               height: 100%;
-              border-bottom-left-radius: 10px;
-              border-top-left-radius: 10px;
-              background-color: #e5e5e5;
+              background-color: #ffffff;
               outline: none;
               padding-left: 15px;
-              border: black 1px solid;
-              -webkit-box-shadow: -2px 7px 15px -4px #000000;
-              box-shadow: -2px 7px 15px -4px #000000;
-              color: black;
+              border: #e5e5e5 1px solid;
+              color: #e5e5e5;
               font-size: 1.1em;
               font-weight: bolder;
               padding-right: 25px;
               border-right: none;
               
               &::placeholder {
-                color: black;
+                color: #e5e5e5;
                 font-size: 1em;
                 font-weight: bold;
               }
@@ -200,14 +193,11 @@
           .reg {
             width: 80%;
             height: 16%;
-            border-radius: 10px;
-            background-color: #e5e5e5;
+            background-color: #ffffff;
             outline: none;
             padding-left: 15px;
-            border: black 1px solid;
-            -webkit-box-shadow: -2px 7px 15px -4px #000000;
-            box-shadow: -2px 7px 15px -4px #000000;
-            color: black;
+            border: #e5e5e5 1px solid;
+            color: #e5e5e5;
             font-size: 1.1em;
             font-weight: bolder;
             padding-right: 25px;
@@ -217,7 +207,7 @@
             }
 
             &::placeholder {
-              color: black;
+              color: #e5e5e5;
               font-size: 1em;
               font-weight: bold;
             }
@@ -234,35 +224,17 @@
         }
 
         #btn-sign-up {
-          color: white;
-          background-color: black;
+          color: rgb(0, 0, 0);
+          background-color: #D7EEEF;
           outline: none;
           font-size: 1.5em;
           letter-spacing: 2px;
           width: 80%;
-          height: 18%;
-          border-radius: 20px;
-          font-weight: bold;
+          height: 18%;;
           border: none;
 
-          &:hover {
-            color: #fcfbda;
-          }
         }
       }
-    }
-
-    .title {
-      width: 100%;
-      text-align: center;
-      padding-top: 15px;
-      font-weight: bolder;
-      height: 15%;
-      background-color: #fcfbda;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      font-size: 1.2em;
-      letter-spacing: 1px;
     }
 
     .create-account-href {
@@ -278,16 +250,6 @@
       height: 10%;
       display: flex;
 
-      .btn-href-sing-up-item {
-        margin: 1px auto;
-        width: 30%;
-        height: 55%;
-        font-size: 0.7em;
-        outline: none;
-        border: none;
-        border-radius: 5px;
-        font-weight: bold;
-      }
     }
   }
   .sing-up-bottom-text {

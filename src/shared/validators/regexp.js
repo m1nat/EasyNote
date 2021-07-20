@@ -5,7 +5,7 @@ export const REGEXP = {
   NUMBERS: /(?=.*[0-9])/,
   EIGHT_CHARACTERS: /(?=.*[!@#$%^&*])/,
   SHOW_ERROR_MESSEGE_PASSWORD: /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}|[0-9]{6,20}|[a-zA-Z]{6,20}/g,
-  USERNAME: /^[a-z 0-9]{6,}|(?=.*[\.-_])[a-z]{6,}/i
+  USERNAME: /[a-zA-Z -_. 0-9]{6,20}/i
 };
 
 export const PASSWORD_STRENGTH = {
