@@ -3,6 +3,7 @@ import {
   hideErrorEmailSignUP,
   hideErrorMessegePasswordSignUP,
   hideErrorMessegeUsername,
+  redInputBorder,
   showErrorEmailSignUP,
   showErrorMessegePasswordSignUP,
   showErrorMessegeUsername
