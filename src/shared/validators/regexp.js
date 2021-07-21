@@ -4,7 +4,7 @@ export const REGEXP = {
   LOWER_CASE: /(?=.*[a-z])/g,
   NUMBERS: /(?=.*[0-9])/gi,
   EIGHT_CHARACTERS: /(?=.*[!@#$%^&*])/gi,
-  SHOW_ERROR_MESSEGE_PASSWORD: /^[a-zA-Z0-9@()=+!^%$#&_-]{8,20}$/gi,
+  SHOW_ERROR_MESSEGE_PASSWORD: /^[a-zA-Z0-9@()=+!^%$#&_-]{6,20}$/gi,
   USERNAME: /^[a-zA-Z0-9]{6,20}$/
 };
 
