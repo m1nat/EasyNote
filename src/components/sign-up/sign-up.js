@@ -133,6 +133,8 @@ export const signUpHandler = () => {
     }
 
     secondPasswordInput.value === '' || formCheck.password_1.isValid && (passwordInput.value === secondPasswordInput.value) ? confirmPasswordHideMessege() : confirmPasswordShowMessege();
+    secondPasswordInput.value === '' || formCheck.password_1.isValid && (passwordInput.value === secondPasswordInput.value) ? secondPasswordInput.className = 'first-inp' : secondPasswordInput.className = 'first-inp-red';
+    secondPasswordInput.value === '' || formCheck.password_1.isValid && (passwordInput.value === secondPasswordInput.value) ? secondEye.className = 'second-eye' : secondEye.className = 'first-eye-red'
     checkValid();
   }
 };
