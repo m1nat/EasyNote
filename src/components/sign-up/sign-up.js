@@ -40,9 +40,10 @@ export const signUpHandler = () => {
   const emailInput = document.getElementById('email-sign-up');
   const passwordInput = document.getElementById('password-su');
   const btnSignUp = document.getElementById('btn-sign-up');
-  const usernameInp = document.getElementById('username');
+  const usernameInp = document.querySelector('.username');
   const secondPasswordInput = document.getElementById('password-confirm');
   const questionmMarkPassword = document.querySelector('.question-mark-password');
+  const questionmMarkUsername = document.querySelector('.question-mark-username');
 
   btnSignUp.setAttribute('disabled', true);
 
@@ -55,12 +56,14 @@ export const signUpHandler = () => {
 
     signUp(email, password)
       .then(response => {
+
         if (response) {
           window.location.href = routs.sign_in;
         }
+
       })
-      
     });
+
     const checkValid = () => {
       const isFormValid = Object.values(formCheck).every( value => value.isValid);
       isFormValid ? btnSignUp.removeAttribute('disabled') : btnSignUp.setAttribute('disabled', true);
@@ -84,7 +87,6 @@ export const signUpHandler = () => {
     if (signUpPasswordValidator(document.getElementById('password-su').value)) {
       passwordStrengthController(document.getElementById('password-su').value);
       passwordInput.value === '' ? questionmMarkPassword.style.display = 'none' : questionmMarkPassword.style.display = 'block';
-      passwordInput.value === '' ? hideErrorMessegePasswordSignUP() : console.log('check');
     };
     
     hideErrorMessegePasswordSignUP()
@@ -101,12 +103,14 @@ export const signUpHandler = () => {
 
   usernameInp.oninput = () => {
     if (signUpUsernameValidator(document.getElementById('username').value)) {
-      hideErrorMessegeUsername();
-      formCheck.username.isValid = true
+      formCheck.username.isValid = true;
     } else {
-      showErrorMessegeUsername();
-      formCheck.username.isValid = false
+      formCheck.username.isValid = false;
+      questionmMarkUsername.style.display = 'block';
     };
+
+    usernameInp.value === '' || signUpUsernameValidator(document.getElementById('username').value) ? questionmMarkUsername.style.display = 'none' : questionmMarkUsername.style.display = 'block';
+    usernameInp.value === '' || signUpUsernameValidator(document.getElementById('username').value) ? usernameInp.className = 'username' : usernameInp.className = 'border-red';
     checkValid();
   };
 
