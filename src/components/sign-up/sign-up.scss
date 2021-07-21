@@ -91,7 +91,6 @@
                 font-size: 1em;
                 font-weight: bold;
               }
-
             }
             .border-red {
               width: 100%;
@@ -100,7 +99,7 @@
               outline: none;
               padding-left: 15px;
               color: black;
-              border: red 2px solid;
+              border: red 1px solid;
               font-size: 1.1em;
               font-weight: bolder;
               padding-right: 25px;
@@ -143,7 +142,6 @@
                 left: 71%;
                 padding: 7px;
                 font-size: 0.7em;
-
               }
             }
 
@@ -334,6 +332,19 @@
             }
           }
 
+          .border-red-email {
+            width: 80%;
+            height: 16%;
+            background-color: #ffffff;
+            outline: none;
+            padding-left: 15px;
+            color: black;
+            border: #f70404 1px solid;
+            font-size: 1.1em;
+            font-weight: bolder;
+            padding-right: 25px;
+          }
+
           .reg {
             width: 80%;
             height: 16%;
@@ -351,7 +362,11 @@
               font-size: 1em;
               font-weight: bold;
             }
+
+ 
+
           }
+
         }
 
         p {
@@ -418,5 +433,3 @@
 .pos {
   display: none;
 }
-
-

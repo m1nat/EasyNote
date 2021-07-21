@@ -44,10 +44,11 @@ export const signUpHandler = () => {
   const secondPasswordInput = document.getElementById('password-confirm');
   const questionmMarkPassword = document.querySelector('.question-mark-password');
   const questionmMarkUsername = document.querySelector('.question-mark-username');
+  const messegeErrorEmailSignup = document.querySelector('.messege-error-email-signup');
 
   btnSignUp.setAttribute('disabled', true);
 
-  
+
   signUpForm.addEventListener('submit', event => {
     event.preventDefault();
 
@@ -62,23 +63,24 @@ export const signUpHandler = () => {
         }
 
       })
-    });
+  });
 
-    const checkValid = () => {
-      const isFormValid = Object.values(formCheck).every( value => value.isValid);
-      isFormValid ? btnSignUp.removeAttribute('disabled') : btnSignUp.setAttribute('disabled', true);
-      console.log(formCheck);
-    };
-    
+  const checkValid = () => {
+    const isFormValid = Object.values(formCheck).every(value => value.isValid);
+    isFormValid ? btnSignUp.removeAttribute('disabled') : btnSignUp.setAttribute('disabled', true);
+    console.log(formCheck);
+  };
+
   emailInput.oninput = () => {
 
     if (singUPEmailValidator(document.getElementById('email-sign-up').value)) {
-      hideErrorEmailSignUP();
       formCheck.email.isValid = true;
     } else {
-      showErrorEmailSignUP();
       formCheck.email.isValid = false;
     }
+
+    emailInput.value === '' || singUPEmailValidator(document.getElementById('email-sign-up').value) ? messegeErrorEmailSignup.style.display = 'none' : messegeErrorEmailSignup.style.display = 'block';
+    emailInput.value === '' || singUPEmailValidator(document.getElementById('email-sign-up').value) ? emailInput.className ='reg' : emailInput.className ='border-red-email';
     checkValid();
   };
 
@@ -88,7 +90,7 @@ export const signUpHandler = () => {
       passwordStrengthController(document.getElementById('password-su').value);
       passwordInput.value === '' ? questionmMarkPassword.style.display = 'none' : questionmMarkPassword.style.display = 'block';
     };
-    
+
     hideErrorMessegePasswordSignUP()
     if (signUpPasswordValidatorMessege(document.getElementById('password-su').value)) {
       btnSignUp.removeAttribute('disabled');
@@ -96,7 +98,7 @@ export const signUpHandler = () => {
     } else {
       formCheck.password_1.isValid = false
       showErrorMessegePasswordSignUP();
-    } 
+    }
     checkValid();
   };
 
@@ -114,7 +116,7 @@ export const signUpHandler = () => {
     checkValid();
   };
 
-  
+
   secondPasswordInput.oninput = () => {
     if (formCheck.password_1.isValid && (passwordInput.value === secondPasswordInput.value)) {
       formCheck.password_2.isValid = true;
@@ -151,5 +153,5 @@ export const showPasswordSignUP = () => {
       passwordConfirm.type = 'password';
     };
   };
-  
+
 };
