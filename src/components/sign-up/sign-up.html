@@ -45,23 +45,20 @@
                   placeholder="Password"
                   maxlength="20"
                 />
+                <div class='question-mark'>
+                </div>
                 <div class="incorrectly-password">
                   Password is under six characters
                 </div>
                 <div class="hidden first-eye"></div>
                 <div class="show-messege-password-strength">
-                  <div class="password-stength-current">
-                    <p id="uppercase">Lowercase</p>
-                  </div>
-                  <div class="password-stength-current">
-                    <p id="lowerCase">Lowercase</p>
-                  </div>
-                  <div class="password-stength-current">
-                    <p id="number">Numbers</p>
-                  </div>
-                  <div class="password-stength-current">
-                    <p id="high">Very high level of security</p>
-                  </div>
+                  <ul class="list-password-str">
+                    <li class='title'>Make it stronger, use:</li>
+                    <li class="weak-li">Lowercase letter</li>
+                    <li class="moderate-li">UPPERCASE letter</li>
+                    <li class="strong-li">number(0-9)</li>
+                    <li class="comlete-li">special character</li>
+                  </ul>
                   <div class="filler">
                     <div class="lign" id="lign-Str"></div>
                   </div>
@@ -76,6 +73,7 @@
                   placeholder="Confirm your password"
                 />
                 <div class="hidden second-eye"></div>
+                <div class="confirm-password-messege">Passwords don’t match</div>
               </div>
             </div>
             <button type="submit" id="btn-sign-up">Sign up</button>

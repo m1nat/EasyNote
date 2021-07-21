@@ -17,10 +17,13 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    box-shadow: 1px 1px 1px;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
     @media screen and(max-width: 1600px) {
-      width: 33%;
+      width: 700px;
+      height: 682px;
     }
 
     .form-wrapper {
@@ -79,14 +82,13 @@
 
             .username-messege {
               position: absolute;
-              font-size: 0.7em;
+              font-size: 0.8em;
               color: red;
               font-weight: bolder;
               top: 100%;
               left: 3%;
               display: none;
             }
-
           }
 
           .hide-pass {
@@ -95,51 +97,87 @@
             display: flex;
             position: relative;
 
+            .question-mark {
+              position: absolute;
+              border: 1px solid;
+              width: 20px;
+              height: 20px;
+              left: 103%;
+              top: 30%;
+            }
+
             .show-messege-password-strength {
               position: absolute;
-              left: 105%;
+              right: 105%;
               top: -20px;
-              width: 170px;
-              height: 90px;
+              width: 187px;
+              height: 116px;
               border: 1px solid #e5e5e5;
-              font-size: 1em;
-              padding: 2px;
               background-color: #e5e5e5;
+              padding: 2px;
               display: none;
+              font-size: 0.8em;
+              border-radius: 5px;
+              -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+              -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+              box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+              @media screen and(max-width:1600px) {
+                width: 187px;
+                height: 116px;
+              }
+
+              .list-password-str {
+                font-size: 0.9em;
+
+                li {
+                  margin-top: 1px;
+                }
+
+                .li-green {
+                  font-size: 1em;
+                  color: #5bcb60;
+                  font-weight: bold;
+                }
+
+                .title {
+                  list-style: none;
+                  margin: 0px;
+                  font-weight: bolder;
+                  font-size: 1em;
+                }
+              }
 
               .filler {
                 margin: 0 auto;
                 width: 90%;
                 height: 7px;
                 border: 1px solid;
-                border-radius: 10px;
+                background-color: #c4c4c4;
+                margin-top: -10px;
 
                 .red {
                   width: 25%;
                   height: 100%;
-                  background-color: red;
-                  border-radius: 10px;
+                  background-color: #5bcb60;
                 }
 
                 .orange {
                   width: 50%;
                   height: 100%;
-                  background-color: rgb(255, 132, 0);
-                  border-radius: 10px;
+                  background-color: #5bcb60;
                 }
 
                 .yellow {
                   width: 75%;
                   height: 100%;
-                  background-color: rgb(200, 255, 0);
-                  border-radius: 10px;
+                  background-color: #5bcb60;
                 }
 
                 .green {
                   width: 100%;
                   height: 100%;
-                  background-color: rgb(0, 255, 30);
-                  border-radius: 10px;
+                  background-color: #5bcb60;
                 }
               }
 
@@ -187,6 +225,18 @@
                 font-size: 1em;
                 font-weight: bold;
               }
+
+            }
+            .confirm-password-messege {
+              position: absolute;
+              width: 150px;
+              height: 15px;
+              top: 110%;
+              color: red;
+              font-size: 0.8em;
+              font-weight: bolder;
+              left: 3%;
+              display: none;
             }
           }
 
@@ -202,16 +252,11 @@
             font-weight: bolder;
             padding-right: 25px;
 
-            @media screen and(max-width: 1600px) {
-              height: 17%;
-            }
-
             &::placeholder {
               color: #e5e5e5;
               font-size: 1em;
               font-weight: bold;
             }
-
           }
         }
 
@@ -255,10 +300,6 @@
     width: 80%;
     height: auto;
     font-size: 0.9em;
-
-    @media screen and(max-width:1600px) {
-      font-size: 0.7em;
-    }
   }
 }
 
@@ -269,7 +310,7 @@
 }
 
 .incorrectly-password {
-  font-size: 0.7em;
+  font-size: 0.8em;
   color: red;
   position: absolute;
   height: 10px;
