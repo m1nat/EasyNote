@@ -1,8 +1,7 @@
 import { PASSWORD_STRENGTH, REGEXP } from './regexp.js';
 
 export const singUPEmailValidator = emailinp => emailinp.match(REGEXP.EmailSingUP);
-export const signUpPasswordValidator = password => password.match(REGEXP.PasswordSignUP);
-export const signUpPasswordValidatorMessege= password => password.match(REGEXP.SHOW_ERROR_MESSEGE_PASSWORD);
+export const signUpPasswordValidatorMessege = password => password.match(REGEXP.SHOW_ERROR_MESSEGE_PASSWORD);
 export const signUpUsernameValidator = username => username.match(REGEXP.USERNAME);
 
 const listItemPasswordWeak = document.querySelector('.weak-li');
@@ -110,6 +109,5 @@ export const passwordStrengthController = password => {
       messegePassword.style.display = 'none';
       break;
   }
-
-
+  
 };

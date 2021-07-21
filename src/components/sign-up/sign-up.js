@@ -1,13 +1,12 @@
 import { signUp } from '../../api/api-handlers.js';
 import {
-  hideErrorMessegePasswordSignUP,
+  hideErrorMessegePasswordSignUP, showErrorMessegePasswordSignUP,
 } from '../../DOM-render/render-messege/error-messege.js';
 import { routs } from '../../shared/constants/paths.js';
 import {
   confirmPasswordHideMessege,
   confirmPasswordShowMessege,
   passwordStrengthController,
-  signUpPasswordValidator,
   signUpPasswordValidatorMessege,
   signUpUsernameValidator,
   singUPEmailValidator
@@ -82,25 +81,23 @@ export const signUpHandler = () => {
 
   passwordInput.oninput = () => {
 
-    if (signUpPasswordValidator(document.getElementById('password-su').value)) {
+    if (!(signUpPasswordValidatorMessege(document.getElementById('password-su').value))) {
       passwordStrengthController(document.getElementById('password-su').value);
-      passwordInput.value === '' ? questionmMarkPassword.style.display = 'none' : questionmMarkPassword.style.display = 'block';
     };
-
-    hideErrorMessegePasswordSignUP()
+    
     if (signUpPasswordValidatorMessege(document.getElementById('password-su').value)) {
       formCheck.password_1.isValid = true;
     } else {
       formCheck.password_1.isValid = false;
     }
-
+    passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? questionmMarkPassword.style.display = 'none' : questionmMarkPassword.style.display = 'block';
     passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? incorrectlyPassword.style.display = 'none' : incorrectlyPassword.style.display = 'block';
     passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? passwordInput.className = 'first-inp': passwordInput.className = 'first-inp-red'; 
     passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? firstEye.className = 'first-eye' : firstEye.className = 'first-eye-red';
+
     checkValid();
 
   };
-
 
   usernameInp.oninput = () => {
     if (signUpUsernameValidator(document.getElementById('username').value)) {
