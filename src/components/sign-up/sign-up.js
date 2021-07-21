@@ -71,12 +71,12 @@ export const signUpHandler = () => {
 
     if (singUPEmailValidator(document.getElementById('email-sign-up').value)) {
       hideErrorEmailSignUP();
-      formCheck.email.isValid = true
+      formCheck.email.isValid = true;
     } else {
       showErrorEmailSignUP();
-      formCheck.email.isValid = false
+      formCheck.email.isValid = false;
     }
-    checkValid()
+    checkValid();
   };
 
   passwordInput.oninput = () => {
@@ -120,7 +120,6 @@ export const signUpHandler = () => {
     passwordInput.value !== secondPasswordInput.value ? confirmPasswordShowMessege() : confirmPasswordHideMessege();
   }
 };
-
 
 export const showPasswordSignUP = () => {
   const firstEye = document.querySelector('.first-eye');
