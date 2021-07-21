@@ -45,6 +45,9 @@ export const signUpHandler = () => {
   const questionmMarkPassword = document.querySelector('.question-mark-password');
   const questionmMarkUsername = document.querySelector('.question-mark-username');
   const messegeErrorEmailSignup = document.querySelector('.messege-error-email-signup');
+  const incorrectlyPassword = document.querySelector('.incorrectly-password');
+  const secondEye = document.querySelector('.second-eye');
+  const firstEye = document.querySelector('.first-eye');
 
   btnSignUp.setAttribute('disabled', true);
 
@@ -93,13 +96,16 @@ export const signUpHandler = () => {
 
     hideErrorMessegePasswordSignUP()
     if (signUpPasswordValidatorMessege(document.getElementById('password-su').value)) {
-      btnSignUp.removeAttribute('disabled');
-      formCheck.password_1.isValid = true
+      formCheck.password_1.isValid = true;
     } else {
-      formCheck.password_1.isValid = false
-      showErrorMessegePasswordSignUP();
+      formCheck.password_1.isValid = false;
     }
+
+    passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? incorrectlyPassword.style.display = 'none' : incorrectlyPassword.style.display = 'block';
+    passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? passwordInput.className = 'first-inp': passwordInput.className = 'first-inp-red'; 
+    passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? firstEye.className = 'first-eye' : firstEye.className = 'first-eye-red';
     checkValid();
+
   };
 
 
@@ -120,15 +126,14 @@ export const signUpHandler = () => {
   secondPasswordInput.oninput = () => {
     if (formCheck.password_1.isValid && (passwordInput.value === secondPasswordInput.value)) {
       formCheck.password_2.isValid = true;
-      confirmPasswordHideMessege();
+
     } else {
       formCheck.password_2.isValid = false;
       confirmPasswordShowMessege();
     }
+
+    secondPasswordInput.value === '' || formCheck.password_1.isValid && (passwordInput.value === secondPasswordInput.value) ? confirmPasswordHideMessege() : confirmPasswordShowMessege();
     checkValid();
-  }
-  secondPasswordInput.onblur = () => {
-    passwordInput.value !== secondPasswordInput.value ? confirmPasswordShowMessege() : confirmPasswordHideMessege();
   }
 };
 
