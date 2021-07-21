@@ -74,10 +74,35 @@
             height: 16%;
             position: relative;
 
-            #username {
+            .username {
               width: 100%;
               height: 100%;
+              background-color: #ffffff;
+              outline: none;
+              padding-left: 15px;
               color: black;
+              border: #e5e5e5 1px solid;
+              font-size: 1.1em;
+              font-weight: bolder;
+              padding-right: 25px;
+
+              &::placeholder {
+                color: #e5e5e5;
+                font-size: 1em;
+                font-weight: bold;
+              }
+            }
+
+            .question-mark-username {
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              left: 103%;
+              top: 30%;
+              background: url("/src/png/question-mark-7-48.png") no-repeat top
+                center;
+              background-size: 60%;
+              display: none;
             }
 
             .username-messege {
@@ -96,16 +121,6 @@
             height: 16%;
             display: flex;
             position: relative;
-
-            .question-mark {
-              position: absolute;
-              border: 1px solid;
-              width: 20px;
-              height: 20px;
-              left: 103%;
-              top: 30%;
-              background: url('/src/png/question-mark-7-48.png');
-            }
 
             .show-messege-password-strength {
               position: absolute;
@@ -226,7 +241,43 @@
                 font-size: 1em;
                 font-weight: bold;
               }
+            }
+            .question-mark-password {
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              left: 103%;
+              top: 30%;
+              background: url("/src/png/question-mark-7-48.png") no-repeat top
+                center;
+              background-size: 60%;
+              display: none;
 
+              .notification {
+                position: absolute;
+                width: 250px;
+                height: 110px;
+                font-size: 0.7em;
+                background-color: #e5e5e5;
+                border-radius: 10px;
+                padding: 5px;
+                top: 25%;
+                left: 75%;
+                display: none;
+              }
+
+              &:hover .notification {
+                display: block;
+                position: absolute;
+                width: 250px;
+                height: 110px;
+                font-size: 0.7em;
+                background-color: #e5e5e5;
+                border-radius: 10px;
+                padding: 5px;
+                top: 39%;
+                left: 71%;
+              }
             }
             .confirm-password-messege {
               position: absolute;
@@ -321,3 +372,8 @@
   font-weight: bolder;
   display: none;
 }
+
+.pos {
+  display: none;
+}
+

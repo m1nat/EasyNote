@@ -42,6 +42,7 @@ export const signUpHandler = () => {
   const btnSignUp = document.getElementById('btn-sign-up');
   const usernameInp = document.getElementById('username');
   const secondPasswordInput = document.getElementById('password-confirm');
+  const questionmMarkPassword = document.querySelector('.question-mark-password');
 
   btnSignUp.setAttribute('disabled', true);
 
@@ -57,7 +58,6 @@ export const signUpHandler = () => {
         if (response) {
           window.location.href = routs.sign_in;
         }
-
       })
       
     });
@@ -80,19 +80,24 @@ export const signUpHandler = () => {
   };
 
   passwordInput.oninput = () => {
+
     if (signUpPasswordValidator(document.getElementById('password-su').value)) {
       passwordStrengthController(document.getElementById('password-su').value);
-    }
+      passwordInput.value === '' ? questionmMarkPassword.style.display = 'none' : questionmMarkPassword.style.display = 'block';
+      passwordInput.value === '' ? hideErrorMessegePasswordSignUP() : console.log('check');
+    };
+    
+    hideErrorMessegePasswordSignUP()
     if (signUpPasswordValidatorMessege(document.getElementById('password-su').value)) {
-      hideErrorMessegePasswordSignUP()
       btnSignUp.removeAttribute('disabled');
       formCheck.password_1.isValid = true
     } else {
-      showErrorMessegePasswordSignUP()
       formCheck.password_1.isValid = false
-    };
+      showErrorMessegePasswordSignUP();
+    } 
     checkValid();
   };
+
 
   usernameInp.oninput = () => {
     if (signUpUsernameValidator(document.getElementById('username').value)) {

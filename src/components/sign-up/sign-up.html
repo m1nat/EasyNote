@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <title>Sign up</title>
   </head>
   <body>
@@ -19,9 +24,10 @@
                   name=""
                   id="username"
                   placeholder="Username"
-                  class="reg"
+                  class="username"
                   maxlength="20"
                 />
+                <div class="question-mark-username"></div>
                 <div class="username-messege">Only Latin can be used</div>
               </div>
               <div class="error-email-signup">
@@ -45,15 +51,25 @@
                   placeholder="Password"
                   maxlength="20"
                 />
-                <div class='question-mark'>
+                <div class="question-mark-password">
+                  <div class="notification">
+                    <ul>
+                      <li>Only Latin alphabet can be used</li>
+                      <li>special symbols can be used @ $ # ! % ? & * ^ ( ) - = + _</li>
+                      <li>Field ‘password’ cannot be empty</li>
+                      <li>umbers( 0-9) can be used</li>
+                      <li>min 6 and max 20 characters</li>
+                    </ul>
+                  </div>
                 </div>
+
                 <div class="incorrectly-password">
                   Password is under six characters
                 </div>
                 <div class="hidden first-eye"></div>
                 <div class="show-messege-password-strength">
                   <ul class="list-password-str">
-                    <li class='title'>Make it stronger, use:</li>
+                    <li class="title">Make it stronger, use:</li>
                     <li class="weak-li">Lowercase letter</li>
                     <li class="moderate-li">UPPERCASE letter</li>
                     <li class="strong-li">number(0-9)</li>
@@ -73,7 +89,9 @@
                   placeholder="Confirm your password"
                 />
                 <div class="hidden second-eye"></div>
-                <div class="confirm-password-messege">Passwords don’t match</div>
+                <div class="confirm-password-messege">
+                  Passwords don’t match
+                </div>
               </div>
             </div>
             <button type="submit" id="btn-sign-up">Sign up</button>
