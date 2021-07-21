@@ -1,19 +1,12 @@
 import { signUp } from '../../api/api-handlers.js';
 import {
-  hideErrorEmailSignUP,
   hideErrorMessegePasswordSignUP,
-  hideErrorMessegeUsername,
-  redInputBorder,
-  showErrorEmailSignUP,
-  showErrorMessegePasswordSignUP,
-  showErrorMessegeUsername
 } from '../../DOM-render/render-messege/error-messege.js';
 import { routs } from '../../shared/constants/paths.js';
 import {
   confirmPasswordHideMessege,
   confirmPasswordShowMessege,
   passwordStrengthController,
-  showMessegeErrorPassword,
   signUpPasswordValidator,
   signUpPasswordValidatorMessege,
   signUpUsernameValidator,
