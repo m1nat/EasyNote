@@ -74,10 +74,14 @@ export const signUpHandler = () => {
       formCheck.email.isValid = false;
     }
 
+    checkValid();
+
+  };
+
+  emailInput.onblur = () => {
     emailInput.value === '' || singUPEmailValidator(document.getElementById('email-sign-up').value) ? messegeErrorEmailSignup.style.display = 'none' : messegeErrorEmailSignup.style.display = 'block';
     emailInput.value === '' || singUPEmailValidator(document.getElementById('email-sign-up').value) ? emailInput.className ='reg' : emailInput.className ='border-red-email';
-    checkValid();
-  };
+  }
 
   passwordInput.oninput = () => {
 
@@ -91,15 +95,21 @@ export const signUpHandler = () => {
       formCheck.password_1.isValid = false;
     }
     passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? questionmMarkPassword.style.display = 'none' : questionmMarkPassword.style.display = 'block';
-    passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? incorrectlyPassword.style.display = 'none' : incorrectlyPassword.style.display = 'block';
-    passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? passwordInput.className = 'first-inp': passwordInput.className = 'first-inp-red'; 
-    passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? firstEye.className = 'first-eye' : firstEye.className = 'first-eye-red';
 
     checkValid();
 
   };
 
+  passwordInput.onblur = () => {
+
+    passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? incorrectlyPassword.style.display = 'none' : incorrectlyPassword.style.display = 'block';
+    passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? passwordInput.className = 'first-inp': passwordInput.className = 'first-inp-red'; 
+    passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? firstEye.className = 'first-eye' : firstEye.className = 'first-eye-red';
+
+  };
+
   usernameInp.oninput = () => {
+
     if (signUpUsernameValidator(document.getElementById('username').value)) {
       formCheck.username.isValid = true;
     } else {
@@ -107,26 +117,32 @@ export const signUpHandler = () => {
       questionmMarkUsername.style.display = 'block';
     };
 
-    usernameInp.value === '' || signUpUsernameValidator(document.getElementById('username').value) ? questionmMarkUsername.style.display = 'none' : questionmMarkUsername.style.display = 'block';
-    usernameInp.value === '' || signUpUsernameValidator(document.getElementById('username').value) ? usernameInp.className = 'username' : usernameInp.className = 'border-red';
     checkValid();
   };
 
+  usernameInp.onblur = () => {
+    usernameInp.value === '' || signUpUsernameValidator(document.getElementById('username').value) ? questionmMarkUsername.style.display = 'none' : questionmMarkUsername.style.display = 'block';
+    usernameInp.value === '' || signUpUsernameValidator(document.getElementById('username').value) ? usernameInp.className = 'username' : usernameInp.className = 'border-red';
+  }
 
   secondPasswordInput.oninput = () => {
+
     if (formCheck.password_1.isValid && (passwordInput.value === secondPasswordInput.value)) {
       formCheck.password_2.isValid = true;
-
     } else {
       formCheck.password_2.isValid = false;
-      confirmPasswordShowMessege();
-    }
+    };
 
+    checkValid();
+
+  };
+
+  secondPasswordInput.onblur = () => {
     secondPasswordInput.value === '' || formCheck.password_1.isValid && (passwordInput.value === secondPasswordInput.value) ? confirmPasswordHideMessege() : confirmPasswordShowMessege();
     secondPasswordInput.value === '' || formCheck.password_1.isValid && (passwordInput.value === secondPasswordInput.value) ? secondPasswordInput.className = 'first-inp' : secondPasswordInput.className = 'first-inp-red';
-    secondPasswordInput.value === '' || formCheck.password_1.isValid && (passwordInput.value === secondPasswordInput.value) ? secondEye.className = 'second-eye' : secondEye.className = 'first-eye-red'
-    checkValid();
+    secondPasswordInput.value === '' || formCheck.password_1.isValid && (passwordInput.value === secondPasswordInput.value) ? secondEye.className = 'second-eye' : secondEye.className = 'first-eye-red';
   }
+
 };
 
 export const showPasswordSignUP = () => {
