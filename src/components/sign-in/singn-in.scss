@@ -7,20 +7,18 @@
   display: flex;
 
   .sign-in {
-    width: 30%;
-    height: 52%;
-    margin: 10% auto;
+    width: 800px;
+    height: 782px;
+    margin: 3% auto;
+    border: 1px solid #e5e5e5;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border-radius: 10px;
-
-    @media screen and(max-width: 1600px) {
-      width: 33%;
-      height: 59%;
-    }
+    border-radius: 10px;    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
     .form-wrapper {
       width: 100%;
@@ -53,32 +51,30 @@
 
           .hide-password {
             width: 80%;
-            height: 35%;
+            height: 24%;
             display: flex;
             border-radius: 10px;
-            -webkit-box-shadow: -2px 7px 15px -4px #000000;
-            box-shadow: -2px 7px 15px -4px #000000;
 
             input {
-              width: 90%;
+              width: 93%;
               height: 100%;
               border-right: none;
               border-bottom-right-radius: 0px;
               border-top-right-radius: 0px;
               font-size: 1.1em;
               font-weight: bolder;
-              background-color: #e5e5e5;
+              background-color: #ffffff;
               outline: none;
-              border: black 1px solid;
+              border: #e5e5e5 1px solid;
               border-right: none;
-              border-bottom-left-radius: 10px;
-              border-top-left-radius: 10px;
               color: black; 
               padding-left: 15px;
               padding-right: 15px;
+              border-radius: 5px;
+
 
               &::placeholder {
-                color: black;
+                color: #e5e5e5;
                 font-size: 1em;
                 font-weight: bold;
               }
@@ -89,26 +85,19 @@
 
           #email-sign-in {
             width: 80%;
-            height: 35%;
-            border-radius: 10px;
-            background-color: #e5e5e5;
+            height: 24%;
+            background-color: #fff;
             outline: none;
             padding-left: 15px;
-            border: black 1px solid;
-            -webkit-box-shadow: -2px 7px 15px -4px #000000;
-            box-shadow: -2px 7px 15px -4px #000000;
+            border: #e5e5e5 1px solid;
             color: black;
             font-size: 1.1em;
             font-weight: bolder;
             padding-right: 15px;
-
-            @media screen and(max-width: 1600px) {
-              width: 80%;
-              height: 34%;
-            }
+            border-radius: 5px;
 
             &::placeholder {
-              color: black;
+              color: #e5e5e5;;
               font-size: 1em;
               font-weight: bold;
             }
@@ -121,37 +110,22 @@
           width: 80%;
           height: 5%;
           text-align: right;
-          font-size: 0.8em;
-          margin-right: 10px;
+          font-size: 1em;
+          margin-right: 90px;
           font-weight: bold;
-
-          @media screen and(max-width: 1600px) {
-            font-size: 0.7em;
-          }
-
+          color: #165DC7;
         }
 
         #btn-sign-in {
-          color: white;
-          background-color: black;
+          color: rgb(0, 0, 0);
+          background-color: #D7EEEF;
           outline: none;
           font-size: 1.3em;
           letter-spacing: 1px;
+          border: 1px solid #C4C4C4;
           width: 80%;
-          height: 21%;
-          border-radius: 20px;
+          height: 14%;
           font-weight: bold;
-          border: none;
-
-          &:hover {
-            color: #fcfbda;
-          }
-
-          @media screen and(max-width: 1600px) {
-            font-size: 1.2em;
-            height: 23%;
-          }
-
         }
 
       }
@@ -161,13 +135,9 @@
     .title {
       width: 100%;
       text-align: center;
-      padding-top: 15px;
-      font-weight: bolder;
+      padding-top: 35px;
       height: 15%;
-      background-color: #fcfbda;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      font-size: 1.2em;
+      font-size: 1.5em;
       letter-spacing: 1px;
     }
 
@@ -212,7 +182,7 @@
   border: 1px solid #e5e5e5;
   border-left: none;
   background-color: #ffffff;
-  border-left: 1px solid black;
+  border-left: 1px solid #e5e5e5;
   background-image: url('/src/png/eye-2-48.png');
   background-repeat: no-repeat;
   background-position: center;
