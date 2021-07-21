@@ -1,14 +1,15 @@
 import { PASSWORD_STRENGTH, REGEXP } from './regexp.js';
 
-export const singUPEmailValidator = emailinp => emailinp.match(REGEXP.EmailSingUP);
-export const signUpPasswordValidatorMessege = password => password.match(REGEXP.SHOW_ERROR_MESSEGE_PASSWORD);
-export const signUpUsernameValidator = username => username.match(REGEXP.USERNAME);
-
 const listItemPasswordWeak = document.querySelector('.weak-li');
 const listItemPasswordModerate = document.querySelector('.moderate-li');
 const listItemPasswordStrong = document.querySelector('.strong-li');
 const listItemPasswordComlete = document.querySelector('.comlete-li');  
 const passwordSignUpInput = document.getElementById('password-su');
+
+export const singUPEmailValidator = emailinp => emailinp.match(REGEXP.EmailSingUP);
+export const signUpPasswordValidatorMessege = password => password.match(REGEXP.SHOW_ERROR_MESSEGE_PASSWORD);
+export const signUpUsernameValidator = username => username.match(REGEXP.USERNAME);
+
 
 const lowerCaseCheck = password => REGEXP.LOWER_CASE.test(password);
 const upperCaseCheck = password => REGEXP.UPPER_CASE.test(password);
@@ -17,25 +18,25 @@ const eightCharacterCaseCheck = password => REGEXP.EIGHT_CHARACTERS.test(passwor
 
 const passwordEvalWeak = () => {
   if(lowerCaseCheck(passwordSignUpInput.value)) {
-    listItemPasswordWeak.classList.add('li-green')
+    listItemPasswordWeak.className = 'li-green'
   }else {
-    listItemPasswordWeak.classList.remove('li-green')
+    listItemPasswordWeak.className = 'weak-li'
   }
 };
 
 const passwordEvalModerate = () => {
   if(upperCaseCheck(passwordSignUpInput.value)) {
-    listItemPasswordModerate.classList.add('li-green')
+    listItemPasswordModerate.className = 'li-green'
   }else {
-    listItemPasswordModerate.classList.remove('li-green')
+    listItemPasswordModerate.className = 'moderate-li'
   }
 };
 
 const passwordEvalStrong = () => {
   if(numberCaseCheck(passwordSignUpInput.value)) {
-    listItemPasswordStrong.classList.add('li-green')
+    listItemPasswordStrong.className = 'li-green'
   }else {
-    listItemPasswordStrong.classList.remove('li-green')
+    listItemPasswordStrong.className = 'strong-li'
   }
 };
 
@@ -43,7 +44,7 @@ const passwordEvalComlete = () => {
   if(eightCharacterCaseCheck(passwordSignUpInput.value)) {
     listItemPasswordComlete.classList.add('li-green')
   }else {
-    listItemPasswordComlete.classList.remove('li-green')
+    listItemPasswordComlete.className = ('complete-li')
   }
 };
 
@@ -103,6 +104,7 @@ export const passwordStrengthController = password => {
     case 4:
       messegePassword.style.display = 'block'
       strLength.classList.add('green');
+      strLength.classList.remove('yellow');
       break;
 
     default:

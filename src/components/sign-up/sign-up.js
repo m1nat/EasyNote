@@ -43,7 +43,6 @@ export const signUpHandler = () => {
 
   btnSignUp.setAttribute('disabled', true);
 
-
   signUpForm.addEventListener('submit', event => {
     event.preventDefault();
 
@@ -63,7 +62,6 @@ export const signUpHandler = () => {
   const checkValid = () => {
     const isFormValid = Object.values(formCheck).every(value => value.isValid);
     isFormValid ? btnSignUp.removeAttribute('disabled') : btnSignUp.setAttribute('disabled', true);
-    console.log(formCheck);
   };
 
   emailInput.oninput = () => {
@@ -85,7 +83,7 @@ export const signUpHandler = () => {
 
   passwordInput.oninput = () => {
 
-    if (!(signUpPasswordValidatorMessege(document.getElementById('password-su').value))) {
+    if (!('')) {
       passwordStrengthController(document.getElementById('password-su').value);
     };
     
@@ -95,7 +93,6 @@ export const signUpHandler = () => {
       formCheck.password_1.isValid = false;
     }
     passwordInput.value === '' || signUpPasswordValidatorMessege(document.getElementById('password-su').value) ? questionmMarkPassword.style.display = 'none' : questionmMarkPassword.style.display = 'block';
-
     checkValid();
 
   };
