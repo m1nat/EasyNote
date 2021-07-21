@@ -72,7 +72,7 @@ header {
         }
 
         .add {
-          background: url('../png/edit-7-48.png') no-repeat center center;
+          background: url('/src/png/edit-7-48.png') no-repeat center center;
           background-size: 39%;
           border-right: 1px solid white;
           position: relative;
@@ -117,7 +117,7 @@ header {
         }
 
         .color {
-          background: url('../png/text-bg.png') no-repeat center center;
+          background: url('/src/png/text-bg.png') no-repeat center center;
           background-size: 40%;
           height: 80%;
           position: relative;
@@ -164,7 +164,7 @@ header {
         }
 
         .add-img {
-          background: url('../png/photo.png') no-repeat center center;
+          background: url('/src/png/photo.png') no-repeat center center;
           background-size: 40%;
           height: 80%;
           position: relative;
@@ -210,7 +210,7 @@ header {
         }
 
         .add-group {
-          background: url('../png/plus.png') no-repeat center center;
+          background: url('/src/png/plus.png') no-repeat center center;
           background-size: 40%;
           height: 80%;
           position: relative;
@@ -257,7 +257,7 @@ header {
         }
 
         .todo-list {
-          background: url('../png/activity-feed.png') no-repeat center center;
+          background: url('/src/png/activity-feed.png') no-repeat center center;
           background-size: 40%;
           height: 80%;
           position: relative;
@@ -304,7 +304,7 @@ header {
         }
 
         .music {
-          background: url('../png/note.png') no-repeat center center;
+          background: url('/src/png/note.png') no-repeat center center;
           background-size: 40%;
           height: 80%;
           position: relative;
@@ -369,7 +369,7 @@ header {
       height: 38px;
       border: 2px solid rgb(0, 0, 0);
       border-radius: 30px;
-      background: url('../png/guest.png') no-repeat center center;
+      background: url('/src/png/guest.png') no-repeat center center;
       background-size: 96%;
     }
 
@@ -381,7 +381,7 @@ header {
       &__img {
         width: 100%;
         height: 100%;
-        background: url('../png/logout.png') no-repeat center center;
+        background: url('/src/png/logout.png') no-repeat center center;
         background-size: 70%;
       }
 
