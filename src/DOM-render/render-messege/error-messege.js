@@ -35,7 +35,7 @@ export const hideErrorMessegeUsername = () => {
 export const showErrorNotification = errors => {
   let errorString = errors.response.data.error.message.split('_').join(' ').toLowerCase();
   console.log(errorString );
-  if(errorString === 'invalid email') {
+  if(errorString === 'invalid email' || errorString === 'email not found') {
     emailMessage.style.display = 'block'
     emailMessage.innerText = 'Sorry, this email is not valid' 
     setTimeout( () => {
