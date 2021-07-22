@@ -16,7 +16,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border-radius: 10px;    
+    border-radius: 10px;
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -29,6 +29,27 @@
     @media screen and(max-width: 1500px) {
       width: 650px;
       height: 622px;
+    }
+
+    .logo {
+      display: flex;
+      width: 300px;
+      height: 100px;
+
+      .title-logo {
+        width: 70%;
+        text-align: center;
+        padding-top: 30px;
+        height: 15%;
+        font-size: 1.7em;
+        letter-spacing: 1px;
+      }
+
+      .img-logo {
+        width: 30%;
+        height: 100%;
+        // background: url('../../png/logo.png');
+      }
     }
 
     .form-wrapper {
@@ -62,7 +83,6 @@
             display: none;
           }
 
-
           .hide-password {
             width: 80%;
             height: 24%;
@@ -93,21 +113,18 @@
               outline: none;
               border: #e5e5e5 1px solid;
               border-right: none;
-              color: black; 
+              color: black;
               padding-left: 15px;
               padding-right: 15px;
               border-bottom-left-radius: 5px;
               border-top-left-radius: 5px;
-
 
               &::placeholder {
                 color: #e5e5e5;
                 font-size: 1em;
                 font-weight: bold;
               }
-
             }
-
           }
 
           #email-sign-in {
@@ -124,13 +141,11 @@
             border-radius: 5px;
 
             &::placeholder {
-              color: #e5e5e5;;
+              color: #e5e5e5;
               font-size: 1em;
               font-weight: bold;
             }
-
           }
-
         }
 
         p {
@@ -140,32 +155,21 @@
           font-size: 1em;
           margin-right: 90px;
           font-weight: bold;
-          color: #165DC7;
+          color: #165dc7;
           margin-top: -36px;
         }
 
         #btn-sign-in {
           color: rgb(0, 0, 0);
-          background-color: #D7EEEF;
+          background-color: #d7eeef;
           outline: none;
           font-size: 1.5em;
           letter-spacing: 1px;
-          border: 1px solid #C4C4C4;
+          border: 1px solid #c4c4c4;
           width: 80%;
           height: 14%;
         }
-
       }
-
-    }
-
-    .title {
-      width: 100%;
-      text-align: center;
-      padding-top: 30px;
-      height: 15%;
-      font-size: 1.7em;
-      letter-spacing: 1px;
     }
 
     .create-account-href {
@@ -190,20 +194,16 @@
         outline: none;
         border: none;
         font-weight: bold;
-        background-color: #D7EEEF;
-        border: 1px solid #C4C4C4;
+        background-color: #d7eeef;
+        border: 1px solid #c4c4c4;
 
         a {
           text-decoration: none;
           color: black;
         }
-
       }
-
     }
-
   }
-
 }
 
 .hidden {
@@ -212,7 +212,7 @@
   border: 1px solid #e5e5e5;
   background-color: #ffffff;
   border-left: 1px solid #e5e5e5;
-  background-image: url('/src/png/eye-2-48.png');
+  background-image: url("/src/png/eye-2-48.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50%;

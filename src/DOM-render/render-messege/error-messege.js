@@ -33,33 +33,31 @@ export const hideErrorMessegeUsername = () => {
 };
 
 export const showErrorNotification = errors => {
+
   let errorString = errors.response.data.error.message.split('_').join(' ').toLowerCase();
-  console.log(errorString );
+
   if(errorString === 'invalid email' || errorString === 'email not found') {
-    emailMessage.style.display = 'block'
-    emailMessage.innerText = 'Sorry, this email is not valid' 
+    emailMessage.style.display = 'block';
+    emailMessage.innerText = 'Sorry, this email is not valid';
     setTimeout( () => {
-      emailMessage.style.display = 'none'
+      emailMessage.style.display = 'none';
     },5000)
   } else if (errorString === 'invalid password'){
-    passwordMessege.style.display = 'block'
-    passwordMessege.innerText = 'Sorry, this password is not valid'
+    passwordMessege.style.display = 'block';
+    passwordMessege.innerText = 'Sorry, this password is not valid';
     setTimeout( () => {
-      passwordMessege.style.display = 'none'
+      passwordMessege.style.display = 'none';
     },5000)
-  }
-
+  };
 
 };
 
-
 export const showErrorNotificationSignUp = errors => {
-  const notification = document.createElement('div');
-  const body = document.getElementsByTagName('body')[0];
+
   notification.innerText = errors.message.split('_').join(' ').toLowerCase();
   notification.className = 'error-notification-sign-up';
-  body.append(notification);
   setTimeout( () => {
-    notification.style.display = 'none'
+    notification.style.display = 'none';
   },5000)
+  
 };

@@ -2,8 +2,8 @@ import { signIn } from '../../api/api-handlers';
 import { setToken } from '../../shared/ls-services/localStorage.js';
 import { routs } from '../../shared/constants/paths.js';
 
-
 export const signInHandlers = () => {
+  
   const signInForm = document.getElementById('form-sign-in')
 
   signInForm.addEventListener('submit', event => {
@@ -25,6 +25,7 @@ export const signInHandlers = () => {
 };
 
 export const showPassword = () => {
+  
   const hidden = document.querySelector('.hidden');
   const password = document.getElementById('password-sign-in');
 
