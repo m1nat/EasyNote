@@ -1,0 +1,85 @@
+.wrapper-start-page {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #f3f3f3;
+  width: 100vw;
+  height: 100vh;
+
+  .header {
+    width: 100%;
+    height: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 1.1em;
+    font-weight: bolder;
+    letter-spacing: 1px;
+
+    .start-login {
+      width: 7%;
+      height: 100%;
+      padding: 5px;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    .start-sign-up {
+      width: 7%;
+      height: 100%;
+      padding: 5px;
+      
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .logo-start-wrapper {
+    width: 650px;
+    height: 650px;
+    margin: 7% auto;
+    border: 1px solid #dcd3d3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    .title {
+      margin: 10px auto;
+      width: 70%;
+      height: 15%;
+      border: 1px solid #eeebeb;
+      background-color: #D7EEEF;
+      color: black;
+      text-align: center;
+      font-size: 2.8em;
+      padding-top: 10px;
+      border-radius: 4px;
+    }
+
+    .logo-start {
+      width: 281px;
+      height: 297px;
+      background: url('/src/png/logo.png') no-repeat center center;
+      background-size: cover;
+    }
+
+    .text {
+      width: 150px;
+      text-align: center;
+
+      p{
+        margin: 0px;
+      }
+    }
+  }
+}
