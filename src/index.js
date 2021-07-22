@@ -19,7 +19,7 @@ window.onload = () => {
       const lsToken = getToken();
       logoutHandlers()
       if (!lsToken) {
-        window.location.href = routs.sign_in;
+        window.location.href = routs.start_page;
       }
       break;
     case paths.sign_in:
