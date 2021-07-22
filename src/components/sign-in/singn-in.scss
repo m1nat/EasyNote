@@ -35,20 +35,22 @@
       display: flex;
       width: 300px;
       height: 100px;
+      margin-top: 20px;
 
       .title-logo {
         width: 70%;
         text-align: center;
         padding-top: 30px;
         height: 15%;
-        font-size: 1.7em;
+        font-size: 2em;
         letter-spacing: 1px;
       }
 
       .img-logo {
         width: 30%;
         height: 100%;
-        // background: url('../../png/logo.png');
+        background: url("/src/png/logo.png") no-repeat center center;
+        background-size: cover;
       }
     }
 
@@ -168,6 +170,10 @@
           border: 1px solid #c4c4c4;
           width: 80%;
           height: 14%;
+
+          &:hover {
+            opacity: 0.5;
+          }
         }
       }
     }
@@ -197,9 +203,14 @@
         background-color: #d7eeef;
         border: 1px solid #c4c4c4;
 
+        &:hover {
+          opacity: 0.5;
+        }
+
         a {
           text-decoration: none;
           color: black;
+          font-size: 1.2em;
         }
       }
     }
