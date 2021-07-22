@@ -2,8 +2,8 @@ import { signIn } from '../../api/api-handlers';
 import { setToken } from '../../shared/ls-services/localStorage.js';
 import { routs } from '../../shared/constants/paths.js';
 
-
 export const signInHandlers = () => {
+  
   const signInForm = document.getElementById('form-sign-in')
 
   signInForm.addEventListener('submit', event => {
@@ -18,15 +18,14 @@ export const signInHandlers = () => {
         const { idToken: token } = response.data;
         setToken(token);
         window.location.href = routs.main;
-      };
-
-    });
-
+      }
+    })
   });
 
 };
 
 export const showPassword = () => {
+  
   const hidden = document.querySelector('.hidden');
   const password = document.getElementById('password-sign-in');
 
@@ -37,4 +36,5 @@ export const showPassword = () => {
       password.type = 'password';
     };
   };
+
 };

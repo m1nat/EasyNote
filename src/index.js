@@ -1,10 +1,9 @@
 import { initAPI } from './api/api-handlers.js';
-import { disableDemoBnts, login, signUpDemo } from './components/demo-page/demo-page.js';
-import { logoutHandlers } from './components/profile/profile.js';
 import { showPassword, signInHandlers } from './components/sign-in/sign-in.js';
 import { showPasswordSignUP, signUpHandler } from './components/sign-up/sign-up.js';
 import { paths, routs } from './shared/constants/paths.js';
-import { getToken } from './shared/ls-services/localStorage.js'
+import { getToken } from './shared/ls-services/localStorage.js';
+import { logoutHandlers } from './components/profile/profile';
 
 import './styles/style.scss';
 
@@ -18,12 +17,10 @@ window.onload = () => {
   switch (pathname) {
     case paths.main:
       const lsToken = getToken();
-
+      logoutHandlers()
       if (!lsToken) {
-        window.location.href = routs.demo;
-      } else {
-        logoutHandlers();
-      };
+        window.location.href = routs.sign_in;
+      }
       break;
     case paths.sign_in:
       showPassword();
@@ -32,11 +29,6 @@ window.onload = () => {
     case paths.sign_up:
       signUpHandler();
       showPasswordSignUP();
-      break;
-    case paths.demo:
-      login();
-      signUpDemo();
-      disableDemoBnts();
       break;
     default:
       break;
