@@ -18,3 +18,17 @@
 .redInp {
   border: #f70606 1px solid;
 }
+
+.error-notification {
+  background-color: #D7EEEF;
+  width: 150px;
+  height: 40px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  bottom: 67.5%;
+  right: 20%;
+  border: #C4C4C4 1px solid;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+}

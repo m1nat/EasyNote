@@ -18,9 +18,9 @@ export const signInHandlers = () => {
         const { idToken: token } = response.data;
         setToken(token);
         window.location.href = routs.main;
-      };
-
-    });
+      }
+    })
+    .catch(err => err);
 
   });
 

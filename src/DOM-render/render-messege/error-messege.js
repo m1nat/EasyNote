@@ -28,3 +28,14 @@ export const hideErrorMessegeUsername = () => {
   const usernameMessege = document.querySelector('.username-messege');
   usernameMessege.style.display = 'none'
 };
+
+export const showErrorNotification = errors => {
+  const notification = document.createElement('div');
+  const body = document.getElementsByTagName('body')[0];
+  notification.innerText = errors.response.data.error.message;
+  notification.className = 'error-notification';
+  body.append(notification);
+  setTimeout( () => {
+    notification.style.display = 'none'
+  },5000)
+};
