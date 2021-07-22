@@ -1,17 +1,16 @@
 header {
   width: 100%;
-  height: 5%;
-  background-color: #fbe8a6;
+  height: 6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  @media screen and(max-width: 1615px) {
-    height: 6%;
-  }
+  border-bottom: 1px #C4C4C4 solid;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
   .header-btns-left {
-    width: 25%;
+    width: 35%;
     height: 100%;
     display: flex;
     align-self: center;
@@ -41,314 +40,47 @@ header {
     }
 
     .logo {
-      width: 20%;
-      height: 100%;
-      padding: 5px;
+      width: 25%;
+      height: 70%;
+      padding: 1px;
+      margin: 7px auto;
+      background-color: #D7EEEF;
+      font-size: 1.4em;
+      letter-spacing: 1.5px;
+      text-align: center;
+      font-weight:400;
+
+      @media screen and(max-width: 1600px) {
+        font-size: 1.3em;
+      }
     }
 
     .wrapper-btns {
-      width: 100%;
+      width: 70%;
       height: 100%;
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: space-between;
 
-      .btn-png {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .btn-png-items {
-          width: 12%;
-          height: 100%;
-          padding: 5px;
-          border-radius: 4px;
-          float: left;
-          height: 32px;
-          text-align: center;
-          cursor: pointer;
-        }
-
-        .add {
-          background: url('/src/png/edit-7-48.png') no-repeat center center;
-          background-size: 39%;
-          border-right: 1px solid white;
-          position: relative;
-
-          &:hover {
-            background-color: grey;
-          }
-
-          &::before {
-            content: attr(data-title);
-            width: 85px;
-            height: 22px;
-            position: absolute;
-            text-align: center;
-            z-index: 2;
-            display: none;
-            padding: 2px;
-            border-radius: 3px;
-            background-color: grey;
-            color: rgb(0, 0, 0);
-            top: 134%;
-            right: -14px;
-            font-size: 0.8em;
-            transition: 1s;
-            opacity: 0.6;
-            border: #fbe8a6;
-          }
-
-          &::after {
-            position: absolute;
-            z-index: 1;
-            display: none;
-            width: 0;
-            height: 0;
-            border: 1px solid;
-          }
-
-          &:hover::before,
-          &:hover::after {
-            display: block;
-          }
-        }
-
-        .color {
-          background: url('/src/png/text-bg.png') no-repeat center center;
-          background-size: 40%;
-          height: 80%;
-          position: relative;
-
-          &:hover {
-            background-color: grey;
-          }
-
-          &::before {
-            content: attr(data-title);
-            width: 85px;
-            transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-            height: 42px;
-            position: absolute;
-            text-align: center;
-            z-index: 2;
-            display: none;
-            padding: 2px;
-            border-radius: 3px;
-            background-color: grey;
-            color: rgb(107, 104, 100);
-            top: 120%;
-            right: -14px;
-            color: rgb(0, 0, 0);
-            font-size: 0.8em;
-            transition: 1s;
-            opacity: 0.6;
-            border: #fbe8a6;
-          }
-
-          &::after {
-            position: absolute;
-            z-index: 1;
-            display: none;
-            width: 0;
-            height: 0;
-            border: 1px solid;
-          }
-
-          &:hover::before,
-          &:hover::after {
-            display: block;
-          }
-        }
-
-        .add-img {
-          background: url('/src/png/photo.png') no-repeat center center;
-          background-size: 40%;
-          height: 80%;
-          position: relative;
-
-          &:hover {
-            background-color: grey;
-          }
-
-          &::before {
-            content: attr(data-title);
-            width: 85px;
-            transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-            height: 42px;
-            position: absolute;
-            text-align: center;
-            z-index: 2;
-            display: none;
-            padding: 2px;
-            border-radius: 3px;
-            background-color: grey;
-            color: rgb(0, 0, 0);
-            top: 120%;
-            right: -14px;
-            font-size: 0.8em;
-            transition: 1s;
-            opacity: 0.6;
-            border: #fbe8a6;
-          }
-
-          &::after {
-            position: absolute;
-            z-index: 1;
-            display: none;
-            width: 0;
-            height: 0;
-            border: 1px solid;
-          }
-
-          &:hover::before,
-          &:hover::after {
-            display: block;
-          }
-        }
-
-        .add-group {
-          background: url('/src/png/plus.png') no-repeat center center;
-          background-size: 40%;
-          height: 80%;
-          position: relative;
-
-          &:hover {
-            background-color: grey;
-          }
-
-          &::before {
-            content: attr(data-title);
-            width: 85px;
-            transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-            height: 22px;
-            position: absolute;
-            text-align: center;
-            z-index: 2;
-            display: none;
-            padding: 2px;
-            border-radius: 3px;
-            background-color: grey;
-            color: rgb(107, 104, 100);
-            top: 120%;
-            right: -14px;
-            color: rgb(0, 0, 0);
-            font-size: 0.8em;
-            transition: 1s;
-            opacity: 0.6;
-            border: #fbe8a6;
-          }
-
-          &::after {
-            position: absolute;
-            z-index: 1;
-            display: none;
-            width: 0;
-            height: 0;
-            border: 1px solid;
-          }
-
-          &:hover::before,
-          &:hover::after {
-            display: block;
-          }
-        }
-
-        .todo-list {
-          background: url('/src/png/activity-feed.png') no-repeat center center;
-          background-size: 40%;
-          height: 80%;
-          position: relative;
-
-          &:hover {
-            background-color: grey;
-          }
-
-          &::before {
-            content: attr(data-title);
-            width: 85px;
-            transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-            height: 42px;
-            position: absolute;
-            text-align: center;
-            z-index: 2;
-            display: none;
-            padding: 2px;
-            border-radius: 3px;
-            background-color: grey;
-            color: rgb(107, 104, 100);
-            top: 120%;
-            right: -14px;
-            color: rgb(0, 0, 0);
-            font-size: 0.8em;
-            transition: 1s;
-            opacity: 0.6;
-            border: #fbe8a6;
-          }
-
-          &::after {
-            position: absolute;
-            z-index: 1;
-            display: none;
-            width: 0;
-            height: 0;
-            border: 1px solid;
-          }
-
-          &:hover::before,
-          &:hover::after {
-            display: block;
-          }
-        }
-
-        .music {
-          background: url('/src/png/note.png') no-repeat center center;
-          background-size: 40%;
-          height: 80%;
-          position: relative;
-
-          &:hover {
-            background-color: grey;
-          }
-
-          &::before {
-            content: attr(data-title);
-            width: 55px;
-            transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-            height: 22px;
-            position: absolute;
-            text-align: center;
-            z-index: 2;
-            display: none;
-            padding: 2px;
-            border-radius: 3px;
-            background-color: grey;
-            color: rgb(0, 0, 0);
-            top: 120%;
-            right: 0px;
-            font-size: 0.8em;
-            transition: 1s;
-            opacity: 0.6;
-            border: #fbe8a6;
-          }
-
-          &::after {
-            position: absolute;
-            z-index: 1;
-            display: none;
-            width: 0;
-            height: 0;
-            border: 1px solid;
-          }
-
-          &:hover::before,
-          &:hover::after {
-            display: block;
-          }
-        }
+      .something-btn {
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        background-color: #C4C4C4;
+        margin-left: 10px;
       }
+
+      .add-todo-list {
+        background-color: #000000;
+        color: #4EAEB2;
+        width: 142px;
+        height: 40px;
+        font-weight: bold;
+        border-radius: 7px;
+        text-align: center;
+        padding: 7px;
+      }
+
     }
   }
 
@@ -367,10 +99,10 @@ header {
     .avatar {
       width: 38px;
       height: 38px;
-      border: 2px solid rgb(0, 0, 0);
+      background-color: #D7EEEF;
       border-radius: 30px;
-      background: url('/src/png/guest.png') no-repeat center center;
-      background-size: 96%;
+      background: url("/src/png/guest.png") no-repeat center center;
+      background-size: 76%;
     }
 
     .exit {
@@ -381,7 +113,7 @@ header {
       &__img {
         width: 100%;
         height: 100%;
-        background: url('/src/png/logout.png') no-repeat center center;
+        background: url("/src/png/logout.png") no-repeat center center;
         background-size: 70%;
       }
 
@@ -423,10 +155,6 @@ header {
       &:hover::after {
         display: block;
       }
-
     }
-
   }
-
 }
-

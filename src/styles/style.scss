@@ -1,6 +1,7 @@
 @import './header-main-page.scss';
 @import '../components/sign-in/singn-in.scss';
 @import '../components/sign-up/sign-up.scss';
+@import './main-body-page.scss';
 
 *,*:after,*:before{
   margin: 0px;
@@ -24,10 +25,24 @@
   height: 40px;
   color: rgb(0, 0, 0);
   position: absolute;
-  bottom: 67.5%;
-  right: 20%;
+  bottom: 69.5%;
+  right: 28%;
   border: #C4C4C4 1px solid;
   padding: 10px;
   border-radius: 5px;
   font-size: 0.8em;
+
+  @media screen and(max-width: 1600px) {
+    background-color: #D7EEEF;
+    width: 130px;
+    height: 40px;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 68%;
+    right: 23%;
+    border: #C4C4C4 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+  }
 }
