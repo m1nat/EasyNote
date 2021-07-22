@@ -1,3 +1,6 @@
+const emailMessage = document.querySelector('.email-sign-in-error-messege');
+const passwordMessege = document.querySelector('.password-sign-in-error-messege');
+
 export const showErrorEmailSignUP = () => {
   const errorMessege = document.querySelector('.messege-error-email-signup');
   errorMessege.style.display = 'block'
@@ -30,14 +33,23 @@ export const hideErrorMessegeUsername = () => {
 };
 
 export const showErrorNotification = errors => {
-  const notification = document.createElement('div');
-  const body = document.getElementsByTagName('body')[0];
-  notification.innerText = errors.response.data.error.message.split('_').join(' ').toLowerCase();
-  notification.className = 'error-notification';
-  body.append(notification);
-  setTimeout( () => {
-    notification.style.display = 'none'
-  },5000)
+  let errorString = errors.response.data.error.message.split('_').join(' ').toLowerCase();
+  console.log(errorString );
+  if(errorString === 'invalid email') {
+    emailMessage.style.display = 'block'
+    emailMessage.innerText = 'Sorry, this email is not valid' 
+    setTimeout( () => {
+      emailMessage.style.display = 'none'
+    },5000)
+  } else if (errorString === 'invalid password'){
+    passwordMessege.style.display = 'block'
+    passwordMessege.innerText = 'Sorry, this password is not valid'
+    setTimeout( () => {
+      passwordMessege.style.display = 'none'
+    },5000)
+  }
+
+
 };
 
 
