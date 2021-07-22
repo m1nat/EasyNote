@@ -8,7 +8,7 @@ export const logoutHandlers = () => {
 
   logoutBtn.onclick = () => {
     removeToken();
-    window.location.href = routs.demo;
+    window.location.href =  routs.sign_in
   }
 
 };

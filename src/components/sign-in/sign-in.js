@@ -20,7 +20,7 @@ export const signInHandlers = () => {
         window.location.href = routs.main;
       }
     })
-    .catch(err => err);
+    .catch(err => e);
 
   });
 

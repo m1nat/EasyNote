@@ -19,10 +19,6 @@ module.exports = {
     new HTMLWebpackPlugin({
       filename: 'sign-up.html',
       template: './src/components/sign-up/sign-up.html'
-    }),
-    new HTMLWebpackPlugin({
-      filename: 'demo-page.html',
-      template: './src/components/demo-page/demo-page.html'
     })
   ],
   module: {
