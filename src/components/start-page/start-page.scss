@@ -58,6 +58,12 @@
       height: 600px;
       margin: 5% auto;
     }
+
+    @media screen and(max-width: 1400px) {
+      width: 590px;
+      height: 590px;
+      margin: 4% auto;
+    }
     
     .title {
       margin: 10px auto;
@@ -76,6 +82,8 @@
         height: 12%;
         padding-top: 0px;
       }
+
+
     }
 
     .logo-start {
