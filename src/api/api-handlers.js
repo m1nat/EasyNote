@@ -3,7 +3,7 @@ import axios from 'axios';
 require('firebase/auth');
 
 import { FIREBASE_CONFIG, authURL } from './api-config';
-import { showErrorNotification } from '../DOM-render/render-messege/error-messege';
+import { showErrorNotification, showErrorNotificationSignUp } from '../DOM-render/render-messege/error-messege';
 
 export const initAPI = () => {
   firebase.initializeApp(FIREBASE_CONFIG)
@@ -18,7 +18,7 @@ export const signIn = (email, password) => {
   .then( response => response )
   .catch(err => {
     showErrorNotification(err)
-  })
+  });
 };
 
 export const signUp = async (email, password) => {
@@ -26,4 +26,7 @@ export const signUp = async (email, password) => {
   .auth()
   .createUserWithEmailAndPassword(email, password)
   .then(response => response)
+  .catch( err => {
+    showErrorNotificationSignUp(err);
+  });
 };

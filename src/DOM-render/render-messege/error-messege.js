@@ -39,3 +39,15 @@ export const showErrorNotification = errors => {
     notification.style.display = 'none'
   },5000)
 };
+
+
+export const showErrorNotificationSignUp = errors => {
+  const notification = document.createElement('div');
+  const body = document.getElementsByTagName('body')[0];
+  notification.innerText = errors.message.split('_').join(' ').toLowerCase();
+  notification.className = 'error-notification-sign-up';
+  body.append(notification);
+  setTimeout( () => {
+    notification.style.display = 'none'
+  },5000)
+};

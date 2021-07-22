@@ -20,8 +20,6 @@ export const signInHandlers = () => {
         window.location.href = routs.main;
       }
     })
-    .catch(err => e);
-
   });
 
 };
@@ -37,4 +35,5 @@ export const showPassword = () => {
       password.type = 'password';
     };
   };
+
 };

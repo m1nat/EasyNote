@@ -46,3 +46,31 @@
     font-size: 0.8em;
   }
 }
+
+.error-notification-sign-up {
+  background-color: #D7EEEF;
+  width: 130px;
+  height: 95px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  bottom: 64%;
+  right: 20%;
+  border: #C4C4C4 1px solid;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+
+  @media screen and(max-width: 1600px) {
+    background-color: #D7EEEF;
+    width: 130px;
+    height: 95px;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 58%;
+    right: 20%;
+    border: #C4C4C4 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+  }
+}
