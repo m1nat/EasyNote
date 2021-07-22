@@ -26,13 +26,22 @@
     }
 
     @media screen and(max-width: 1500px) {
-      width: 650px;
-      height: 622px;
+      width: 660px;
+      height: 632px;
     }
 
     .form-wrapper {
       width: 100%;
       height: 73%;
+
+      .title-signUp {
+        width: 100%;
+        text-align: center;
+        padding-top: 30px;
+        height: 7%;
+        font-size: 2em;
+        letter-spacing: 1px;
+      }
 
       form {
         margin: 20% auto;
