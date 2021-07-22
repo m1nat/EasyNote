@@ -20,9 +20,7 @@ window.onload = () => {
       logoutHandlers()
       if (!lsToken) {
         window.location.href = routs.sign_in;
-      } else {
-
-      };
+      }
       break;
     case paths.sign_in:
       showPassword();
@@ -31,7 +29,6 @@ window.onload = () => {
     case paths.sign_up:
       signUpHandler();
       showPasswordSignUP();
-      break;
       break;
     default:
       break;

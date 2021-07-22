@@ -32,7 +32,7 @@ export const hideErrorMessegeUsername = () => {
 export const showErrorNotification = errors => {
   const notification = document.createElement('div');
   const body = document.getElementsByTagName('body')[0];
-  notification.innerText = errors.response.data.error.message;
+  notification.innerText = errors.response.data.error.message.split('_').join(' ').toLowerCase();
   notification.className = 'error-notification';
   body.append(notification);
   setTimeout( () => {
