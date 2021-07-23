@@ -1,5 +1,6 @@
 const emailMessage = document.querySelector('.email-sign-in-error-messege');
 const passwordMessege = document.querySelector('.password-sign-in-error-messege');
+const emailAlready = document.querySelector('.messege-error-email-signup')
 
 export const showErrorEmailSignUP = () => {
   const errorMessege = document.querySelector('.messege-error-email-signup');
@@ -54,10 +55,14 @@ export const showErrorNotification = errors => {
 
 export const showErrorNotificationSignUp = errors => {
 
-  notification.innerText = errors.message.split('_').join(' ').toLowerCase();
-  notification.className = 'error-notification-sign-up';
-  setTimeout( () => {
-    notification.style.display = 'none';
-  },5000)
-  
+  if(errors){
+    emailAlready.innerText = 'The email address is already in use by another account.'
+    emailAlready.className = 'error-email'
+    emailAlready.style.display = 'block'
+    setTimeout( () => {
+      emailAlready.style.display = 'none';
+    },5000)
+    console.log('check');
+  }
+
 };

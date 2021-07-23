@@ -534,3 +534,13 @@
 .pos {
   display: none;
 }
+
+.error-email {
+  font-size: 0.8em !important;
+  color: red;
+  font-weight: bold;
+  padding-left: 15px;
+  display: none;
+  margin-top: 2px;
+  height: 15px;
+}
