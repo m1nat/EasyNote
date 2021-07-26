@@ -9,7 +9,7 @@ const passwordSignUpInput = document.getElementById('password-su');
 export const singUPEmailValidator = emailinp => emailinp.match(REGEXP.EmailSingUP);
 export const signUpPasswordValidatorMessege = password => password.match(REGEXP.SHOW_ERROR_MESSEGE_PASSWORD);
 export const signUpUsernameValidator = username => username.match(REGEXP.USERNAME);
-
+export const addNewBoards = name => name.match(REGEXP.NAME_THE_NEW_BOARD);
 
 const lowerCaseCheck = password => REGEXP.LOWER_CASE.test(password);
 const upperCaseCheck = password => REGEXP.UPPER_CASE.test(password);

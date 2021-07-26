@@ -4,6 +4,8 @@ import { showPasswordSignUP, signUpHandler } from './components/sign-up/sign-up.
 import { paths, routs } from './shared/constants/paths.js';
 import { getToken } from './shared/ls-services/localStorage.js';
 import { logoutHandlers } from './components/profile/profile';
+import { createNoteHandlers } from './components/create-board/create-board.js';
+import { mainPageHandlers } from './components/main-page/main-page.js';
 
 import './styles/style.scss';
 
@@ -17,7 +19,8 @@ window.onload = () => {
   switch (pathname) {
     case paths.main:
       const lsToken = getToken();
-      logoutHandlers()
+      logoutHandlers();
+      mainPageHandlers()
       if (!lsToken) {
         window.location.href = routs.start_page;
       }
@@ -29,6 +32,9 @@ window.onload = () => {
     case paths.sign_up:
       signUpHandler();
       showPasswordSignUP();
+      break;
+    case paths.create_board:
+      createNoteHandlers();
       break;
     default:
       break;

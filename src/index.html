@@ -13,33 +13,50 @@
     <title>EasyNote</title>
   </head>
   <body>
-    <div class="wrapper_mainPage">
+    <div class="wrapper-main">
       <header>
-        <div class="header-btns-left">
-          <div class="logo">EasyNote</div>
-          <div class="wrapper-btns">
-            <div class="something-btn"></div>
-            <div class="add-todo-list">Add to do list</div>
-          </div>
+        <div class="logo-img">
+          <div class="logo-img-png"></div>
+          <div class="logo-img-title">EasyNote</div>
         </div>
-        <div class="header-btns-right">
-          <div class="avatar">
-            <div class="photo"></div>
-          </div>
-          <div class="exit" id="logout" data-title="Logout">
-            <div class="exit__img" ></div>
-          </div>
+        <div class="btns-header">
+          <div class="music"></div>
+          <div class="logout"></div>
         </div>
       </header>
       <main>
-        <div class="aside-boards"></div>
+        <div class="aside">
+          <div class="aside-name">User</div>
+          <div class="aside-email"></div>
+          <div class="settings">
+            <div class="my-account">My account</div>
+            <div class="login-security">Login & Security</div>
+          </div>
+        </div>
         <div class="main-board">
-          <div class="main-board-my-boards"></div>
-          <div class="main-board-create-group"></div>
+          <div class="my-boards">
+            <div class="my-boards-title">My Boards</div>
+            <div class="create-my-boards"></div>
+          </div>
+          <div class="my-group">
+            <div class="my-group-title">My Boards groups</div>
+            <div class="create-my-group"></div>
+          </div>
         </div>
       </main>
-      <aside></aside>
-      <footer></footer>
+      <div class="wrapper-modal">
+        <h5>Name the new board</h5>
+        <div class="form-wrapper">
+          <form class="modal-form">
+            <input type="text" name="" id="" placeholder="Name" class="nameBoardInp"/>
+            <p class="error-messege-inp-add-new-board"> Invalid name</p>
+            <div class="modal-btn">
+              <button class="cancel" type="button">Cancel</button>
+              <button class="save" type="submit">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
