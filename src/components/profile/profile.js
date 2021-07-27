@@ -1,5 +1,5 @@
 import { routs } from '../../shared/constants/paths.js';
-import { removeEmailLs, removeToken } from '../../shared/ls-services/localStorage.js';
+import { removeEmailLs, removeNameOfBoard, removeToken } from '../../shared/ls-services/localStorage.js';
 
 export const logoutHandlers = () => {
   
@@ -8,6 +8,7 @@ export const logoutHandlers = () => {
   logoutBtn.onclick = () => {
     removeToken();
     removeEmailLs();
+    removeNameOfBoard();
     window.location.href =  routs.start_page;
   };
 

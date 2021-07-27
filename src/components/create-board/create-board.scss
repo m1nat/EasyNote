@@ -91,6 +91,14 @@
         background-color: #c4c4c4;
         cursor: pointer;
       }
+      .board-name {
+        color: white;
+        width: 50%;
+        height: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 1.4em;
+      }
     }
   }
   .midle-create-board {
@@ -173,9 +181,6 @@
           padding: 4px;
           border-bottom: solid 1px #b4b4b4;
 
-          @media screen and(max-width: 1600px) {
-          }
-
           &:hover {
             background-color: #c4c4c4;
             border-radius: 4px;
@@ -188,13 +193,17 @@
             margin-left: 20px;
           }
 
-          a {
-            text-decoration: none;
-            color: black;
+          span {
+            font-size: 0.9em;
+            font-weight: bolder;
+            padding: 5px;
 
-            span {
-              font-size: 1em;
-              font-weight: bolder;
+            @media screen and(max-width: 1600px) {
+              font-size: 0.8em;
+            }
+
+            @media screen and(max-width: 1175px) {
+              font-size: 0.7em;
             }
           }
         }
@@ -218,6 +227,22 @@
         width: 97%;
         height: 95%;
         background-color: #f0f0f0;
+
+        .sticker-board {
+          width: 60px;
+          height: 60px;
+          margin: 50px auto;
+          background-color: #fffacb;
+          resize: both;
+          outline: none;
+          border: #c4c4c4 1px solid;
+          border-radius: 10px;
+          padding: 10px;
+          -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+          -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+          box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+          z-index: 9;
+        }
       }
     }
   }

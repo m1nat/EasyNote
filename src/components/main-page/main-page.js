@@ -1,5 +1,5 @@
 import { routs } from '../../shared/constants/paths';
-import { getEmailLs } from '../../shared/ls-services/localStorage';
+import { getEmailLs, setNameOfBoard } from '../../shared/ls-services/localStorage';
 import { addNewBoards } from '../../shared/validators/check-inputs';
 
 const myBoardsBtn = document.querySelector('.create-my-boards');
@@ -12,6 +12,8 @@ const saveBtn = document.querySelector('.save');
 const asideUserEmail = document.querySelector('.aside-email');
 
 export const mainPageHandlers = () => {
+
+  boardNameInp.value = '';
 
   myBoardsBtn.onclick = () => {
     modal.style.display = 'block';
@@ -28,6 +30,7 @@ export const mainPageHandlers = () => {
 
     if (addNewBoards(boardNameInp.value)) {
       window.location.href = routs.create_board;
+      setNameOfBoard(boardNameInp.value);
     } else {
         errMessage.style.display = 'block';
     };
