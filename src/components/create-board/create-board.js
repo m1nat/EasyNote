@@ -75,7 +75,7 @@ export const createNoteHandlers = () => {
     
     errNoteSaveBtnsCancel.onclick = () => {
       window.location.href = routs.main;
-    }
+    };
 
     const name = getNameOfBoard();
     const stickerTextArea = document.querySelector('.sticker-board');
