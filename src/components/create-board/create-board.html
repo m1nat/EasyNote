@@ -24,10 +24,9 @@
           <div class="logo-img-title">EasyNote</div>
         </div>
         <div class="btns-header-create-board">
-          <div class="home-page-btn">
-            <a href="/">Home page</a>
-          </div>
+          <div class="home-page-btn">Home page</div>
           <div class="music"></div>
+          <div class="board-name">dsad</div>
         </div>
       </header>
       <div class="midle-create-board">
@@ -43,19 +42,44 @@
         <div class="menu">
           <div class="menu-list">
             <div class="menu-item">
-              <a href=""><span>Change the board colour</span></a>
+              <span>Change the board colour</span>
+            </div>
+            <div class="menu-item" id="add-new-note">
+              <span>Add a new note</span>
             </div>
             <div class="menu-item">
-              <a href=""><span>Add a new note</span></a>
+              <span>Add an image</span>
             </div>
-            <div class="menu-item"><a href=""><span>Add an image</span></a></div>
-            <div class="menu-item"><a href=""><span>Add an emoji</span></a></div>
+            <div class="menu-item">
+              <span>Add an emoji</span>
+            </div>
           </div>
           <div class="back"></div>
         </div>
         <div class="midle-create-board-main">
           <div class="board"></div>
+          <div class="delete-save-board">
+            <div class="blockButtonsCreateNote">
+              <div class="wrapperRemoveNote">
+                <button class="del-note">Delete</button>
+              </div>
+              <div class="wrapperSaveNote">
+                <form action="" class="footer-create-board">
+                  <button class="save-note" type="submit">Save</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="errNoteSave">
+        <h6>Do you want to save changes ?</h6>
+        <form action="" class="errNoteSave-form">
+          <div class="errNoteSave-btns">
+            <div class="errNoteSave-btns-cancel">Cancel</div>
+            <button class="errNoteSave-btns-save">Save</button>
+          </div>
+        </form>
       </div>
     </div>
   </body>
