@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import axios from 'axios';
 require('firebase/auth');
 
-import { FIREBASE_CONFIG, authURL } from './api-config';
+import { FIREBASE_CONFIG, authURL, databaseURL } from './api-config';
 import { showErrorNotification, showErrorNotificationSignUp } from '../DOM-render/render-messege/error-messege';
 
 export const initAPI = () => {
@@ -15,18 +15,32 @@ export const signIn = (email, password) => {
     password,
     returnSecureToken: true
   })
-  .then( response => response )
-  .catch(err => {
-    showErrorNotification(err)
-  });
+    .then(response => response)
+    .catch(err => {
+      showErrorNotification(err)
+    });
 };
 
 export const signUp = async (email, password) => {
   return firebase
-  .auth()
-  .createUserWithEmailAndPassword(email, password)
-  .then(response => response)
-  .catch( err => {
-    showErrorNotificationSignUp(err);
-  });
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(response => response)
+    .catch(err => {
+      showErrorNotificationSignUp(err);
+    });
 };
+
+export const createNotes = (name, text) => {
+  return fetch(`${databaseURL}/notes.json`, {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name,
+      text
+    })
+  })
+};
+
