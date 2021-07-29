@@ -22,7 +22,7 @@ const boardName = document.querySelector('.board-name')
 export const createNoteHandlers = () => {
 
   addNewSticker.onclick = () => {
-   
+
     const note = document.createElement('div');
     note.className = 'tc-note';
     tcNotes.append(note);
@@ -40,24 +40,49 @@ export const createNoteHandlers = () => {
     const tcNoteBody = document.createElement('textarea');
     tcNoteBody.className = 'tc-note-body';
     title.after(tcNoteBody);
+   
 
     tcNoteClose.onclick = () => {
       note.remove();
+    };
+
+    delNote.onclick = () => {
+      document.querySelectorAll('.tc-note').forEach( element => {
+        element.remove()
+      });;
     }
 
+    formDelSave.addEventListener('submit', event => {
+      event.preventDefault();
+
+      const name = boardName.value;
+
+      if (valueOfStickers.value) {
+        createNotes(name, valueOfStickers.value)
+          .then(response => {
+            if (response) {
+              removeNameOfBoard();
+              window.location.href = routs.main;
+            };
+          })
+        }
+        
+      });
+
+    
     deleteSaveBoard.style.display = 'block';
   };
+  
+  homePageBtn.onclick = () => {
 
-  homePageBtn.onclick = () => { 
-    
     errNoteSaveBtnsCancel.onclick = () => {
       window.location.href = routs.main;
     };
-    
-    const name = getNameOfBoard();
+
+    const name = boardName.value;
     const stickerTextArea = document.querySelector('.tc-note-body');
     if (stickerTextArea) {
-      
+
       errNoteSave.style.display = 'flex';
       errNoteSaveForm.addEventListener('submit', event => {
         event.preventDefault();
@@ -77,6 +102,7 @@ export const createNoteHandlers = () => {
 
   };
 
+
   btn.onclick = () => {
     menu.className = 'menu-show';
     btn.style.display = 'none';
@@ -95,7 +121,7 @@ export const createNoteHandlers = () => {
   board.onclick = () => {
     menu.className = 'menu';
     btn.style.display = 'block';
-  }
+  };
 
   const lsBoardName = getNameOfBoard();
   boardNameHeader.innerText = lsBoardName;
