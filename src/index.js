@@ -6,6 +6,7 @@ import { getToken } from './shared/ls-services/localStorage.js';
 import { logoutHandlers } from './components/profile/profile';
 import { createNoteHandlers } from './components/create-board/create-board.js';
 import { mainPageHandlers } from './components/main-page/main-page.js';
+import { recoveryPassword } from './components/reset-password/reset-password.js';
 
 import './styles/style.scss';
 
@@ -36,6 +37,9 @@ window.onload = () => {
       break;
     case paths.create_board:
       createNoteHandlers();
+      break;
+    case paths.reset_password:
+      recoveryPassword()
       break;
     default:
       break;

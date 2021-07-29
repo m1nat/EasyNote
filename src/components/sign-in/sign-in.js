@@ -5,6 +5,7 @@ import { routs } from '../../shared/constants/paths.js';
 export const signInHandlers = () => {
   
   const signInForm = document.getElementById('form-sign-in');
+  const forgot = document.querySelector('.forgot')
 
   signInForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -23,6 +24,10 @@ export const signInHandlers = () => {
       }
     })
   })
+
+  forgot.onclick = () => {
+    window.location.href = routs.reset_password
+  }
 
 };
 

@@ -3,7 +3,8 @@ export const routs = {
   sign_in: 'sign-in.html',
   sign_up: 'sign-up.html',
   start_page: 'start-page.html',
-  create_board: 'create-board.html'
+  create_board: 'create-board.html',
+  reset_password: 'reset-password.html'
 };
 
 export const paths = {
@@ -11,5 +12,6 @@ export const paths = {
   sign_in: '/sign-in.html',
   sign_up: '/sign-up.html',
   start_page: '/start-page.html',
-  create_board: '/create-board.html'
+  create_board: '/create-board.html',
+  reset_password: '/reset-password.html'
 };

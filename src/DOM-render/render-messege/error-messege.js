@@ -2,6 +2,8 @@ const emailMessage = document.querySelector('.email-sign-in-error-messege');
 const passwordMessege = document.querySelector('.password-sign-in-error-messege');
 const emailAlready = document.querySelector('.messege-error-email-signup');
 const emailInput = document.getElementById('email-sign-up');
+const recoveryMessage = document.querySelector('.email-recovery-error-messege');
+
 
 export const showErrorEmailSignUP = () => {
   const errorMessege = document.querySelector('.messege-error-email-signup');
@@ -51,6 +53,17 @@ export const showErrorNotification = errors => {
       passwordMessege.style.display = 'none';
     },5000)
   };
+
+};
+
+export const showErrorNotificationRecovery = errors => {
+
+  let errorString = errors.message.split('_').join(' ').toLowerCase();
+  if (errorString) {
+    recoveryMessage.innerText = 'Sorry, this email is not valid'
+    recoveryMessage.style.display = 'block'
+  }
+
 
 };
 

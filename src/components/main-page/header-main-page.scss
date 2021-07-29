@@ -252,7 +252,7 @@
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    
+
     @media screen and(max-width: 1600px) {
       bottom: 400px;
       width: 44%;
@@ -274,13 +274,13 @@
         height: 23px;
         border-radius: 4px;
         outline: none;
-        border: #C4C4C4 1px solid;
+        border: #c4c4c4 1px solid;
         padding-left: 20px;
         padding-right: 20px;
         font-size: 0.9em;
 
         &::placeholder {
-          color: #C2C2C2;
+          color: #c2c2c2;
           font-size: 0.9em;
         }
       }
@@ -311,7 +311,7 @@
         width: 35%;
         outline: none;
         border-radius: 6px;
-        background-color: #D7EEEF;
+        background-color: #d7eeef;
         border: none;
       }
     }

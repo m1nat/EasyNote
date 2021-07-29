@@ -92,6 +92,7 @@ export const createNoteHandlers = () => {
               window.location.href = routs.main;
             }
           })
+          
       })
     } else if (!(stickerTextArea)) {
       removeNameOfBoard();
@@ -99,7 +100,6 @@ export const createNoteHandlers = () => {
     };
 
   };
-
 
   btn.onclick = () => {
     menu.className = 'menu-show';

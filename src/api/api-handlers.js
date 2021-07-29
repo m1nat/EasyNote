@@ -3,7 +3,8 @@ import axios from 'axios';
 require('firebase/auth');
 
 import { FIREBASE_CONFIG, authURL, databaseURL } from './api-config';
-import { showErrorNotification, showErrorNotificationSignUp } from '../DOM-render/render-messege/error-messege';
+import { showErrorNotification, showErrorNotificationRecovery, showErrorNotificationSignUp } from '../DOM-render/render-messege/error-messege';
+import { routs } from '../shared/constants/paths';
 
 export const initAPI = () => {
   firebase.initializeApp(FIREBASE_CONFIG)
@@ -44,3 +45,8 @@ export const createNotes = (name, text) => {
   })
 };
 
+export const passwordRecovery = email => {
+firebase.auth().sendPasswordResetEmail(email)
+    .then(() => window.location.href = routs.sign_up)
+    .catch(err => showErrorNotificationRecovery(err))
+};

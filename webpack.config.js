@@ -27,6 +27,10 @@ module.exports = {
     new HTMLWebpackPlugin({
       filename: 'create-board.html',
       template: './src/components/create-board/create-board.html'
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'reset-password.html',
+      template: './src/components/reset-password/reset-password.html'
     })
   ],
   module: {
