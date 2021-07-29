@@ -40,7 +40,10 @@ export const createNoteHandlers = () => {
     const tcNoteBody = document.createElement('textarea');
     tcNoteBody.className = 'tc-note-body';
     title.after(tcNoteBody);
-   
+
+    const valText = document.querySelectorAll('.tc-note-body')
+    
+    console.log(valText);
 
     tcNoteClose.onclick = () => {
       note.remove();
