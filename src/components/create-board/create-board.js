@@ -40,11 +40,7 @@ export const createNoteHandlers = () => {
     const tcNoteBody = document.createElement('textarea');
     tcNoteBody.className = 'tc-note-body';
     title.after(tcNoteBody);
-
-    const valText = document.querySelectorAll('.tc-note-body')
     
-    console.log(valText);
-
     tcNoteClose.onclick = () => {
       note.remove();
     };
@@ -60,8 +56,8 @@ export const createNoteHandlers = () => {
 
       const name = boardName.value;
 
-      if (valueOfStickers.value) {
-        createNotes(name, valueOfStickers.value)
+      if (document.querySelector('.tc-note-body').value) {
+        createNotes(name, document.querySelector('.tc-note-body').value)
           .then(response => {
             if (response) {
               removeNameOfBoard();
@@ -69,9 +65,8 @@ export const createNoteHandlers = () => {
             };
           })
         }
-        
-      });
 
+      });
     
     deleteSaveBoard.style.display = 'block';
   };
