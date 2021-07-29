@@ -99,10 +99,15 @@
       .board-name {
         color: white;
         width: 50%;
-        height: 100%;
         text-align: center;
-        padding: 12px;
-        font-size: 1.4em;
+        padding: 5px;
+        height: 90%;
+        font-size: 1em;
+        resize: none;
+        background-color: rgb(48, 46, 46);
+        border: none;
+        outline: none;
+        overflow: none;
       }
     }
   }
@@ -222,6 +227,10 @@
               font-size: 0.8em;
             }
 
+            @media screen and(max-width: 1200px) {
+              font-size: 0.7em;
+            }
+
             @media screen and(max-width: 1175px) {
               font-size: 0.7em;
             }
@@ -235,6 +244,8 @@
         background: url("/src/png/arrow-97-48.png") no-repeat center center;
         background-size: cover;
         margin-bottom: 10px;
+        align-self: flex-start;
+        margin-left: 10px;
       }
     }
 
@@ -250,19 +261,112 @@
         height: 95%;
         background-color: #f0f0f0;
 
-        .sticker-board {
-          width: 60px;
-          height: 60px;
-          margin: 50px auto;
-          background-color: #fffacb;
-          resize: both;
-          outline: none;
-          border: #c4c4c4 1px solid;
-          border-radius: 10px;
-          padding: 10px;
-          -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-          -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-          box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        // .sticker-board {
+        //   width: 60px;
+        //   height: 60px;
+        //   margin: 50px auto;
+        //   background-color: #fffacb;
+        //   resize: both;
+        //   outline: none;
+        //   border: #c4c4c4 1px solid;
+        //   border-radius: 10px;
+        //   padding: 10px;
+        //   -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        //   -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        //   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        // }
+
+        #notesWrapper {
+          padding: 50px;
+
+          .tc-notes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0 auto;
+
+            .tc-note {
+              background-color: #FFFACB;
+              border-radius: 8px;
+              width: 280px;
+              height: 150px;
+              margin: 0 10px 20px;
+              box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+              transition: all 0.5s;
+              cursor: pointer;
+
+              .tc-note-header {
+                padding: 10px 16px 0;
+
+                .tc-note-close {
+                  display: inline-block;
+                  width: 24px;
+                  height: 24px;
+                  border-radius: 50%;
+                  line-height: 24px;
+                  text-align: center;
+                  transition: all 0.3s;
+                  background: url('/src/png/x-mark-48.png') no-repeat center center;
+                  background-size: 50%;
+
+                  &:hover {
+                    background-color:rgba(0, 0, 0, 0.2);
+                  }
+
+                  &:focus {
+                    box-shadow: inset 2px 3px 0px rgba(90, 49, 49, 0.8);
+                  }
+                }
+                .tc-note-close {
+                  float: right;
+                }
+              }
+              .tc-note-title,
+              .tc-note-body {
+                outline: 0;
+              }
+
+              .tc-note-title {
+                font-size: 24px;
+                padding: 10px 16px;
+              }
+
+              .tc-note-body {
+                font-size: 1em;
+                padding: 10px 16px 16px;
+                background: #FFFACB;
+                resize: none;
+                width: 100%;
+                border: none;
+                height: 70%;
+                padding: 15px;
+
+                &::-webkit-scrollbar {
+                  width: 10px;
+                  cursor: pointer;
+                }
+
+                &::-webkit-scrollbar-track {
+                  background-color: #FFFACB;
+                  border-radius: 4px;
+                  cursor: pointer;
+              }
+              
+
+                &::-webkit-scrollbar-thumb {
+                  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                  border-radius: 4px;
+                  cursor: pointer;
+              }
+
+              }
+
+              &:hover {
+                box-shadow: 2px 4px 10px 2px 3px 0px rgba(0, 0, 0, 0.3) ;
+              }
+
+            }
+          }
         }
       }
 

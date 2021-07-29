@@ -16,59 +16,36 @@ const homePageBtn = document.querySelector('.home-page-btn');
 const errNoteSave = document.querySelector('.errNoteSave');
 const errNoteSaveForm = document.querySelector('.errNoteSave-form');
 const errNoteSaveBtnsCancel = document.querySelector('.errNoteSave-btns-cancel');
+const tcNotes = document.querySelector('.tc-notes');
+const boardName = document.querySelector('.board-name')
 
 export const createNoteHandlers = () => {
-  errNoteSave.style.display = 'none'
-
-  let coordX;
-  let coordY;
 
   addNewSticker.onclick = () => {
-    let sticker = document.createElement('textarea');
-    sticker.classList.add('sticker-board');
-    board.append(sticker);
+   
+    const note = document.createElement('div');
+    note.className = 'tc-note';
+    tcNotes.append(note);
+    const tcNoteHeader = document.createElement('div');
+    tcNoteHeader.className = 'tc-note-header';
+    note.append(tcNoteHeader);
+    const tcNoteClose = document.createElement('span')
+    tcNoteClose.className = 'tc-note-close';
+    tcNoteHeader.append(tcNoteClose);
+    const btn = document.createElement('div');
+    btn.className = 'fas fa-times';
+    const title = document.createElement('div');
+    title.className = 'tc-note-title';
+    tcNoteHeader.after(title);
+    const tcNoteBody = document.createElement('textarea');
+    tcNoteBody.className = 'tc-note-body';
+    title.after(tcNoteBody);
+
+    tcNoteClose.onclick = () => {
+      note.remove();
+    }
 
     deleteSaveBoard.style.display = 'block';
-
-    sticker.draggable = true;
-
-    sticker.addEventListener('dragstart', e => {
-      e.dataTransfer.setData('text/html', 'dragstart');
-      coordY = e.offsetY;
-      coordX = e.offsetX;
-    });
-
-    board.addEventListener('dragover', e => {
-      e.preventDefault()
-    });
-
-    board.addEventListener('drop', e => {
-      sticker.style.position = 'absolute';
-      sticker.style.top = (e.pageY - coordY) + 'px';
-      sticker.style.left = (e.pageX - coordX) + 'px';
-
-    });
-
-    delNote.onclick = () => {
-      sticker.remove();
-    };
-
-    formDelSave.addEventListener('submit', event => {
-      event.preventDefault();
-      const name = getNameOfBoard()
-
-      if (sticker.value) {
-        createNotes(name, sticker.value)
-          .then(response => {
-            if (response) {
-              removeNameOfBoard();
-              window.location.href = routs.main;
-            };
-          })
-      }
-
-    });
-
   };
 
   homePageBtn.onclick = () => { 
@@ -76,11 +53,11 @@ export const createNoteHandlers = () => {
     errNoteSaveBtnsCancel.onclick = () => {
       window.location.href = routs.main;
     };
-
+    
     const name = getNameOfBoard();
-    const stickerTextArea = document.querySelector('.sticker-board');
+    const stickerTextArea = document.querySelector('.tc-note-body');
     if (stickerTextArea) {
-
+      
       errNoteSave.style.display = 'flex';
       errNoteSaveForm.addEventListener('submit', event => {
         event.preventDefault();

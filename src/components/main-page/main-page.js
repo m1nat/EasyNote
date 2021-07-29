@@ -28,12 +28,10 @@ export const mainPageHandlers = () => {
   modal_form.addEventListener('submit', event => {
     event.preventDefault();
 
-    if (addNewBoards(boardNameInp.value)) {
+    if (boardNameInp.value) {
       window.location.href = routs.create_board;
       setNameOfBoard(boardNameInp.value);
-    } else {
-        errMessage.style.display = 'block';
-    };
+    }
 
   })
 };

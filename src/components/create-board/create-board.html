@@ -14,6 +14,16 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap"
+      rel="stylesheet"
+    />
     <title>Create Board</title>
   </head>
   <body>
@@ -26,7 +36,7 @@
         <div class="btns-header-create-board">
           <div class="home-page-btn">Home page</div>
           <div class="music"></div>
-          <div class="board-name">dsad</div>
+          <textarea class="board-name"></textarea>
         </div>
       </header>
       <div class="midle-create-board">
@@ -57,7 +67,12 @@
           <div class="back"></div>
         </div>
         <div class="midle-create-board-main">
-          <div class="board"></div>
+          <div class="board">
+            <div id="notesWrapper">
+              <div class="tc-notes">
+              </div>
+            </div>
+          </div>
           <div class="delete-save-board">
             <div class="blockButtonsCreateNote">
               <div class="wrapperRemoveNote">

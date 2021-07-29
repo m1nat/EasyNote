@@ -9,6 +9,7 @@ import { mainPageHandlers } from './components/main-page/main-page.js';
 
 import './styles/style.scss';
 
+
 initAPI();
 
 window.onload = () => {
