@@ -47,6 +47,6 @@ export const createNotes = (name, text) => {
 
 export const passwordRecovery = email => {
 firebase.auth().sendPasswordResetEmail(email)
-    .then(() => window.location.href = routs.sign_up)
+    .then(() => window.location.href = routs.sign_in)
     .catch(err => showErrorNotificationRecovery(err))
 };
