@@ -1,8 +1,9 @@
-@import './header-main-page.scss';
+@import '../components/main-page/header-main-page.scss';
 @import '../components/sign-in/singn-in.scss';
 @import '../components/sign-up/sign-up.scss';
-@import './main-body-page.scss';
 @import '../components/start-page/start-page.scss';
+@import '../components/create-board/create-board.scss';
+@import '../components/reset-password/reset-password.scss';
 
 *,*:after,*:before{
   margin: 0px;

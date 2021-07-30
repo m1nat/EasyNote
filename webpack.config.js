@@ -23,6 +23,14 @@ module.exports = {
     new HTMLWebpackPlugin({
       filename: 'start-page.html',
       template: './src/components/start-page/start-page.html'
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'create-board.html',
+      template: './src/components/create-board/create-board.html'
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'reset-password.html',
+      template: './src/components/reset-password/reset-password.html'
     })
   ],
   module: {

@@ -2,12 +2,16 @@ export const routs = {
   main: '/',
   sign_in: 'sign-in.html',
   sign_up: 'sign-up.html',
-  start_page: 'start-page.html'
+  start_page: 'start-page.html',
+  create_board: 'create-board.html',
+  reset_password: 'reset-password.html'
 };
 
 export const paths = {
   main: '/',
   sign_in: '/sign-in.html',
   sign_up: '/sign-up.html',
-  start_page: '/start-page.html'
+  start_page: '/start-page.html',
+  create_board: '/create-board.html',
+  reset_password: '/reset-password.html'
 };

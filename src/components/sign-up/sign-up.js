@@ -1,5 +1,6 @@
 import { signUp } from '../../api/api-handlers.js';
 import { routs } from '../../shared/constants/paths.js';
+import { setEmailLs } from '../../shared/ls-services/localStorage.js';
 import {
   confirmPasswordHideMessege,
   confirmPasswordShowMessege,
