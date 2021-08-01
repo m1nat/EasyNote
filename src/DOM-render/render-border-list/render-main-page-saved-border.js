@@ -4,7 +4,7 @@ import { getLocalId } from "../../shared/ls-services/localStorage";
 export const renderBoarder = () => {
   getBoard()
     .then(response => {
-      const containerBoards = document.querySelector('.container-boards');
+      const containerBoards = document.querySelector('.create-my-boards');
       containerBoards.innerHTML = null;
       const uuid = getLocalId();
       let findName = [];
@@ -16,7 +16,7 @@ export const renderBoarder = () => {
 
       findName.forEach(el => {
         const savedBoard = document.createElement('div');
-        containerBoards.append(savedBoard);
+        containerBoards.after(savedBoard);
         savedBoard.className = 'saved-notes';
         const titleBoardSavedBoard = document.createElement('h6');
         savedBoard.append(titleBoardSavedBoard);
