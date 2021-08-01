@@ -1,6 +1,6 @@
 import { createNotes } from "../../api/api-handlers";
 import { routs } from "../../shared/constants/paths";
-import { getNameOfBoard, removeNameOfBoard } from "../../shared/ls-services/localStorage";
+import { getLocalId, getNameOfBoard, removeNameOfBoard } from "../../shared/ls-services/localStorage";
 
 const btn = document.querySelector('.aside-actions');
 const menu = document.querySelector('.menu');
@@ -17,12 +17,13 @@ const errNoteSave = document.querySelector('.errNoteSave');
 const errNoteSaveForm = document.querySelector('.errNoteSave-form');
 const errNoteSaveBtnsCancel = document.querySelector('.errNoteSave-btns-cancel');
 const tcNotes = document.querySelector('.tc-notes');
-const boardName = document.querySelector('.board-name')
+const boardName = document.querySelector('.board-name');
+const localId = getLocalId();
+const newArr = [];
 
 export const createNoteHandlers = () => {
 
   addNewSticker.onclick = () => {
-
     const note = document.createElement('div');
     note.className = 'tc-note';
     tcNotes.append(note);
@@ -40,41 +41,57 @@ export const createNoteHandlers = () => {
     const tcNoteBody = document.createElement('textarea');
     tcNoteBody.className = 'tc-note-body';
     title.after(tcNoteBody);
-    
+
+    deleteSaveBoard.style.display = 'block';
+
     tcNoteClose.onclick = () => {
       note.remove();
-    };
-
-    delNote.onclick = () => {
-      document.querySelectorAll('.tc-note').forEach( element => {
-        element.remove()
-      });;
     }
 
-    formDelSave.addEventListener('submit', event => {
-      event.preventDefault();
-
-      const name = boardName.value;
-
-      if (document.querySelector('.tc-note-body').value) {
-        createNotes(name, document.querySelector('.tc-note-body').value)
-          .then(response => {
-            if (response) {
-              removeNameOfBoard();
-              window.location.href = routs.main;
-            };
-          })
-        }
-
+    delNote.onclick = () => {
+      document.querySelectorAll('.tc-note').forEach(element => {
+        element.remove()
       });
-    
-    deleteSaveBoard.style.display = 'block';
-  };
-  
+    }
+
+  };  
+
+  formDelSave.addEventListener('submit', event => {
+    event.preventDefault();
+
+    const name = boardName.value;
+
+    const val = document.querySelectorAll('.tc-note-body');
+    val.forEach(el => {
+      if (el.value) {
+        newArr.push(el.value)
+      }
+    })
+
+    if (document.querySelector('.tc-note-body').value) {
+      createNotes(name, newArr, localId)
+        .then(response => {
+          if (response) {
+            removeNameOfBoard();
+            window.location.href = routs.main;
+          };
+        })
+    }
+
+  })
+
   homePageBtn.onclick = () => {
+
+    const val = document.querySelectorAll('.tc-note-body');
+    val.forEach(el => {
+      if (el.value) {
+        newArr.push(el.value)
+      }
+    })
 
     errNoteSaveBtnsCancel.onclick = () => {
       window.location.href = routs.main;
+      removeNameOfBoard();
     };
 
     const name = boardName.value;
@@ -85,14 +102,14 @@ export const createNoteHandlers = () => {
       errNoteSaveForm.addEventListener('submit', event => {
         event.preventDefault();
 
-        createNotes(name, stickerTextArea.value)
+        createNotes(name, newArr, localId)
           .then(response => {
             if (response) {
               removeNameOfBoard();
               window.location.href = routs.main;
             }
           })
-          
+
       })
     } else if (!(stickerTextArea)) {
       removeNameOfBoard();

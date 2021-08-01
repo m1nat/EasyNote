@@ -16,3 +16,18 @@ export const getNameOfBoard = () => localStorage.getItem('boardName');
 
 export const removeNameOfBoard = () => localStorage.removeItem('boardName');
 
+export const setUIDLS = (UID) => localStorage.setItem('userUID', UID);
+
+export const getUIDLS = () => localStorage.getItem('userUID');
+
+export const setUserId = (id) => localStorage.setItem('userId', id);
+
+export const setUserNameLocalStorage = name => localStorage.setItem('name', name);
+
+export const getUserNameLocalStorage = () => localStorage.getItem('name');
+
+export const clearLocalStorage = () => localStorage.clear();
+
+export const setLocalId = (id) => localStorage.setItem('localId', id);
+
+export const getLocalId = () => localStorage.getItem('localId');

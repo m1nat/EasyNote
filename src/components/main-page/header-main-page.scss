@@ -192,14 +192,44 @@
           font-size: 1.4em;
         }
 
-        .create-my-boards {
-          width: 26%;
+        .userNotesAddAndLoad {
+          width: 100%;
           height: 70%;
-          margin-left: 20px;
-          cursor: pointer;
-          background: url("/src/png/plus.png") no-repeat center center;
-          background-size: 6%;
-          background-color: #e4dede;
+          display: flex;
+          align-items: center;
+          overflow-x: scroll;
+
+          .create-my-boards {
+            width: 26%;
+            height: 100%;
+            margin-left: 20px;
+            cursor: pointer;
+            background: url("/src/png/plus.png") no-repeat center center;
+            background-size: 6%;
+            background-color: #e4dede;
+          }
+
+          .container-boards {
+            width: 100%;
+            height: 100%;
+            margin-left: 15px;
+            display: flex;
+            overflow-x: auto;
+            
+            .saved-notes {
+              width: 370px;
+              height: 100%;
+              background-color: #e4dede;
+              margin-left: 10px;
+
+              &-title {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                padding-top: 5px;
+              }
+            }
+          }
         }
       }
 

@@ -7,6 +7,7 @@ import { logoutHandlers } from './components/profile/profile';
 import { createNoteHandlers } from './components/create-board/create-board.js';
 import { mainPageHandlers } from './components/main-page/main-page.js';
 import { recoveryPassword } from './components/reset-password/reset-password.js';
+import { renderBoarder } from './DOM-render/render-border-list/render-main-page-saved-border.js';
 
 import './styles/style.scss';
 
@@ -22,7 +23,8 @@ window.onload = () => {
     case paths.main:
       const lsToken = getToken();
       logoutHandlers();
-      mainPageHandlers()
+      mainPageHandlers();
+      renderBoarder();
       if (!lsToken) {
         window.location.href = routs.start_page;
       }

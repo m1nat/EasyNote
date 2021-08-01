@@ -1,6 +1,5 @@
 import { signUp } from '../../api/api-handlers.js';
 import { routs } from '../../shared/constants/paths.js';
-import { setEmailLs } from '../../shared/ls-services/localStorage.js';
 import {
   confirmPasswordHideMessege,
   confirmPasswordShowMessege,
@@ -48,7 +47,13 @@ export const signUpHandler = () => {
     const email = document.getElementById('email-sign-up').value;
     const password = document.getElementById('password-su').value;
 
-    signUp(email, password)
+    const user = {
+      userName: usernameInp.value,
+      email: email,
+      password: password
+    }
+
+    signUp(user)
       .then(response => {
 
         if (response) {

@@ -1,8 +1,8 @@
-import { signIn } from '../../api/api-handlers';
-import { setEmailLs, setToken } from '../../shared/ls-services/localStorage.js';
+import { getUserName, signIn } from '../../api/api-handlers';
+import { setEmailLs, setLocalId, setToken, setUserNameLocalStorage } from '../../shared/ls-services/localStorage.js';
 import { routs } from '../../shared/constants/paths.js';
 
-export const signInHandlers = () => {
+export const signInHandlers = async () => {
   
   const signInForm = document.getElementById('form-sign-in');
   const forgot = document.querySelector('.forgot')
@@ -13,14 +13,25 @@ export const signInHandlers = () => {
     const email = document.getElementById('email-sign-in').value;
     const password = document.getElementById('password-sign-in').value;
 
+    let authUser;
+    let dataUsers;
+
     signIn(email, password)
     .then(response => {
       if (response) {
+        authUser = response.data
         const { idToken: token } = response.data;
         setToken(token);
         const { email } = response.data;
         setEmailLs(email);
-        window.location.href = routs.main;
+        getUserName()
+          .then(response => {
+            dataUsers = response;
+            const nameUser = dataUsers.find( user => user.uuid === authUser.localId);
+            setLocalId(nameUser.uuid)
+            setUserNameLocalStorage(nameUser.userName);
+            window.location.href = routs.main;
+          })
       }
     })
   })
