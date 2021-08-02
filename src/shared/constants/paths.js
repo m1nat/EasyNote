@@ -4,7 +4,8 @@ export const routs = {
   sign_up: 'sign-up.html',
   start_page: 'start-page.html',
   create_board: 'create-board.html',
-  reset_password: 'reset-password.html'
+  reset_password: 'reset-password.html',
+  saved_notes: 'saved-notes.html'
 };
 
 export const paths = {
@@ -13,5 +14,6 @@ export const paths = {
   sign_up: '/sign-up.html',
   start_page: '/start-page.html',
   create_board: '/create-board.html',
-  reset_password: '/reset-password.html'
+  reset_password: '/reset-password.html',
+  saved_notes: '/saved-notes.html'
 };

@@ -216,23 +216,23 @@
           }
 
           .create-my-boards {
-            width: 300px;
+            width: 310px;
             height: 100%;
             margin-left: 20px;
             cursor: pointer;
             background: url("/src/png/plus.png") no-repeat center center;
             background-size: 6%;
             background-color: #e4dede;
-            min-width: 300px;
+            min-width: 310px;
           }
 
           .saved-notes {
-            width: 410px;
+            width: 310px;
             height: 100%;
             background-color: #e4dede;
             margin-left: 10px;
             cursor: pointer;
-            min-width: 300px;
+            min-width: 310px;
 
             &-title {
               width: 100%;
@@ -257,7 +257,7 @@
         }
 
         .create-my-group {
-          width: 26%;
+          width: 310px;
           height: 70%;
           margin-left: 20px;
           cursor: pointer;

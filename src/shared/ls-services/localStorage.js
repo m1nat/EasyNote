@@ -31,3 +31,11 @@ export const clearLocalStorage = () => localStorage.clear();
 export const setLocalId = (id) => localStorage.setItem('localId', id);
 
 export const getLocalId = () => localStorage.getItem('localId');
+
+export const setNotes = notes => localStorage.setItem('Notes', notes);
+
+export const getNotes = () => localStorage.getItem('Notes');
+
+export const setNameBoadrd = name => localStorage.setItem('NameOfBoard', name);
+
+export const getNameBoadrd = () => localStorage.getItem('NameOfBoard');

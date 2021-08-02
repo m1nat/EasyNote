@@ -31,6 +31,10 @@ module.exports = {
     new HTMLWebpackPlugin({
       filename: 'reset-password.html',
       template: './src/components/reset-password/reset-password.html'
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'saved-notes.html',
+      template: './src/components/saved-nostes/saved-notes.html'
     })
   ],
   module: {
