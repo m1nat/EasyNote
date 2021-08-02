@@ -33,6 +33,7 @@ export const renderNotes = () => {
           tcNoteBody.className = 'tc-note-body';
           title.after(tcNoteBody);
           tcNoteBody.innerText = el
+          console.log(el);
         })
       }
     })

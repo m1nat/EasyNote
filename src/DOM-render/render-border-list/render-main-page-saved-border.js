@@ -24,7 +24,18 @@ export const renderBoarder = () => {
         savedBoard.append(titleBoardSavedBoard);
         titleBoardSavedBoard.className = 'saved-notes-title';
         titleBoardSavedBoard.innerText = el;
+        const hoverDel = document.createElement('div');
+        titleBoardSavedBoard.after(hoverDel);
+        hoverDel.className = 'open-delete-board';
+        const del = document.createElement('div');
+        hoverDel.append(del);
+        del.className = 'del'
+        const open = document.createElement('div');
+        open.className = 'open';
+        del.after(open);
 
+        
+        
         savedBoard.onclick = () => {
 
           response.forEach(el => {
