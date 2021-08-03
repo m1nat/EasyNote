@@ -9,10 +9,12 @@ export const renderNotes = () => {
   getBoard()
     .then( response => {
       if (response) {
+        const textarea = document.querySelector('.board-name')
         const boardName = getNameBoadrd();
-        let notes = getNotes()
-        const textsNote = notes.split(',')
-        const id = getLocalId()
+        let notes = getNotes();
+        const textsNote = notes.split(',');
+        const id = getLocalId();
+        textarea.value = boardName
         
         textsNote.forEach ( el => {
           const note = document.createElement('div');

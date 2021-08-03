@@ -1,8 +1,9 @@
-import { getBoard } from "../../api/api-handlers";
+import { getBoard, removeBoard } from "../../api/api-handlers";
 import { routs } from "../../shared/constants/paths";
 import { getLocalId, setNameBoadrd, setNotes } from "../../shared/ls-services/localStorage";
 
 export const renderBoarder = () => {
+
   getBoard()
     .then(response => {
       const containerBoards = document.querySelector('.create-my-boards');
@@ -10,9 +11,10 @@ export const renderBoarder = () => {
       const uuid = getLocalId();
       let findName = [];
       let findNotes = [];
+
       response.forEach(el => {
         if (el.uuid === uuid) {
-          findName.push(el.name)
+          findName.push(el.name);
         }
       })
 
@@ -24,32 +26,39 @@ export const renderBoarder = () => {
         savedBoard.append(titleBoardSavedBoard);
         titleBoardSavedBoard.className = 'saved-notes-title';
         titleBoardSavedBoard.innerText = el;
+        const loadSevesNotes = document.createElement('div');
+        titleBoardSavedBoard.after(loadSevesNotes);
+        loadSevesNotes.className = 'load-seves-notes';
         const hoverDel = document.createElement('div');
-        titleBoardSavedBoard.after(hoverDel);
+        loadSevesNotes.after(hoverDel);
         hoverDel.className = 'open-delete-board';
-        const del = document.createElement('div');
-        hoverDel.append(del);
-        del.className = 'del'
-        const open = document.createElement('div');
-        open.className = 'open';
-        del.after(open);
 
-        
-        
-        savedBoard.onclick = () => {
+        hoverDel.onclick = () => {
+          response.forEach(element => {
 
-          response.forEach(el => {
-            if (el.uuid === uuid && el.name === titleBoardSavedBoard.innerText) {
-              findNotes.push(el.text)
-              setNotes(findNotes)
-              setNameBoadrd(el.name)
+            if (element.name === el) {
+              removeBoard(element.id);
+              savedBoard.remove();
             }
+            
           })
+        }
 
+        loadSevesNotes.onclick = () => {
+          response.forEach(el => {
+
+            if (el.uuid === uuid && el.name === titleBoardSavedBoard.innerText) {
+              findNotes.push(el.text);
+              setNotes(findNotes);
+              setNameBoadrd(el.name);
+            }
+
+          })
           window.location.href = routs.saved_notes;
         }
-        
+
       })
 
     })
+
 }

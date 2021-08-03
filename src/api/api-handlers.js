@@ -94,6 +94,12 @@ export const getUserName = () => {
 export const getBoard = () => {
   return axios.get(`${databaseURL}/notes.json`)
     .then( response => {
-      return Object.keys(response.data).map( key => ({...response.data[key], id: key}))
+      if(response) {
+        return Object.keys(response.data).map( key => ({...response.data[key], id: key}))
+      }
     })
+}
+
+export const removeBoard = (id) => {
+  axios.delete(`${databaseURL}/notes/${id}.json`)
 }

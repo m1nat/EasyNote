@@ -199,18 +199,18 @@
           overflow-x: auto;
 
           &::-webkit-scrollbar {
-            width: 10px;
+            height: 5px;
             cursor: pointer;
           }
 
           &::-webkit-scrollbar-track {
-            background-color: #d6d5ca;
+            background-color: #f3f3f3;
             border-radius: 7px;
             cursor: pointer;
           }
 
           &::-webkit-scrollbar-thumb {
-            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 0 6px rgba(177, 174, 174, 0.3);
             border-radius: 4px;
             cursor: pointer;
           }
@@ -220,16 +220,23 @@
             height: 95%;
             margin-left: 20px;
             cursor: pointer;
-            background: url("/src/png/plus.png") no-repeat center center;
-            background-size: 6%;
-            background-color: #e4dede;
+            background: url("/src/png/add.png") no-repeat center center;
+            background-size: 4%;
+            background-color: #fafafa;
             min-width: 310px;
+            // transition: 1s;
+
+            &:hover {
+              -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+              -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+              box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            }
           }
 
           .saved-notes {
             width: 310px;
             height: 95%;
-            background-color: #e4dede;
+            background-color: #fafafa;
             margin-left: 10px;
             cursor: pointer;
             min-width: 310px;
@@ -237,40 +244,20 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
+            transition: 0.5s;
 
-            
-            .open-delete-board {
+            &:hover {
+              width: 340px;
+              height: 97%;
+              -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+              -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+              box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            }
+
+            .load-seves-notes {
+              height: 65%;
               width: 100%;
-              height: 25%;
-              opacity: 0;
-              transition: 1s;
-              display: flex;
-              justify-content: space-around;
-              align-items: center;
-
-              .del {
-                width: 15%;
-                height: 80%;
-                background: url('/src/png/trash-9-48.png') no-repeat center center;
-                background-size: 50%; 
-              }
-
-              .open {
-                width: 15%;
-                height: 80%;
-                background: url('/src/png/magnifying-glass-2-48.png') no-repeat center center;
-                background-size: 50%; 
-              }
-
-
             }
-
-            &:hover .open-delete-board {
-              opacity: 1;
-
-            }
-
-
 
             &-title {
               width: 100%;
@@ -279,6 +266,23 @@
               padding-top: 15px;
             }
 
+            .open-delete-board {
+              width: 100%;
+              height: 15%;
+              opacity: 0;
+              transition: 1s;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              background: url("/src/png/multiply-3-48.png") no-repeat center
+                center;
+              background-size: 3%;
+              background-color: rgb(253, 190, 190);
+
+              &:hover {
+                opacity: 1;
+              }
+            }
           }
         }
       }
@@ -300,9 +304,9 @@
           height: 70%;
           margin-left: 20px;
           cursor: pointer;
-          background: url("/src/png/plus.png") no-repeat center center;
-          background-size: 6%;
-          background-color: #e4dede;
+          background: url("/src/png/add.png") no-repeat center center;
+          background-size: 4%;
+          background-color: #fafafa;
         }
       }
     }

@@ -41,3 +41,5 @@ export const removeNotes = () => localStorage.removeItem('Notes')
 export const setNameBoadrd = name => localStorage.setItem('NameOfBoard', name);
 
 export const getNameBoadrd = () => localStorage.getItem('NameOfBoard');
+
+export const removeNameBoadrd = () => localStorage.removeItem('NameOfBoard');
