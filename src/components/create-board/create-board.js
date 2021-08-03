@@ -6,7 +6,7 @@ const btn = document.querySelector('.aside-actions');
 const menu = document.querySelector('.menu');
 const back = document.querySelector('.back');
 const boardNameHeader = document.querySelector('.board-name');
-const board = document.querySelector('.board');
+const board = document.querySelector('.board-create');
 const addNewSticker = document.getElementById('add-new-note');
 const menuItem = document.querySelectorAll('.aside-board-items');
 const deleteSaveBoard = document.querySelector('.delete-save-board');
@@ -18,8 +18,12 @@ const errNoteSaveForm = document.querySelector('.errNoteSave-form');
 const errNoteSaveBtnsCancel = document.querySelector('.errNoteSave-btns-cancel');
 const tcNotes = document.querySelector('.tc-notes');
 const boardName = document.querySelector('.board-name');
+const changeBoardColor = document.getElementById('change-board-color');
+const colorList = document.querySelector('.change-colors-board');
 const localId = getLocalId();
 const newArr = [];
+
+colorList.style.display = 'none'
 
 export const createNoteHandlers = () => {
 
@@ -116,7 +120,11 @@ export const createNoteHandlers = () => {
       window.location.href = routs.main;
     };
 
-  };
+    board.onclick = () => {
+      errNoteSave.style.display = 'none';
+    }
+
+   };
 
   btn.onclick = () => {
     menu.className = 'menu-show';
@@ -136,9 +144,24 @@ export const createNoteHandlers = () => {
   board.onclick = () => {
     menu.className = 'menu';
     btn.style.display = 'block';
+    colorList.style.display = 'none'
   };
 
   const lsBoardName = getNameOfBoard();
   boardNameHeader.innerText = lsBoardName;
+
+  changeBoardColor.onclick = () => {
+    colorList.style.display = 'flex';
+    const pink = document.querySelector('.pink');
+    const yellow = document.querySelector('.yellow');
+    const green = document.querySelector('.green');
+    const blue = document.querySelector('.blue');
+    const white = document.querySelector('.white');
+    pink.onclick = () => board.style.backgroundColor = '#f6c3c3';
+    yellow.onclick = () => board.style.backgroundColor = '#fffacb';
+    green.onclick = () => board.style.backgroundColor = '#e0f6c3';
+    blue.onclick = () => board.style.backgroundColor = '#c3edf6';
+    white.onclick = () => board.style.backgroundColor = '#ffffff';
+  }
 
 };
