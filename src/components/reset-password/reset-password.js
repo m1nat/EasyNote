@@ -9,5 +9,6 @@ export const recoveryPassword = () => {
     event.preventDefault();
 
     passwordRecovery(resetPasswordInput.value);
+    
   })
 };

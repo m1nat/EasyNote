@@ -32,7 +32,7 @@ export const mainPageHandlers = () => {
       window.location.href = routs.create_board;
       setNameOfBoard(boardNameInp.value);
     } else {
-      errMessage.style.display = 'block'
+      errMessage.style.display = 'block';
     }
 
   })

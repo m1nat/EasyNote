@@ -50,7 +50,7 @@ export const createNoteHandlers = () => {
 
     delNote.onclick = () => {
       document.querySelectorAll('.tc-note').forEach(element => {
-        element.remove()
+        element.remove();
       });
     }
 
@@ -64,7 +64,7 @@ export const createNoteHandlers = () => {
     const val = document.querySelectorAll('.tc-note-body');
     val.forEach(el => {
       if (el.value) {
-        newArr.push(el.value)
+        newArr.push(el.value);
       }
     })
 
@@ -85,7 +85,7 @@ export const createNoteHandlers = () => {
     const val = document.querySelectorAll('.tc-note-body');
     val.forEach(el => {
       if (el.value) {
-        newArr.push(el.value)
+        newArr.push(el.value);
       }
     })
 
