@@ -1,9 +1,7 @@
 import { getBoard } from "../../api/api-handlers";
 import { getLocalId, getNameBoadrd, getNotes } from "../../shared/ls-services/localStorage";
 
-const tcNotes = document.querySelector('.tc-notes');
-
-
+const tcNotes = document.querySelector('.notesWrapper-tc');
 
 export const renderNotes = () => {
   getBoard()
