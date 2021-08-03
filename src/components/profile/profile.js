@@ -6,7 +6,7 @@ export const logoutHandlers = () => {
   const logoutBtn = document.querySelector('.logout');
 
   logoutBtn.onclick = () => {
-    clearLocalStorage()
+    clearLocalStorage();
     window.location.href = routs.start_page;
   };
 

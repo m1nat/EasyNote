@@ -10,4 +10,4 @@ export const savedNotesHandlers = () => {
     removeNotes();
     removeNameBoadrd();
   }
-}
+};

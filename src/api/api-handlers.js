@@ -8,7 +8,7 @@ import { routs } from '../shared/constants/paths';
 import { setUIDLS, getUIDLS, setUserId } from '../shared/ls-services/localStorage';
 
 export const initAPI = () => {
-  firebase.initializeApp(FIREBASE_CONFIG)
+  firebase.initializeApp(FIREBASE_CONFIG);
 };
 
 export const signIn = (email, password) => {
@@ -52,7 +52,7 @@ export const createAuthData = (email, password) => {
       const { uid } = response.user;
       setUIDLS(uid);
     });
-}
+};
 
 export const createUser = user => {
   const { userName, email } = user;
@@ -62,7 +62,7 @@ export const createUser = user => {
     email,
     uuid: getUIDLS()
   });
-}
+};
 
 export const signUp = async user => {
   const { password, email } = user;
@@ -79,7 +79,7 @@ export const signUp = async user => {
   } catch (error) {
   }
 
-}
+};
 
 export const getUserName = () => {
   return axios.get(`${databaseURL}/users.json`)
@@ -89,17 +89,17 @@ export const getUserName = () => {
       }
     })
 
-}
+};
 
 export const getBoard = () => {
   return axios.get(`${databaseURL}/notes.json`)
     .then( response => {
       if(response) {
-        return Object.keys(response.data).map( key => ({...response.data[key], id: key}))
+        return Object.keys(response.data).map( key => ({...response.data[key], id: key}));
       }
     })
-}
+};
 
 export const removeBoard = (id) => {
-  axios.delete(`${databaseURL}/notes/${id}.json`)
-}
+  axios.delete(`${databaseURL}/notes/${id}.json`);
+};
