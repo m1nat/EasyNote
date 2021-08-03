@@ -23,7 +23,7 @@ export const signIn = (email, password) => {
     });
 };
 
-export const createNotes = (name, text, uuid) => {
+export const createNotes = (name, text, uuid, color) => {
   return fetch(`${databaseURL}/notes.json`, {
     method: 'POST',
     headers: {
@@ -32,7 +32,8 @@ export const createNotes = (name, text, uuid) => {
     body: JSON.stringify({
       name,
       text,
-      uuid
+      uuid,
+      color
     })
   })
 };

@@ -25,7 +25,7 @@ const newArr = [];
 
 
 export const createNoteHandlers = () => {
-  
+
   colorList.style.display = 'none';
   addNewSticker.onclick = () => {
     const note = document.createElement('div');
@@ -58,73 +58,11 @@ export const createNoteHandlers = () => {
       });
     }
 
-  };  
+  };
 
-  formDelSave.addEventListener('submit', event => {
-    event.preventDefault();
 
-    const name = boardName.value;
 
-    const val = document.querySelectorAll('.tc-note-body');
-    val.forEach(el => {
-      if (el.value) {
-        newArr.push(el.value);
-      }
-    })
 
-    if (document.querySelector('.tc-note-body').value) {
-      createNotes(name, newArr, localId)
-        .then(response => {
-          if (response) {
-            removeNameOfBoard();
-            window.location.href = routs.main;
-          };
-        })
-    }
-
-  })
-
-  homePageBtn.onclick = () => {
-
-    const val = document.querySelectorAll('.tc-note-body');
-    val.forEach(el => {
-      if (el.value) {
-        newArr.push(el.value);
-      }
-    })
-
-    errNoteSaveBtnsCancel.onclick = () => {
-      window.location.href = routs.main;
-      removeNameOfBoard();
-    };
-
-    const name = boardName.value;
-    const stickerTextArea = document.querySelector('.tc-note-body');
-    if (stickerTextArea) {
-
-      errNoteSave.style.display = 'flex';
-      errNoteSaveForm.addEventListener('submit', event => {
-        event.preventDefault();
-
-        createNotes(name, newArr, localId)
-          .then(response => {
-            if (response) {
-              removeNameOfBoard();
-              window.location.href = routs.main;
-            }
-          })
-
-      })
-    } else if (!(stickerTextArea)) {
-      removeNameOfBoard();
-      window.location.href = routs.main;
-    };
-
-    board.onclick = () => {
-      errNoteSave.style.display = 'none';
-    }
-
-   };
 
   btn.onclick = () => {
     menu.className = 'menu-show';
@@ -157,11 +95,77 @@ export const createNoteHandlers = () => {
     const green = document.querySelector('.green');
     const blue = document.querySelector('.blue');
     const white = document.querySelector('.white');
-    pink.onclick = () => board.style.backgroundColor = '#f6c3c3';
-    yellow.onclick = () => board.style.backgroundColor = '#fffacb';
-    green.onclick = () => board.style.backgroundColor = '#e0f6c3';
-    blue.onclick = () => board.style.backgroundColor = '#c3edf6';
+    pink.onclick = () => board.style.backgroundColor = '#EDF2FC';
+    yellow.onclick = () => board.style.backgroundColor = '#C8C7C7';
+    green.onclick = () => board.style.backgroundColor = '#F5ECDB';
+    blue.onclick = () => board.style.backgroundColor = '#000000';
     white.onclick = () => board.style.backgroundColor = '#ffffff';
+    console.log(board.style.backgroundColor);
   }
 
+  formDelSave.addEventListener('submit', event => {
+    event.preventDefault();
+
+    const name = boardName.value;
+
+    const val = document.querySelectorAll('.tc-note-body');
+    val.forEach(el => {
+      if (el.value) {
+        newArr.push(el.value);
+      }
+    })
+
+    if (document.querySelector('.tc-note-body').value) {
+      createNotes(name, newArr, localId, board.style.backgroundColor)
+        .then(response => {
+          if (response) {
+            removeNameOfBoard();
+            window.location.href = routs.main;
+          };
+        })
+    }
+
+  })
+
+  homePageBtn.onclick = () => {
+
+    const val = document.querySelectorAll('.tc-note-body');
+    val.forEach(el => {
+      if (el.value) {
+        newArr.push(el.value);
+      }
+    })
+
+    errNoteSaveBtnsCancel.onclick = () => {
+      window.location.href = routs.main;
+      removeNameOfBoard();
+    };
+
+    const name = boardName.value;
+    const stickerTextArea = document.querySelector('.tc-note-body');
+    if (stickerTextArea) {
+
+      errNoteSave.style.display = 'flex';
+      errNoteSaveForm.addEventListener('submit', event => {
+        event.preventDefault();
+
+        createNotes(name, newArr, localId, board.style.backgroundColor)
+          .then(response => {
+            if (response) {
+              removeNameOfBoard();
+              window.location.href = routs.main;
+            }
+          })
+
+      })
+    } else if (!(stickerTextArea)) {
+      removeNameOfBoard();
+      window.location.href = routs.main;
+    };
+
+    board.onclick = () => {
+      errNoteSave.style.display = 'none';
+    }
+
+  };
 };

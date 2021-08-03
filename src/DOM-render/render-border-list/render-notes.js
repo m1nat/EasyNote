@@ -2,6 +2,7 @@ import { getBoard } from "../../api/api-handlers";
 import { getLocalId, getNameBoadrd, getNotes } from "../../shared/ls-services/localStorage";
 
 const tcNotes = document.querySelector('.notesWrapper-tc');
+const board = document.querySelector('.board')
 
 export const renderNotes = () => {
   getBoard()
@@ -13,7 +14,12 @@ export const renderNotes = () => {
         const textsNote = notes.split(',');
         const id = getLocalId();
         textarea.value = boardName;
-        
+        response.forEach( el => {
+          if( el.uuid === id && boardName === el.name) {
+            board.style.backgroundColor = el.color;
+          }
+        })
+
         textsNote.forEach ( el => {
           const note = document.createElement('div');
           note.className = 'tc-note';
