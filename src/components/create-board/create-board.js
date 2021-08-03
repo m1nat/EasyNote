@@ -23,10 +23,10 @@ const colorList = document.querySelector('.change-colors-board');
 const localId = getLocalId();
 const newArr = [];
 
-colorList.style.display = 'none'
 
 export const createNoteHandlers = () => {
-
+  
+  colorList.style.display = 'none';
   addNewSticker.onclick = () => {
     const note = document.createElement('div');
     note.className = 'tc-note';
