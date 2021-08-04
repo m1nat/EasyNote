@@ -37,7 +37,7 @@ export const signInHandlers = async () => {
   })
 
   forgot.onclick = () => {
-    window.location.href = routs.reset_password
+    window.location.href = routs.reset_password;
   }
 
 };

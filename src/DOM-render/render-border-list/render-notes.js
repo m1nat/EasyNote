@@ -14,7 +14,7 @@ export const renderNotes = () => {
         let notes = getNotes();
         const textsNote = notes.split(',');
         const id = getLocalId();
-        textarea.value = boardName
+        textarea.value = boardName;
         
         textsNote.forEach ( el => {
           const note = document.createElement('div');
@@ -34,8 +34,7 @@ export const renderNotes = () => {
           const tcNoteBody = document.createElement('textarea');
           tcNoteBody.className = 'tc-note-body';
           title.after(tcNoteBody);
-          tcNoteBody.innerText = el
-          console.log(el);
+          tcNoteBody.innerText = el;
         })
       }
     })
