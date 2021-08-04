@@ -1,5 +1,6 @@
 import { routs } from '../../shared/constants/paths';
 import { getEmailLs, getUserNameLocalStorage, setNameOfBoard } from '../../shared/ls-services/localStorage';
+import { addNewBoards } from '../../shared/validators/check-inputs';
 
 const myBoardsBtn = document.querySelector('.create-my-boards');
 const modal = document.querySelector('.wrapper-modal');
@@ -9,6 +10,8 @@ const cancelForm = document.querySelector('.cancel');
 const asideUserEmail = document.querySelector('.aside-email');
 const userNameDOM = document.querySelector('.aside-name');
 const errMessage = document.querySelector('.error-messege-inp-add-new-board');
+
+
 
 export const mainPageHandlers = () => {
 
@@ -28,7 +31,7 @@ export const mainPageHandlers = () => {
   modal_form.addEventListener('submit', event => {
     event.preventDefault();
 
-    if (boardNameInp.value) {
+    if (addNewBoards(boardNameInp.value)) {
       window.location.href = routs.create_board;
       setNameOfBoard(boardNameInp.value);
     } else {

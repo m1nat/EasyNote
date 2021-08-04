@@ -224,7 +224,6 @@
             background-size: 4%;
             background-color: #fafafa;
             min-width: 310px;
-            // transition: 1s;
 
             &:hover {
               -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -269,18 +268,22 @@
             .open-delete-board {
               width: 100%;
               height: 15%;
-              opacity: 0;
+              opacity: 0.5;
               transition: 1s;
               display: flex;
               justify-content: space-around;
               align-items: center;
-              background: url("/src/png/multiply-3-48.png") no-repeat center
+              background: url("/src/png/multiply-2-48.png") no-repeat center
                 center;
               background-size: 3%;
-              background-color: rgb(253, 190, 190);
+
 
               &:hover {
                 opacity: 1;
+                background: url("/src/png/multiply-3-48.png") no-repeat center
+                center;
+                background-size: 3%;
+                background-color: rgb(253, 190, 190);
               }
             }
           }

@@ -6,7 +6,7 @@ export const REGEXP = {
   EIGHT_CHARACTERS: /(?=.*[!@#$%^()+=_&*-])/gi,
   SHOW_ERROR_MESSEGE_PASSWORD: /^[a-zA-Z0-9@()*=+!?^%$#&_-]{6,20}$/gi,
   USERNAME: /^[a-zA-Z0-9]{6,20}$/,
-  NAME_THE_NEW_BOARD: /^[a-zA-Z0-9]{6,20}$/
+  NAME_THE_NEW_BOARD: /^[a-zA-Z 0-9]{1,20}$/
 };
 
 export const PASSWORD_STRENGTH = {
