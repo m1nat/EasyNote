@@ -22,7 +22,7 @@ export const renderNotes = () => {
         const textsNote = notes.split(',');
         const id = getLocalId();
 
-        saveBtn.style.display = ''
+        saveBtn.style.display = '';
         textarea.value = boardName;
 
         response.forEach(el => {
@@ -35,7 +35,7 @@ export const renderNotes = () => {
         textsNote.forEach(el => {
           const note = document.createElement('div');
           const tcNoteHeader = document.createElement('div');
-          const tcNoteClose = document.createElement('span')
+          const tcNoteClose = document.createElement('span');
           const btn = document.createElement('div');
           const title = document.createElement('div');
           const tcNoteBody = document.createElement('textarea');
@@ -59,7 +59,7 @@ export const renderNotes = () => {
 
             note.remove();
             saveBtn.style.display = 'flex';
-            const notes = document.querySelector('.tc-note')
+            const notes = document.querySelector('.tc-note');
             if (!(notes)) {
               saveBtn.style.display = 'none';
             }
@@ -72,11 +72,7 @@ export const renderNotes = () => {
         }
 
         check.onclick = () => {
-          if (colorBoard === board.style.backgroundColor) {
-            saveBtn.style.display = 'none';
-          } else {
-            saveBtn.style.display = 'flex';
-          }
+          colorBoard === board.style.backgroundColor ? saveBtn.style.display = 'none' : saveBtn.style.display = 'flex';
         };
 
         newTextNotes.forEach(el => {
@@ -93,9 +89,10 @@ export const renderNotes = () => {
         form.addEventListener('submit', event => {
           event.preventDefault();
 
-          const valueOfTextArea = document.querySelectorAll('.tc-note-bodys');
-          valueOfTextArea.forEach(el => arrText.push(el.value));
           const bdName = document.querySelector('.board-name')
+          const valueOfTextArea = document.querySelectorAll('.tc-note-bodys');
+
+          valueOfTextArea.forEach(el => arrText.push(el.value));
 
           const patchBoard = {
             color: board.style.backgroundColor,
@@ -109,7 +106,7 @@ export const renderNotes = () => {
         })
 
         homePageBtn.onclick =  () => {
-          window.location.href = routs.main
+          window.location.href = routs.main;
         }
 
       }

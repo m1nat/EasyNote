@@ -43,12 +43,14 @@ export const savedNotesHandlers = () => {
   };
 
   changeBoardColor.onclick = () => {
-    colorList.style.display = 'flex';
     const pink = document.querySelector('.pink');
     const yellow = document.querySelector('.yellow');
     const green = document.querySelector('.green');
     const blue = document.querySelector('.blue');
     const white = document.querySelector('.white');
+
+    colorList.style.display = 'flex';
+
     pink.onclick = () => board.style.backgroundColor = '#EDF2FC';
     yellow.onclick = () => board.style.backgroundColor = '#C8C7C7';
     green.onclick = () => board.style.backgroundColor = '#F5ECDB';
@@ -57,23 +59,25 @@ export const savedNotesHandlers = () => {
   }
   addNewSticker.onclick = () => {
     const note = document.createElement('div');
-    note.className = 'tc-note';
-    tcNotes.append(note);
     const tcNoteHeader = document.createElement('div');
-    tcNoteHeader.className = 'tc-note-header';
-    note.append(tcNoteHeader);
     const tcNoteClose = document.createElement('span')
-    tcNoteClose.className = 'tc-note-closes';
-    tcNoteHeader.append(tcNoteClose);
     const btn = document.createElement('div');
-    btn.className = 'fas fa-times';
     const title = document.createElement('div');
-    title.className = 'tc-note-title';
-    tcNoteHeader.after(title);
     const tcNoteBody = document.createElement('textarea');
+
+    note.className = 'tc-note';
+    tcNoteHeader.className = 'tc-note-header';
+    tcNoteClose.className = 'tc-note-closes';
+    btn.className = 'fas fa-times';
+    title.className = 'tc-note-title';
     tcNoteBody.className = 'tc-note-bodys';
+    saveBtn.style.display = 'flex';
+    
+    tcNotes.append(note);
+    note.append(tcNoteHeader);
+    tcNoteHeader.append(tcNoteClose);
+    tcNoteHeader.after(title);
     title.after(tcNoteBody);
-    saveBtn.style.display = 'flex'
 
     tcNoteClose.onclick = () => {
       note.remove();

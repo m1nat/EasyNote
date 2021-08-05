@@ -35,7 +35,6 @@ export const renderBoarder = () => {
 
         hoverDel.onclick = () => {
 
-
           response.forEach(element => {
 
             if (element.name === el) {
