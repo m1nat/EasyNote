@@ -9,18 +9,20 @@ export const renderNotes = () => {
         const check = document.querySelector('.change-colors-board');
         const tcNotes = document.querySelector('.notesWrapper-tc');
         const board = document.querySelector('.board');
-        const changeData = document.querySelector('.delete-save-board');
         const textarea = document.querySelector('.board-name');
         const saveBtn = document.querySelector('.saveNewChanges');
         const homePageBtn = document.querySelector('.home-page-btnss');
         const form = document.querySelector('.footer-save');
-        const newTextNotes = document.querySelectorAll('.tc-note-bodys')
-        const arrText = [];
+        const newTextNotes = document.querySelectorAll('.tc-note-bodys');
+        const formHomePage = document.querySelector('.errNoteSaves');
+        let arrText = [];
         let colorBoard;
         const boardName = getNameBoadrd();
         let notes = getNotes();
         const textsNote = notes.split(',');
         const id = getLocalId();
+
+
 
         saveBtn.style.display = '';
         textarea.value = boardName;
@@ -89,7 +91,7 @@ export const renderNotes = () => {
         form.addEventListener('submit', event => {
           event.preventDefault();
 
-          const bdName = document.querySelector('.board-name')
+          const bdName = document.querySelector('.board-name');
           const valueOfTextArea = document.querySelectorAll('.tc-note-bodys');
 
           valueOfTextArea.forEach(el => arrText.push(el.value));
@@ -101,15 +103,51 @@ export const renderNotes = () => {
             uuid: getLocalId(),
             notesID: getIdNotes()
           };
-           updateNotes(patchBoard);
+          updateNotes(patchBoard);
 
         })
 
-        homePageBtn.onclick =  () => {
-          window.location.href = routs.main;
-        }
 
+        homePageBtn.onclick = () => {
+
+          const bdName = document.querySelector('.board-name');
+          const valueOfTextArea = document.querySelectorAll('.tc-note-bodys');
+          const cancel = document.querySelector('.errNoteSave-btns-cancel');
+
+          cancel.onclick = () => {
+            window.location.href = routs.main;
+          }
+          
+          valueOfTextArea.forEach(el => arrText.push(el.value));
+          console.log(arrText);
+          const patchBoard = {
+            color: board.style.backgroundColor,
+            name: bdName.value,
+            text: arrText,
+            uuid: getLocalId(),
+            notesID: getIdNotes()
+          };
+          
+          if (colorBoard !== board.style.backgroundColor || bdName.value !== getNameBoadrd() || arrText.join('') !== textsNote.join('')) {
+            formHomePage.style.display = 'block';
+            formHomePage.addEventListener('submit', event => {
+              event.preventDefault();
+
+              updateNotes(patchBoard);
+            })
+          } else if (colorBoard == board.style.backgroundColor || bdName.value == getNameBoadrd() || arrText.join('') == textsNote.join('')) {
+            window.location.href = routs.main;
+          }
+
+
+          board.onclick = () => {
+            formHomePage.style.display = 'none';
+            arrText = [];
+          }
+        }
+      
       }
+
     })
 
 }

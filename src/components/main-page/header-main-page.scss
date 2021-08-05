@@ -265,11 +265,10 @@
               padding-top: 15px;
             }
 
-            .open-delete-board {
+            &:hover .open-delete-board {
               width: 100%;
               height: 15%;
               opacity: 0.5;
-              transition: 1s;
               display: flex;
               justify-content: space-around;
               align-items: center;
