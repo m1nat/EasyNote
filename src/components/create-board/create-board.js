@@ -60,10 +60,6 @@ export const createNoteHandlers = () => {
 
   };
 
-
-
-
-
   btn.onclick = () => {
     menu.className = 'menu-show';
     btn.style.display = 'none';
@@ -100,7 +96,6 @@ export const createNoteHandlers = () => {
     green.onclick = () => board.style.backgroundColor = '#F5ECDB';
     blue.onclick = () => board.style.backgroundColor = '#000000';
     white.onclick = () => board.style.backgroundColor = '#ffffff';
-    console.log(board.style.backgroundColor);
   }
 
   formDelSave.addEventListener('submit', event => {
