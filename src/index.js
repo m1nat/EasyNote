@@ -12,6 +12,7 @@ import { renderNotes } from './DOM-render/render-border-list/render-notes.js';
 import { savedNotesHandlers } from './components/saved-nostes/saved-notes.js';
 
 import './styles/style.scss';
+import { preloaderMainPage } from './DOM-render/preloader/preloader.js';
 
 
 initAPI();
@@ -27,6 +28,7 @@ window.onload = () => {
       logoutHandlers();
       mainPageHandlers();
       renderBoarder();
+      preloaderMainPage()
       if (!lsToken) {
         window.location.href = routs.start_page;
       }

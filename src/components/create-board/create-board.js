@@ -6,23 +6,27 @@ const btn = document.querySelector('.aside-actions');
 const menu = document.querySelector('.menu');
 const back = document.querySelector('.back');
 const boardNameHeader = document.querySelector('.board-name');
-const board = document.querySelector('.board');
+const board = document.querySelector('.board-create');
 const addNewSticker = document.getElementById('add-new-note');
 const menuItem = document.querySelectorAll('.aside-board-items');
 const deleteSaveBoard = document.querySelector('.delete-save-board');
 const delNote = document.querySelector('.del-note');
 const formDelSave = document.querySelector('.footer-create-board');
-const homePageBtn = document.querySelector('.home-page-btn');
+const homePageBtn = document.querySelector('.home-page-btns');
 const errNoteSave = document.querySelector('.errNoteSave');
 const errNoteSaveForm = document.querySelector('.errNoteSave-form');
 const errNoteSaveBtnsCancel = document.querySelector('.errNoteSave-btns-cancel');
 const tcNotes = document.querySelector('.tc-notes');
 const boardName = document.querySelector('.board-name');
+const changeBoardColor = document.getElementById('change-board-color');
+const colorList = document.querySelector('.change-colors-board');
 const localId = getLocalId();
 const newArr = [];
 
+
 export const createNoteHandlers = () => {
 
+  colorList.style.display = 'none';
   addNewSticker.onclick = () => {
     const note = document.createElement('div');
     note.className = 'tc-note';
@@ -54,7 +58,45 @@ export const createNoteHandlers = () => {
       });
     }
 
-  };  
+  };
+
+  btn.onclick = () => {
+    menu.className = 'menu-show';
+    btn.style.display = 'none';
+  };
+
+  back.onclick = () => {
+    menu.className = 'menu';
+    btn.style.display = 'block';
+  };
+
+  menuItem.forEach(el => el.onclick = () => {
+    menu.className = 'menu-show';
+    btn.style.display = 'none';
+  });
+
+  board.onclick = () => {
+    menu.className = 'menu';
+    btn.style.display = 'block';
+    colorList.style.display = 'none'
+  };
+
+  const lsBoardName = getNameOfBoard();
+  boardNameHeader.innerText = lsBoardName;
+
+  changeBoardColor.onclick = () => {
+    const pink = document.querySelector('.pink');
+    const yellow = document.querySelector('.yellow');
+    const green = document.querySelector('.green');
+    const blue = document.querySelector('.blue');
+    const white = document.querySelector('.white');
+    colorList.style.display = 'flex';
+    pink.onclick = () => board.style.backgroundColor = '#EDF2FC';
+    yellow.onclick = () => board.style.backgroundColor = '#C8C7C7';
+    green.onclick = () => board.style.backgroundColor = '#F5ECDB';
+    blue.onclick = () => board.style.backgroundColor = '#000000';
+    white.onclick = () => board.style.backgroundColor = '#ffffff';
+  }
 
   formDelSave.addEventListener('submit', event => {
     event.preventDefault();
@@ -69,7 +111,7 @@ export const createNoteHandlers = () => {
     })
 
     if (document.querySelector('.tc-note-body').value) {
-      createNotes(name, newArr, localId)
+      createNotes(name, newArr, localId, board.style.backgroundColor)
         .then(response => {
           if (response) {
             removeNameOfBoard();
@@ -102,7 +144,7 @@ export const createNoteHandlers = () => {
       errNoteSaveForm.addEventListener('submit', event => {
         event.preventDefault();
 
-        createNotes(name, newArr, localId)
+        createNotes(name, newArr, localId, board.style.backgroundColor)
           .then(response => {
             if (response) {
               removeNameOfBoard();
@@ -116,29 +158,9 @@ export const createNoteHandlers = () => {
       window.location.href = routs.main;
     };
 
+    board.onclick = () => {
+      errNoteSave.style.display = 'none';
+    }
+
   };
-
-  btn.onclick = () => {
-    menu.className = 'menu-show';
-    btn.style.display = 'none';
-  };
-
-  back.onclick = () => {
-    menu.className = 'menu';
-    btn.style.display = 'block';
-  };
-
-  menuItem.forEach(el => el.onclick = () => {
-    menu.className = 'menu-show';
-    btn.style.display = 'none';
-  });
-
-  board.onclick = () => {
-    menu.className = 'menu';
-    btn.style.display = 'block';
-  };
-
-  const lsBoardName = getNameOfBoard();
-  boardNameHeader.innerText = lsBoardName;
-
 };

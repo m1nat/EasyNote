@@ -1,6 +1,6 @@
 import { getBoard, removeBoard } from "../../api/api-handlers";
 import { routs } from "../../shared/constants/paths";
-import { getLocalId, setNameBoadrd, setNotes } from "../../shared/ls-services/localStorage";
+import { getLocalId, setIdNotes, setNameBoadrd, setNotes } from "../../shared/ls-services/localStorage";
 
 export const renderBoarder = () => {
 
@@ -34,6 +34,7 @@ export const renderBoarder = () => {
         hoverDel.className = 'open-delete-board';
 
         hoverDel.onclick = () => {
+
           response.forEach(element => {
 
             if (element.name === el) {
@@ -42,6 +43,7 @@ export const renderBoarder = () => {
             }
             
           })
+          
         }
 
         loadSevesNotes.onclick = () => {
@@ -51,6 +53,7 @@ export const renderBoarder = () => {
               findNotes.push(el.text);
               setNotes(findNotes);
               setNameBoadrd(el.name);
+              setIdNotes(el.id)
             }
 
           })
