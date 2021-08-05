@@ -90,7 +90,9 @@ export const createNoteHandlers = () => {
     const green = document.querySelector('.green');
     const blue = document.querySelector('.blue');
     const white = document.querySelector('.white');
+
     colorList.style.display = 'flex';
+
     pink.onclick = () => board.style.backgroundColor = '#EDF2FC';
     yellow.onclick = () => board.style.backgroundColor = '#C8C7C7';
     green.onclick = () => board.style.backgroundColor = '#F5ECDB';
@@ -158,9 +160,10 @@ export const createNoteHandlers = () => {
       window.location.href = routs.main;
     };
 
-    board.onclick = () => {
-      errNoteSave.style.display = 'none';
-    }
-
+    
   };
+  board.onclick = () => {
+    errNoteSave.style.display = 'none';
+    newArr = [];
+  }
 };

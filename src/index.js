@@ -50,6 +50,7 @@ window.onload = () => {
     case paths.saved_notes:
       renderNotes()
       savedNotesHandlers()
+      preloaderMainPage()
       break;
 
     default:
