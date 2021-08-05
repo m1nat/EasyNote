@@ -74,7 +74,7 @@ export const signUp = async user => {
     await signIn(email, password)
       .then(response => {
         if (response) {
-          window.location.href = routs.sign_in
+          window.location.href = routs.sign_in;
         }
       })
   } catch (error) {
@@ -86,7 +86,7 @@ export const getUserName = () => {
   return axios.get(`${databaseURL}/users.json`)
     .then(response => {
       if (response) {
-        return Object.keys(response.data).map(key => ({ ...response.data[key], id: key }))
+        return Object.keys(response.data).map(key => ({ ...response.data[key], id: key }));
       }
     })
 
@@ -94,9 +94,9 @@ export const getUserName = () => {
 
 export const getBoard = () => {
   return axios.get(`${databaseURL}/notes.json`)
-    .then( response => {
-      if(response) {
-        return Object.keys(response.data).map( key => ({...response.data[key], id: key}));
+    .then(response => {
+      if (response) {
+        return Object.keys(response.data).map(key => ({ ...response.data[key], id: key }));
       }
     })
 };
@@ -105,29 +105,25 @@ export const removeBoard = (id) => {
   axios.delete(`${databaseURL}/notes/${id}.json`);
 };
 
-
 export const updateNotes = (notes) => {
   const { color, name, text, uuid, notesID } = notes
-      return fetch(
-          `${databaseURL}/notes/${notesID}.json`,
-          {
-              method: 'PUT',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                color,
-                name,
-                text,
-                uuid
-              })
-          }
-      )
-          .then( response => response.json())
-          .then(result => {
-            if (result) {
-              window.location.href = routs.main
-            }
-          })
+  return fetch(`${databaseURL}/notes/${notesID}.json`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      color,
+      name,
+      text,
+      uuid
+    })
   }
-  
+  )
+    .then(response => response.json())
+    .then(result => {
+      if (result) {
+        window.location.href = routs.main;
+      }
+    })
+}

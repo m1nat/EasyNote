@@ -34,6 +34,8 @@ export const renderBoarder = () => {
         hoverDel.className = 'open-delete-board';
 
         hoverDel.onclick = () => {
+
+
           response.forEach(element => {
 
             if (element.name === el) {
@@ -42,6 +44,7 @@ export const renderBoarder = () => {
             }
             
           })
+          
         }
 
         loadSevesNotes.onclick = () => {

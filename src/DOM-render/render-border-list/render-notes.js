@@ -1,7 +1,6 @@
 import { getBoard, updateNotes } from "../../api/api-handlers";
 import { routs } from "../../shared/constants/paths";
 import { getIdNotes, getLocalId, getNameBoadrd, getNameOfBoard, getNotes } from "../../shared/ls-services/localStorage";
-import { renderBoarder } from "./render-main-page-saved-border";
 
 export const renderNotes = () => {
   getBoard()
@@ -15,6 +14,7 @@ export const renderNotes = () => {
         const saveBtn = document.querySelector('.saveNewChanges');
         const homePageBtn = document.querySelector('.home-page-btnss');
         const form = document.querySelector('.footer-save');
+        const newTextNotes = document.querySelectorAll('.tc-note-bodys')
         const arrText = [];
         let colorBoard;
         const boardName = getNameBoadrd();
@@ -79,7 +79,6 @@ export const renderNotes = () => {
           }
         };
 
-        const newTextNotes = document.querySelectorAll('.tc-note-bodys')
         newTextNotes.forEach(el => {
           const val = el.value
           el.oninput = () => {
@@ -106,10 +105,8 @@ export const renderNotes = () => {
             notesID: getIdNotes()
           };
            updateNotes(patchBoard);
-           
 
         })
-
 
         homePageBtn.onclick =  () => {
           window.location.href = routs.main
