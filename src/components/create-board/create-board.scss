@@ -339,11 +339,64 @@
 
           .holder {
             width: 100%;
-            height: 30px;
-            border: 1px solid;
+            height: 22px;
             background-color: black;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .holder-panel {
+              background-color: #c4c4c4;
+              width: 70%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .font-waight {
+                width: 13%;
+                height: 100%;
+                font-weight: bolder;
+                padding-left: 7px;
+              }
+
+              .cursive {
+                width: 13%;
+                height: 100%;
+                font-family: cursive;
+                font-size: 0.9em;
+                text-align: center;
+                padding-top: 2px;
+              }
+
+              .underline {
+                width: 13%;
+                height: 100%;
+                text-decoration: underline;
+                font-weight: bolder;
+                text-align: center;
+              }
+
+              .order-list {
+                width: 13%;
+                height: 100%;
+              }
+
+              .unorder-list {
+                width: 13%;
+                height: 100%;
+                border: 1px solid;
+              }
+              .font-size {
+                width: 35%;
+                height: 100%;
+              }
+            }
+
+            .holder-black {
+              width: 30%;
+              height: 100%;
+            }
           }
 
           .tc-note {
