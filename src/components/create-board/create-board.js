@@ -53,7 +53,7 @@ export const createNoteHandlers = () => {
     }
 
     delNote.onclick = () => {
-      document.querySelectorAll('.tc-note').forEach(element => {
+      document.querySelectorAll('.tc-note').forEach( element => {
         element.remove();
       });
     }
@@ -161,9 +161,8 @@ export const createNoteHandlers = () => {
     };
 
     
+    board.onclick = () => {
+      errNoteSave.style.display = 'none';
+    }
   };
-  board.onclick = () => {
-    errNoteSave.style.display = 'none';
-    newArr = [];
-  }
 };
