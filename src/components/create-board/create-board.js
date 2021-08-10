@@ -606,6 +606,7 @@ export const createNoteHandlers = () => {
         }
       }
     }
+    
     board.onclick = () => {
       errNoteSave.style.display = 'none';
       newArr = [];
