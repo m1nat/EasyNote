@@ -23,17 +23,25 @@ export const signIn = (email, password) => {
     });
 };
 
-export const createNotes = (name, text, uuid, color) => {
+export const createNotes = ( createNewNotes ) => {
+
+  const { name, notes, localId, boardColor, weight, cursive, style, underln, fontSize } = createNewNotes; 
+
   return fetch(`${databaseURL}/notes.json`, {
     method: 'POST',
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      name,
-      text,
-      uuid,
-      color
+      name, 
+      notes, 
+      localId, 
+      boardColor, 
+      weight, 
+      cursive, 
+      style, 
+      underln, 
+      fontSize 
     })
   })
 };

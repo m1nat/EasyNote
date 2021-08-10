@@ -64,7 +64,6 @@ export const showErrorNotificationRecovery = errors => {
     recoveryMessage.style.display = 'block'
   }
 
-
 };
 
 export const showErrorNotificationSignUp = errors => {

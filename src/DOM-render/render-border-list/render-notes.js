@@ -21,16 +21,17 @@ export const renderNotes = () => {
         let notes = getNotes();
         const textsNote = notes.split(',');
         const id = getLocalId();
+        let weights = [];
+        let result;
 
-
-
-        saveBtn.style.display = '';
+        saveBtn.style.display = 'none';
         textarea.value = boardName;
 
         response.forEach(el => {
-          if (el.uuid === id && boardName === el.name) {
+          if (el.localId === id && boardName === el.name) {
             board.style.backgroundColor = el.color;
             colorBoard = el.color;
+            weights.push(el.weight)
           }
         })
 
@@ -56,6 +57,7 @@ export const renderNotes = () => {
           title.after(tcNoteBody);
 
           tcNoteBody.innerText = el;
+          
 
           tcNoteClose.onclick = () => {
 
@@ -68,16 +70,9 @@ export const renderNotes = () => {
           };
         });
 
+        const list = document.querySelectorAll('.tc-note-bodys'); 
 
-        textarea.oninput = () => {
-          boardName === textarea.value ? saveBtn.style.display = 'none' : saveBtn.style.display = 'flex';
-        }
-
-        check.onclick = () => {
-          colorBoard === board.style.backgroundColor ? saveBtn.style.display = 'none' : saveBtn.style.display = 'flex';
-        };
-
-        newTextNotes.forEach(el => {
+        list.forEach(el => {
           const val = el.value
           el.oninput = () => {
             if (el.value === val) {
@@ -87,6 +82,14 @@ export const renderNotes = () => {
             }
           }
         })
+
+        textarea.oninput = () => {
+          boardName === textarea.value ? saveBtn.style.display = 'none' : saveBtn.style.display = 'flex';
+        }
+
+        check.onclick = () => {
+          colorBoard === board.style.backgroundColor ? saveBtn.style.display = 'none' : saveBtn.style.display = 'flex';
+        };
 
         form.addEventListener('submit', event => {
           event.preventDefault();

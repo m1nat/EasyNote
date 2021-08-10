@@ -5,6 +5,7 @@
   padding: 0px;
   box-sizing: border-box;
   position: relative;
+  box-sizing: border-box;
 
   header {
     width: 100%;
@@ -337,6 +338,30 @@
           flex-wrap: wrap;
           margin: 0 auto;
 
+          .wrapper-emoji {
+            width: 100%;
+            height: 52px;
+            margin-bottom: 5px;
+            background-color: #c4c4c4;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            display: none;
+
+            .emoji-line-first { 
+              width: 100%;
+              height: 50%;
+              display: flex;
+              
+            }
+
+            .emoji-line-second {
+              width: 100%;
+              height: 50%;
+              display: flex;
+            }
+          }
+
           .holder {
             width: 100%;
             height: 22px;
@@ -344,6 +369,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            display: none;
+            transition-duration: 1s;
 
             .holder-panel {
               background-color: #c4c4c4;
@@ -358,6 +385,15 @@
                 height: 100%;
                 font-weight: bolder;
                 padding-left: 7px;
+                transition-duration: 0.5s;
+
+                &:hover {
+                  border: 1px solid white;
+                }
+
+                .change-waight {
+                  font-weight: bolder;
+                }
               }
 
               .cursive {
@@ -367,6 +403,11 @@
                 font-size: 0.9em;
                 text-align: center;
                 padding-top: 2px;
+                transition-duration: 0.5s;
+
+                &:hover {
+                  border: 1px solid white;
+                }
               }
 
               .underline {
@@ -375,22 +416,69 @@
                 text-decoration: underline;
                 font-weight: bolder;
                 text-align: center;
+                transition-duration: 0.5s;
+
+                &:hover {
+                  border: 1px solid white;
+                }
               }
 
               .order-list {
                 width: 13%;
                 height: 100%;
+                transition-duration: 0.5s;
+
+                &:hover {
+                  border: 1px solid white;
+                }
               }
 
               .unorder-list {
                 width: 13%;
                 height: 100%;
-                background: url('/src/png/list-2-48.png') no-repeat center center;
-                background-size: 65%;
+                background: url("/src/png/list-2-48.png") no-repeat center
+                  center;
+                background-size: 63%;
+                transition-duration: 0.5s;
+
+                &:hover {
+                  border: 1px solid white;
+                }
               }
               .font-size {
                 width: 35%;
                 height: 100%;
+                font-size: 0.8em;
+                padding-left: 8px;
+                transition-duration: 0.5s;
+                position: relative;
+
+                .fz-wrapper {
+                  width: 80px;
+                  height: 120px;
+                  position: absolute;
+                  background-color: #c4c4c4;
+                  top: 103%;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+
+                  .fz-size {
+                    width: 100%;
+                    height: auto;
+                    border-bottom: 1px solid rgb(172, 172, 172);
+                    transition-duration: 0.5s;
+
+                    &:hover {
+                      background-color: #fff;
+                    }
+                  }
+                }
+
+                &:hover {
+                  border: 1px solid white;
+                }
               }
             }
 
@@ -403,7 +491,7 @@
           .tc-note {
             background-color: #fffacb;
             border-radius: 8px;
-            width: 280px;
+            width: 285px;
             height: 150px;
             margin: 0 10px 20px;
             box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
@@ -456,6 +544,12 @@
               border: none;
               height: 70%;
               padding: 15px;
+
+              .order-list {
+                width: 100%;
+                height: auto;
+                
+              }
 
               &::-webkit-scrollbar {
                 width: 10px;
@@ -530,7 +624,7 @@
 .errNoteSave {
   display: none;
   position: absolute;
-  width: 330px;
+  width: 530px !important;
   height: 90px;
   top: 200px;
   left: 39%;
@@ -564,7 +658,7 @@
         border: none;
         border-radius: 5px;
         outline: none;
-        width: 70px;
+        width: 170px !important;
         padding-left: 11px;
         cursor: pointer;
       }
@@ -577,5 +671,32 @@
         width: 70px;
       }
     }
+  }
+}
+
+.validatorNameBoard {
+  position: absolute;
+  width: 250px;
+  height: 40px;
+  background-color: #c9c6c6;
+  top: 25%;
+  left: 45%;
+  border-radius: 4px;
+  padding-left: 40px;
+  text-align: center;
+  padding-top: 7px;
+  font-size: 1em;
+  color: red;
+  display: none;
+
+  .close {
+    outline: none;
+    border: none;
+    background: url("/src/png/multiply-2-48.png") no-repeat center center;
+    background-size: contain;
+    width: 10px;
+    height: 10px;
+    margin-left: 35px;
+    cursor: pointer;
   }
 }
