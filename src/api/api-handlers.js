@@ -3,7 +3,7 @@ import axios from 'axios';
 require('firebase/auth');
 
 import { FIREBASE_CONFIG, authURL, databaseURL } from './api-config';
-import { showErrorNotification, showErrorNotificationRecovery } from '../DOM-render/render-messege/error-messege';
+import { showErrorNotification, showErrorNotificationRecovery, showErrorNotificationSignUp } from '../DOM-render/render-messege/error-messege';
 import { routs } from '../shared/constants/paths';
 import { setUIDLS, getUIDLS, setUserId } from '../shared/ls-services/localStorage';
 
@@ -23,17 +23,25 @@ export const signIn = (email, password) => {
     });
 };
 
-export const createNotes = (name, text, uuid, color) => {
+export const createNotes = ( createNewNotes ) => {
+
+  const { name, notes, localId, boardColor, weight, cursive, style, underln, fontSize } = createNewNotes; 
+
   return fetch(`${databaseURL}/notes.json`, {
     method: 'POST',
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      name,
-      text,
-      uuid,
-      color
+      name, 
+      notes, 
+      localId, 
+      boardColor, 
+      weight, 
+      cursive, 
+      style, 
+      underln, 
+      fontSize 
     })
   })
 };
@@ -78,6 +86,7 @@ export const signUp = async user => {
         }
       })
   } catch (error) {
+    showErrorNotificationSignUp(error)
   }
 
 };

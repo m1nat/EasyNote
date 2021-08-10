@@ -13,7 +13,7 @@ export const renderBoarder = () => {
       let findNotes = [];
 
       response.forEach(el => {
-        if (el.uuid === uuid) {
+        if (el.localId === uuid) {
           findName.push(el.name);
         }
       })
@@ -48,9 +48,8 @@ export const renderBoarder = () => {
 
         loadSevesNotes.onclick = () => {
           response.forEach(el => {
-
-            if (el.uuid === uuid && el.name === titleBoardSavedBoard.innerText) {
-              findNotes.push(el.text);
+            if (el.localId === uuid && el.name === titleBoardSavedBoard.innerText) {
+              findNotes.push(el.notes);
               setNotes(findNotes);
               setNameBoadrd(el.name);
               setIdNotes(el.id)
