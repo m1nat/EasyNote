@@ -110,7 +110,6 @@ export const renderNotes = () => {
 
         })
 
-
         homePageBtn.onclick = () => {
 
           const bdName = document.querySelector('.board-name');
@@ -122,7 +121,6 @@ export const renderNotes = () => {
           }
           
           valueOfTextArea.forEach(el => arrText.push(el.value));
-          console.log(arrText);
           const patchBoard = {
             color: board.style.backgroundColor,
             name: bdName.value,
@@ -154,4 +152,3 @@ export const renderNotes = () => {
     })
 
 }
-
