@@ -22,7 +22,12 @@ export const renderNotes = () => {
         const textsNote = notes.split(',');
         const id = getLocalId();
         let weights = [];
-        let result;
+        let arrFontWeight = [];
+        let arrFontCursivce = [];
+        let arrFontStyle = [];
+        let underlineArr = [];
+        let fontSizeArr = [];
+
 
         saveBtn.style.display = 'none';
         textarea.value = boardName;
@@ -57,7 +62,7 @@ export const renderNotes = () => {
           title.after(tcNoteBody);
 
           tcNoteBody.innerText = el;
-          
+
 
           tcNoteClose.onclick = () => {
 
@@ -70,7 +75,7 @@ export const renderNotes = () => {
           };
         });
 
-        const list = document.querySelectorAll('.tc-note-bodys'); 
+        const list = document.querySelectorAll('.tc-note-bodys');
 
         list.forEach(el => {
           const val = el.value
@@ -97,13 +102,25 @@ export const renderNotes = () => {
           const bdName = document.querySelector('.board-name');
           const valueOfTextArea = document.querySelectorAll('.tc-note-bodys');
 
-          valueOfTextArea.forEach(el => arrText.push(el.value));
+          valueOfTextArea.forEach(el => {
+            arrText.push(el.value);
+            arrFontWeight.push(el.style.fontWeight);
+            arrFontCursivce.push(el.style.fontFamily);
+            arrFontStyle.push(el.style.fontStyle);
+            underlineArr.push(el.style.textDecoration);
+            fontSizeArr.push(el.style.fontSize);
+          });
 
           const patchBoard = {
-            color: board.style.backgroundColor,
             name: bdName.value,
-            text: arrText,
-            uuid: getLocalId(),
+            notes: arrText,
+            localId: getLocalId(),
+            color: board.style.backgroundColor,
+            weight: arrFontWeight,
+            cursive: arrFontCursivce,
+            style: arrFontStyle,
+            underln: underlineArr,
+            fontSize: fontSizeArr,
             notesID: getIdNotes()
           };
           updateNotes(patchBoard);
@@ -113,28 +130,41 @@ export const renderNotes = () => {
         homePageBtn.onclick = () => {
 
           const bdName = document.querySelector('.board-name');
-          const valueOfTextArea = document.querySelectorAll('.tc-note-bodys');
           const cancel = document.querySelector('.errNoteSave-btns-cancel');
+          const valueOfTextArea = document.querySelectorAll('.tc-note-bodys');
 
           cancel.onclick = () => {
             window.location.href = routs.main;
           }
-          
-          valueOfTextArea.forEach(el => arrText.push(el.value));
-          const patchBoard = {
-            color: board.style.backgroundColor,
-            name: bdName.value,
-            text: arrText,
-            uuid: getLocalId(),
-            notesID: getIdNotes()
-          };
-          
+
+          valueOfTextArea.forEach(el => {
+            arrText.push(el.value);
+            arrFontWeight.push(el.style.fontWeight);
+            arrFontCursivce.push(el.style.fontFamily);
+            arrFontStyle.push(el.style.fontStyle);
+            underlineArr.push(el.style.textDecoration);
+            fontSizeArr.push(el.style.fontSize);
+          });
+
           if (colorBoard !== board.style.backgroundColor || bdName.value !== getNameBoadrd() || arrText.join('') !== textsNote.join('')) {
             formHomePage.style.display = 'block';
             formHomePage.addEventListener('submit', event => {
               event.preventDefault();
 
-              updateNotes(patchBoard);
+              const patchBoard = {
+                name: bdName.value,
+                notes: arrText,
+                localId: getLocalId(),
+                color: board.style.backgroundColor,
+                weight: arrFontWeight,
+                cursive: arrFontCursivce,
+                style: arrFontStyle,
+                underln: underlineArr,
+                fontSize: fontSizeArr,
+                notesID: getIdNotes()
+              };
+
+              updateNotes(patchBoard)
             })
           } else if (colorBoard == board.style.backgroundColor || bdName.value == getNameBoadrd() || arrText.join('') == textsNote.join('')) {
             window.location.href = routs.main;
@@ -146,7 +176,7 @@ export const renderNotes = () => {
             arrText = [];
           }
         }
-      
+
       }
 
     })

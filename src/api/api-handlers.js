@@ -114,24 +114,29 @@ export const removeBoard = (id) => {
   axios.delete(`${databaseURL}/notes/${id}.json`);
 };
 
-export const updateNotes = (notes) => {
-  const { color, name, text, uuid, notesID } = notes
+export const updateNotes = patchBoard => {
+  const { name, notes, localId, boardColor, weight, cursive, style, underln, fontSize, notesID } = patchBoard; 
   return fetch(`${databaseURL}/notes/${notesID}.json`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      color,
-      name,
-      text,
-      uuid
+      name, 
+      notes, 
+      localId, 
+      boardColor, 
+      weight, 
+      cursive, 
+      style, 
+      underln, 
+      fontSize 
     })
   }
   )
-    .then(response => response.json())
-    .then(result => {
-      if (result) {
+    .then( response => response.json() )
+    .then( result => {
+      if ( result ) {
         window.location.href = routs.main;
       }
     })

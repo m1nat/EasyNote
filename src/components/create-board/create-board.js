@@ -23,7 +23,9 @@ const changeBoardColor = document.getElementById('change-board-color');
 const colorList = document.querySelector('.change-colors-board');
 const addEmoji = document.getElementById('add-emoji');
 const validatorNameBoard = document.querySelector('.validatorNameBoard');
-const closeIncorrectBoardName = document.querySelector('.close')
+const closeIncorrectBoardName = document.querySelector('.close');
+const emojiBlock = document.querySelector('.wrapper-emoji');
+const holder = document.querySelector('.holder');
 const localId = getLocalId();
 let newArr = [];
 let arrFontWeight = [];
@@ -148,11 +150,12 @@ export const createNoteHandlers = () => {
       const isClicked = tcNoteBody.getAttribute('clicked');
 
       if (!isClicked) {
-        tcNoteBody.setAttribute('clicked', true);
-        holder.style.display = 'flex';
+      tcNoteBody.setAttribute('clicked', true);
+      holder.style.display = 'flex';
       } else {
         tcNoteBody.removeAttribute('clicked');
         holder.style.display = 'none';
+        wrapperEmoji.style.display = 'none'
       }
     };
 
@@ -205,10 +208,6 @@ export const createNoteHandlers = () => {
     }
 
     orderList.onclick = () => {
-
-      const isClicked = orderList.getAttribute('clicked');
-
-      if (!isClicked) {
 
         orderList.setAttribute('clicked', true);
         wrapperEmoji.style.display = 'flex';
@@ -294,12 +293,6 @@ export const createNoteHandlers = () => {
         smile_26.onclick = () => {
           tcNoteBody.value += smile_26.innerText;
         }
-
-      } else {
-        orderList.removeAttribute('clicked');
-        wrapperEmoji.style.display = 'none';
-      }
-
     }
 
     fontSize.onclick = () => {
@@ -547,6 +540,16 @@ export const createNoteHandlers = () => {
 
   })
 
+  board.onclick = () => {
+    errNoteSave.style.display = 'none';
+    newArr = [];
+    arrFontWeight = [];
+    arrFontCursivce = [];
+    arrFontStyle = [];
+    underlineArr = [];
+    fontSizeArr = [];
+  }
+
   homePageBtn.onclick = () => {
 
     const val = document.querySelectorAll('.tc-note-body');
@@ -605,16 +608,6 @@ export const createNoteHandlers = () => {
           validatorNameBoard.style.display = 'none'
         }
       }
-    }
-    
-    board.onclick = () => {
-      errNoteSave.style.display = 'none';
-      newArr = [];
-      arrFontWeight = [];
-      arrFontCursivce = [];
-      arrFontStyle = [];
-      underlineArr = [];
-      fontSizeArr = [];
     }
   };
 };
