@@ -13,7 +13,6 @@ export const renderNotes = () => {
         const saveBtn = document.querySelector('.saveNewChanges');
         const homePageBtn = document.querySelector('.home-page-btnss');
         const form = document.querySelector('.footer-save');
-        const newTextNotes = document.querySelectorAll('.tc-note-bodys');
         const formHomePage = document.querySelector('.errNoteSaves');
         let arrText = [];
         let colorBoard;
@@ -21,13 +20,16 @@ export const renderNotes = () => {
         let notes = getNotes();
         const textsNote = notes.split(',');
         const id = getLocalId();
-        let weights = [];
+        let weight = [];
+        let size = [];
+        let cursive = [];
+        let family = [];
+        let underline = [];
         let arrFontWeight = [];
         let arrFontCursivce = [];
         let arrFontStyle = [];
         let underlineArr = [];
         let fontSizeArr = [];
-
 
         saveBtn.style.display = 'none';
         textarea.value = boardName;
@@ -36,9 +38,14 @@ export const renderNotes = () => {
           if (el.localId === id && boardName === el.name) {
             board.style.backgroundColor = el.color;
             colorBoard = el.color;
-            weights.push(el.weight)
+            weight = el.weight;
+            cursive = el.cursive;
+            family = el.style;
+            underline = el.underln;
+            size = el.fontSize
           }
         })
+
 
         textsNote.forEach(el => {
           const note = document.createElement('div');
@@ -63,7 +70,6 @@ export const renderNotes = () => {
 
           tcNoteBody.innerText = el;
 
-
           tcNoteClose.onclick = () => {
 
             note.remove();
@@ -76,6 +82,13 @@ export const renderNotes = () => {
         });
 
         const list = document.querySelectorAll('.tc-note-bodys');
+        list.forEach ( (el, i) => {
+          el.style.fontWeight = weight[i];
+          el.style.fontFamily = cursive[i];
+          el.style.fontStyle = family[i];
+          el.style.textDecoration = underline[i];
+          el.style.fontSize = size[i];
+        })
 
         list.forEach(el => {
           const val = el.value
