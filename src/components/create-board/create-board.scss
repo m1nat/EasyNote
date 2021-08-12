@@ -722,8 +722,8 @@
 
 .validatorNameBoard {
   position: absolute;
-  width: 250px;
-  height: 40px;
+  width: 255px;
+  height: 70px;
   background-color: #c9c6c6;
   top: 25%;
   left: 45%;
@@ -734,6 +734,8 @@
   font-size: 1em;
   color: red;
   display: none;
+  padding-right: 50px;
+  flex-direction: column;
 
   .close {
     outline: none;
@@ -742,7 +744,17 @@
     background-size: contain;
     width: 10px;
     height: 10px;
-    margin-left: 35px;
     cursor: pointer;
+    margin-right: 10px;
+    position: absolute;
+    top: 5px;
+    left: 90%;
+  }
+
+  a {
+    font-size: 0.7em;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
   }
 }

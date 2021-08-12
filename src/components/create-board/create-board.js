@@ -34,7 +34,7 @@ export const createNoteHandlers = () => {
   let arrFontStyle = [];
   let underlineArr = [];
   let fontSizeArr = [];
-  
+
   addImages();
   colorList.style.display = 'none';
 
@@ -135,14 +135,14 @@ export const createNoteHandlers = () => {
     btn.className = 'fas fa-times';
     tcNoteBody.className = 'tc-note-body';
 
-    tcNotes.append( note );
-    note.append( wrapperEmoji, holder, tcNoteHeader, title, tcNoteBody );
-    wrapperEmoji.append( firstLineEmoji, secondLineEmoji );
-    firstLineEmoji.append( smile_1, smile_2, smile_3, smile_4, smile_5, smile_6, smile_7, smile_8, smile_9, smile_10, smile_11, smile_12, smile_13);
-    secondLineEmoji.append( smile_14, smile_15, smile_16, smile_17, smile_18, smile_19, smile_20, smile_21, smile_22, smile_23, smile_24, smile_25, smile_26);
-    holder.append( holderPanel, holderBlack );
-    holderPanel.append( fontWaight, cursive, underline, orderList, unorderList, fontSize );
-    tcNoteHeader.append( tcNoteClose );
+    tcNotes.append(note);
+    note.append(wrapperEmoji, holder, tcNoteHeader, title, tcNoteBody);
+    wrapperEmoji.append(firstLineEmoji, secondLineEmoji);
+    firstLineEmoji.append(smile_1, smile_2, smile_3, smile_4, smile_5, smile_6, smile_7, smile_8, smile_9, smile_10, smile_11, smile_12, smile_13);
+    secondLineEmoji.append(smile_14, smile_15, smile_16, smile_17, smile_18, smile_19, smile_20, smile_21, smile_22, smile_23, smile_24, smile_25, smile_26);
+    holder.append(holderPanel, holderBlack);
+    holderPanel.append(fontWaight, cursive, underline, orderList, unorderList, fontSize);
+    tcNoteHeader.append(tcNoteClose);
 
     tcNoteBody.onclick = () => {
 
@@ -463,7 +463,16 @@ export const createNoteHandlers = () => {
 
     }
 
-    deleteSaveBoard.style.display = 'block';
+    document.querySelectorAll('.tc-note-body').forEach(element => {
+      element.oninput = () => {
+        if (element.value !== '' && element.value) {
+          deleteSaveBoard.style.display = 'block';
+        } else {
+          deleteSaveBoard.style.display = 'none';
+
+        }
+      }
+    })
 
     tcNoteClose.onclick = () => {
       note.remove();
@@ -578,55 +587,68 @@ export const createNoteHandlers = () => {
       checkNewArr = el.value;
     })
 
-      console.log(checkNewArr);
-      if ( checkNewArr && addNewBoards(boardName.value) ) {
-        errNoteSave.style.display = 'flex';
+    if (checkNewArr && addNewBoards(boardName.value) && document.querySelector('.tc-note')) {
 
-        const val = document.querySelectorAll('.tc-note-body');
-        val.forEach(el => {
-          newArr.push(el.value);
-          arrFontWeight.push(el.style.fontWeight);
-          arrFontCursivce.push(el.style.fontFamily);
-          arrFontStyle.push(el.style.fontStyle);
-          underlineArr.push(el.style.textDecoration);
-          fontSizeArr.push(el.style.fontSize);
-        })
+      errNoteSave.style.display = 'flex';
 
-        errNoteSaveForm.addEventListener('submit', event => {
-          event.preventDefault();
+      const val = document.querySelectorAll('.tc-note-body');
+      val.forEach(el => {
+        newArr.push(el.value);
+        arrFontWeight.push(el.style.fontWeight);
+        arrFontCursivce.push(el.style.fontFamily);
+        arrFontStyle.push(el.style.fontStyle);
+        underlineArr.push(el.style.textDecoration);
+        fontSizeArr.push(el.style.fontSize);
+      })
 
-          createNewNotes = {
-            name: boardName.value,
-            notes: newArr,
-            localId: localId,
-            boardColor: board.style.backgroundColor,
-            weight: arrFontWeight,
-            cursive: arrFontCursivce,
-            style: arrFontStyle,
-            underln: underlineArr,
-            fontSize: fontSizeArr
-          }
+      errNoteSaveForm.addEventListener('submit', event => {
+        event.preventDefault();
 
-          createNotes(createNewNotes)
-            .then(response => {
-              if (response) {
-                removeNameOfBoard();
-                window.location.href = routs.main;
-              }
-            })
-
-        })
-      } 
-      if (!(addNewBoards(boardName.value)) || !checkNewArr) {
-        validatorNameBoard.style.display = 'flex'
-        errNoteSave.style.display = 'none';
-        createNewNotes = null
-
-        closeIncorrectBoardName.onclick = () => {
-          validatorNameBoard.style.display = 'none';
-          
+        createNewNotes = {
+          name: boardName.value,
+          notes: newArr,
+          localId: localId,
+          boardColor: board.style.backgroundColor,
+          weight: arrFontWeight,
+          cursive: arrFontCursivce,
+          style: arrFontStyle,
+          underln: underlineArr,
+          fontSize: fontSizeArr
         }
+
+        createNotes(createNewNotes)
+          .then(response => {
+            if (response) {
+              removeNameOfBoard();
+              window.location.href = routs.main;
+            }
+          })
+
+      })
+    } else if (!checkNewArr) {
+      validatorNameBoard.style.display = 'flex';
+      errNoteSave.style.display = 'none';
+      createNewNotes = null
+
+      closeIncorrectBoardName.onclick = () => {
+        validatorNameBoard.style.display = 'none';
+
       }
+    } else if (!addNewBoards(boardName.value)) {
+      validatorNameBoard.style.display = 'flex';
+      errNoteSave.style.display = 'none';
+      createNewNotes = null;
+      deleteSaveBoard.style.display = 'none';
+
+      closeIncorrectBoardName.onclick = () => {
+        validatorNameBoard.style.display = 'none';
+      }
+    }
+
+
+    // if (!(addNewBoards(boardName.value)) || !checkNewArr || !boardName.value) {
+    //   window.location.href = routs.main
+    // }
   };
 };
 
