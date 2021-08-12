@@ -1,4 +1,5 @@
 import { createNotes } from "../../api/api-handlers";
+import { addImages } from "../../DOM-render/add-img/add-img";
 import { routs } from "../../shared/constants/paths";
 import { getLocalId, getNameOfBoard, removeNameOfBoard } from "../../shared/ls-services/localStorage";
 import { addNewBoards } from "../../shared/validators/check-inputs";
@@ -18,7 +19,6 @@ const tcNotes = document.querySelector('.tc-notes');
 const boardName = document.querySelector('.board-name');
 const changeBoardColor = document.getElementById('change-board-color');
 const colorList = document.querySelector('.change-colors-board');
-const addEmoji = document.getElementById('add-emoji');
 const validatorNameBoard = document.querySelector('.validatorNameBoard');
 const closeIncorrectBoardName = document.querySelector('.close');
 const localId = getLocalId();
@@ -34,7 +34,8 @@ export const createNoteHandlers = () => {
   let arrFontStyle = [];
   let underlineArr = [];
   let fontSizeArr = [];
-
+  
+  addImages();
   colorList.style.display = 'none';
 
   addNewSticker.onclick = () => {
@@ -475,28 +476,6 @@ export const createNoteHandlers = () => {
     }
 
   };
-
-  addEmoji.onclick = () => {
-
-    const holder = document.querySelector('.holder');
-    const isClicked = addEmoji.getAttribute('clicked');
-    holder.style.display = 'none'
-
-    if (!isClicked) {
-      const tcNote = document.querySelector('.tc-note');
-      const wrapperEmoji = document.createElement('div');
-      tcNote.prepend(wrapperEmoji);
-      wrapperEmoji.className = 'wrapper-emoji';
-      addEmoji.setAttribute('clicked', true);
-      addEmoji.style.backgroundColor = 'white';
-    } else {
-      wrapperEmoji.remove();
-      addEmoji.removeAttribute('clicked');
-      addEmoji.style.backgroundColor = '#c4c4c4';
-
-    }
-
-  }
 
   btn.onclick = () => {
     menu.className = 'menu-show';

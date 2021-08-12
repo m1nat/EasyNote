@@ -338,6 +338,54 @@
           flex-wrap: wrap;
           margin: 0 auto;
 
+          .img-wrapper {
+            background-color: #fffacb;
+            border-radius: 8px;
+            width: 285px;
+            height: 150px;
+            margin: 0 10px 20px;
+            box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s;
+            cursor: pointer;
+
+            .file-upload {
+              height: 110px;
+              width: 110px;
+              border-radius: 100px;
+              position: relative;
+              margin: 20px auto;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: 4px solid #ffffff;
+              overflow: hidden;
+              background-image: linear-gradient(
+                to bottom,
+                #fffacb 50%,
+                #e6e6e4 50%
+              );
+              background-size: 100% 200%;
+              transition: all 1s;
+              color: #ffffff;
+              font-size: 100px;
+
+              input[type="file"] {
+                height: 200px;
+                width: 200px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                cursor: pointer;
+              }
+
+              &:hover {
+                background-position: 0 -100%;
+                color: #d8d8d4;
+              }
+            }
+          }
+
           .wrapper-emoji {
             width: 100%;
             height: 52px;
@@ -348,11 +396,10 @@
             align-items: center;
             display: none;
 
-            .emoji-line-first { 
+            .emoji-line-first {
               width: 100%;
               height: 50%;
               display: flex;
-              
             }
 
             .emoji-line-second {
@@ -548,7 +595,6 @@
               .order-list {
                 width: 100%;
                 height: auto;
-                
               }
 
               &::-webkit-scrollbar {
