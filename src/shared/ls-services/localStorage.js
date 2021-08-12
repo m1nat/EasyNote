@@ -48,3 +48,5 @@ export const setIdNotes = (id) => localStorage.setItem('notesId', id);
 
 export const getIdNotes = () => localStorage.getItem('notesId');
 
+export const removeIdNotes = () => localStorage.removeItem('notesId');
+

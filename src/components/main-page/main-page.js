@@ -1,5 +1,5 @@
 import { routs } from '../../shared/constants/paths';
-import { getEmailLs, getUserNameLocalStorage, setNameOfBoard } from '../../shared/ls-services/localStorage';
+import { getEmailLs, getUserNameLocalStorage, removeIdNotes, removeNameBoadrd, removeNameOfBoard, removeNotes, setNameOfBoard } from '../../shared/ls-services/localStorage';
 import { addNewBoards } from '../../shared/validators/check-inputs';
 
 const myBoardsBtn = document.querySelector('.create-my-boards');
@@ -19,6 +19,10 @@ export const mainPageHandlers = () => {
 
   myBoardsBtn.onclick = () => {
     modal.style.display = 'block';
+    removeNameBoadrd();
+    removeNotes();
+    removeIdNotes();
+    removeNameOfBoard();
   };
 
   cancelForm.onclick = () => {

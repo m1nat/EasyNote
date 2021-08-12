@@ -264,6 +264,157 @@
             flex-wrap: wrap;
             margin: 0 auto;
 
+            .wrapper-emoji {
+              width: 100%;
+              height: 52px;
+              margin-bottom: 5px;
+              background-color: #c4c4c4;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              display: none;
+  
+              .emoji-line-first { 
+                width: 100%;
+                height: 50%;
+                display: flex;
+                
+              }
+  
+              .emoji-line-second {
+                width: 100%;
+                height: 50%;
+                display: flex;
+              }
+            }
+  
+
+            .holder {
+              width: 100%;
+              height: 22px;
+              background-color: black;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              display: none;
+              transition-duration: 1s;
+  
+              .holder-panel {
+                background-color: #c4c4c4;
+                width: 70%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+  
+                .font-waight {
+                  width: 13%;
+                  height: 100%;
+                  font-weight: bolder;
+                  padding-left: 7px;
+                  transition-duration: 0.5s;
+  
+                  &:hover {
+                    border: 1px solid white;
+                  }
+  
+                  .change-waight {
+                    font-weight: bolder;
+                  }
+                }
+  
+                .cursive {
+                  width: 13%;
+                  height: 100%;
+                  font-family: cursive;
+                  font-size: 0.9em;
+                  text-align: center;
+                  padding-top: 2px;
+                  transition-duration: 0.5s;
+  
+                  &:hover {
+                    border: 1px solid white;
+                  }
+                }
+  
+                .underline {
+                  width: 13%;
+                  height: 100%;
+                  text-decoration: underline;
+                  font-weight: bolder;
+                  text-align: center;
+                  transition-duration: 0.5s;
+  
+                  &:hover {
+                    border: 1px solid white;
+                  }
+                }
+  
+                .order-list {
+                  width: 13%;
+                  height: 100%;
+                  transition-duration: 0.5s;
+  
+                  &:hover {
+                    border: 1px solid white;
+                  }
+                }
+  
+                .unorder-list {
+                  width: 13%;
+                  height: 100%;
+                  background: url("/src/png/list-2-48.png") no-repeat center
+                    center;
+                  background-size: 63%;
+                  transition-duration: 0.5s;
+  
+                  &:hover {
+                    border: 1px solid white;
+                  }
+                }
+                .font-size {
+                  width: 35%;
+                  height: 100%;
+                  font-size: 0.8em;
+                  padding-left: 8px;
+                  transition-duration: 0.5s;
+                  position: relative;
+  
+                  .fz-wrapper {
+                    width: 80px;
+                    height: 120px;
+                    position: absolute;
+                    background-color: #c4c4c4;
+                    top: 103%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+  
+                    .fz-size {
+                      width: 100%;
+                      height: auto;
+                      border-bottom: 1px solid rgb(172, 172, 172);
+                      transition-duration: 0.5s;
+  
+                      &:hover {
+                        background-color: #fff;
+                      }
+                    }
+                  }
+  
+                  &:hover {
+                    border: 1px solid white;
+                  }
+                }
+              }
+  
+              .holder-black {
+                width: 30%;
+                height: 100%;
+              }
+            }
+
             .tc-note {
               background-color: #fffacb;
               border-radius: 8px;
