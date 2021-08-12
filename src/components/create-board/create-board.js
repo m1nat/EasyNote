@@ -564,29 +564,38 @@ export const createNoteHandlers = () => {
 
   homePageBtn.onclick = () => {
 
-    const val = document.querySelectorAll('.tc-note-body');
-    val.forEach(el => {
-      newArr.push(el.value);
-      arrFontWeight.push(el.style.fontWeight);
-      arrFontCursivce.push(el.style.fontFamily);
-      arrFontStyle.push(el.style.fontStyle);
-      underlineArr.push(el.style.textDecoration);
-      fontSizeArr.push(el.style.fontSize);
-    })
+    let createNewNotes;
 
     errNoteSaveBtnsCancel.onclick = () => {
       window.location.href = routs.main;
       removeNameOfBoard();
     };
 
-    if (boardName.value) {
-      errNoteSave.style.display = 'flex';
-      if (addNewBoards(boardName.value)) {
+    let checkNewArr;
+
+    const val = document.querySelectorAll('.tc-note-body');
+    val.forEach(el => {
+      checkNewArr = el.value;
+    })
+
+      console.log(checkNewArr);
+      if ( checkNewArr && addNewBoards(boardName.value) ) {
+        errNoteSave.style.display = 'flex';
+
+        const val = document.querySelectorAll('.tc-note-body');
+        val.forEach(el => {
+          newArr.push(el.value);
+          arrFontWeight.push(el.style.fontWeight);
+          arrFontCursivce.push(el.style.fontFamily);
+          arrFontStyle.push(el.style.fontStyle);
+          underlineArr.push(el.style.textDecoration);
+          fontSizeArr.push(el.style.fontSize);
+        })
 
         errNoteSaveForm.addEventListener('submit', event => {
           event.preventDefault();
 
-          const createNewNotes = {
+          createNewNotes = {
             name: boardName.value,
             notes: newArr,
             localId: localId,
@@ -607,15 +616,17 @@ export const createNoteHandlers = () => {
             })
 
         })
-      } else if (!(addNewBoards(boardName.value))) {
+      } 
+      if (!(addNewBoards(boardName.value)) || !checkNewArr) {
         validatorNameBoard.style.display = 'flex'
         errNoteSave.style.display = 'none';
+        createNewNotes = null
 
         closeIncorrectBoardName.onclick = () => {
-          validatorNameBoard.style.display = 'none'
+          validatorNameBoard.style.display = 'none';
+          
         }
       }
-    }
   };
 };
 
