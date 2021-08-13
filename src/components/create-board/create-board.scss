@@ -146,18 +146,28 @@
         background: url("/src/png/arrow-32-48.png") no-repeat center center;
         background-size: cover;
       }
+
+      .aside-actions-close {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+        background: url("/src/png/arrow-32-48.png") no-repeat center center;
+        background-size: cover;
+      }
     }
     
     .galery {
       width: 20%;
       height: 100%;
       border: 1px solid rgb(187, 187, 187);
-      display: flex;
+      display: none;
       align-items: flex-start;
       justify-content: center;
       overflow-y: auto;
       border-bottom-right-radius: 5px;
       border-top-right-radius: 5px;
+      transition-duration: 1s all;
+
 
       &::-webkit-scrollbar {
         width: 10px;
@@ -313,6 +323,62 @@
         .greenwaterfall {
           width: 100%;
           background-image: url('/src/assets/green_waterfall.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .city {
+          width: 100%;
+          background-image: url('/src/assets/city.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .airplane {
+          width: 100%;
+          background-image: url('/src/assets/airplane.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .home2 {
+          width: 100%;
+          background-image: url('/src/assets/home2.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .beach {
+          width: 100%;
+          background-image: url('/src/assets/beach.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .sea2 {
+          width: 100%;
+          background-image: url('/src/assets/sea2.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .coffe {
+          width: 100%;
+          background-image: url('/src/assets/coffe.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .snow {
+          width: 100%;
+          background-image: url('/src/assets/snow.jpg');
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;

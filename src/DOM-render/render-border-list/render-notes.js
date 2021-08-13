@@ -529,7 +529,6 @@ export const renderNotes = () => {
           el.style.fontStyle = family[i];
           el.style.textDecoration = underline[i];
           el.style.fontSize = size[i];
-
         })
 
         list.forEach(el => {

@@ -503,6 +503,16 @@ export const createNoteHandlers = () => {
 
     tcNoteClose.onclick = () => {
       note.remove();
+      
+      let item;
+      const list = document.querySelectorAll('.tc-note-body');
+      list.forEach( el => item = el);
+      console.log(item); 
+      
+
+      if ( !item ) {
+        deleteSaveBoard.style.display = 'none';
+      }
     }
 
     delNote.onclick = () => {
