@@ -213,109 +213,136 @@ export const createNoteHandlers = () => {
 
       smile_1.onclick = () => {
         tcNoteBody.value += smile_1.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_2.onclick = () => {
         tcNoteBody.value += smile_2.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_3.onclick = () => {
         tcNoteBody.value += smile_3.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_4.onclick = () => {
         tcNoteBody.value += smile_4.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_5.onclick = () => {
         tcNoteBody.value += smile_5.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_6.onclick = () => {
         tcNoteBody.value += smile_6.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_6.onclick = () => {
         tcNoteBody.value += smile_6.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
       smile_7.onclick = () => {
         tcNoteBody.value += smile_7.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_8.onclick = () => {
         tcNoteBody.value += smile_8.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_9.onclick = () => {
         tcNoteBody.value += smile_9.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_10.onclick = () => {
         tcNoteBody.value += smile_10.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_11.onclick = () => {
         tcNoteBody.value += smile_11.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_12.onclick = () => {
         tcNoteBody.value += smile_12.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_13.onclick = () => {
         tcNoteBody.value += smile_13.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_14.onclick = () => {
         tcNoteBody.value += smile_14.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_15.onclick = () => {
         tcNoteBody.value += smile_15.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_16.onclick = () => {
         tcNoteBody.value += smile_16.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_17.onclick = () => {
         tcNoteBody.value += smile_17.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_18.onclick = () => {
         tcNoteBody.value += smile_18.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_19.onclick = () => {
         tcNoteBody.value += smile_19.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_20.onclick = () => {
         tcNoteBody.value += smile_20.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_21.onclick = () => {
         tcNoteBody.value += smile_21.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_22.onclick = () => {
         tcNoteBody.value += smile_22.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_23.onclick = () => {
         tcNoteBody.value += smile_23.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_24.onclick = () => {
         tcNoteBody.value += smile_24.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_25.onclick = () => {
         tcNoteBody.value += smile_25.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
       smile_26.onclick = () => {
         tcNoteBody.value += smile_26.innerText;
+        deleteSaveBoard.style.display = 'block';
       }
 
     }
@@ -587,6 +614,8 @@ export const createNoteHandlers = () => {
       checkNewArr = el.value;
     })
 
+
+
     if (checkNewArr && addNewBoards(boardName.value) && document.querySelector('.tc-note')) {
 
       errNoteSave.style.display = 'flex';
@@ -645,10 +674,6 @@ export const createNoteHandlers = () => {
       }
     }
 
-
-    // if (!(addNewBoards(boardName.value)) || !checkNewArr || !boardName.value) {
-    //   window.location.href = routs.main
-    // }
   };
 };
 

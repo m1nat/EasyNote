@@ -3,6 +3,20 @@ import { routs } from "../../shared/constants/paths";
 import { getIdNotes, getLocalId, getNameBoadrd, getNameOfBoard, getNotes } from "../../shared/ls-services/localStorage";
 import { addNewBoards } from "../../shared/validators/check-inputs";
 
+const saveBtn = document.querySelector('.saveNewChanges');
+const fontWaight = document.querySelector('.font-waight')
+
+let weight = [];
+let size = [];
+let cursive = [];
+let family = [];
+let underline = [];
+let arrFontWeight = [];
+let arrFontCursivce = [];
+let arrFontStyle = [];
+let underlineArr = [];
+let fontSizeArr = [];
+
 export const renderNotes = () => {
   getBoard()
     .then(response => {
@@ -11,7 +25,6 @@ export const renderNotes = () => {
         const tcNotes = document.querySelector('.notesWrapper-tc');
         const board = document.querySelector('.board');
         const textarea = document.querySelector('.board-name');
-        const saveBtn = document.querySelector('.saveNewChanges');
         const homePageBtn = document.querySelector('.home-page-btnss');
         const form = document.querySelector('.footer-save');
         const formHomePage = document.querySelector('.errNoteSaves');
@@ -23,16 +36,6 @@ export const renderNotes = () => {
         const id = getLocalId();
         let arrText = [];
         let colorBoard;
-        let weight = [];
-        let size = [];
-        let cursive = [];
-        let family = [];
-        let underline = [];
-        let arrFontWeight = [];
-        let arrFontCursivce = [];
-        let arrFontStyle = [];
-        let underlineArr = [];
-        let fontSizeArr = [];
 
         saveBtn.style.display = 'none';
         textarea.value = boardName;
@@ -173,6 +176,8 @@ export const renderNotes = () => {
           };
 
           fontWaight.onclick = () => {
+
+            checkStylesText()
 
             const isClicked = fontWaight.getAttribute('clicked');
 
@@ -524,6 +529,10 @@ export const renderNotes = () => {
           el.style.fontStyle = family[i];
           el.style.textDecoration = underline[i];
           el.style.fontSize = size[i];
+
+          if (el.style.fontWeight = 'bold') {
+            fontWaight.style.backgroundColor = 'white'
+          }
         })
 
         list.forEach(el => {
@@ -544,6 +553,8 @@ export const renderNotes = () => {
         check.onclick = () => {
           colorBoard === board.style.backgroundColor ? saveBtn.style.display = 'none' : saveBtn.style.display = 'flex';
         };
+
+
 
         form.addEventListener('submit', event => {
           event.preventDefault();
@@ -659,4 +670,22 @@ export const renderNotes = () => {
 
     })
 
+}
+
+
+const checkStylesText = () => {
+  const valueOfTextArea = document.querySelectorAll('.tc-note-bodys');
+  const fontWaight = document.querySelector('.font-waight')
+  let arrFontWeights = [];
+  
+  valueOfTextArea.forEach( (el, i) => 
+    {
+       arrFontWeights.push(el.style.fontWeight)
+      console.log(el.style.fontWeight === weight[i]);
+       if ( el.style.fontWeight === weight[i]) {
+        saveBtn.style.display = 'flex';
+        fontWaight.setAttribute('clicked', true);
+        fontWaight.style.backgroundColor = 'white';
+       } 
+    })
 }
