@@ -530,9 +530,6 @@ export const renderNotes = () => {
           el.style.textDecoration = underline[i];
           el.style.fontSize = size[i];
 
-          if (el.style.fontWeight = 'bold') {
-            fontWaight.style.backgroundColor = 'white'
-          }
         })
 
         list.forEach(el => {
@@ -671,7 +668,6 @@ export const renderNotes = () => {
     })
 
 }
-
 
 const checkStylesText = () => {
   const valueOfTextArea = document.querySelectorAll('.tc-note-bodys');

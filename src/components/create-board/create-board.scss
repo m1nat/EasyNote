@@ -147,6 +147,178 @@
         background-size: cover;
       }
     }
+    
+    .galery {
+      width: 20%;
+      height: 100%;
+      border: 1px solid rgb(187, 187, 187);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      overflow-y: auto;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+
+      &::-webkit-scrollbar {
+        width: 10px;
+        cursor: pointer;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: rgb(242, 240, 240);
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      &-item-first-line {
+        width: 45%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+
+
+        .img {
+          width: 100%;
+          height: 135px;
+          border-radius: 3px;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+
+        .hand-love {
+          width: 100%;
+          background-image: url('/src/assets/Love_Sunrises_and_sunsets_Fingers_Hands_Heart_Sun_532758_1280x897.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .board {
+          width: 100%;
+          background-image: url('/src/assets/board.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .paris {
+          width: 100%;
+          background-image: url('/src/assets/paris.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        
+        .book {
+          width: 100%;
+          background-image: url('/src/assets/book.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .praha {
+          width: 100%;
+          background-image: url('/src/assets/praha.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .waterfall {
+          width: 100%;
+          background-image: url('/src/assets/waterflow.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .home-on-water {
+          width: 100%;
+          background-image: url('/src/assets/home\ on\ lake.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .cat {
+          width: 100%;
+          background-image: url('/src/assets/cat.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .flowers {
+          width: 100%;
+          background-image: url('/src/assets/flowers.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .cloud {
+          width: 100%;
+          background-image: url('/src/assets/cloud.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+      }
+
+      &-item-second-line {
+        width: 45%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+        margin-left: 10px;
+
+        .img {
+          width: 100%;
+          height: 135px;
+          border-radius: 3px;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+
+        .sea {
+          width: 100%;
+          background-image: url('/src/assets/sea.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .air-ballon {
+          width: 100%;
+          background-image: url('/src/assets/airballon.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .greenwaterfall {
+          width: 100%;
+          background-image: url('/src/assets/green_waterfall.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+    }
 
     .menu {
       display: none;
