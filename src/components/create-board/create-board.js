@@ -21,13 +21,14 @@ const changeBoardColor = document.getElementById('change-board-color');
 const colorList = document.querySelector('.change-colors-board');
 const validatorNameBoard = document.querySelector('.validatorNameBoard');
 const closeIncorrectBoardName = document.querySelector('.close');
+const btnRountMainPage = document.querySelector('.errNoteSave-btns-cancel');
+const saveBoard = document.querySelector('.errNoteSave-btns-save');
 const localId = getLocalId();
 
 export const createNoteHandlers = () => {
 
   const errNoteSave = document.querySelector('.errNoteSave');
   const errNoteSaveForm = document.querySelector('.errNoteSave-form');
-  const errNoteSaveBtnsCancel = document.querySelector('.errNoteSave-btns-cancel');
   let newArr = [];
   let arrFontWeight = [];
   let arrFontCursivce = [];
@@ -143,6 +144,8 @@ export const createNoteHandlers = () => {
     holder.append(holderPanel, holderBlack);
     holderPanel.append(fontWaight, cursive, underline, orderList, unorderList, fontSize);
     tcNoteHeader.append(tcNoteClose);
+
+    deleteSaveBoard.style.display = 'flex'
 
     tcNoteBody.onclick = () => {
 
@@ -490,27 +493,25 @@ export const createNoteHandlers = () => {
 
     }
 
-    document.querySelectorAll('.tc-note-body').forEach(element => {
-      element.oninput = () => {
-        if (element.value !== '' && element.value) {
-          deleteSaveBoard.style.display = 'block';
-        } else {
-          deleteSaveBoard.style.display = 'none';
+    // document.querySelectorAll('.tc-note').forEach(element => {
+    //   element.oninput = () => {
+    //     if (element.value !== '' && element.value) {
+    //       deleteSaveBoard.style.display = 'block';
+    //     } else {
+    //       deleteSaveBoard.style.display = 'none';
 
-        }
-      }
-    })
+    //     }
+    //   }
+    // })
 
     tcNoteClose.onclick = () => {
       note.remove();
-      
-      let item;
-      const list = document.querySelectorAll('.tc-note-body');
-      list.forEach( el => item = el);
-      console.log(item); 
-      
 
-      if ( !item ) {
+      let item;
+      const list = document.querySelectorAll('.tc-note');
+      list.forEach(el => item = el)
+
+      if (!item) {
         deleteSaveBoard.style.display = 'none';
       }
     }
@@ -518,6 +519,7 @@ export const createNoteHandlers = () => {
     delNote.onclick = () => {
       document.querySelectorAll('.tc-note').forEach(element => {
         element.remove();
+        deleteSaveBoard.style.display = 'none';
       });
     }
 
@@ -596,7 +598,6 @@ export const createNoteHandlers = () => {
 
       closeIncorrectBoardName.onclick = () => {
         validatorNameBoard.style.display = 'none';
-        newArr = [];
       }
     }
 
@@ -605,85 +606,59 @@ export const createNoteHandlers = () => {
   board.onclick = () => {
     menu.className = 'menu';
     btn.style.display = 'block';
-    colorList.style.display = 'none'
+    colorList.style.display = 'none';
+    errNoteSave.style.display = 'none';
   }
 
   homePageBtn.onclick = () => {
 
-    let createNewNotes;
-
-    errNoteSaveBtnsCancel.onclick = () => {
+    if (addNewBoards(boardName.value) && document.querySelector('.tc-note')) {
+      errNoteSave.style.display = 'flex';
+    } else {
       window.location.href = routs.main;
-      removeNameOfBoard();
-    };
+    }
 
-    let checkNewArr;
+    if (errNoteSave.style.display == 'flex') {
+
+      btnRountMainPage.onclick = () => {
+        window.location.href = routs.main;
+      }
+      
+    }
+  };
+
+  saveBoard.onclick = async () => {
 
     const val = document.querySelectorAll('.tc-note-body');
     val.forEach(el => {
-      checkNewArr = el.value;
+      newArr.push(el.value);
+      arrFontWeight.push(el.style.fontWeight);
+      arrFontCursivce.push(el.style.fontFamily);
+      arrFontStyle.push(el.style.fontStyle);
+      underlineArr.push(el.style.textDecoration);
+      fontSizeArr.push(el.style.fontSize);
     })
 
-
-
-    if (checkNewArr && addNewBoards(boardName.value) && document.querySelector('.tc-note')) {
-
-      errNoteSave.style.display = 'flex';
-
-      const val = document.querySelectorAll('.tc-note-body');
-      val.forEach(el => {
-        newArr.push(el.value);
-        arrFontWeight.push(el.style.fontWeight);
-        arrFontCursivce.push(el.style.fontFamily);
-        arrFontStyle.push(el.style.fontStyle);
-        underlineArr.push(el.style.textDecoration);
-        fontSizeArr.push(el.style.fontSize);
-      })
-
-      errNoteSaveForm.addEventListener('submit', event => {
-        event.preventDefault();
-
-        createNewNotes = {
-          name: boardName.value,
-          notes: newArr,
-          localId: localId,
-          boardColor: board.style.backgroundColor,
-          weight: arrFontWeight,
-          cursive: arrFontCursivce,
-          style: arrFontStyle,
-          underln: underlineArr,
-          fontSize: fontSizeArr
-        }
-
-        createNotes(createNewNotes)
-          .then(response => {
-            if (response) {
-              removeNameOfBoard();
-              window.location.href = routs.main;
-            }
-          })
-
-      })
-    } else if (!checkNewArr) {
-      validatorNameBoard.style.display = 'flex';
-      errNoteSave.style.display = 'none';
-      createNewNotes = null
-
-      closeIncorrectBoardName.onclick = () => {
-        validatorNameBoard.style.display = 'none';
-
-      }
-    } else if (!addNewBoards(boardName.value)) {
-      validatorNameBoard.style.display = 'flex';
-      errNoteSave.style.display = 'none';
-      createNewNotes = null;
-      deleteSaveBoard.style.display = 'none';
-
-      closeIncorrectBoardName.onclick = () => {
-        validatorNameBoard.style.display = 'none';
-      }
+    const createNewNotes = {
+      name: boardName.value,
+      notes: newArr,
+      localId: localId,
+      boardColor: board.style.backgroundColor,
+      weight: arrFontWeight,
+      cursive: arrFontCursivce,
+      style: arrFontStyle,
+      underln: underlineArr,
+      fontSize: fontSizeArr
     }
 
-  };
+    await createNotes(createNewNotes)
+      .then(response => {
+        if (response) {
+          removeNameOfBoard();
+          window.location.href = routs.main;
+        }
+      })
+
+  }
 };
 
