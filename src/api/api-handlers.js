@@ -111,7 +111,7 @@ export const getBoard = () => {
 };
 
 export const removeBoard = (id) => {
-  axios.delete(`${databaseURL}/notes/${id}.json`);
+  return axios.delete(`${databaseURL}/notes/${id}.json`)
 };
 
 export const updateNotes = patchBoard => {

@@ -903,12 +903,12 @@
   }
 }
 .errNoteSave {
-  display: flex;
+  display: none;
   position: absolute;
   width: 520px !important;
   height: 95px;
   top: 200px;
-  left: 39%;
+  left: 30%;
   border: 1px solid;
   flex-direction: column;
   justify-content: space-around;

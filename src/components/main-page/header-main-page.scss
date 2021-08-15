@@ -243,11 +243,9 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            transition: 0.5s;
+            transition: 1s;
 
             &:hover {
-              width: 340px;
-              height: 97%;
               -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
               -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
               box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -279,7 +277,7 @@
               &:hover {
                 opacity: 1;
                 background: url("/src/png/multiply-3-48.png") no-repeat center
-                center;
+                  center;
                 background-size: 3%;
                 background-color: rgb(253, 190, 190);
               }
@@ -411,7 +409,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     animation: 1s spin infinite linear;
-    background: url('/src/png/logo.png') no-repeat center center;
+    background: url("/src/png/logo.png") no-repeat center center;
     background-size: contain;
 
     &.done {
