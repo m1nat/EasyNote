@@ -18,8 +18,8 @@ let arrFontStyle = [];
 let underlineArr = [];
 let fontSizeArr = [];
 
-export const renderNotes = () => {
-  getBoard()
+export const renderNotes = async () => {
+  await getBoard()
     .then(response => {
       if (response) {
         const check = document.querySelector('.change-colors-board');
@@ -52,7 +52,6 @@ export const renderNotes = () => {
             underline = el.underln;
             size = el.fontSize;
             backgroundImages = el.image
-            console.log(backgroundImages);
           }
         })
 

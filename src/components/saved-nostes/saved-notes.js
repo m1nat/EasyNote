@@ -1,5 +1,6 @@
 
 export const savedNotesHandlers = () => {
+
   const menu = document.querySelector('.menu');
   const btn = document.querySelector('.aside-actions');
   const back = document.querySelector('.back');
@@ -509,4 +510,5 @@ export const savedNotesHandlers = () => {
       note.remove();
     }
   }
+  
 };

@@ -162,7 +162,7 @@ export const createNoteHandlers = () => {
       } else {
         tcNoteBody.removeAttribute('clicked');
         holder.style.display = 'none';
-        wrapperEmoji.style.display = 'none'
+        wrapperEmoji.style.display = 'none';
       }
     };
 
@@ -193,7 +193,7 @@ export const createNoteHandlers = () => {
         tcNoteBody.style.fontFamily = 'Times New Roman, Times, serif'
       } else {
         cursive.style.backgroundColor = '#c4c4c4';
-        tcNoteBody.style.fontStyle = 'normal'
+        tcNoteBody.style.fontStyle = 'normal';
         cursive.removeAttribute('clicked');
       }
     }
@@ -368,7 +368,7 @@ export const createNoteHandlers = () => {
         const upperMiddle = document.createElement('div');
         const large = document.createElement('div');
         const larger = document.createElement('div');
-        const superSize = document.createElement('div')
+        const superSize = document.createElement('div');
 
         fontSize.append(fzWrapper);
         fzWrapper.append(smallFont, mediumFont, upperMiddle, large, larger, superSize);
@@ -508,6 +508,7 @@ export const createNoteHandlers = () => {
       if (!item) {
         deleteSaveBoard.style.display = 'none';
       }
+
     }
 
     delNote.onclick = () => {
@@ -624,7 +625,6 @@ export const createNoteHandlers = () => {
   };
 
   saveBoard.onclick = async () => {
-    console.log(sourceImg);
 
     const val = document.querySelectorAll('.tc-note-body');
     val.forEach(el => {
@@ -658,6 +658,6 @@ export const createNoteHandlers = () => {
       })
 
   }
-  
+
 };
 
