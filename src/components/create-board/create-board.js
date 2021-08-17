@@ -1,7 +1,7 @@
 import { createNotes } from "../../api/api-handlers";
 import { addImages } from "../../DOM-render/add-img/add-img";
 import { routs } from "../../shared/constants/paths";
-import { getLocalId, getNameOfBoard, removeNameOfBoard } from "../../shared/ls-services/localStorage";
+import { getImageUrl, getLocalId, getNameOfBoard, removeNameOfBoard } from "../../shared/ls-services/localStorage";
 import { addNewBoards } from "../../shared/validators/check-inputs";
 
 const btn = document.querySelector('.aside-actions');
@@ -23,9 +23,12 @@ const validatorNameBoard = document.querySelector('.validatorNameBoard');
 const closeIncorrectBoardName = document.querySelector('.close');
 const btnRountMainPage = document.querySelector('.errNoteSave-btns-cancel');
 const saveBoard = document.querySelector('.errNoteSave-btns-save');
+const images = document.querySelectorAll('.img');
 const localId = getLocalId();
 
 export const createNoteHandlers = () => {
+
+  addImages();
 
   const errNoteSave = document.querySelector('.errNoteSave');
   const errNoteSaveForm = document.querySelector('.errNoteSave-form');
@@ -35,11 +38,13 @@ export const createNoteHandlers = () => {
   let arrFontStyle = [];
   let underlineArr = [];
   let fontSizeArr = [];
+  let index;
+  let sourceImg;
 
-  addImages();
   colorList.style.display = 'none';
 
   addNewSticker.onclick = () => {
+    addImages();
     const holder = document.createElement('div');
     const holderPanel = document.createElement('div');
     const fontWaight = document.createElement('div');
@@ -493,17 +498,6 @@ export const createNoteHandlers = () => {
 
     }
 
-    // document.querySelectorAll('.tc-note').forEach(element => {
-    //   element.oninput = () => {
-    //     if (element.value !== '' && element.value) {
-    //       deleteSaveBoard.style.display = 'block';
-    //     } else {
-    //       deleteSaveBoard.style.display = 'none';
-
-    //     }
-    //   }
-    // })
-
     tcNoteClose.onclick = () => {
       note.remove();
 
@@ -582,7 +576,8 @@ export const createNoteHandlers = () => {
       cursive: arrFontCursivce,
       style: arrFontStyle,
       underln: underlineArr,
-      fontSize: fontSizeArr
+      fontSize: fontSizeArr,
+      image: getImageUrl()
     }
 
     if (addNewBoards(boardName.value)) {
@@ -602,6 +597,7 @@ export const createNoteHandlers = () => {
     }
 
   })
+
 
   board.onclick = () => {
     menu.className = 'menu';
@@ -623,11 +619,12 @@ export const createNoteHandlers = () => {
       btnRountMainPage.onclick = () => {
         window.location.href = routs.main;
       }
-      
+
     }
   };
 
   saveBoard.onclick = async () => {
+    console.log(sourceImg);
 
     const val = document.querySelectorAll('.tc-note-body');
     val.forEach(el => {
@@ -648,7 +645,8 @@ export const createNoteHandlers = () => {
       cursive: arrFontCursivce,
       style: arrFontStyle,
       underln: underlineArr,
-      fontSize: fontSizeArr
+      fontSize: fontSizeArr,
+      image: getImageUrl()
     }
 
     await createNotes(createNewNotes)
@@ -660,5 +658,6 @@ export const createNoteHandlers = () => {
       })
 
   }
+  
 };
 

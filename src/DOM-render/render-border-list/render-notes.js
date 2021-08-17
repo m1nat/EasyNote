@@ -37,6 +37,7 @@ export const renderNotes = () => {
         const id = getLocalId();
         let arrText = [];
         let colorBoard;
+        let backgroundImages;
 
         saveBtn.style.display = 'none';
         textarea.value = boardName;
@@ -49,11 +50,19 @@ export const renderNotes = () => {
             cursive = el.cursive;
             family = el.style;
             underline = el.underln;
-            size = el.fontSize
+            size = el.fontSize;
+            backgroundImages = el.image
+            console.log(backgroundImages);
           }
         })
 
+        board.style.backgroundImage = `url("${backgroundImages}")`
+        board.style.backgroundSize = 'cover';
+        board.style.backgroundRepeat = 'no-repeat';
+        board.style.backgroundPosition = 'center';
+
         textsNote.forEach(el => {
+
           const holder = document.createElement('div');
           const holderPanel = document.createElement('div');
           const fontWaight = document.createElement('div');
@@ -172,8 +181,9 @@ export const renderNotes = () => {
             } else {
               tcNoteBody.removeAttribute('clicked');
               holder.style.display = 'none';
-              wrapperEmoji.style.display = 'none'
+              wrapperEmoji.style.display = 'none';
             }
+
           };
 
           fontWaight.onclick = () => {
@@ -593,10 +603,12 @@ export const renderNotes = () => {
         })
 
         board.onclick = () => {
+
           formHomePage.style.display = 'none';
           check.style.display = 'none';
           menu.className = 'menu';
           btn.style.display = 'block';
+
         }
 
         homePageBtn.onclick = () => {
@@ -609,7 +621,6 @@ export const renderNotes = () => {
           const emptyNotes = document.querySelector('.incorrect-board');
           const deleteBoard = document.querySelector('.incorrect-board-btn-cancel');
           const keepUp = document.querySelector('.incorrect-board-btn-save');
-          const name = getNameBoadrd();
 
           if (!note) {
             emptyNotes.style.display = 'flex';
@@ -673,20 +684,3 @@ export const renderNotes = () => {
     })
 
 }
-
-// const checkStylesText = () => {
-//   const valueOfTextArea = document.querySelectorAll('.tc-note-bodys');
-//   const fontWaight = document.querySelector('.font-waight')
-//   let arrFontWeights = [];
-
-//   valueOfTextArea.forEach( (el, i) => 
-//     {
-//        arrFontWeights.push(el.style.fontWeight)
-//       console.log(el.style.fontWeight === weight[i]);
-//        if ( el.style.fontWeight === weight[i]) {
-//         saveBtn.style.display = 'flex';
-//         fontWaight.setAttribute('clicked', true);
-//         fontWaight.style.backgroundColor = 'white';
-//        } 
-//     })
-// }

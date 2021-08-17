@@ -10,10 +10,9 @@ import { recoveryPassword } from './components/reset-password/reset-password.js'
 import { renderBoarder } from './DOM-render/render-border-list/render-main-page-saved-border.js';
 import { renderNotes } from './DOM-render/render-border-list/render-notes.js';
 import { savedNotesHandlers } from './components/saved-nostes/saved-notes.js';
-
-import './styles/style.scss';
 import { preloaderMainPage } from './DOM-render/preloader/preloader.js';
 
+import './styles/style.scss';
 
 initAPI();
 
