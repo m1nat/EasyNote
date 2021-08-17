@@ -11,6 +11,7 @@ export const addImages = () => {
   const boardCreate = document.querySelector('.board-create');
   const images = document.querySelectorAll('.img');
   const close = document.querySelector('.midle-create-board-main');
+  const backToMenu = document.querySelector('.back-to-menu');
   let sourceImg;
   let index;
 
@@ -18,13 +19,23 @@ export const addImages = () => {
     galery.style.display = 'none';
   }
 
-
   addImagesBtn.onclick = () => {
     galery.style.display = 'flex';
-    asideActions.className = 'aside-actions-close';
+      menu.className = 'menu'
+
+    backToMenu.onclick = () => {
+      galery.style.display = 'none';
+    }
+
+    // if( galery.style.display = 'flex' ) {
+    // } else {
+    //   menu.className = 'menu-show'
+    // }
+    
   }
 
   images.forEach((el, i) => {
+
     el.onclick = () => {
 
       theCSSprop = window.getComputedStyle(el, null).getPropertyValue("background-image");

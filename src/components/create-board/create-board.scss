@@ -166,7 +166,8 @@
       overflow-y: auto;
       border-bottom-right-radius: 5px;
       border-top-right-radius: 5px;
-      transition-duration: 1s all;
+      transition: 1s;
+      position: relative;
 
       &::-webkit-scrollbar {
         width: 10px;
@@ -379,6 +380,21 @@
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
+        }
+      }
+
+      .back-to-menu {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        left: 80px;
+        top: 95%;
+        background: url("/src/png/arrow-97-48.png") no-repeat center center;
+        background-size: cover;
+
+        &:hover {
+          background-color: rgba(143, 137, 137, 0.604);
+          border-radius: 5px;
         }
       }
     }
