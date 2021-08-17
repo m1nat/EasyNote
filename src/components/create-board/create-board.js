@@ -1,6 +1,7 @@
 import { createNotes } from "../../api/api-handlers";
+import { addImages } from "../../DOM-render/add-img/add-img";
 import { routs } from "../../shared/constants/paths";
-import { getLocalId, getNameOfBoard, removeNameOfBoard } from "../../shared/ls-services/localStorage";
+import { getImageUrl, getLocalId, getNameOfBoard, removeNameOfBoard } from "../../shared/ls-services/localStorage";
 import { addNewBoards } from "../../shared/validators/check-inputs";
 
 const btn = document.querySelector('.aside-actions');
@@ -14,31 +15,36 @@ const deleteSaveBoard = document.querySelector('.delete-save-board');
 const delNote = document.querySelector('.del-note');
 const formDelSave = document.querySelector('.footer-create-board');
 const homePageBtn = document.querySelector('.home-page-btns');
-const errNoteSave = document.querySelector('.errNoteSave');
-const errNoteSaveForm = document.querySelector('.errNoteSave-form');
-const errNoteSaveBtnsCancel = document.querySelector('.errNoteSave-btns-cancel');
 const tcNotes = document.querySelector('.tc-notes');
 const boardName = document.querySelector('.board-name');
 const changeBoardColor = document.getElementById('change-board-color');
 const colorList = document.querySelector('.change-colors-board');
-const addEmoji = document.getElementById('add-emoji');
 const validatorNameBoard = document.querySelector('.validatorNameBoard');
 const closeIncorrectBoardName = document.querySelector('.close');
-const emojiBlock = document.querySelector('.wrapper-emoji');
-const holder = document.querySelector('.holder');
+const btnRountMainPage = document.querySelector('.errNoteSave-btns-cancel');
+const saveBoard = document.querySelector('.errNoteSave-btns-save');
+const images = document.querySelectorAll('.img');
 const localId = getLocalId();
-let newArr = [];
-let arrFontWeight = [];
-let arrFontCursivce = [];
-let arrFontStyle = [];
-let underlineArr = [];
-let fontSizeArr = [];
 
 export const createNoteHandlers = () => {
+
+  addImages();
+
+  const errNoteSave = document.querySelector('.errNoteSave');
+  const errNoteSaveForm = document.querySelector('.errNoteSave-form');
+  let newArr = [];
+  let arrFontWeight = [];
+  let arrFontCursivce = [];
+  let arrFontStyle = [];
+  let underlineArr = [];
+  let fontSizeArr = [];
+  let index;
+  let sourceImg;
 
   colorList.style.display = 'none';
 
   addNewSticker.onclick = () => {
+    addImages();
     const holder = document.createElement('div');
     const holderPanel = document.createElement('div');
     const fontWaight = document.createElement('div');
@@ -119,7 +125,6 @@ export const createNoteHandlers = () => {
     firstLineEmoji.className = 'emoji-line-first';
     secondLineEmoji.className = 'emoji-line-second';
     wrapperEmoji.className = 'wrapper-emoji';
-
     holder.className = 'holder';
     holderPanel.className = 'holder-panel';
     fontWaight.className = 'font-waight';
@@ -138,24 +143,26 @@ export const createNoteHandlers = () => {
 
     tcNotes.append(note);
     note.append(wrapperEmoji, holder, tcNoteHeader, title, tcNoteBody);
-    wrapperEmoji.append(firstLineEmoji, secondLineEmoji)
+    wrapperEmoji.append(firstLineEmoji, secondLineEmoji);
     firstLineEmoji.append(smile_1, smile_2, smile_3, smile_4, smile_5, smile_6, smile_7, smile_8, smile_9, smile_10, smile_11, smile_12, smile_13);
     secondLineEmoji.append(smile_14, smile_15, smile_16, smile_17, smile_18, smile_19, smile_20, smile_21, smile_22, smile_23, smile_24, smile_25, smile_26);
     holder.append(holderPanel, holderBlack);
     holderPanel.append(fontWaight, cursive, underline, orderList, unorderList, fontSize);
     tcNoteHeader.append(tcNoteClose);
 
+    deleteSaveBoard.style.display = 'flex'
+
     tcNoteBody.onclick = () => {
 
       const isClicked = tcNoteBody.getAttribute('clicked');
 
       if (!isClicked) {
-      tcNoteBody.setAttribute('clicked', true);
-      holder.style.display = 'flex';
+        tcNoteBody.setAttribute('clicked', true);
+        holder.style.display = 'flex';
       } else {
         tcNoteBody.removeAttribute('clicked');
         holder.style.display = 'none';
-        wrapperEmoji.style.display = 'none'
+        wrapperEmoji.style.display = 'none';
       }
     };
 
@@ -186,7 +193,7 @@ export const createNoteHandlers = () => {
         tcNoteBody.style.fontFamily = 'Times New Roman, Times, serif'
       } else {
         cursive.style.backgroundColor = '#c4c4c4';
-        tcNoteBody.style.fontStyle = 'normal'
+        tcNoteBody.style.fontStyle = 'normal';
         cursive.removeAttribute('clicked');
       }
     }
@@ -209,90 +216,143 @@ export const createNoteHandlers = () => {
 
     orderList.onclick = () => {
 
-        orderList.setAttribute('clicked', true);
-        wrapperEmoji.style.display = 'flex';
+      orderList.setAttribute('clicked', true);
+      wrapperEmoji.style.display = 'flex';
 
-        smile_1.onclick = () => {
-          tcNoteBody.value += smile_1.innerText;
-        }
-        smile_2.onclick = () => {
-          tcNoteBody.value += smile_2.innerText;
-        }
-        smile_3.onclick = () => {
-          tcNoteBody.value += smile_3.innerText;
-        }
-        smile_4.onclick = () => {
-          tcNoteBody.value += smile_4.innerText;
-        }
-        smile_5.onclick = () => {
-          tcNoteBody.value += smile_5.innerText;
-        }
-        smile_6.onclick = () => {
-          tcNoteBody.value += smile_6.innerText;
-        }
-        smile_6.onclick = () => {
-          tcNoteBody.value += smile_6.innerText;
-        }
-        smile_7.onclick = () => {
-          tcNoteBody.value += smile_7.innerText;
-        }
-        smile_8.onclick = () => {
-          tcNoteBody.value += smile_8.innerText;
-        }
-        smile_9.onclick = () => {
-          tcNoteBody.value += smile_9.innerText;
-        }
-        smile_10.onclick = () => {
-          tcNoteBody.value += smile_10.innerText;
-        }
-        smile_11.onclick = () => {
-          tcNoteBody.value += smile_11.innerText;
-        }
-        smile_12.onclick = () => {
-          tcNoteBody.value += smile_12.innerText;
-        }
-        smile_13.onclick = () => {
-          tcNoteBody.value += smile_13.innerText;
-        }
-        smile_14.onclick = () => {
-          tcNoteBody.value += smile_14.innerText;
-        }
-        smile_15.onclick = () => {
-          tcNoteBody.value += smile_15.innerText;
-        }
-        smile_16.onclick = () => {
-          tcNoteBody.value += smile_16.innerText;
-        }
-        smile_17.onclick = () => {
-          tcNoteBody.value += smile_17.innerText;
-        }
-        smile_18.onclick = () => {
-          tcNoteBody.value += smile_18.innerText;
-        }
-        smile_19.onclick = () => {
-          tcNoteBody.value += smile_19.innerText;
-        }
-        smile_20.onclick = () => {
-          tcNoteBody.value += smile_20.innerText;
-        }
-        smile_21.onclick = () => {
-          tcNoteBody.value += smile_21.innerText;
-        }
-        smile_22.onclick = () => {
-          tcNoteBody.value += smile_22.innerText;
-        }
-        smile_23.onclick = () => {
-          tcNoteBody.value += smile_23.innerText;
-        }
-        smile_24.onclick = () => {
-          tcNoteBody.value += smile_24.innerText;
-        }
-        smile_25.onclick = () => {
-          tcNoteBody.value += smile_25.innerText;
-        }
-        smile_26.onclick = () => {
-          tcNoteBody.value += smile_26.innerText;
-        }
+      smile_1.onclick = () => {
+        tcNoteBody.value += smile_1.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_2.onclick = () => {
+        tcNoteBody.value += smile_2.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_3.onclick = () => {
+        tcNoteBody.value += smile_3.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_4.onclick = () => {
+        tcNoteBody.value += smile_4.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_5.onclick = () => {
+        tcNoteBody.value += smile_5.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_6.onclick = () => {
+        tcNoteBody.value += smile_6.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_6.onclick = () => {
+        tcNoteBody.value += smile_6.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+      smile_7.onclick = () => {
+        tcNoteBody.value += smile_7.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_8.onclick = () => {
+        tcNoteBody.value += smile_8.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_9.onclick = () => {
+        tcNoteBody.value += smile_9.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_10.onclick = () => {
+        tcNoteBody.value += smile_10.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_11.onclick = () => {
+        tcNoteBody.value += smile_11.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_12.onclick = () => {
+        tcNoteBody.value += smile_12.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_13.onclick = () => {
+        tcNoteBody.value += smile_13.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_14.onclick = () => {
+        tcNoteBody.value += smile_14.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_15.onclick = () => {
+        tcNoteBody.value += smile_15.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_16.onclick = () => {
+        tcNoteBody.value += smile_16.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_17.onclick = () => {
+        tcNoteBody.value += smile_17.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_18.onclick = () => {
+        tcNoteBody.value += smile_18.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_19.onclick = () => {
+        tcNoteBody.value += smile_19.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_20.onclick = () => {
+        tcNoteBody.value += smile_20.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_21.onclick = () => {
+        tcNoteBody.value += smile_21.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_22.onclick = () => {
+        tcNoteBody.value += smile_22.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_23.onclick = () => {
+        tcNoteBody.value += smile_23.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_24.onclick = () => {
+        tcNoteBody.value += smile_24.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_25.onclick = () => {
+        tcNoteBody.value += smile_25.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
+      smile_26.onclick = () => {
+        tcNoteBody.value += smile_26.innerText;
+        deleteSaveBoard.style.display = 'block';
+      }
+
     }
 
     fontSize.onclick = () => {
@@ -308,7 +368,7 @@ export const createNoteHandlers = () => {
         const upperMiddle = document.createElement('div');
         const large = document.createElement('div');
         const larger = document.createElement('div');
-        const superSize = document.createElement('div')
+        const superSize = document.createElement('div');
 
         fontSize.append(fzWrapper);
         fzWrapper.append(smallFont, mediumFont, upperMiddle, large, larger, superSize);
@@ -429,7 +489,6 @@ export const createNoteHandlers = () => {
 
         }
 
-
       } else {
         fontSize.style.backgroundColor = '#c4c4c4';
         fontSize.removeAttribute('clicked');
@@ -439,42 +498,27 @@ export const createNoteHandlers = () => {
 
     }
 
-
-    deleteSaveBoard.style.display = 'block';
-
     tcNoteClose.onclick = () => {
       note.remove();
+
+      let item;
+      const list = document.querySelectorAll('.tc-note');
+      list.forEach(el => item = el)
+
+      if (!item) {
+        deleteSaveBoard.style.display = 'none';
+      }
+
     }
 
     delNote.onclick = () => {
       document.querySelectorAll('.tc-note').forEach(element => {
         element.remove();
+        deleteSaveBoard.style.display = 'none';
       });
     }
 
   };
-
-  addEmoji.onclick = () => {
-
-    const holder = document.querySelector('.holder');
-    const isClicked = addEmoji.getAttribute('clicked');
-    holder.style.display = 'none'
-
-    if (!isClicked) {
-      const tcNote = document.querySelector('.tc-note');
-      const wrapperEmoji = document.createElement('div');
-      tcNote.prepend(wrapperEmoji);
-      wrapperEmoji.className = 'wrapper-emoji';
-      addEmoji.setAttribute('clicked', true);
-      addEmoji.style.backgroundColor = 'white';
-    } else {
-      wrapperEmoji.remove();
-      addEmoji.removeAttribute('clicked');
-      addEmoji.style.backgroundColor = '#c4c4c4';
-
-    }
-
-  }
 
   btn.onclick = () => {
     menu.className = 'menu-show';
@@ -491,12 +535,6 @@ export const createNoteHandlers = () => {
     btn.style.display = 'none';
   });
 
-  board.onclick = () => {
-    menu.className = 'menu';
-    btn.style.display = 'block';
-    colorList.style.display = 'none'
-  };
-
   const lsBoardName = getNameOfBoard();
   boardNameHeader.innerText = lsBoardName;
 
@@ -510,7 +548,7 @@ export const createNoteHandlers = () => {
     colorList.style.display = 'flex';
 
     pink.onclick = () => board.style.backgroundColor = '#EDF2FC';
-    yellow.onclick = () => board.style.backgroundColor = '#C8C7C7';
+    yellow.onclick = () => board.style.backgroundColor = '#f0f0f0';
     green.onclick = () => board.style.backgroundColor = '#F5ECDB';
     blue.onclick = () => board.style.backgroundColor = '#000000';
     white.onclick = () => board.style.backgroundColor = '#ffffff';
@@ -519,95 +557,107 @@ export const createNoteHandlers = () => {
   formDelSave.addEventListener('submit', event => {
     event.preventDefault();
 
-    const name = boardName.value;
-
     const val = document.querySelectorAll('.tc-note-body');
+
     val.forEach(el => {
-      if (el.value) {
-        newArr.push(el.value);
-      }
+      newArr.push(el.value);
+      arrFontWeight.push(el.style.fontWeight);
+      arrFontCursivce.push(el.style.fontFamily);
+      arrFontStyle.push(el.style.fontStyle);
+      underlineArr.push(el.style.textDecoration);
+      fontSizeArr.push(el.style.fontSize);
     })
 
-    if (document.querySelector('.tc-note-body').value) {
-      createNotes(name, newArr, localId, board.style.backgroundColor)
+    const createNewNotes = {
+      name: boardName.value,
+      notes: newArr,
+      localId: localId,
+      boardColor: board.style.backgroundColor,
+      weight: arrFontWeight,
+      cursive: arrFontCursivce,
+      style: arrFontStyle,
+      underln: underlineArr,
+      fontSize: fontSizeArr,
+      image: getImageUrl()
+    }
+
+    if (addNewBoards(boardName.value)) {
+      createNotes(createNewNotes)
         .then(response => {
           if (response) {
             removeNameOfBoard();
             window.location.href = routs.main;
           };
         })
+    } else if (!addNewBoards(boardName.value)) {
+      validatorNameBoard.style.display = 'flex';
+
+      closeIncorrectBoardName.onclick = () => {
+        validatorNameBoard.style.display = 'none';
+      }
     }
 
   })
 
+
   board.onclick = () => {
+    menu.className = 'menu';
+    btn.style.display = 'block';
+    colorList.style.display = 'none';
     errNoteSave.style.display = 'none';
-    newArr = [];
-    arrFontWeight = [];
-    arrFontCursivce = [];
-    arrFontStyle = [];
-    underlineArr = [];
-    fontSizeArr = [];
   }
 
   homePageBtn.onclick = () => {
 
-    const val = document.querySelectorAll('.tc-note-body');
-    val.forEach(el => {
-      if (el.value) {
-        newArr.push(el.value);
-        arrFontWeight.push(el.style.fontWeight);
-        arrFontCursivce.push(el.style.fontFamily);
-        arrFontStyle.push(el.style.fontStyle);
-        underlineArr.push(el.style.textDecoration);
-        fontSizeArr.push(el.style.fontSize);
-      }
-    })
-
-    errNoteSaveBtnsCancel.onclick = () => {
-      window.location.href = routs.main;
-      removeNameOfBoard();
-    };
-
-    const name = boardName.value;
-    const stickerTextArea = document.querySelector('.tc-note-body');
-
-    if (boardName.value) {
+    if (addNewBoards(boardName.value) && document.querySelector('.tc-note')) {
       errNoteSave.style.display = 'flex';
-      if (addNewBoards(boardName.value)) {
+    } else {
+      window.location.href = routs.main;
+    }
 
-        errNoteSaveForm.addEventListener('submit', event => {
-          event.preventDefault();
+    if (errNoteSave.style.display == 'flex') {
 
-          const createNewNotes = {
-            name: boardName.value,
-            notes: newArr,
-            localId: localId,
-            boardColor: board.style.backgroundColor,
-            weight: arrFontWeight,
-            cursive: arrFontCursivce,
-            style: arrFontStyle,
-            underln: underlineArr,
-            fontSize: fontSizeArr
-          }
-
-          createNotes(createNewNotes)
-            .then(response => {
-              if (response) {
-                removeNameOfBoard();
-                window.location.href = routs.main;
-              }
-            })
-
-        })
-      } else if (!(addNewBoards(boardName.value))) {
-        validatorNameBoard.style.display = 'flex'
-        errNoteSave.style.display = 'none';
-
-        closeIncorrectBoardName.onclick = () => {
-          validatorNameBoard.style.display = 'none'
-        }
+      btnRountMainPage.onclick = () => {
+        window.location.href = routs.main;
       }
+
     }
   };
+
+  saveBoard.onclick = async () => {
+
+    const val = document.querySelectorAll('.tc-note-body');
+    val.forEach(el => {
+      newArr.push(el.value);
+      arrFontWeight.push(el.style.fontWeight);
+      arrFontCursivce.push(el.style.fontFamily);
+      arrFontStyle.push(el.style.fontStyle);
+      underlineArr.push(el.style.textDecoration);
+      fontSizeArr.push(el.style.fontSize);
+    })
+
+    const createNewNotes = {
+      name: boardName.value,
+      notes: newArr,
+      localId: localId,
+      boardColor: board.style.backgroundColor,
+      weight: arrFontWeight,
+      cursive: arrFontCursivce,
+      style: arrFontStyle,
+      underln: underlineArr,
+      fontSize: fontSizeArr,
+      image: getImageUrl()
+    }
+
+    await createNotes(createNewNotes)
+      .then(response => {
+        if (response) {
+          removeNameOfBoard();
+          window.location.href = routs.main;
+        }
+      })
+
+  }
+
 };
+

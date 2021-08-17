@@ -19,19 +19,23 @@ export const renderBoarder = () => {
       })
 
       findName.forEach((el, i) => {
+  
         const savedBoard = document.createElement('div');
-        containerBoards.after(savedBoard);
-        savedBoard.className = 'saved-notes';
         const titleBoardSavedBoard = document.createElement('h6');
-        savedBoard.append(titleBoardSavedBoard);
-        titleBoardSavedBoard.className = 'saved-notes-title';
-        titleBoardSavedBoard.innerText = el;
         const loadSevesNotes = document.createElement('div');
-        titleBoardSavedBoard.after(loadSevesNotes);
-        loadSevesNotes.className = 'load-seves-notes';
         const hoverDel = document.createElement('div');
-        loadSevesNotes.after(hoverDel);
+
+        titleBoardSavedBoard.className = 'saved-notes-title';
+        savedBoard.className = 'saved-notes';
+        loadSevesNotes.className = 'load-seves-notes';
         hoverDel.className = 'open-delete-board';
+
+        containerBoards.after(savedBoard);
+        savedBoard.append(titleBoardSavedBoard);
+        titleBoardSavedBoard.after(loadSevesNotes);
+        loadSevesNotes.after(hoverDel);
+
+        titleBoardSavedBoard.innerText = el;
 
         hoverDel.onclick = () => {
 
@@ -54,13 +58,13 @@ export const renderBoarder = () => {
               setNameBoadrd(el.name);
               setIdNotes(el.id)
             }
-
+            
           })
           window.location.href = routs.saved_notes;
         }
-
+        
       })
-
+      
     })
 
 };

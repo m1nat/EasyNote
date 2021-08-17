@@ -1,4 +1,5 @@
 import firebase from 'firebase/app';
+import 'firebase/storage';
 import axios from 'axios';
 require('firebase/auth');
 
@@ -25,7 +26,7 @@ export const signIn = (email, password) => {
 
 export const createNotes = ( createNewNotes ) => {
 
-  const { name, notes, localId, boardColor, weight, cursive, style, underln, fontSize } = createNewNotes; 
+  const { name, notes, localId, boardColor, weight, cursive, style, underln, fontSize, image} = createNewNotes; 
 
   return fetch(`${databaseURL}/notes.json`, {
     method: 'POST',
@@ -41,7 +42,8 @@ export const createNotes = ( createNewNotes ) => {
       cursive, 
       style, 
       underln, 
-      fontSize 
+      fontSize,
+      image
     })
   })
 };
@@ -111,7 +113,7 @@ export const getBoard = () => {
 };
 
 export const removeBoard = (id) => {
-  axios.delete(`${databaseURL}/notes/${id}.json`);
+  return axios.delete(`${databaseURL}/notes/${id}.json`)
 };
 
 export const updateNotes = patchBoard => {

@@ -7,6 +7,6 @@ export const preloaderMainPage = () => {
       preloader.className = 'done';
     }
     
-  }, 1000);
+  }, 1200);
 
 };

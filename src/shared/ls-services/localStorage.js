@@ -48,3 +48,10 @@ export const setIdNotes = (id) => localStorage.setItem('notesId', id);
 
 export const getIdNotes = () => localStorage.getItem('notesId');
 
+export const removeIdNotes = () => localStorage.removeItem('notesId');
+
+export const setImageUrl = url => localStorage.setItem('imageURL', url);
+
+export const getImageUrl = () => localStorage.getItem('imageURL');
+
+export const removeImageUrl = () => localStorage.removeItem('imageURL');

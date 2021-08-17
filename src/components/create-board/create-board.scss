@@ -146,6 +146,257 @@
         background: url("/src/png/arrow-32-48.png") no-repeat center center;
         background-size: cover;
       }
+
+      .aside-actions-close {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+        background: url("/src/png/arrow-32-48.png") no-repeat center center;
+        background-size: cover;
+      }
+    }
+
+    .galery {
+      width: 20%;
+      height: 100%;
+      border: 1px solid rgb(187, 187, 187);
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      overflow-y: auto;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      transition: 1s;
+      position: relative;
+
+      &::-webkit-scrollbar {
+        width: 10px;
+        cursor: pointer;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: rgb(242, 240, 240);
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      &-item-first-line {
+        width: 45%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+
+        .img {
+          width: 100%;
+          height: 135px;
+          border-radius: 3px;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+
+        .hand-love {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/zdanie_arhitektura_podsvetka_196497_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .board {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/tigr_ryk_zhivotnoe_217621_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .paris {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/lotos_tsvetok_lepestki_217430_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .book {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/lodki_pliazh_more_170322_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .praha {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/lodki_more_voda_217731_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .waterfall {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/lodka_parus_more_217599_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .home-on-water {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/listia_kapli_mokryj_201921_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .cat {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/listia_kapli_makro_190211_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .flowers {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/kamni_galka_shershavyj_217589_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .cloud {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/gory_les_derevia_217683_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+
+      &-item-second-line {
+        width: 45%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+        margin-left: 10px;
+
+        .img {
+          width: 100%;
+          height: 135px;
+          border-radius: 3px;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+
+        .sea {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/gorod_zdaniia_arhitektura_217696_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .air-ballon {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/gorod_zdaniia_arhitektura_217687_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .greenwaterfall {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/gorod_gorodskoj_pejzazh_zdaniia_217568_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .city {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/frukty_ananas_apelsin_197288_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .airplane {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/fruktovyj_led_morozhenoe_led_217541_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .home2 {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/frantsuzskij_buldog_sobaka_vysunutyj_iazyk_208041_1280x720.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .beach {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/fejerverk_vzryvy_iskry_215861_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .sea2 {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/doroga_ulitsa_ogni_217609_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .coffe {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/doroga_pustynia_gory_217612_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .snow {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/babochka_krylia_nasekomoe_217632_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+
+      .back-to-menu {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        left: 80px;
+        top: 95%;
+        background: url("/src/png/arrow-97-48.png") no-repeat center center;
+        background-size: cover;
+
+        &:hover {
+          background-color: rgba(143, 137, 137, 0.604);
+          border-radius: 5px;
+        }
+      }
     }
 
     .menu {
@@ -304,7 +555,7 @@
       }
 
       .yellow {
-        background-color: #c8c7c7;
+        background-color: #f0f0f0;
       }
 
       .green {
@@ -327,7 +578,7 @@
       background-color: #f0f0f0;
       overflow-x: none;
       overflow-y: auto;
-      transition: 1.5s;
+      transition: 1s;
 
       #notesWrapper {
         padding: 50px;
@@ -337,6 +588,54 @@
           justify-content: center;
           flex-wrap: wrap;
           margin: 0 auto;
+
+          .img-wrapper {
+            background-color: #fffacb;
+            border-radius: 8px;
+            width: 285px;
+            height: 150px;
+            margin: 0 10px 20px;
+            box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s;
+            cursor: pointer;
+
+            .file-upload {
+              height: 110px;
+              width: 110px;
+              border-radius: 100px;
+              position: relative;
+              margin: 20px auto;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: 4px solid #ffffff;
+              overflow: hidden;
+              background-image: linear-gradient(
+                to bottom,
+                #fffacb 50%,
+                #e6e6e4 50%
+              );
+              background-size: 100% 200%;
+              transition: all 1s;
+              color: #ffffff;
+              font-size: 100px;
+
+              input[type="file"] {
+                height: 200px;
+                width: 200px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                cursor: pointer;
+              }
+
+              &:hover {
+                background-position: 0 -100%;
+                color: #d8d8d4;
+              }
+            }
+          }
 
           .wrapper-emoji {
             width: 100%;
@@ -348,11 +647,10 @@
             align-items: center;
             display: none;
 
-            .emoji-line-first { 
+            .emoji-line-first {
               width: 100%;
               height: 50%;
               display: flex;
-              
             }
 
             .emoji-line-second {
@@ -548,7 +846,6 @@
               .order-list {
                 width: 100%;
                 height: auto;
-                
               }
 
               &::-webkit-scrollbar {
@@ -624,10 +921,10 @@
 .errNoteSave {
   display: none;
   position: absolute;
-  width: 530px !important;
-  height: 90px;
+  width: 520px !important;
+  height: 95px;
   top: 200px;
-  left: 39%;
+  left: 30%;
   border: 1px solid;
   flex-direction: column;
   justify-content: space-around;
@@ -641,34 +938,43 @@
 
   h6 {
     text-align: center;
+    text-shadow: 4px 3px 2px rgba(206, 190, 182, 0.98);
   }
 
-  .errNoteSave-form {
-    width: 100%;
+  .errNoteSave-btns {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
 
-    .errNoteSave-btns {
-      width: 80%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin: 0px auto;
+    .errNoteSave-btns-cancel {
+      background-color: #c4c4c4;
+      height: 25px;
+      width: 170px;
+      text-align: center;
+      border-radius: 4px;
+      box-shadow: 5px 5px 8px rgba(43, 42, 42, 0.693);
+      transition: 0.3s;
 
-      .errNoteSave-btns-cancel {
-        background-color: #c9c6c6;
-        border: none;
-        border-radius: 5px;
-        outline: none;
-        width: 170px !important;
-        padding-left: 11px;
-        cursor: pointer;
+      &:active {
+        background-color: rgba(247, 127, 127, 0.774);
+        color: white;
+        box-shadow: 2px 2px 4px rgba(36, 35, 35, 0.837);
       }
+    }
 
-      .errNoteSave-btns-save {
-        background-color: #d7eeef;
-        border: none;
-        outline: none;
-        border-radius: 5px;
-        width: 70px;
+    .errNoteSave-btns-save {
+      background-color: #d7eeef;
+      height: 25px;
+      width: 70px;
+      border-radius: 4px;
+      box-shadow: 5px 5px 8px rgba(43, 42, 42, 0.693);
+      transition: 0.3s;
+      text-align: center;
+
+      &:active {
+        background-color: rgba(153, 245, 173, 0.768);
+        color: rgb(255, 255, 255);
+        box-shadow: 2px 2px 4px rgba(36, 35, 35, 0.837);
       }
     }
   }
@@ -676,8 +982,8 @@
 
 .validatorNameBoard {
   position: absolute;
-  width: 250px;
-  height: 40px;
+  width: 255px;
+  height: 70px;
   background-color: #c9c6c6;
   top: 25%;
   left: 45%;
@@ -688,6 +994,8 @@
   font-size: 1em;
   color: red;
   display: none;
+  padding-right: 50px;
+  flex-direction: column;
 
   .close {
     outline: none;
@@ -696,7 +1004,17 @@
     background-size: contain;
     width: 10px;
     height: 10px;
-    margin-left: 35px;
     cursor: pointer;
+    margin-right: 10px;
+    position: absolute;
+    top: 5px;
+    left: 90%;
+  }
+
+  a {
+    font-size: 0.7em;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
   }
 }
