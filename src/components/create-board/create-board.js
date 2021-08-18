@@ -5,7 +5,7 @@ import { getImageUrl, getLocalId, getNameOfBoard, removeNameOfBoard } from "../.
 import { addNewBoards } from "../../shared/validators/check-inputs";
 
 const btn = document.querySelector('.aside-actions');
-const menu = document.querySelector('.menu');
+const menu = document.querySelector('.menu-show');
 const back = document.querySelector('.back');
 const boardNameHeader = document.querySelector('.board-name');
 const board = document.querySelector('.board-create');
@@ -23,7 +23,6 @@ const validatorNameBoard = document.querySelector('.validatorNameBoard');
 const closeIncorrectBoardName = document.querySelector('.close');
 const btnRountMainPage = document.querySelector('.errNoteSave-btns-cancel');
 const saveBoard = document.querySelector('.errNoteSave-btns-save');
-const images = document.querySelectorAll('.img');
 const localId = getLocalId();
 
 export const createNoteHandlers = () => {
@@ -38,8 +37,6 @@ export const createNoteHandlers = () => {
   let arrFontStyle = [];
   let underlineArr = [];
   let fontSizeArr = [];
-  let index;
-  let sourceImg;
 
   colorList.style.display = 'none';
 
@@ -150,7 +147,7 @@ export const createNoteHandlers = () => {
     holderPanel.append(fontWaight, cursive, underline, orderList, unorderList, fontSize);
     tcNoteHeader.append(tcNoteClose);
 
-    deleteSaveBoard.style.display = 'flex'
+    deleteSaveBoard.style.display = 'flex';
 
     tcNoteBody.onclick = () => {
 
@@ -521,17 +518,17 @@ export const createNoteHandlers = () => {
   };
 
   btn.onclick = () => {
-    menu.className = 'menu-show';
+    menu.style.display = 'flex';
     btn.style.display = 'none';
   };
 
   back.onclick = () => {
-    menu.className = 'menu';
+    menu.style.display = 'none';
     btn.style.display = 'block';
   };
 
   menuItem.forEach(el => el.onclick = () => {
-    menu.className = 'menu-show';
+    menu.style.display = 'flex'
     btn.style.display = 'none';
   });
 
@@ -601,7 +598,7 @@ export const createNoteHandlers = () => {
 
 
   board.onclick = () => {
-    menu.className = 'menu';
+    menu.style.display = 'none';
     btn.style.display = 'block';
     colorList.style.display = 'none';
     errNoteSave.style.display = 'none';
