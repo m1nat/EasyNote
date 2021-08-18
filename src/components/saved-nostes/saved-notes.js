@@ -1,7 +1,7 @@
 
 export const savedNotesHandlers = () => {
 
-  const menu = document.querySelector('.menu');
+  const menu = document.querySelector('.menu-show');
   const btn = document.querySelector('.aside-actions');
   const back = document.querySelector('.back');
   const menuItem = document.querySelectorAll('.aside-board-items');
@@ -15,21 +15,21 @@ export const savedNotesHandlers = () => {
   colorList.style.display = 'none';
 
   menuItem.forEach(el => el.onclick = () => {
-    menu.className = 'menu-show';
+    menu.style.display = 'flex'
     btn.style.display = 'none';
   });
 
   btn.onclick = () => {
-    menu.className = 'menu-show';
+    menu.style.display = 'flex'
     btn.style.display = 'none';
   };
 
   back.onclick = () => {
-    menu.className = 'menu';
+    menu.style.display = 'none';
     btn.style.display = 'block';
   };
   board.onclick = () => {
-    menu.className = 'menu';
+    menu.style.display = 'none';
     btn.style.display = 'block';
     colorList.style.display = 'none'
   };

@@ -4,7 +4,7 @@ import { getIdNotes, getLocalId, getNameBoadrd, getNotes } from "../../shared/ls
 import { addNewBoards } from "../../shared/validators/check-inputs";
 
 const saveBtn = document.querySelector('.saveNewChanges');
-const menu = document.querySelector('.menu');
+const menu = document.querySelector('.menu-show');
 const btn = document.querySelector('.aside-actions');
 
 let weight = [];
@@ -605,7 +605,7 @@ export const renderNotes = async () => {
 
           formHomePage.style.display = 'none';
           check.style.display = 'none';
-          menu.className = 'menu';
+          menu.style.display = 'none';
           btn.style.display = 'block';
 
         }

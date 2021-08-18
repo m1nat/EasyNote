@@ -146,19 +146,14 @@
         background-size: cover;
       }
     }
-
-    .menu {
-      display: none;
-      transition: 0.5s;
-    }
-
+    
     .menu-show {
       width: 18%;
       border: 1px solid;
       height: 100%;
       border-bottom-right-radius: 8px;
       border-top-right-radius: 8px;
-      display: flex;
+      display: none;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;

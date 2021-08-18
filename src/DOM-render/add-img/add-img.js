@@ -6,12 +6,13 @@ export const addImages = () => {
   let theCSSprop;
   const addImagesBtn = document.getElementById('add-img');
   const galery = document.querySelector('.galery');
-  const menu = document.querySelector('.menu');
+  const menu = document.querySelector('.menu-show');
   const asideActions = document.querySelector('.aside-actions');
   const boardCreate = document.querySelector('.board-create');
   const images = document.querySelectorAll('.img');
   const close = document.querySelector('.midle-create-board-main');
   const backToMenu = document.querySelector('.back-to-menu');
+  const itemAsideBoard = document.querySelectorAll('.aside-board-items');
   let sourceImg;
   let index;
 
@@ -21,23 +22,27 @@ export const addImages = () => {
 
   addImagesBtn.onclick = () => {
     galery.style.display = 'flex';
-      menu.className = 'menu'
+    menu.style.display = 'none';
+
+    itemAsideBoard.forEach(el => {
+      el.onclick = () => {
+        galery.style.display = 'none';
+        menu.style.display = 'flex';
+        asideActions.style.display = 'none';
+
+      }
+    })
 
     backToMenu.onclick = () => {
       galery.style.display = 'none';
+      asideActions.style.display = 'block';
     }
 
-    // if( galery.style.display = 'flex' ) {
-    // } else {
-    //   menu.className = 'menu-show'
-    // }
-    
   }
 
   images.forEach((el, i) => {
 
     el.onclick = () => {
-
       theCSSprop = window.getComputedStyle(el, null).getPropertyValue("background-image");
       boardCreate.style.backgroundImage = theCSSprop;
       boardCreate.style.backgroundSize = 'cover';
