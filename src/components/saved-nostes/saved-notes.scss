@@ -108,7 +108,6 @@
     align-items: center;
     flex-direction: center;
 
-    
     .galerys {
       width: 20%;
       height: 100%;
@@ -155,7 +154,6 @@
           margin-top: 10px;
           cursor: pointer;
         }
-
 
         .hand-loves {
           width: 100%;
@@ -391,7 +389,7 @@
         background-size: cover;
       }
     }
-    
+
     .menu-show {
       width: 18%;
       border: 1px solid;
@@ -421,22 +419,6 @@
         width: 80%;
         height: 90%;
         position: relative;
-
-        .refresh-image {
-          position: absolute;
-          display: none;
-          width: 15px;
-          height: 15px;
-          top: 26%;
-          left: 85%;
-          background: url('/src/png/recurring-appointment-48.png') no-repeat center center;
-          background-size: cover;
-          transition: 0.5s;
-
-          &:hover {
-            transform: rotate(250deg);
-          }
-        }
 
         .menu-item {
           width: 90%;
@@ -510,7 +492,43 @@
         overflow-x: none;
         overflow-y: auto;
         transition: 0.5s;
+        position: relative;
 
+        .refresh-image {
+          position: absolute;
+          width: 26px;
+          height: 26px;
+          left: 98%;
+          top: 1%;
+          background: url("/src/png/close-window-48.png") no-repeat center
+            center;
+          background-size: contain;
+          animation-name: zoom;
+          animation-duration: 3s;
+          animation-timing-function: ease;
+          animation-iteration-count: 5;
+
+          &:hover {
+            animation-play-state: paused;
+          }
+          @keyframes zoom {
+            0% {
+              width: 30px;
+              height: 30px;
+            }
+            50% {
+              width: 34px;
+              height: 34px;
+              background: url("/src/png/close-window-white.png") no-repeat
+                center center;
+              background-size: contain;
+            }
+            100% {
+              width: 30px;
+              height: 30px;
+            }
+          }
+        }
         #notesWrapper {
           padding: 50px;
 
