@@ -420,6 +420,23 @@
         justify-content: flex-start;
         width: 80%;
         height: 90%;
+        position: relative;
+
+        .refresh-image {
+          position: absolute;
+          display: none;
+          width: 15px;
+          height: 15px;
+          top: 26%;
+          left: 85%;
+          background: url('/src/png/recurring-appointment-48.png') no-repeat center center;
+          background-size: cover;
+          transition: 0.5s;
+
+          &:hover {
+            transform: rotate(250deg);
+          }
+        }
 
         .menu-item {
           width: 90%;

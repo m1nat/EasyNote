@@ -12,9 +12,10 @@ export const addImagesEdit = () => {
   const galery = document.querySelector('.galerys');
   const menu = document.querySelector('.menu-show');
   const asideActions = document.querySelector('.aside-actions');
-  const close = document.querySelector('.midle-create-board-main');
   const backToMenu = document.querySelector('.back-to-menu');
   const itemAsideBoard = document.querySelectorAll('.aside-board-items');
+  const refreshImage = document.querySelector('.refresh-image');
+
   let sourceImg;
   let index;
 

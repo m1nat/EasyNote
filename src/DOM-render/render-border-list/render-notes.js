@@ -1,12 +1,15 @@
 import { getBoard, removeBoard, updateNotes } from "../../api/api-handlers";
 import { routs } from "../../shared/constants/paths";
-import { getIdNotes, getImageUrl, getLocalId, getNameBoadrd, getNotes, getResponseURLimage, removeImageUrl, setResponseURLimage, setURL } from "../../shared/ls-services/localStorage";
+import { getIdNotes, getImageUrl, getLocalId, getNameBoadrd, getNotes, getResponseURLimage, removeImageUrl, removeResponseURLimage, setResponseURLimage, setURL } from "../../shared/ls-services/localStorage";
 import { addNewBoards } from "../../shared/validators/check-inputs";
 
 const saveBtn = document.querySelector('.saveNewChanges');
 const menu = document.querySelector('.menu-show');
 const btn = document.querySelector('.aside-actions');
 const galerys = document.querySelector('.galerys');
+const backToMenus = document.querySelector('.back-to-menus');
+const refreshImage = document.querySelector('.refresh-image');
+const board = document.querySelector('.board');
 
 let weight = [];
 let size = [];
@@ -23,10 +26,9 @@ export const renderNotes = async () => {
   await getBoard()
     .then(response => {
       if (response) {
-        
+
         const check = document.querySelector('.change-colors-board');
         const tcNotes = document.querySelector('.notesWrapper-tc');
-        const board = document.querySelector('.board');
         const textarea = document.querySelector('.board-name');
         const homePageBtn = document.querySelector('.home-page-btnss');
         const form = document.querySelector('.footer-save');
@@ -53,13 +55,18 @@ export const renderNotes = async () => {
             family = el.style;
             underline = el.underln;
             size = el.fontSize;
-            backgroundImages = el.image
-            setResponseURLimage(el.image)
-            setURL(el.image)
+
+            if (el.image) {
+              setResponseURLimage(el.image)
+              setURL(el.image)
+              backgroundImages = el.image
+              board.style.backgroundImage = `url("${backgroundImages}")`;
+              refreshImage.style.display = 'block';
+            }
+
           }
         })
 
-        board.style.backgroundImage = `url("${backgroundImages}")`
         board.style.backgroundSize = 'cover';
         board.style.backgroundRepeat = 'no-repeat';
         board.style.backgroundPosition = 'center';
@@ -635,6 +642,7 @@ export const renderNotes = async () => {
               removeBoard(getIdNotes())
                 .then(response => {
                   if (response) {
+                    removeResponseURLimage();
                     window.location.href = routs.main;
                   }
                 })
@@ -673,11 +681,11 @@ export const renderNotes = async () => {
                 underln: underlineArr,
                 fontSize: fontSizeArr,
                 notesID: getIdNotes(),
-                image:  getResponseURLimage()
+                image: getResponseURLimage()
               };
 
               updateNotes(patchBoard);
-              
+
             }
           } else if (colorBoard === board.style.backgroundColor || bdName.value === name || arrText.join('') === textsNote.join('')) {
             window.location.href = routs.main;
@@ -689,4 +697,13 @@ export const renderNotes = async () => {
 
     })
 
+  backToMenus.onclick = () => {
+    galerys.style.display = 'none';
+  }
+
+  refreshImage.onclick = () => {
+    board.style.backgroundImage = 'none';
+    refreshImage.style.display = 'none';
+    removeResponseURLimage();
+  }
 }
