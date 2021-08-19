@@ -1,11 +1,12 @@
 import { getBoard, removeBoard, updateNotes } from "../../api/api-handlers";
 import { routs } from "../../shared/constants/paths";
-import { getIdNotes, getLocalId, getNameBoadrd, getNotes } from "../../shared/ls-services/localStorage";
+import { getIdNotes, getImageUrl, getLocalId, getNameBoadrd, getNotes, setResponseURLimage } from "../../shared/ls-services/localStorage";
 import { addNewBoards } from "../../shared/validators/check-inputs";
 
 const saveBtn = document.querySelector('.saveNewChanges');
 const menu = document.querySelector('.menu-show');
 const btn = document.querySelector('.aside-actions');
+const galerys = document.querySelector('.galerys');
 
 let weight = [];
 let size = [];
@@ -22,6 +23,7 @@ export const renderNotes = async () => {
   await getBoard()
     .then(response => {
       if (response) {
+        
         const check = document.querySelector('.change-colors-board');
         const tcNotes = document.querySelector('.notesWrapper-tc');
         const board = document.querySelector('.board');
@@ -52,6 +54,7 @@ export const renderNotes = async () => {
             underline = el.underln;
             size = el.fontSize;
             backgroundImages = el.image
+            setResponseURLimage(el.image)
           }
         })
 
@@ -585,7 +588,8 @@ export const renderNotes = async () => {
             style: arrFontStyle,
             underln: underlineArr,
             fontSize: fontSizeArr,
-            notesID: getIdNotes()
+            notesID: getIdNotes(),
+            image: getImageUrl()
           };
 
           if (addNewBoards(bdName.value)) {
@@ -607,6 +611,7 @@ export const renderNotes = async () => {
           check.style.display = 'none';
           menu.style.display = 'none';
           btn.style.display = 'block';
+          galerys.style.display = 'none';
 
         }
 
@@ -666,7 +671,8 @@ export const renderNotes = async () => {
                 style: arrFontStyle,
                 underln: underlineArr,
                 fontSize: fontSizeArr,
-                notesID: getIdNotes()
+                notesID: getIdNotes(),
+                image: getImageUrl()
               };
 
               updateNotes(patchBoard);

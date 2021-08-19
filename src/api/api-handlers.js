@@ -6,7 +6,7 @@ require('firebase/auth');
 import { FIREBASE_CONFIG, authURL, databaseURL } from './api-config';
 import { showErrorNotification, showErrorNotificationRecovery, showErrorNotificationSignUp } from '../DOM-render/render-messege/error-messege';
 import { routs } from '../shared/constants/paths';
-import { setUIDLS, getUIDLS, setUserId } from '../shared/ls-services/localStorage';
+import { setUIDLS, getUIDLS, setUserId, removeImageUrl, removeResponseURLimage, removeIdNotes } from '../shared/ls-services/localStorage';
 
 export const initAPI = () => {
   firebase.initializeApp(FIREBASE_CONFIG);
@@ -117,7 +117,7 @@ export const removeBoard = (id) => {
 };
 
 export const updateNotes = patchBoard => {
-  const { name, notes, localId, boardColor, weight, cursive, style, underln, fontSize, notesID } = patchBoard; 
+  const { name, notes, localId, boardColor, weight, cursive, style, underln, fontSize, notesID, image } = patchBoard; 
   return fetch(`${databaseURL}/notes/${notesID}.json`, {
     method: 'PUT',
     headers: {
@@ -132,7 +132,8 @@ export const updateNotes = patchBoard => {
       cursive, 
       style, 
       underln, 
-      fontSize 
+      fontSize,
+      image
     })
   }
   )
@@ -140,6 +141,8 @@ export const updateNotes = patchBoard => {
     .then( result => {
       if ( result ) {
         window.location.href = routs.main;
+        removeImageUrl();
+        removeResponseURLimage();
       }
     })
 }

@@ -108,6 +108,251 @@
     align-items: center;
     flex-direction: center;
 
+    
+    .galerys {
+      width: 20%;
+      height: 100%;
+      border: 1px solid rgb(187, 187, 187);
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      overflow-y: auto;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      transition: 1s;
+      position: relative;
+
+      &::-webkit-scrollbar {
+        width: 10px;
+        cursor: pointer;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: rgb(242, 240, 240);
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .galery-item-first-lines {
+        width: 45%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+
+        .imgs {
+          width: 100%;
+          height: 135px;
+          border-radius: 3px;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+
+
+        .hand-loves {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/zdanie_arhitektura_podsvetka_196497_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .boards {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/tigr_ryk_zhivotnoe_217621_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .pariss {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/lotos_tsvetok_lepestki_217430_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .books {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/lodki_pliazh_more_170322_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .prahas {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/lodki_more_voda_217731_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .waterfalls {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/lodka_parus_more_217599_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .home-on-waters {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/listia_kapli_mokryj_201921_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .cats {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/listia_kapli_makro_190211_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .flowerss {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/kamni_galka_shershavyj_217589_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .cloudss {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/gory_les_derevia_217683_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+
+      .galery-item-second-lines {
+        width: 45%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+        margin-left: 10px;
+
+        .imgs {
+          width: 100%;
+          height: 135px;
+          border-radius: 3px;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+
+        .seass {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/gorod_zdaniia_arhitektura_217696_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .air-ballons {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/gorod_zdaniia_arhitektura_217687_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .greenwaterfalls {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/gorod_gorodskoj_pejzazh_zdaniia_217568_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .citys {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/frukty_ananas_apelsin_197288_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .airplanes {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/fruktovyj_led_morozhenoe_led_217541_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .home2s {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/frantsuzskij_buldog_sobaka_vysunutyj_iazyk_208041_1280x720.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .beachs {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/fejerverk_vzryvy_iskry_215861_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .sea2s {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/doroga_ulitsa_ogni_217609_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .coffes {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/doroga_pustynia_gory_217612_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .snows {
+          width: 100%;
+          background-image: url("/src/assets/boardImages/babochka_krylia_nasekomoe_217632_1920x1080.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+
+      .back-to-menus {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        left: 80px;
+        top: 95%;
+        background: url("/src/png/arrow-97-48.png") no-repeat center center;
+        background-size: cover;
+
+        &:hover {
+          background-color: rgba(143, 137, 137, 0.604);
+          border-radius: 5px;
+        }
+      }
+    }
+
     .aside-board {
       width: 4%;
       height: 100%;
@@ -247,6 +492,7 @@
         background-color: #f0f0f0;
         overflow-x: none;
         overflow-y: auto;
+        transition: 0.5s;
 
         #notesWrapper {
           padding: 50px;
@@ -497,7 +743,7 @@
         display: none;
         align-items: center;
         justify-content: flex-end;
-        transition: 1s all;
+        transition: 1s;
 
         &:hover {
           width: 97%;

@@ -1,7 +1,7 @@
 import { createNotes } from "../../api/api-handlers";
 import { addImages } from "../../DOM-render/add-img/add-img";
 import { routs } from "../../shared/constants/paths";
-import { getImageUrl, getLocalId, getNameOfBoard, removeNameOfBoard } from "../../shared/ls-services/localStorage";
+import { getImageUrl, getLocalId, getNameOfBoard, removeImageUrl, removeNameOfBoard } from "../../shared/ls-services/localStorage";
 import { addNewBoards } from "../../shared/validators/check-inputs";
 
 const btn = document.querySelector('.aside-actions');
@@ -583,6 +583,7 @@ export const createNoteHandlers = () => {
         .then(response => {
           if (response) {
             removeNameOfBoard();
+            removeImageUrl();
             window.location.href = routs.main;
           };
         })
@@ -650,6 +651,7 @@ export const createNoteHandlers = () => {
       .then(response => {
         if (response) {
           removeNameOfBoard();
+          removeImageUrl();
           window.location.href = routs.main;
         }
       })
