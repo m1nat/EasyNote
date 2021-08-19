@@ -1,5 +1,5 @@
 import { imagePath } from "../../shared/constants/paths";
-import { getImageUrl, getResponseURLimage, setImageUrl } from "../../shared/ls-services/localStorage";
+import { getImageUrl, getResponseURLimage, getURL, setImageUrl, setResponseURLimage } from "../../shared/ls-services/localStorage";
 
 
 export const addImagesEdit = () => {
@@ -8,40 +8,36 @@ export const addImagesEdit = () => {
   const images = document.querySelectorAll('.imgs');
   const boardCreate = document.querySelector('.board');
   const saveBtn = document.querySelector('.saveNewChanges');
-  // const addImagesBtn = document.getElementById('add-img');
-  // const galery = document.querySelector('.galery');
-  // const menu = document.querySelector('.menu-show');
-  // const asideActions = document.querySelector('.aside-actions');
-  // const close = document.querySelector('.midle-create-board-main');
-  // const backToMenu = document.querySelector('.back-to-menu');
-  // const itemAsideBoard = document.querySelectorAll('.aside-board-items');
+  const addImagesBtn = document.querySelector('.add-images');
+  const galery = document.querySelector('.galerys');
+  const menu = document.querySelector('.menu-show');
+  const asideActions = document.querySelector('.aside-actions');
+  const close = document.querySelector('.midle-create-board-main');
+  const backToMenu = document.querySelector('.back-to-menu');
+  const itemAsideBoard = document.querySelectorAll('.aside-board-items');
   let sourceImg;
   let index;
 
+  addImagesBtn.onclick = () => {
+    galery.style.display = 'flex';
+    menu.style.display = 'none';
 
-  // close.onclick = () => {
-  //   galery.style.display = 'none';
-  // }
+    itemAsideBoard.forEach(el => {
+      
+      el.onclick = () => {
+        galery.style.display = 'none';
+        menu.style.display = 'flex';
+        asideActions.style.display = 'none';
+      }
 
-  // addImagesBtn.onclick = () => {
-  //   galery.style.display = 'flex';
-  //   menu.style.display = 'none';
+    })
 
-  //   itemAsideBoard.forEach(el => {
-  //     el.onclick = () => {
-  //       galery.style.display = 'none';
-  //       menu.style.display = 'flex';
-  //       asideActions.style.display = 'none';
+    backToMenu.onclick = () => {
+      galery.style.display = 'none';
+      asideActions.style.display = 'block';
+    }
 
-  //     }
-  //   })
-
-  //   backToMenu.onclick = () => {
-  //     galery.style.display = 'none';
-  //     asideActions.style.display = 'block';
-  //   }
-
-  // }
+  }
 
   images.forEach((el, i) => {
 
@@ -119,13 +115,14 @@ export const addImagesEdit = () => {
           break;
       }
 
-      if ( sourceImg !== getResponseURLimage() ) {
+      if ( sourceImg !== getURL() ) {
         saveBtn.style.display = 'flex';
       } else {
         saveBtn.style.display = 'none';
       }
       
       setImageUrl(sourceImg);
+      setResponseURLimage(sourceImg);
 
     }
 

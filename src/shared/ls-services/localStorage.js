@@ -61,3 +61,7 @@ export const setResponseURLimage = url => localStorage.setItem('responseURL', ur
 export const getResponseURLimage = () => localStorage.getItem('responseURL');
 
 export const removeResponseURLimage = () => localStorage.removeItem('responseURL');
+
+export const setURL = url => localStorage.setItem('url', url);
+
+export const getURL = () => localStorage.getItem('url');

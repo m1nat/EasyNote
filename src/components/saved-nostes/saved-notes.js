@@ -27,6 +27,7 @@ export const savedNotesHandlers = () => {
   menuItem.forEach(el => el.onclick = () => {
     menu.style.display = 'flex'
     btn.style.display = 'none';
+    galerys.style.display = 'none';
   });
 
   btn.onclick = () => {

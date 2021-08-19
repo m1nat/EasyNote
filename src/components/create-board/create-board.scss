@@ -472,9 +472,7 @@
             margin-left: 5px;
             transition: 0.5s;
             padding: 10px;
-            border-bottom: solid 1px #b4b4b4;
             position: relative;
-
           }
           .refresh {
             display: none;
@@ -482,8 +480,9 @@
             height: 14px;
             position: absolute;
             left: 80%;
-            top: 29%;
-            background: url('/src/png/recurring-appointment-48.png') no-repeat center center;
+            top: 24%;
+            background: url("/src/png/recurring-appointment-48.png") no-repeat
+              center center;
             background-size: cover;
             transition: 1s;
             cursor: pointer;
@@ -492,6 +491,10 @@
 
             &:hover {
               transform: rotate(250deg);
+            }
+
+            @media screen and(max-width: 1600px) {
+              top: 29%;
             }
           }
 
@@ -517,6 +520,7 @@
             font-size: 0.8em;
             font-weight: bolder;
             padding: 5px;
+            border: none;
 
             @media screen and(max-width: 1600px) {
               font-size: 0.8em;

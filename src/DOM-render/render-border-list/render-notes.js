@@ -1,6 +1,6 @@
 import { getBoard, removeBoard, updateNotes } from "../../api/api-handlers";
 import { routs } from "../../shared/constants/paths";
-import { getIdNotes, getImageUrl, getLocalId, getNameBoadrd, getNotes, removeImageUrl, setResponseURLimage } from "../../shared/ls-services/localStorage";
+import { getIdNotes, getImageUrl, getLocalId, getNameBoadrd, getNotes, getResponseURLimage, removeImageUrl, setResponseURLimage, setURL } from "../../shared/ls-services/localStorage";
 import { addNewBoards } from "../../shared/validators/check-inputs";
 
 const saveBtn = document.querySelector('.saveNewChanges');
@@ -55,6 +55,7 @@ export const renderNotes = async () => {
             size = el.fontSize;
             backgroundImages = el.image
             setResponseURLimage(el.image)
+            setURL(el.image)
           }
         })
 
@@ -589,7 +590,7 @@ export const renderNotes = async () => {
             underln: underlineArr,
             fontSize: fontSizeArr,
             notesID: getIdNotes(),
-            image: getImageUrl()
+            image: getResponseURLimage()
           };
 
           if (addNewBoards(bdName.value)) {
@@ -672,7 +673,7 @@ export const renderNotes = async () => {
                 underln: underlineArr,
                 fontSize: fontSizeArr,
                 notesID: getIdNotes(),
-                image: getImageUrl()
+                image:  getResponseURLimage()
               };
 
               updateNotes(patchBoard);
