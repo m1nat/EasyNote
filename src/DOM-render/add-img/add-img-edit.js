@@ -23,6 +23,8 @@ export const addImagesEdit = () => {
     galery.style.display = 'flex';
     menu.style.display = 'none';
 
+    
+    
     itemAsideBoard.forEach(el => {
       
       el.onclick = () => {
@@ -32,14 +34,14 @@ export const addImagesEdit = () => {
       }
 
     })
-
+    
     backToMenu.onclick = () => {
       galery.style.display = 'none';
       asideActions.style.display = 'block';
     }
 
   }
-
+  
   images.forEach((el, i) => {
 
     el.onclick = () => {
@@ -48,6 +50,9 @@ export const addImagesEdit = () => {
       boardCreate.style.backgroundSize = 'cover';
       boardCreate.style.backgroundRepeat = 'no-repeat';
       boardCreate.style.backgroundPosition = 'center';
+      
+      refreshImage.style.display = 'flex'
+
 
       index = i;
 

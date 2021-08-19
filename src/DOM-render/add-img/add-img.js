@@ -1,5 +1,5 @@
 import { imagePath } from "../../shared/constants/paths";
-import { getImageUrl, removeImageUrl, setImageUrl } from "../../shared/ls-services/localStorage";
+import { getImageUrl, getResponseURLimage, removeImageUrl, setImageUrl } from "../../shared/ls-services/localStorage";
 
 export const addImages = () => {
 

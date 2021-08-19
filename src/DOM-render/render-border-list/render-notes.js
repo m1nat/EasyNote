@@ -39,6 +39,7 @@ export const renderNotes = async () => {
         const textsNote = notes.split(',');
         const boardName = getNameBoadrd();
         const id = getLocalId();
+        const idNote = getIdNotes()
         let arrText = [];
         let colorBoard;
         let backgroundImages;
@@ -47,7 +48,7 @@ export const renderNotes = async () => {
         textarea.value = boardName;
 
         response.forEach(el => {
-          if (el.localId === id && boardName === el.name) {
+          if (el.localId === id && boardName === el.name && idNote === el.id ) {
             board.style.backgroundColor = el.boardColor;
             colorBoard = el.boardColor;
             weight = el.weight;
@@ -72,7 +73,7 @@ export const renderNotes = async () => {
         board.style.backgroundPosition = 'center';
 
         textsNote.forEach(el => {
-
+          
           const holder = document.createElement('div');
           const holderPanel = document.createElement('div');
           const fontWaight = document.createElement('div');
