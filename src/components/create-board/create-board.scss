@@ -477,19 +477,21 @@
 
           }
           .refresh {
-            display: 'none';
+            display: none;
             width: 14px;
             height: 14px;
             position: absolute;
             left: 80%;
             top: 29%;
             background: url('/src/png/recurring-appointment-48.png') no-repeat center center;
-            background-size: contain;
+            background-size: cover;
             transition: 1s;
             cursor: pointer;
+            border: none;
+            z-index: 20;
 
             &:hover {
-              transform: rotate(180deg);
+              transform: rotate(250deg);
             }
           }
 

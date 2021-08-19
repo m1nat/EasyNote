@@ -1,5 +1,5 @@
 import { imagePath } from "../../shared/constants/paths";
-import { getImageUrl, setImageUrl } from "../../shared/ls-services/localStorage";
+import { getImageUrl, removeImageUrl, setImageUrl } from "../../shared/ls-services/localStorage";
 
 export const addImages = () => {
 
@@ -14,11 +14,16 @@ export const addImages = () => {
   const backToMenu = document.querySelector('.back-to-menu');
   const itemAsideBoard = document.querySelectorAll('.aside-board-items');
   const refreshImage = document.querySelector('.refresh');
+  const createImageBoard = getImageUrl();
   let sourceImg;
   let index;
 
-  
-  if ( getImageUrl() ) {
+  boardCreate.style.backgroundImage = `url("${createImageBoard}")`;
+  boardCreate.style.backgroundSize = 'cover';
+  boardCreate.style.backgroundRepeat = 'no-repeat';
+  boardCreate.style.backgroundPosition = 'center';
+
+  if (getImageUrl()) {
     refreshImage.style.display = 'block';
   } else {
     refreshImage.style.display = 'none';
@@ -27,7 +32,20 @@ export const addImages = () => {
   close.onclick = () => {
     galery.style.display = 'none';
   }
+  
+  refreshImage.onclick = () => {
 
+    if (!getImageUrl()) {
+      galery.style.display = 'flex';
+    } else {
+      boardCreate.style.backgroundImage = 'none';
+      refreshImage.style.display = 'none';
+      menu.style.display = 'flex';
+      removeImageUrl();
+    }
+
+  }
+  
   addImagesBtn.onclick = () => {
     galery.style.display = 'flex';
     menu.style.display = 'none';
@@ -126,7 +144,7 @@ export const addImages = () => {
 
       setImageUrl(sourceImg);
 
-      if ( getImageUrl() ) {
+      if (getImageUrl()) {
         refreshImage.style.display = 'block';
       } else {
         refreshImage.style.display = 'none';
@@ -135,10 +153,5 @@ export const addImages = () => {
     }
 
   })
-
-  refreshImage.onclick = () => {
-    boardCreate.style.backgroundImage = 'none';
-    refreshImage.style.display = 'none';
-  }
 
 }

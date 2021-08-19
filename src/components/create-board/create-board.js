@@ -611,12 +611,14 @@ export const createNoteHandlers = () => {
       errNoteSave.style.display = 'flex';
     } else {
       window.location.href = routs.main;
+      removeImageUrl();
     }
 
     if (errNoteSave.style.display == 'flex') {
 
       btnRountMainPage.onclick = () => {
         window.location.href = routs.main;
+        removeImageUrl();
       }
 
     }

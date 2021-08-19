@@ -1,6 +1,6 @@
 import { getBoard, removeBoard, updateNotes } from "../../api/api-handlers";
 import { routs } from "../../shared/constants/paths";
-import { getIdNotes, getImageUrl, getLocalId, getNameBoadrd, getNotes, setResponseURLimage } from "../../shared/ls-services/localStorage";
+import { getIdNotes, getImageUrl, getLocalId, getNameBoadrd, getNotes, removeImageUrl, setResponseURLimage } from "../../shared/ls-services/localStorage";
 import { addNewBoards } from "../../shared/validators/check-inputs";
 
 const saveBtn = document.querySelector('.saveNewChanges');
@@ -676,7 +676,7 @@ export const renderNotes = async () => {
               };
 
               updateNotes(patchBoard);
-
+              
             }
           } else if (colorBoard === board.style.backgroundColor || bdName.value === name || arrText.join('') === textsNote.join('')) {
             window.location.href = routs.main;
