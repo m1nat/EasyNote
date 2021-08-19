@@ -53,7 +53,6 @@ export const addImagesEdit = () => {
       
       refreshImage.style.display = 'flex'
 
-
       index = i;
 
       switch (index) {

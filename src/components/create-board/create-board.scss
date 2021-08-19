@@ -600,6 +600,7 @@
     }
 
     .board-create {
+      position: relative;
       margin: 10px auto;
       width: 97%;
       height: 95%;
@@ -607,6 +608,43 @@
       overflow-x: none;
       overflow-y: auto;
       transition: 1s;
+      
+
+      .refresh {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 97%;
+        top: 1%;
+        background: url('/src/png/close-window-48.png') no-repeat center center;
+        background-size: contain;
+        animation-name: zoom;
+        animation-duration: 3s;
+        animation-timing-function: ease;
+        animation-iteration-count: 5;
+
+        &:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes zoom {
+          0% {
+            width: 30px;
+            height: 30px;
+          }
+          50% {
+            width: 35px;
+            height: 35px;
+            background: url('/src/png/close-window-white.png') no-repeat center center;
+            background-size: contain;
+          }
+          100% {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+
 
       #notesWrapper {
         padding: 50px;
