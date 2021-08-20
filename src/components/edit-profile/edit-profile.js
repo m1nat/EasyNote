@@ -13,7 +13,9 @@ export const profileEdit = () => {
   userName.innerHTML = getUserNameLocalStorage();
   userNameEdit.innerHTML = getUserNameLocalStorage();
   email.innerHTML = getEmailLs();
+  
   logoHome.onclick = () => {
     window.location.href = routs.main;
   }
+
 }

@@ -36,7 +36,7 @@ export const renderNotes = async () => {
         const validatorNameBoard = document.querySelector('.validatorNameBoard');
         const closeIncorrectBoardName = document.querySelector('.close');
         const notes = getNotes();
-        const textsNote = notes.split(',');
+        let textsNote;
         const boardName = getNameBoadrd();
         const id = getLocalId();
         const idNote = getIdNotes()
@@ -56,6 +56,7 @@ export const renderNotes = async () => {
             family = el.style;
             underline = el.underln;
             size = el.fontSize;
+            textsNote =  el.notes
 
             if (el.image) {
               setResponseURLimage(el.image)
