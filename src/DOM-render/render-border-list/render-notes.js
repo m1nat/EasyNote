@@ -27,6 +27,7 @@ export const renderNotes = async () => {
     .then(response => {
       if (response) {
 
+        
         const check = document.querySelector('.change-colors-board');
         const tcNotes = document.querySelector('.notesWrapper-tc');
         const textarea = document.querySelector('.board-name');
