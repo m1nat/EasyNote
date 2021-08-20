@@ -55,3 +55,13 @@ export const setImageUrl = url => localStorage.setItem('imageURL', url);
 export const getImageUrl = () => localStorage.getItem('imageURL');
 
 export const removeImageUrl = () => localStorage.removeItem('imageURL');
+
+export const setResponseURLimage = url => localStorage.setItem('responseURL', url);
+
+export const getResponseURLimage = () => localStorage.getItem('responseURL');
+
+export const removeResponseURLimage = () => localStorage.removeItem('responseURL');
+
+export const setURL = url => localStorage.setItem('url', url);
+
+export const getURL = () => localStorage.getItem('url');

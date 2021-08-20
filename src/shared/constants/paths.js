@@ -5,7 +5,8 @@ export const routs = {
   start_page: 'start-page.html',
   create_board: 'create-board.html',
   reset_password: 'reset-password.html',
-  saved_notes: 'saved-notes.html'
+  saved_notes: 'saved-notes.html',
+  edit_profile: 'edit-profile.html'
 };
 
 export const paths = {
@@ -15,7 +16,8 @@ export const paths = {
   start_page: '/start-page.html',
   create_board: '/create-board.html',
   reset_password: '/reset-password.html',
-  saved_notes: '/saved-notes.html'
+  saved_notes: '/saved-notes.html',
+  edit_profile: '/edit-profile.html'
 };
 
 

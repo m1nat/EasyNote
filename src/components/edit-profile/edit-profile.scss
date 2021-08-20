@@ -1,0 +1,293 @@
+.wrapper-main {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  position: relative;
+
+  header {
+    width: 100%;
+    height: 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+    .logo-imgs {
+      width: 25%;
+      height: 100%;
+      background-color: #d7eeef;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &-png {
+        width: 20%;
+        height: 100%;
+        background: url("/src/png/logo.png") center center no-repeat;
+        background-size: contain;
+        margin-left: 120px;
+
+        @media screen and(max-width: 1600px) {
+          margin-left: 70px;
+        }
+      }
+
+      &-title {
+        width: 80%;
+        height: 100%;
+        padding-top: 3px;
+        font-size: 1.9em;
+
+        @media screen and(max-width: 1600px) {
+          font-size: 1.5em;
+        }
+      }
+    }
+
+    .btns-header {
+      width: 75%;
+      height: 100%;
+      background-color: rgb(48, 46, 46);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .logout {
+        width: 5%;
+        height: 100%;
+        background: url("/src/png/exit.png") no-repeat center center;
+        background-size: 40%;
+        cursor: pointer;
+
+        @media screen and(max-width: 1600px) {
+          width: 5%;
+          height: 100%;
+          background-size: 50%;
+        }
+      }
+    }
+  }
+
+  main {
+    width: 100%;
+    height: 94%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .aside {
+      width: 25%;
+      height: 100%;
+      border-right: 1px solid #e4dede;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+
+      .aside-name {
+        width: 100%;
+        height: 4%;
+        font-size: 1.4em;
+        padding-left: 35px;
+        margin-top: 20px;
+
+        @media screen and(max-width: 1600px) {
+          width: 100%;
+          height: 4%;
+          font-size: 1.2em;
+          padding-left: 25px;
+          margin-top: 15px;
+        }
+      }
+
+      .aside-email {
+        width: 100%;
+        height: 4%;
+        font-size: 1.2em;
+        padding-left: 35px;
+        color: #999797;
+
+        @media screen and(max-width: 1600px) {
+          width: 100%;
+          height: 4%;
+          font-size: 1em;
+          padding-left: 25px;
+        }
+      }
+
+      .settings {
+        width: 100%;
+        height: 12%;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .my-account {
+          width: 90%;
+          height: 35%;
+          border-bottom: 1px solid #e4dede;
+          font-weight: 400;
+          font-size: 1.1em;
+          cursor: pointer;
+          padding: 5px;
+          font-weight: 400;
+          border-radius: 5px;
+
+          @media screen and(max-width: 1500px) {
+            height: 55% !important;
+          }
+
+          &:hover {
+            background-color: #b6b5b5;
+            color: white;
+          }
+
+          @media screen and(max-width: 1600px) {
+            width: 90%;
+            height: 50%;
+            border-bottom: 1px solid #e4dede;
+            padding-left: 20px;
+            padding-top: 15px;
+          }
+        }
+
+        .login-security {
+          width: 90%;
+          height: 50%;
+          border-bottom: 1px solid #e4dede;
+          padding-left: 20px;
+          padding-top: 25px;
+          font-weight: 400;
+          font-size: 1.1em;
+          cursor: pointer;
+
+          @media screen and(max-width: 1600px) {
+            width: 90%;
+            height: 50%;
+            border-bottom: 1px solid #e4dede;
+            padding-left: 20px;
+            padding-top: 15px;
+          }
+        }
+      }
+    }
+
+    .main-board {
+      width: 75%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 15px;
+
+      .userInfo {
+        width: 60%;
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+
+        .My-account {
+          font-weight: bold;
+          font-size: 1.2em;
+          padding: 10px;
+          width: 100%;
+          height: 30%;
+        }
+
+        .changeName {
+          width: 100%;
+          height: 30%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px silver solid;
+
+          .nameBlock {
+            width: 20%;
+            height: 100%;
+          }
+
+          .name {
+            width: 100%;
+            height: 30%;
+            padding: 10px;
+          }
+
+          .userName {
+            width: 100%;
+            height: 30%;
+            color: silver;
+            font-size: 1.3em;
+            padding: 10px;
+          }
+
+          .btnEdit {
+            width: 10%;
+            height: 100%;
+            display: flex;
+
+            .btnblockEdit {
+              border: none;
+              width: 100px;
+              height: 25px;
+              align-self: flex-end;
+              border-radius: 5px;
+              background-color: #D7EEEF;
+              margin-bottom: 10px;
+            }
+          }
+        }
+
+        .changeEmail {
+          margin-top: 10px;
+          width: 100%;
+          height: 30%;
+          display: flex;
+          align-self: center;
+          justify-content: space-between;
+
+          .emailBlock {
+            width: 20%;
+            height: 100%;
+          }
+
+          .email {
+            width: 100%;
+            height: 30%;
+            padding: 10px;
+          }
+
+          .userEmail {
+            width: 100%;
+            height: 30%;
+            color: silver;
+            font-size: 1.3em;
+            padding: 10px;
+          }
+
+          .btnEdits {
+            width: 10%;
+            height: 100%;
+            display: flex;
+
+            .btnblockEdits {
+              border: none;
+              width: 100px;
+              height: 25px;
+              align-self: flex-end;
+              border-radius: 5px;
+              background-color: #D7EEEF;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,71 +1,47 @@
 import { imagePath } from "../../shared/constants/paths";
-import { getImageUrl, getResponseURLimage, removeImageUrl, setImageUrl } from "../../shared/ls-services/localStorage";
+import { getImageUrl, getResponseURLimage, getURL, setImageUrl, setResponseURLimage } from "../../shared/ls-services/localStorage";
 
-export const addImages = () => {
+
+export const addImagesEdit = () => {
 
   let theCSSprop;
-  const addImagesBtn = document.getElementById('add-img');
-  const galery = document.querySelector('.galery');
+  const images = document.querySelectorAll('.imgs');
+  const boardCreate = document.querySelector('.board');
+  const saveBtn = document.querySelector('.saveNewChanges');
+  const addImagesBtn = document.querySelector('.add-images');
+  const galery = document.querySelector('.galerys');
   const menu = document.querySelector('.menu-show');
   const asideActions = document.querySelector('.aside-actions');
-  const boardCreate = document.querySelector('.board-create');
-  const images = document.querySelectorAll('.img');
-  const close = document.querySelector('.midle-create-board-main');
   const backToMenu = document.querySelector('.back-to-menu');
   const itemAsideBoard = document.querySelectorAll('.aside-board-items');
-  const refreshImage = document.querySelector('.refresh');
-  const createImageBoard = getImageUrl();
+  const refreshImage = document.querySelector('.refresh-image');
+
   let sourceImg;
   let index;
 
-  boardCreate.style.backgroundImage = `url("${createImageBoard}")`;
-  boardCreate.style.backgroundSize = 'cover';
-  boardCreate.style.backgroundRepeat = 'no-repeat';
-  boardCreate.style.backgroundPosition = 'center';
-
-  if (getImageUrl()) {
-    refreshImage.style.display = 'block';
-  } else {
-    refreshImage.style.display = 'none';
-  }
-
-  close.onclick = () => {
-    galery.style.display = 'none';
-  }
-  
-  refreshImage.onclick = () => {
-
-    if (!getImageUrl()) {
-      galery.style.display = 'flex';
-    } else {
-      boardCreate.style.backgroundImage = 'none';
-      refreshImage.style.display = 'none';
-      menu.style.display = 'flex';
-      removeImageUrl();
-    }
-
-  }
-  
   addImagesBtn.onclick = () => {
     galery.style.display = 'flex';
     menu.style.display = 'none';
 
+    
+    
     itemAsideBoard.forEach(el => {
+      
       el.onclick = () => {
         galery.style.display = 'none';
         menu.style.display = 'flex';
         asideActions.style.display = 'none';
-
       }
-    })
 
+    })
+    
     backToMenu.onclick = () => {
       galery.style.display = 'none';
       asideActions.style.display = 'block';
     }
 
   }
-
+  
   images.forEach((el, i) => {
 
     el.onclick = () => {
@@ -74,6 +50,8 @@ export const addImages = () => {
       boardCreate.style.backgroundSize = 'cover';
       boardCreate.style.backgroundRepeat = 'no-repeat';
       boardCreate.style.backgroundPosition = 'center';
+      
+      refreshImage.style.display = 'flex'
 
       index = i;
 
@@ -86,7 +64,6 @@ export const addImages = () => {
           break;
         case 2:
           sourceImg = imagePath.lotos_tsvetok_lepestki;
-          break;
         case 3:
           sourceImg = imagePath.lodki_pliazh_more;
           break;
@@ -142,13 +119,15 @@ export const addImages = () => {
         default:
           break;
       }
-      setImageUrl(sourceImg);
 
-      if (getImageUrl()) {
-        refreshImage.style.display = 'block';
+      if ( sourceImg !== getURL() ) {
+        saveBtn.style.display = 'flex';
       } else {
-        refreshImage.style.display = 'none';
+        saveBtn.style.display = 'none';
       }
+      
+      setImageUrl(sourceImg);
+      setResponseURLimage(sourceImg);
 
     }
 

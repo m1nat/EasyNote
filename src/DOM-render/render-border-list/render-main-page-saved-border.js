@@ -52,7 +52,7 @@ export const renderBoarder = () => {
 
         loadSevesNotes.onclick = () => {
           response.forEach(el => {
-            if (el.localId === uuid && el.name === titleBoardSavedBoard.innerText) {
+            if (el.localId === uuid && el.name === titleBoardSavedBoard.innerText ) {
               findNotes.push(el.notes);
               setNotes(findNotes);
               setNameBoadrd(el.name);

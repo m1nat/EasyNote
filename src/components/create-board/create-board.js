@@ -1,7 +1,7 @@
 import { createNotes } from "../../api/api-handlers";
 import { addImages } from "../../DOM-render/add-img/add-img";
 import { routs } from "../../shared/constants/paths";
-import { getImageUrl, getLocalId, getNameOfBoard, removeNameOfBoard } from "../../shared/ls-services/localStorage";
+import { getImageUrl, getLocalId, getNameOfBoard, removeImageUrl, removeNameOfBoard } from "../../shared/ls-services/localStorage";
 import { addNewBoards } from "../../shared/validators/check-inputs";
 
 const btn = document.querySelector('.aside-actions');
@@ -41,7 +41,7 @@ export const createNoteHandlers = () => {
   colorList.style.display = 'none';
 
   addNewSticker.onclick = () => {
-    addImages();
+    // addImages();
     const holder = document.createElement('div');
     const holderPanel = document.createElement('div');
     const fontWaight = document.createElement('div');
@@ -583,6 +583,7 @@ export const createNoteHandlers = () => {
         .then(response => {
           if (response) {
             removeNameOfBoard();
+            removeImageUrl();
             window.location.href = routs.main;
           };
         })
@@ -610,12 +611,14 @@ export const createNoteHandlers = () => {
       errNoteSave.style.display = 'flex';
     } else {
       window.location.href = routs.main;
+      removeImageUrl();
     }
 
     if (errNoteSave.style.display == 'flex') {
 
       btnRountMainPage.onclick = () => {
         window.location.href = routs.main;
+        removeImageUrl();
       }
 
     }
@@ -650,6 +653,7 @@ export const createNoteHandlers = () => {
       .then(response => {
         if (response) {
           removeNameOfBoard();
+          removeImageUrl();
           window.location.href = routs.main;
         }
       })

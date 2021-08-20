@@ -38,6 +38,10 @@ module.exports = {
       filename: 'saved-notes.html',
       template: './src/components/saved-nostes/saved-notes.html'
     }),
+    new HTMLWebpackPlugin({
+      filename: 'edit-profile.html',
+      template: './src/components/edit-profile/edit-profile.html'
+    }),
     new CleanWebpackPlugin()
   ],
   module: {

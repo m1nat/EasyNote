@@ -1,3 +1,4 @@
+import { addImagesEdit } from "../../DOM-render/add-img/add-img-edit";
 
 export const savedNotesHandlers = () => {
 
@@ -11,12 +12,22 @@ export const savedNotesHandlers = () => {
   const addNewSticker = document.getElementById('add-new-note');
   const tcNotes = document.querySelector('.notesWrapper-tc');
   const saveBtn = document.querySelector('.saveNewChanges');
+  const addImages = document.querySelector('.add-images');
+  const galerys = document.querySelector('.galerys');
+
+  addImagesEdit();
 
   colorList.style.display = 'none';
+
+  addImages.onclick = () => {
+    galerys.style.display = 'flex';
+    menu.style.display = 'none';
+  }
 
   menuItem.forEach(el => el.onclick = () => {
     menu.style.display = 'flex'
     btn.style.display = 'none';
+    galerys.style.display = 'none';
   });
 
   btn.onclick = () => {
@@ -28,12 +39,7 @@ export const savedNotesHandlers = () => {
     menu.style.display = 'none';
     btn.style.display = 'block';
   };
-  board.onclick = () => {
-    menu.style.display = 'none';
-    btn.style.display = 'block';
-    colorList.style.display = 'none'
-  };
-
+  
   changeBoardColor.onclick = () => {
     const pink = document.querySelector('.pink');
     const yellow = document.querySelector('.yellow');
