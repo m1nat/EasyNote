@@ -112,7 +112,7 @@ export const addImagesEdit = () => {
         case 18:
           sourceImg = imagePath.doroga_pustynia_gory;
           break;
-        case 18:
+        case 19:
           sourceImg = imagePath.babochka_krylia_nasekomoe;
           break;
 

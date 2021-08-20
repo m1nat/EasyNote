@@ -41,7 +41,7 @@ export const createNoteHandlers = () => {
   colorList.style.display = 'none';
 
   addNewSticker.onclick = () => {
-    addImages();
+    // addImages();
     const holder = document.createElement('div');
     const holderPanel = document.createElement('div');
     const fontWaight = document.createElement('div');

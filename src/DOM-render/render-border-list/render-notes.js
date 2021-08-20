@@ -1,6 +1,6 @@
 import { getBoard, removeBoard, updateNotes } from "../../api/api-handlers";
 import { routs } from "../../shared/constants/paths";
-import { getIdNotes, getImageUrl, getLocalId, getNameBoadrd, getNotes, getResponseURLimage, removeImageUrl, removeResponseURLimage, setResponseURLimage, setURL } from "../../shared/ls-services/localStorage";
+import { getIdNotes, getImageUrl, getLocalId, getNameBoadrd, getNotes, getResponseURLimage, removeImageUrl, removeResponseURLimage, setIdNotes, setResponseURLimage, setURL } from "../../shared/ls-services/localStorage";
 import { addNewBoards } from "../../shared/validators/check-inputs";
 
 const saveBtn = document.querySelector('.saveNewChanges');
@@ -56,7 +56,8 @@ export const renderNotes = async () => {
             family = el.style;
             underline = el.underln;
             size = el.fontSize;
-            textsNote =  el.notes
+            textsNote =  el.notes;
+            setIdNotes(el.id);
 
             if (el.image) {
               setResponseURLimage(el.image)

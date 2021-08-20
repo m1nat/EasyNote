@@ -86,6 +86,7 @@ export const addImages = () => {
           break;
         case 2:
           sourceImg = imagePath.lotos_tsvetok_lepestki;
+          break;
         case 3:
           sourceImg = imagePath.lodki_pliazh_more;
           break;
@@ -134,14 +135,14 @@ export const addImages = () => {
         case 18:
           sourceImg = imagePath.doroga_pustynia_gory;
           break;
-        case 18:
+        case 19:
           sourceImg = imagePath.babochka_krylia_nasekomoe;
           break;
 
         default:
           break;
       }
-
+      console.log(sourceImg);
       setImageUrl(sourceImg);
 
       if (getImageUrl()) {
