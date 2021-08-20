@@ -142,7 +142,6 @@ export const addImages = () => {
         default:
           break;
       }
-      console.log(sourceImg);
       setImageUrl(sourceImg);
 
       if (getImageUrl()) {
