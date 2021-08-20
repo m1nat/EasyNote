@@ -10,10 +10,14 @@ const cancelForm = document.querySelector('.cancel');
 const asideUserEmail = document.querySelector('.aside-email');
 const userNameDOM = document.querySelector('.aside-name');
 const errMessage = document.querySelector('.error-messege-inp-add-new-board');
-
+const profileEditRouts = document.querySelector('.my-account')
 
 
 export const mainPageHandlers = () => {
+
+  profileEditRouts.onclick = () => {
+    window.location.href = routs.edit_profile;
+  }
 
   boardNameInp.value = '';
 

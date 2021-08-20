@@ -13,6 +13,7 @@ import { savedNotesHandlers } from './components/saved-nostes/saved-notes.js';
 import { preloaderMainPage } from './DOM-render/preloader/preloader.js';
 
 import './styles/style.scss';
+import { profileEdit } from './components/edit-profile/edit-profile.js';
 
 initAPI();
 
@@ -50,6 +51,9 @@ window.onload = () => {
       renderNotes()
       savedNotesHandlers()
       preloaderMainPage()
+      break;
+    case paths.edit_profile:
+      profileEdit();
       break;
 
     default:
