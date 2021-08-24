@@ -1,33 +1,26 @@
+@import '../../styles/mixin.scss';
+
 .wrapper-main {
-  width: 100vw;
-  height: 100vh;
-  margin: 0px;
-  padding: 0px;
+  @include width_height(100vw, 100vh);
+  @include marginPadding(0px, 0px);
   box-sizing: border-box;
   position: relative;
 
   header {
-    width: 100%;
-    height: 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include width_height(100%, 6%);
+    @include flexCenterSpaceBetween(flex, center, space-between);
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
     .logo-imgs {
-      width: 25%;
-      height: 100%;
+      @include width_height(25%, 100%);
+      @include flexCenterSpaceBetween(flex, center, center);
       background-color: #d7eeef;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       cursor: pointer;
 
       &-png {
-        width: 20%;
-        height: 100%;
+        @include width_height(20%, 100%);
         background: url("/src/png/logo.png") center center no-repeat;
         background-size: contain;
         margin-left: 120px;
@@ -38,8 +31,7 @@
       }
 
       &-title {
-        width: 80%;
-        height: 100%;
+        @include width_height(80%, 100%);
         padding-top: 3px;
         font-size: 1.9em;
 
@@ -50,23 +42,18 @@
     }
 
     .btns-header {
-      width: 75%;
-      height: 100%;
+      @include width_height(75%, 100%);
+      @include flexCenterSpaceBetween(flex, center, flex-end);
       background-color: rgb(48, 46, 46);
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
 
       .logout {
-        width: 5%;
-        height: 100%;
+        @include width_height(5%, 100%);
         background: url("/src/png/exit.png") no-repeat center center;
         background-size: 40%;
         cursor: pointer;
 
         @media screen and(max-width: 1600px) {
-          width: 5%;
-          height: 100%;
+          @include width_height(5%, 100%);
           background-size: 50%;
         }
       }
@@ -74,31 +61,23 @@
   }
 
   main {
-    width: 100%;
-    height: 94%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include width_height(100%, 94%);
+    @include flexCenterSpaceBetween(flex, center, center);
 
     .aside {
-      width: 25%;
-      height: 100%;
+      @include width_height(25%, 100%);
+      @include flexCenterSpaceBetween(flex, center, flex-start);
       border-right: 1px solid #e4dede;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
       flex-direction: column;
 
       .aside-name {
-        width: 100%;
-        height: 4%;
+        @include width_height(100%, 4%);
         font-size: 1.4em;
         padding-left: 35px;
         margin-top: 20px;
 
         @media screen and(max-width: 1600px) {
-          width: 100%;
-          height: 4%;
+          @include width_height(100%, 4%);
           font-size: 1.2em;
           padding-left: 25px;
           margin-top: 15px;
@@ -106,31 +85,25 @@
       }
 
       .aside-email {
-        width: 100%;
-        height: 4%;
+        @include width_height(100%, 4%);
         font-size: 1.2em;
         padding-left: 35px;
         color: #999797;
 
         @media screen and(max-width: 1600px) {
-          width: 100%;
-          height: 4%;
+          @include width_height(100%, 4%);
           font-size: 1em;
           padding-left: 25px;
         }
       }
 
       .settings {
-        width: 100%;
-        height: 12%;
+        @include width_height(100%, 12%);
+        @include flexCenterSpaceBetween(flex, center, center);
         flex-direction: column;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         .my-account {
-          width: 90%;
-          height: 35%;
+          @include width_height(90%, 35%);
           border-bottom: 1px solid #e4dede;
           font-weight: 400;
           font-size: 1.1em;
@@ -149,93 +122,75 @@
           }
 
           @media screen and(max-width: 1600px) {
-            width: 90%;
-            height: 50%;
+            @include width_height(90%, 50%);
+            @include paddingTopLeft(15px, 20px);
             border-bottom: 1px solid #e4dede;
-            padding-left: 20px;
-            padding-top: 15px;
+
           }
         }
 
         .login-security {
-          width: 90%;
-          height: 50%;
+          @include width_height(90%, 50%);
+          @include paddingTopLeft(25px, 20px);
           border-bottom: 1px solid #e4dede;
-          padding-left: 20px;
-          padding-top: 25px;
           font-weight: 400;
           font-size: 1.1em;
           cursor: pointer;
 
           @media screen and(max-width: 1600px) {
-            width: 90%;
-            height: 50%;
+            @include width_height(90%, 50%);
+            @include paddingTopLeft(15px, 20px);
             border-bottom: 1px solid #e4dede;
-            padding-left: 20px;
-            padding-top: 15px;
           }
         }
       }
     }
 
     .main-board {
-      width: 75%;
-      height: 100%;
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
+      @include width_height(75%, 100%);
+      @include flexCenterSpaceBetween(flex, flex-start, flex-start);
       padding: 15px;
 
       .userInfo {
-        width: 60%;
-        height: 30%;
+        @include width_height(60%, 30%);
         display: flex;
         flex-direction: column;
 
         .My-account {
+          @include width_height(100%, 30%);
           font-weight: bold;
           font-size: 1.2em;
           padding: 10px;
-          width: 100%;
-          height: 30%;
         }
 
         .changeName {
-          width: 100%;
-          height: 30%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          @include width_height(100%, 30%);
+          @include flexCenterSpaceBetween(flex, center, space-between);
           border-bottom: 1px silver solid;
 
           .nameBlock {
-            width: 20%;
-            height: 100%;
+            @include width_height(20%, 100%);
           }
 
           .name {
-            width: 100%;
-            height: 30%;
+            @include width_height(100%, 30%);
             padding: 10px;
           }
 
           .userName {
-            width: 100%;
-            height: 30%;
+            @include width_height(100%, 30%);
             color: silver;
             font-size: 1.3em;
             padding: 10px;
           }
 
           .btnEdit {
-            width: 10%;
-            height: 100%;
+            @include width_height(10%, 100%);
             display: flex;
 
             .btnblockEdit {
+              @include width_height(100px, 25px);
               border: none;
-              width: 100px;
-              height: 25px;
               align-self: flex-end;
               border-radius: 5px;
               background-color: #D7EEEF;
@@ -245,41 +200,33 @@
         }
 
         .changeEmail {
+          @include width_height(100%, 30%);
+          @include flexCenterSpaceBetween(flex, center, space-between);
           margin-top: 10px;
-          width: 100%;
-          height: 30%;
-          display: flex;
-          align-self: center;
-          justify-content: space-between;
 
           .emailBlock {
-            width: 20%;
-            height: 100%;
+            @include width_height(20%, 100%);
           }
 
           .email {
-            width: 100%;
-            height: 30%;
+            @include width_height(100%, 30%);
             padding: 10px;
           }
 
           .userEmail {
-            width: 100%;
-            height: 30%;
+            @include width_height(100%, 30%);
             color: silver;
             font-size: 1.3em;
             padding: 10px;
           }
 
           .btnEdits {
-            width: 10%;
-            height: 100%;
+            @include width_height(10%, 100%);;
             display: flex;
 
             .btnblockEdits {
+              @include width_height(100px, 25px);
               border: none;
-              width: 100px;
-              height: 25px;
               align-self: flex-end;
               border-radius: 5px;
               background-color: #D7EEEF;

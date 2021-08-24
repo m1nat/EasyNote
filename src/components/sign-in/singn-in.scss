@@ -1,99 +1,112 @@
+@import '../../styles/mixin.scss';
+
 .wrapper {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #e5e5e5;
+  @include width_height(100vw, 100vh);
+  @include marginPadding(0px, 0px);
   display: flex;
+  background-color: #e5e5e5;
+
 
   .sign-in {
-    width: 800px;
-    height: 782px;
+    @include width_height(800px, 782px);
+    @include flexCenterSpaceBetween(flex, center, space-between);
+    flex-direction: column;
     margin: 3% auto;
     border: 1px solid #e5e5e5;
     background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     border-radius: 10px;
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
     @media screen and(max-width: 1600px) {
-      width: 700px;
-      height: 682px;
+      @include width_height(700px, 682px);
     }
 
     @media screen and(max-width: 1500px) {
-      width: 660px;
-      height: 632px;
+      @include width_height(660px, 632px);
+    }
+
+    @media screen and(max-height: 812px){
+      width: 360px !important;
+      height: 800px !important;
+    }
+
+    @media screen and(max-width: 540px) {
+      width: 520px !important;
+      height: 690px !important;
+    }
+
+    @media screen and(max-width: 414px) {
+      width: 396px !important;
+      height: 706px !important;
+    }
+
+    @media screen and (max-width: 375px) {
+      width: 360px !important;
+      height: 650px !important;
+    }
+
+    @media screen and(max-width: 360px) {
+      width: 350px !important;
+      height: 616px !important;
+    }
+
+    @media screen and(max-width: 320px) {
+      width: 310px !important;
+      height: 550px !important;
     }
 
     .title-logo {
-      width: 70%;
+      @include width_height(70%, 15%);
       text-align: center;
       padding-top: 30px;
-      height: 15%;
       font-size: 2em;
       letter-spacing: 1px;
     }
 
     .form-wrapper {
-      width: 100%;
-      height: 63%;
+      @include width_height(100%, 63%);
 
       form {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        @include width_height(100%, 100%);
+        @include flexCenterSpaceBetween(flex, center, space-around);
         flex-direction: column;
-        width: 100%;
-        height: 100%;
 
         .block-input {
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center;
+          @include width_height(100%, 42%);
+          @include flexCenterSpaceBetween(flex, center, space-evenly);
           flex-direction: column;
-          width: 100%;
-          height: 42%;
           position: relative;
 
           .email-sign-in-error-messege {
+            @include width_height(500px, 20px);
             color: red;
             position: absolute;
-            width: 500px;
-            height: 20px;
             text-align: left;
             font-size: 0.8em;
             display: none;
           }
 
           .hide-password {
-            width: 80%;
-            height: 24%;
+            @include width_height(80%, 24%);
             display: flex;
             border-radius: 10px;
             position: relative;
 
             .password-sign-in-error-messege {
+              @include width_height(500px, 20px);
+              @include absoluteTopLeft(105%, 3%);
               position: absolute;
               color: red;
               position: absolute;
-              width: 500px;
-              height: 20px;
               text-align: left;
               font-size: 0.8em;
-              top: 105%;
-              left: 3%;
               display: none;
             }
 
             input {
-              width: 93%;
-              height: 100%;
+              @include width_height(93%, 100%);
               border-right: none;
               font-size: 1.1em;
               font-weight: bolder;
@@ -116,17 +129,16 @@
           }
 
           #email-sign-in {
-            width: 80%;
-            height: 24%;
+            @include width_height(80%, 24%);
             background-color: #fff;
             outline: none;
+            border-radius: 5px;
             padding-left: 15px;
+            padding-right: 15px;
             border: #e5e5e5 1px solid;
             color: black;
             font-size: 1.1em;
             font-weight: bolder;
-            padding-right: 15px;
-            border-radius: 5px;
 
             &::placeholder {
               color: #e5e5e5;
@@ -137,26 +149,24 @@
         }
 
         p {
-          width: 80%;
-          height: 5%;
+          @include width_height(80%, 5%);
           text-align: right;
           font-size: 1em;
           margin-right: 90px;
+          margin-top: -36px;
           font-weight: bold;
           color: #165dc7;
-          margin-top: -36px;
           cursor: pointer;
         }
 
         #btn-sign-in {
+          @include width_height(80%, 14%);
           color: rgb(0, 0, 0);
           background-color: #d7eeef;
           outline: none;
           font-size: 1.5em;
           letter-spacing: 1px;
           border: 1px solid #c4c4c4;
-          width: 80%;
-          height: 14%;
 
           &:hover {
             opacity: 0.5;
@@ -166,8 +176,7 @@
     }
 
     .create-account-href {
-      width: 100%;
-      height: auto;
+      @include width_height(100%, auto);
       text-align: center;
       font-size: 1em;
       color: #797979;
@@ -175,14 +184,12 @@
     }
 
     .btn-href-sing-up {
-      width: 100%;
-      height: 10%;
+      @include width_height(100%, 10%);
       display: flex;
 
       .btn-href-sing-up-item {
+        @include width_height(55%, 55%);
         margin: 1px auto;
-        width: 55%;
-        height: 55%;
         font-size: 0.7em;
         outline: none;
         border: none;
@@ -205,15 +212,12 @@
 }
 
 .hidden {
-  width: 10%;
-  height: 100%;
+  @include width_height(10%, 100%);
+  @include imagePosition(center, no-repeat, 50%);
   border: 1px solid #e5e5e5;
   background-color: #ffffff;
   border-left: 1px solid #e5e5e5;
   background-image: url("/src/png/eye-2-48.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 50%;
   cursor: pointer;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;

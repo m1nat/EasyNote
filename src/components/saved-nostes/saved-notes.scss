@@ -1,32 +1,23 @@
 .wrapper-main {
-  width: 100vw;
-  height: 100vh;
-  margin: 0px;
-  padding: 0px;
+  @include width_height(100vw, 100vh);
+  @include marginPadding(0px, 0px);
   box-sizing: border-box;
   position: relative;
 
   header {
-    width: 100%;
-    height: 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include width_height(100%, 6%);
+    @include flexCenterSpaceBetween(flex, center, space-between);
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
     .logo-img {
-      width: 25%;
-      height: 100%;
+      @include width_height(25%, 100%);
+      @include flexCenterSpaceBetween(flex, center, center);
       background-color: #d7eeef;
-      display: flex;
-      align-items: center;
-      justify-content: center;
 
       &-png {
-        width: 20%;
-        height: 100%;
+        @include width_height(20%, 100%);
         background: url("/src/png/logo.png") center center no-repeat;
         background-size: contain;
         margin-left: 120px;
@@ -37,8 +28,7 @@
       }
 
       &-title {
-        width: 80%;
-        height: 100%;
+        @include width_height(80%, 100%);
         padding-top: 3px;
         font-size: 1.9em;
 
@@ -49,16 +39,12 @@
     }
 
     .btns-header-create-board {
-      width: 75%;
-      height: 100%;
+      @include width_height(75%, 100%);
+      @include flexCenterSpaceBetween(flex, center, flex-start);
       background-color: rgb(48, 46, 46);
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
 
       .home-page-btnss {
-        width: 12%;
-        height: 70%;
+        @include width_height(12%, 70%);
         background-color: #c4c4c4;
         text-align: center;
         padding-top: 7px;
@@ -87,11 +73,10 @@
       }
 
       .board-name {
+        @include width_height(50%, 90%);
         color: white;
-        width: 50%;
         text-align: center;
         padding: 5px;
-        height: 90%;
         font-size: 1em;
         resize: none;
         background-color: rgb(48, 46, 46);
@@ -102,19 +87,13 @@
     }
   }
   .midle-create-board {
-    width: 100%;
-    height: 94%;
-    display: flex;
-    align-items: center;
-    flex-direction: center;
+    @include width_height(100%, 94%);
+    @include flexCenterSpaceBetween(flex, center, center);
 
     .galerys {
-      width: 20%;
-      height: 100%;
+      @include width_height(20%, 100%);
+      @include flexCenterSpaceBetween(none, flex-start, center);
       border: 1px solid rgb(187, 187, 187);
-      display: none;
-      align-items: flex-start;
-      justify-content: center;
       overflow-y: auto;
       border-bottom-right-radius: 5px;
       border-top-right-radius: 5px;
@@ -139,17 +118,13 @@
       }
 
       .galery-item-first-lines {
-        width: 45%;
-        height: auto;
-        display: flex;
+        @include width_height(45%, auto);
+        @include flexCenterSpaceBetween(flex, center, space-between);
         flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
         margin-bottom: 10px;
 
         .imgs {
-          width: 100%;
-          height: 135px;
+          @include width_height(100%, 135px);
           border-radius: 3px;
           margin-top: 10px;
           cursor: pointer;
@@ -158,97 +133,73 @@
         .hand-loves {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Fzdanie_arhitektura_podsvetka_196497_1920x1080.jpg?alt=media&token=104fff58-3a58-4c19-8a27-e55a880dbee7");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .boards {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Ftigr_ryk_zhivotnoe_217621_1920x1080.jpg?alt=media&token=44a06c04-886b-4b13-b3f2-0562c3f89ff5");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .pariss {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Flotos_tsvetok_lepestki_217430_1920x1080.jpg?alt=media&token=42a9fd08-996c-466a-b5b0-5a87af8434a1");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .books {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Flodki_pliazh_more_170322_1920x1080.jpg?alt=media&token=155314a5-e2a7-48c5-9405-0b4929a10e1f");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .prahas {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Flodki_more_voda_217731_1920x1080.jpg?alt=media&token=636086cd-d048-4aa1-80cd-2723dcaa9398");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .waterfalls {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Flodka_parus_more_217599_1920x1080.jpg?alt=media&token=c1872f62-5e01-4f1e-99ac-9e2060efa525");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .home-on-waters {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Flistia_kapli_mokryj_201921_1920x1080.jpg?alt=media&token=a1731d73-851e-4247-a7b9-cbd8fbcf2227");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .cats {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Flistia_kapli_makro_190211_1920x1080.jpg?alt=media&token=4e1adde9-8486-459e-a09c-f562293ee6e6");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .flowerss {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Fkamni_galka_shershavyj_217589_1920x1080.jpg?alt=media&token=084b8c6e-aead-46b4-8fd5-6d5387aec4b6");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .cloudss {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Fgory_les_derevia_217683_1920x1080.jpg?alt=media&token=94f4de4e-d58e-4306-aed1-1ea71026aa5d");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
       }
 
       .galery-item-second-lines {
-        width: 45%;
-        height: auto;
-        display: flex;
+        @include width_height(45%, auto);
+        @include flexCenterSpaceBetween(flex, center, space-evenly);
         flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
         margin-bottom: 10px;
         margin-left: 10px;
 
         .imgs {
-          width: 100%;
-          height: 135px;
+          @include width_height(100%, 135px);
           border-radius: 3px;
           margin-top: 10px;
           cursor: pointer;
@@ -257,90 +208,68 @@
         .seass {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Fgorod_zdaniia_arhitektura_217696_1920x1080.jpg?alt=media&token=4186d919-4996-461d-85f2-2cdd3c8898b0");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .air-ballons {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Fgorod_zdaniia_arhitektura_217687_1920x1080.jpg?alt=media&token=51d8d677-b839-46d7-b9ad-7b9120441106");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .greenwaterfalls {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Fgorod_gorodskoj_pejzazh_zdaniia_217568_1920x1080.jpg?alt=media&token=26112afc-5ee4-4b76-b97d-f41c9ff7d952");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .citys {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Ffrukty_ananas_apelsin_197288_1920x1080.jpg?alt=media&token=d63b7c51-edd8-42fb-800e-bc17b99b81d9");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .airplanes {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Ffruktovyj_led_morozhenoe_led_217541_1920x1080.jpg?alt=media&token=3a2c6c8c-10a9-462f-8daf-954598dd7811");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .home2s {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Ffrantsuzskij_buldog_sobaka_vysunutyj_iazyk_208041_1280x720.jpg?alt=media&token=b3ccac07-ecc4-47e6-ac4f-b40b988a01cf");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .beachs {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Ffejerverk_vzryvy_iskry_215861_1920x1080.jpg?alt=media&token=f2914d99-dfa4-4ac8-ac2f-affe9d61ac53");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .sea2s {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Fdoroga_ulitsa_ogni_217609_1920x1080.jpg?alt=media&token=55a0807d-fca1-44ed-a6c4-5968a7ceb10e");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .coffes {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Fdoroga_pustynia_gory_217612_1920x1080.jpg?alt=media&token=1d5b8931-4e1b-48e9-b209-c98989f5caef");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
 
         .snows {
           width: 100%;
           background-image: url("https://firebasestorage.googleapis.com/v0/b/minilab-badae.appspot.com/o/images%2Fbabochka_krylia_nasekomoe_217632_1920x1080.jpg?alt=media&token=733cee6e-e12c-4165-aa89-658362c327c1");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
+          @include imagePosition(center, no-repeat, cover);
         }
       }
 
       .back-to-menus {
+        @include width_height(40px, 40px);
         position: fixed;
-        width: 40px;
-        height: 40px;
-        left: 80px;
-        top: 95%;
+        @include absoluteTopLeft(95%, 80px);
         background: url("/src/png/arrow-97-48.png") no-repeat center center;
         background-size: cover;
 
@@ -352,13 +281,11 @@
     }
 
     .aside-board {
-      width: 4%;
-      height: 100%;
-      background-color: rgb(48, 46, 46);
-      display: flex;
+      @include width_height(4%, 100%);
+      @include flexCenterSpaceBetween(flex, center, space-between);
       flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
+      background-color: rgb(48, 46, 46);
+
 
       @media screen and(max-width: 1600px) {
         width: 4.5%;
@@ -369,21 +296,18 @@
       }
 
       &-items {
+        @include width_height(45px, 45px);
         margin-top: 35px;
-        width: 45px;
-        height: 45px;
         border-radius: 7px;
         background-color: #464242;
 
         @media screen and(max-width: 1600px) {
-          width: 39px;
-          height: 39px;
+          @include width_height(39px, 39px);
         }
       }
 
       .aside-actions {
-        width: 30px;
-        height: 30px;
+        @include width_height(30px, 30px);
         margin-bottom: 10px;
         background: url("/src/png/arrow-32-48.png") no-repeat center center;
         background-size: cover;
@@ -391,15 +315,12 @@
     }
 
     .menu-show {
-      width: 18%;
+      @include width_height(18%, 100%);
+      @include flexCenterSpaceBetween(none, center, space-between);
       border: 1px solid;
-      height: 100%;
       border-bottom-right-radius: 8px;
       border-top-right-radius: 8px;
-      display: none;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
       -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
       -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
       box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -412,19 +333,14 @@
       }
 
       .menu-list {
-        display: flex;
+        @include width_height(80%, 90%);
+        @include flexCenterSpaceBetween(flex, center, flex-start);
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        width: 80%;
-        height: 90%;
         position: relative;
 
         .menu-item {
-          width: 90%;
-          height: 5%;
-          margin-top: 40px;
-          margin-left: 5px;
+          @include width_height(90%, 5%);
+          @include marginTopLeft(40px, 5px);
           transition: 0.5s;
           padding: 10px;
           border-bottom: solid 1px #b4b4b4;
@@ -441,10 +357,8 @@
           }
 
           @media screen and(max-width: 1600px) {
-            width: 100%;
-            height: 6%;
-            margin-top: 40px;
-            margin-left: 20px;
+            @include width_height(100%, 6%);
+            @include marginTopLeft(40px, 20px);
           }
 
           span {
@@ -468,8 +382,7 @@
       }
 
       .back {
-        width: 30px;
-        height: 30px;
+        @include width_height(30px, 30px);
         background: url("/src/png/arrow-97-48.png") no-repeat center center;
         background-size: cover;
         margin-bottom: 10px;
@@ -479,15 +392,13 @@
     }
 
     .midle-create-board-main {
-      height: 100%;
-      width: 100%;
+      @include width_height(100%, 100%);
       display: flex;
       flex-direction: column;
 
       .board {
+        @include width_height(97%, 95%);
         margin: 15px auto;
-        width: 97%;
-        height: 95%;
         background-color: #f0f0f0;
         overflow-x: none;
         overflow-y: auto;
@@ -495,10 +406,9 @@
         position: relative;
 
         .refresh-image {
+          @include width_height(26px, 26px);
           display: none;
           position: absolute;
-          width: 26px;
-          height: 26px;
           left: 96%;
           top: 1%;
           background: url("/src/png/close-window-48.png") no-repeat center
@@ -514,19 +424,16 @@
           }
           @keyframes zoom {
             0% {
-              width: 30px;
-              height: 30px;
+              @include width_height(30px, 30px);
             }
             50% {
-              width: 34px;
-              height: 34px;
+              @include width_height(34px, 34px);
               background: url("/src/png/close-window-white.png") no-repeat
                 center center;
               background-size: contain;
             }
             100% {
-              width: 30px;
-              height: 30px;
+              @include width_height(30px, 30px);
             }
           }
         }
@@ -541,49 +448,37 @@
             position: relative;
 
             .wrapper-emoji {
-              width: 100%;
-              height: 52px;
+              @include width_height(100%, 52px);
+              @include flexCenterSpaceBetween(none, center, center);
+              flex-direction: column;
               margin-bottom: 5px;
               background-color: #c4c4c4;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              display: none;
 
               .emoji-line-first {
-                width: 100%;
-                height: 50%;
+                @include width_height(100%, 50%);
                 display: flex;
               }
 
               .emoji-line-second {
-                width: 100%;
-                height: 50%;
+                @include width_height(100%, 50%);
                 display: flex;
               }
             }
 
             .holder {
-              width: 100%;
-              height: 22px;
+              @include width_height(100%, 22px);
+              @include flexCenterSpaceBetween(flex, center, center);
               background-color: black;
-              display: flex;
-              align-items: center;
-              justify-content: center;
               display: none;
               transition-duration: 1s;
 
               .holder-panel {
+                @include width_height(70%, 100%);
+                @include flexCenterSpaceBetween(flex, center, center);
                 background-color: #c4c4c4;
-                width: 70%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
 
                 .font-waight {
-                  width: 13%;
-                  height: 100%;
+                  @include width_height(13%, 100%);
                   font-weight: bolder;
                   padding-left: 7px;
                   transition-duration: 0.5s;
@@ -598,8 +493,7 @@
                 }
 
                 .cursive {
-                  width: 13%;
-                  height: 100%;
+                  @include width_height(13%, 100%);
                   font-family: cursive;
                   font-size: 0.9em;
                   text-align: center;
@@ -612,8 +506,7 @@
                 }
 
                 .underline {
-                  width: 13%;
-                  height: 100%;
+                  @include width_height(13%, 100%);
                   text-decoration: underline;
                   font-weight: bolder;
                   text-align: center;
@@ -625,8 +518,7 @@
                 }
 
                 .order-list {
-                  width: 13%;
-                  height: 100%;
+                  @include width_height(13%, 100%);
                   transition-duration: 0.5s;
 
                   &:hover {
@@ -635,8 +527,7 @@
                 }
 
                 .unorder-list {
-                  width: 13%;
-                  height: 100%;
+                  @include width_height(13%, 100%);
                   background: url("/src/png/list-2-48.png") no-repeat center
                     center;
                   background-size: 63%;
@@ -647,27 +538,22 @@
                   }
                 }
                 .font-size {
-                  width: 35%;
-                  height: 100%;
+                  @include width_height(35%, 100%);
                   font-size: 0.8em;
                   padding-left: 8px;
                   transition-duration: 0.5s;
                   position: relative;
 
                   .fz-wrapper {
-                    width: 80px;
-                    height: 120px;
+                    @include width_height(80px, 120px);
+                    @include flexCenterSpaceBetween(flex, center, center);
+                    flex-direction: column;
                     position: absolute;
                     background-color: #c4c4c4;
                     top: 103%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
 
                     .fz-size {
-                      width: 100%;
-                      height: auto;
+                      @include width_height(100%, auto);
                       border-bottom: 1px solid rgb(172, 172, 172);
                       transition-duration: 0.5s;
 
@@ -684,16 +570,14 @@
               }
 
               .holder-black {
-                width: 30%;
-                height: 100%;
+                @include width_height(30%, 100%);
               }
             }
 
             .tc-note {
               background-color: #fffacb;
               border-radius: 8px;
-              width: 284px;
-              height: 150px;
+              @include width_height(284px, 150px);
               margin: 0 10px 20px;
               box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
               cursor: pointer;
@@ -703,8 +587,7 @@
 
                 .tc-note-closes {
                   display: inline-block;
-                  width: 24px;
-                  height: 24px;
+                  @include width_height(24px, 24px);
                   border-radius: 50%;
                   line-height: 24px;
                   text-align: center;
@@ -736,13 +619,12 @@
               }
 
               .tc-note-bodys {
+                @include width_height(100%, 70%);
                 font-size: 1em;
                 padding: 10px 16px 16px;
                 background: #fffacb;
                 resize: none;
-                width: 100%;
                 border: none;
-                height: 70%;
                 padding: 15px;
                 outline: none;
 
@@ -773,30 +655,23 @@
       }
 
       .saveNewChanges {
-        width: 97%;
-        height: 5%;
+        @include width_height(97%, 5%);
+        @include flexCenterSpaceBetween(none, center, flex-end);
         margin: 0px auto;
-        display: none;
-        align-items: center;
-        justify-content: flex-end;
         transition: 1s;
 
         &:hover {
-          width: 97%;
-          height: 5%;
+          @include width_height(97%, 5%);
+          @include flexCenterSpaceBetween(flex, center, flex-end);
           margin: 0px auto;
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
         }
 
         .save-note {
+          @include width_height(60px, 70%);
           border-radius: 3px;
           outline: none;
           border: none;
           background-color: #d7eeef;
-          width: 60px;
-          height: 70%;
         }
       }
     }
@@ -804,17 +679,14 @@
 }
 
 .errNoteSavess {
+  @include flexCenterSpaceBetween(none, center, space-around);
+  @include absoluteTopLeft(200px, 30%);
   position: absolute;
-  display: none;
+  flex-direction: column;
   width: 520px !important;
   height: 95px;
-  top: 200px;
-  left: 30%;
   border: 1px solid;
-  flex-direction: column;
-  justify-content: space-around;
   background-color: #fff;
-  align-items: center;
   border: none;
   border-radius: 10px;
   -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -833,9 +705,8 @@
     margin: 10px auto !important;
 
     .errNoteSave-btns-cancels {
+      @include width_height(170px, 25px);
       background-color: #c4c4c4;
-      height: 23px;
-      width: 170px;
       text-align: center;
       border-radius: 4px;
       box-shadow: 5px 5px 8px rgba(43, 42, 42, 0.693);
@@ -849,9 +720,8 @@
     }
 
     .errNoteSave-btns-saves {
+      @include width_height(70px, 25px);
       background-color: #d7eeef;
-      height: 25px;
-      width: 70px;
       border-radius: 4px;
       box-shadow: 5px 5px 8px rgba(43, 42, 42, 0.693);
       transition: 0.3s;
@@ -867,17 +737,15 @@
 }
 
 .incorrect-board {
+  @include flexCenterSpaceBetween(none, center, space-around);
+  flex-direction: column;
   position: absolute;
-  display: none;
   width: 520px !important;
   height: 95px;
   top: 200px;
   left: 30%;
   border: 1px solid;
-  flex-direction: column;
-  justify-content: space-around;
   background-color: #fff;
-  align-items: center;
   border: none;
   border-radius: 10px;
   -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -896,9 +764,8 @@
     margin: 10px auto !important;
 
     .incorrect-board-btn-cancel {
+      @include width_height(23px, 170px);
       background-color: #c4c4c4;
-      height: 23px;
-      width: 170px;
       text-align: center;
       border-radius: 4px;
       box-shadow: 5px 5px 8px rgba(43, 42, 42, 0.693);
@@ -912,9 +779,8 @@
     }
 
     .incorrect-board-btn-save {
+      @include width_height(70px, 25px);
       background-color: #d7eeef;
-      height: 25px;
-      width: 70px;
       border-radius: 4px;
       box-shadow: 5px 5px 8px rgba(43, 42, 42, 0.693);
       transition: 0.3s;
