@@ -705,7 +705,7 @@
     margin: 10px auto !important;
 
     .errNoteSave-btns-cancels {
-      @include width_height(23px, 170px);
+      @include width_height(170px, 25px);
       background-color: #c4c4c4;
       text-align: center;
       border-radius: 4px;

@@ -4,9 +4,8 @@
   box-sizing: border-box;
   position: relative;
   box-sizing: border-box;
-  
 
-  header {
+  .headers {
     @include width_height(100%, 6%);
     @include flexCenterSpaceBetween(flex, center, space-between);
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -18,7 +17,7 @@
       @include flexCenterSpaceBetween(flex, center, center);
       background-color: #d7eeef;
 
-      &-png {
+      &-pngs {
         @include width_height(20%, 100%);
         background: url("/src/png/logo.png") center center no-repeat;
         background-size: contain;
@@ -27,15 +26,45 @@
         @media screen and(max-width: 1600px) {
           margin-left: 70px;
         }
+
+        @media screen and(max-width: 928px) {
+          margin-left: 30px;
+        }
+
+        @media screen and(max-width: 745px) {
+          margin-left: 10px !important;
+        }
+
+        @media screen and(max-width: 633px) {
+          display: none;
+        }
       }
 
-      &-title {
+      &-titles {
         @include width_height(80%, 100%);
         padding-top: 3px;
         font-size: 1.9em;
 
         @media screen and(max-width: 1600px) {
           font-size: 1.5em;
+        }
+
+        @media screen and(max-width: 745px) {
+          font-size: 1.2em;
+          margin-left: 10px;
+          padding: 10px !important;
+        }
+
+        @media screen and(max-width: 633px) {
+          font-size: 1.1em;
+          padding-top: 5px;
+        }
+
+        @media screen and(max-width: 500px) {
+          font-size: 1em;
+          padding-top: 8px !important;
+          font-weight: bold;
+          width: 100% !important;
         }
       }
     }
@@ -65,12 +94,37 @@
         }
 
         @media screen and(max-width: 1300px) {
-          padding-top: 3px;
+          padding-top: 8px !important;
           font-size: 1em;
           margin-left: 20px;
           border-radius: 5px;
           letter-spacing: 1px;
           width: 14%;
+        }
+
+        @media screen and(max-width: 850px) {
+          font-size: 1em;
+          margin-left: 10px;
+          border-radius: 5px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          width: 17% !important;
+          padding-top: 7px;
+        }
+
+        @media screen and(max-width: 745px) {
+          width: 18% !important;
+          font-size: 0.9em;
+        }
+
+        @media screen and(max-width: 594px) {
+          width: 25% !important;
+          height: 60%;
+        }
+
+        @media screen and(max-width: 427px) {
+          width: 35% !important;
+          height: 55%;
         }
       }
 
@@ -104,6 +158,26 @@
 
       @media screen and(max-width: 1200px) {
         width: 5%;
+      }
+
+      @media screen and(max-width: 1000px) {
+        width: 6% !important;
+      }
+
+      @media screen and(max-width: 859px) {
+        width: 7% !important;
+      }
+
+      @media screen and(max-width: 714px) {
+        width: 8% !important;
+      }
+
+      @media screen and(max-width: 668px) {
+        width: 10% !important;
+      }
+
+      @media screen and(max-width: 490px) {
+        width: 13% !important;
       }
 
       &-items {
@@ -339,11 +413,30 @@
         width: 22%;
       }
 
+      @media screen and(max-width: 1165px ) {
+        width: 30% !important;
+      }
+
+      @media screen and(max-width: 916px) {
+        width: 35% !important;
+      }
+
+      @media screen and(max-width: 663px) {
+        width: 39% !important;
+      }
+
       .menu-list {
         @include width_height(80%, 90%);
         @include flexCenterSpaceBetween(flex, center, flex-start);
         flex-direction: column;
 
+        @media screen and(max-width: 916px) {
+          width: 85% !important;
+        }
+
+        @media screen and(max-width: 777px) {
+          width: 100% !important;
+        }
 
         #change-board-color {
           @include width_height(90%, 5%);
@@ -356,6 +449,11 @@
           @media screen and(max-width: 1600px) {
             margin-top: 20px;
             height: 3%;
+          }
+
+          @media screen and (max-width: 850px) {
+            width: 100% !important;
+            margin-left: 0px !important;
           }
 
           &:hover {
@@ -377,33 +475,21 @@
           padding: 10px;
           border-bottom: solid 1px #b4b4b4;
 
+          @media screen and (max-width: 850px) {
+            width: 100% !important;
+            margin-left: 0px !important;
+          }
+
+          @media screen and(max-width: 623px) {
+            font-size: 0.7em;
+          }
+
           #add-img {
             @include width_height(90%, 5%);
             @include marginTopLeft(40px, 5px);
             transition: 0.5s;
             padding: 10px;
             position: relative;
-          }
-          .refresh {
-            @include width_height(14px, 14px);
-            @include absoluteTopLeft(24%, 80%);
-            display: none;
-            position: absolute;
-            background: url("/src/png/recurring-appointment-48.png") no-repeat
-              center center;
-            background-size: cover;
-            transition: 1s;
-            cursor: pointer;
-            border: none;
-            z-index: 20;
-
-            &:hover {
-              transform: rotate(250deg);
-            }
-
-            @media screen and(max-width: 1600px) {
-              top: 29%;
-            }
           }
 
           @media screen and(max-width: 1600px) {
@@ -506,18 +592,34 @@
       overflow-x: none;
       overflow-y: auto;
       transition: 1s;
-      
+      background-size: 10%;
 
       .refresh {
         @include width_height(26px, 26px);
-        position: absolute;
         @include absoluteTopLeft(1%, 96%);
-        background: url('/src/png/close-window-48.png') no-repeat center center;
+        position: absolute;
+        background: url("/src/png/close-window-48.png") no-repeat center center;
         background-size: contain;
         animation-name: zoom;
         animation-duration: 3s;
         animation-timing-function: ease;
         animation-iteration-count: 5;
+
+        @media screen and(max-width: 846px) {
+          left: 94% !important;
+        }
+
+        @media screen and(max-width: 645px) {
+          left: 93% !important;
+          width: 20px;
+          height: 20px;
+        }
+
+        @media screen and(max-width: 414px) {
+          left: 90% !important;
+          width: 20px;
+          height: 20px;
+        }
 
         &:hover {
           animation-play-state: paused;
@@ -529,7 +631,8 @@
           }
           50% {
             @include width_height(34px, 34px);
-            background: url('/src/png/close-window-white.png') no-repeat center center;
+            background: url("/src/png/close-window-white.png") no-repeat center
+              center;
             background-size: contain;
           }
           100% {
@@ -537,7 +640,6 @@
           }
         }
       }
-
 
       #notesWrapper {
         padding: 50px;
@@ -549,10 +651,10 @@
           margin: 0 auto;
 
           .wrapper-emoji {
-            @include width_height(100%, 52px);
+            @include width_height(100%, 42px);
             @include flexCenterSpaceBetween(none, center, center);
             flex-direction: column;
-            margin-bottom: 5px;
+            margin-bottom: 0px;
             background-color: #c4c4c4;
 
             .emoji-line-first {
@@ -729,6 +831,13 @@
               border: none;
               padding: 15px;
 
+              @media screen and(max-width: 550px) {
+                width: 90% !important;
+                height: 50%;
+                font-size: 0.8em;
+                padding: 5px 10px 10px;
+              }
+
               .order-list {
                 width: 100%;
                 height: auto;
@@ -781,7 +890,6 @@
         }
 
         .wrapperSaveNote {
-
           .footer-create-board {
             @include width_height(100%, 100%);
 
@@ -791,7 +899,6 @@
               outline: none;
               border: none;
               border-radius: 5px;
-
             }
           }
         }
@@ -814,6 +921,47 @@
   -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
+  @media screen and(max-width: 987px) {
+    left: 25% !important;
+  }
+
+  @media screen and(max-width: 842px) {
+    left: 20% !important;
+  }
+
+  @media screen and(max-width: 700px) {
+    left: 15% !important;
+  }
+
+  @media screen and(max-width: 650px) {
+    width: 450px !important;
+  }
+
+  @media screen and(max-width: 577px) {
+    left: 13% !important;
+    width: 410px !important;
+  }
+
+  @media screen and(max-width: 522px) {
+    left: 11% !important;
+    width: 390px !important;
+  }
+
+  @media screen and(max-width: 450px) {
+    left: 9% !important;
+    width: 370px !important;
+  }
+
+  @media screen and(max-width: 433px) {
+    left: 7% !important;
+    width: 350px !important;
+  }
+
+  @media screen and(max-width: 403px) {
+    left: 5% !important;
+    width: 330px !important;
+  }
+
   h6 {
     text-align: center;
     text-shadow: 4px 3px 2px rgba(206, 190, 182, 0.98);
@@ -823,6 +971,14 @@
     display: flex;
     width: 60%;
     justify-content: space-between;
+
+    @media screen and(max-width: 650px) {
+      width: 70% !important;
+    }
+
+    @media screen and(max-width: 403px) {
+      width: 85% !important;
+    }
 
     .errNoteSave-btns-cancel {
       @include width_height(170px, 25px);

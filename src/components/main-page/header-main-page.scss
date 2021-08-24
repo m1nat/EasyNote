@@ -1,4 +1,4 @@
-@import '../../styles/mixin.scss';
+@import "../../styles/mixin.scss";
 
 .wrapper-main {
   @include width_height(100vw, 100vh);
@@ -13,6 +13,19 @@
     -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
+    @media screen and(max-width: 1024px) {
+      width: 100%;
+      height: 3% !important;
+    }
+
+    @media screen and(max-width: 540px) {
+      height: 4% !important;
+    }
+
+    @media screen and(max-width: 320px) {
+      height: 5% !important;
+    }
+
     .logo-img {
       @include width_height(25%, 100%);
       @include flexCenterSpaceBetween(flex, center, center);
@@ -22,10 +35,22 @@
         @include width_height(20%, 100%);
         background: url("/src/png/logo.png") center center no-repeat;
         background-size: contain;
-        margin-left: 120px;
+        margin-left: 40px !important;
 
         @media screen and(max-width: 1600px) {
           margin-left: 70px;
+        }
+
+        @media screen and(max-width: 1024px) {
+          margin-left: 40px !important;
+        }
+
+        @media screen and(max-width: 768px) {
+          margin-left: 10px !important;
+        }
+
+        @media screen and(max-width: 414px) {
+          display: none;
         }
       }
 
@@ -33,9 +58,33 @@
         @include width_height(80%, 100%);
         padding-top: 3px;
         font-size: 1.9em;
+        margin-left: 30px;
 
         @media screen and(max-width: 1600px) {
           font-size: 1.5em;
+        }
+
+        @media screen and(max-width: 1024px) {
+          padding-top: 0px !important;
+          margin-left: 20px;
+          padding: 0px;
+          font-size: 1.3em !important;
+        }
+        @media screen and(max-width: 768px) {
+          font-size: 1.2em !important;
+        }
+
+        @media screen and(max-width: 540px) {
+          font-size: 0.9em;
+          margin-left: 10px;
+        }
+
+        @media screen and(max-width: 414px) {
+          margin-left: 0px !important;
+        }
+
+        @media screen and(max-width: 320px) {
+          width: 100% !important;
         }
       }
     }
@@ -54,6 +103,14 @@
         @media screen and(max-width: 1600px) {
           @include width_height(5%, 100%);
           background-size: 50%;
+        }
+
+        @media screen and(max-width: 540px) {
+          background-size: 70%;
+          width: 8% !important;
+        }
+        @media screen and(max-width: 414px) {
+          width: 10% !important;
         }
       }
     }
@@ -81,6 +138,33 @@
           padding-left: 25px;
           margin-top: 15px;
         }
+
+        @media screen and(max-width: 1024px) {
+          height: 2% !important;
+        }
+
+        @media screen and(max-width: 867px) {
+          padding-left: 3px !important;
+        }
+
+        @media screen and(max-width: 768px) {
+          font-size: 1.1em !important;
+          font-weight: bold;
+          padding-left: 10px !important;
+        }
+
+        @media screen and(max-width: 540px) {
+          font-size: 0.9em !important;
+          margin-top: 10px !important;
+          height: 3% !important;
+        }
+
+        @media screen and(max-width: 414px) {
+          font-size: 0.8em !important;
+          margin-top: 10px !important;
+          height: 3% !important;
+          font-family: cursive;
+        }
       }
 
       .aside-email {
@@ -94,12 +178,43 @@
           font-size: 1em;
           padding-left: 25px;
         }
+
+        @media screen and(max-width: 768px) {
+          font-size: 0.8em !important;
+          padding-left: 10px !important;
+          margin-top: 5px;
+        }
+        @media screen and(max-width: 867px) {
+          padding-left: 3px !important;
+        }
+
+        @media screen and(max-width: 660px) {
+          font-size: 0.6em !important;
+        }
+
+        @media screen and(max-width: 540px) {
+          padding-left: 5px !important;
+          margin-top: 5px !important;
+        }
+
+        @media screen and(max-width: 494px) {
+          display: none;
+        }
       }
 
       .settings {
         @include width_height(100%, 12%);
         @include flexCenterSpaceBetween(flex, center, center);
         flex-direction: column;
+
+        @media screen and(max-width: 1024px) {
+          height: 9% !important;
+        }
+
+        @media screen and(max-width: 320px) {
+          height: 9% !important;
+          margin-top: 20px;
+        }
 
         .my-account {
           @include width_height(90%, 35%);
@@ -112,8 +227,20 @@
           border-radius: 5px;
 
           @media screen and(max-width: 1500px) {
-            height: 55% !important; 
+            height: 55% !important;
+          }
 
+          @media screen and(max-width: 1024px) {
+            height: 84% !important;
+          }
+
+          @media screen and(max-width: 768px) {
+            font-size: 0.9em !important;
+            padding: 2px !important;
+          }
+
+          @media screen and(max-width: 320px) {
+            font-size: 0.8em !important;
           }
 
           &:hover {
@@ -156,16 +283,35 @@
         border-bottom: 1px solid #e4dede;
         flex-direction: column;
 
+        @media screen and(max-width: 1024px) {
+          height: 25%;
+        }
+
         .my-boards-title {
           @include width_height(100%, 25%);
           padding: 20px;
           font-size: 1.4em;
+
+          @media screen and(max-width: 1024px) {
+            height: 23% !important;
+          }
+
+          @media screen and(max-width: 540px) {
+            font-size: 1em;
+            padding: 10px;
+            margin-left: 9px;
+            font-weight: bold;
+          }
         }
 
         .userNotesAddAndLoad {
           @include width_height(100%, 70%);
           display: flex;
           overflow-x: auto;
+
+          @media screen and(max-width: 1024px) {
+            height: 75%;
+          }
 
           &::-webkit-scrollbar {
             height: 5px;
@@ -193,6 +339,14 @@
             background-color: #fafafa;
             min-width: 310px;
 
+            @media screen and(max-width: 768px) {
+              min-width: 240px;
+            }
+
+            @media screen and(max-width: 540px) {
+              min-width: 150px;
+            }
+
             &:hover {
               -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
               -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -210,6 +364,13 @@
             flex-direction: column;
             transition: 1s;
 
+            @media screen and(max-width: 768px) {
+              min-width: 240px;
+            }
+            @media screen and(max-width: 540px) {
+              min-width: 150px;
+            }
+
             &:hover {
               -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
               -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -224,6 +385,10 @@
               @include width_height(100%, 20%);
               text-align: center;
               padding-top: 15px;
+
+              @media screen and(max-width: 540px) {
+                font-size: 0.8em;
+              }
             }
 
             &:hover .open-delete-board {
@@ -250,10 +415,19 @@
         @include width_height(95%, 35%);
         border-bottom: 1px solid #e4dede;
 
+        @media screen and(max-width: 1024px) {
+          height: 25%;
+        }
+
         .my-group-title {
           @include width_height(100%, 25%);
           padding: 20px;
           font-size: 1.4em;
+
+          @media screen and(max-width: 540px) {
+            font-size: 1em;
+            font-weight: bold;
+          }
         }
 
         .create-my-group {
@@ -263,6 +437,14 @@
           background: url("/src/png/add.png") no-repeat center center;
           background-size: 4%;
           background-color: #fafafa;
+
+          @media screen and(max-width: 768px) {
+            width: 240px;
+          }
+
+          @media screen and(max-width: 540px) {
+            width: 150px;
+          }
         }
       }
     }
@@ -281,14 +463,35 @@
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
     @media screen and(max-width: 1600px) {
-      @include width_height(400px, 44%);
       height: 140px;
+      left: 35%;
+      top: 20%;
+    }
+
+    @media screen and(max-width: 942px) {
+        width: 55% !important;
+        height: 120px !important;
+    }
+
+    @media screen and(max-width: 768px) {
       left: 30%;
+      top: 20%;
+    }
+
+    @media screen and(max-width: 414px) {
+      left: 25%;
+      top: 20%;
+      width: 74% !important;
+      height: 115px;
     }
 
     h5 {
       text-align: center;
       margin-top: 10px;
+
+      @media screen and(max-width: 942px) {
+        font-size: 1em;
+    }
     }
 
     .form-wrapper {
@@ -297,11 +500,15 @@
 
       input {
         @include width_height(100%, 23px);
-        @include paddingTopLeft(20px, 20px);
+        padding-left: 10px;
         border-radius: 4px;
         outline: none;
         border: #c4c4c4 1px solid;
         font-size: 0.9em;
+
+        @media screen and(max-width: 768px) {
+          @include paddingTopLeft(0px, 20px);
+        }
 
         &::placeholder {
           color: #c2c2c2;
