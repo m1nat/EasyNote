@@ -1,0 +1,36 @@
+@mixin width_height($w, $h) {
+  width: $w;
+  height: $h;
+};
+
+@mixin flexCenterSpaceBetween($fl, $ctr, $spbt) {
+  display: $fl;
+  align-items: $ctr;
+  justify-content: $spbt;
+};
+
+@mixin imagePosition($center, $no-repeat, $cover) {
+  background-position: $center;
+  background-repeat: $no-repeat;
+  background-size: $cover;
+};
+
+@mixin marginPadding($margin, $padding) {
+  margin: 0px;
+  padding: 0px;
+};
+
+@mixin absoluteTopLeft($top, $left) {
+  top: $top;
+  left: $left;
+};
+
+@mixin marginTopLeft($marginTop, $margiLeft) {
+  margin-top: $marginTop;
+  margin-left: $margiLeft;
+};
+
+@mixin paddingTopLeft($paddingTop ,$paddingLeft){
+  padding-top: $paddingTop;
+  padding-left: $paddingLeft;
+}

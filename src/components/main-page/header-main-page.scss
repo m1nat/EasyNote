@@ -1,32 +1,25 @@
+@import '../../styles/mixin.scss';
+
 .wrapper-main {
-  width: 100vw;
-  height: 100vh;
-  margin: 0px;
-  padding: 0px;
+  @include width_height(100vw, 100vh);
+  @include marginPadding(0px, 0px);
   box-sizing: border-box;
   position: relative;
 
   header {
-    width: 100%;
-    height: 6%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include width_height(100%, 6%);
+    @include flexCenterSpaceBetween(flex, center, space-between);
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
     .logo-img {
-      width: 25%;
-      height: 100%;
+      @include width_height(25%, 100%);
+      @include flexCenterSpaceBetween(flex, center, center);
       background-color: #d7eeef;
-      display: flex;
-      align-items: center;
-      justify-content: center;
 
       &-png {
-        width: 20%;
-        height: 100%;
+        @include width_height(20%, 100%);
         background: url("/src/png/logo.png") center center no-repeat;
         background-size: contain;
         margin-left: 120px;
@@ -37,8 +30,7 @@
       }
 
       &-title {
-        width: 80%;
-        height: 100%;
+        @include width_height(80%, 100%);
         padding-top: 3px;
         font-size: 1.9em;
 
@@ -49,23 +41,18 @@
     }
 
     .btns-header {
-      width: 75%;
-      height: 100%;
+      @include width_height(75%, 100%);
+      @include flexCenterSpaceBetween(none, center, flex-end);
       background-color: rgb(48, 46, 46);
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
 
       .logout {
-        width: 5%;
-        height: 100%;
+        @include width_height(5%, 100%);
         background: url("/src/png/exit.png") no-repeat center center;
         background-size: 40%;
         cursor: pointer;
 
         @media screen and(max-width: 1600px) {
-          width: 5%;
-          height: 100%;
+          @include width_height(5%, 100%);
           background-size: 50%;
         }
       }
@@ -73,31 +60,23 @@
   }
 
   main {
-    width: 100%;
-    height: 94%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include width_height(100%, 94%);
+    @include flexCenterSpaceBetween(flex, center, center);
 
     .aside {
-      width: 25%;
-      height: 100%;
+      @include width_height(25%, 100%);
+      @include flexCenterSpaceBetween(flex, center, flex-start);
       border-right: 1px solid #e4dede;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
       flex-direction: column;
 
       .aside-name {
-        width: 100%;
-        height: 4%;
+        @include width_height(100%, 4%);
         font-size: 1.4em;
         padding-left: 35px;
         margin-top: 20px;
 
         @media screen and(max-width: 1600px) {
-          width: 100%;
-          height: 4%;
+          @include width_height(100%, 4%);
           font-size: 1.2em;
           padding-left: 25px;
           margin-top: 15px;
@@ -105,31 +84,25 @@
       }
 
       .aside-email {
-        width: 100%;
-        height: 4%;
+        @include width_height(100%, 4%);
         font-size: 1.2em;
         padding-left: 35px;
         color: #999797;
 
         @media screen and(max-width: 1600px) {
-          width: 100%;
-          height: 4%;
+          @include width_height(100%, 4%);
           font-size: 1em;
           padding-left: 25px;
         }
       }
 
       .settings {
-        width: 100%;
-        height: 12%;
+        @include width_height(100%, 12%);
+        @include flexCenterSpaceBetween(flex, center, center);
         flex-direction: column;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         .my-account {
-          width: 90%;
-          height: 35%;
+          @include width_height(90%, 35%);
           border-bottom: 1px solid #e4dede;
           font-weight: 400;
           font-size: 1.1em;
@@ -149,62 +122,48 @@
           }
 
           @media screen and(max-width: 1600px) {
-            width: 90%;
-            height: 50%;
+            @include width_height(90%, 50%);
+            @include paddingTopLeft(15px, 20px);
             border-bottom: 1px solid #e4dede;
-            padding-left: 20px;
-            padding-top: 15px;
           }
         }
 
         .login-security {
-          width: 90%;
-          height: 50%;
+          @include width_height(90%, 50%);
+          @include paddingTopLeft(25px, 20px);
           border-bottom: 1px solid #e4dede;
-          padding-left: 20px;
-          padding-top: 25px;
           font-weight: 400;
           font-size: 1.1em;
           cursor: pointer;
 
           @media screen and(max-width: 1600px) {
-            width: 90%;
-            height: 50%;
+            @include width_height(90%, 50%);
+            @include paddingTopLeft(15px, 20px);
             border-bottom: 1px solid #e4dede;
-            padding-left: 20px;
-            padding-top: 15px;
           }
         }
       }
     }
 
     .main-board {
-      width: 75%;
-      height: 100%;
-      display: flex;
+      @include width_height(75%, 100%);
+      @include flexCenterSpaceBetween(flex, center, flex-start);
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
 
       .my-boards {
-        width: 95%;
-        height: 35%;
+        @include width_height(95%, 35%);
+        @include flexCenterSpaceBetween(flex, flex-start, flex-start);
         border-bottom: 1px solid #e4dede;
-        display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
 
         .my-boards-title {
-          width: 100%;
-          height: 25%;
+          @include width_height(100%, 25%);
           padding: 20px;
           font-size: 1.4em;
         }
 
         .userNotesAddAndLoad {
-          width: 100%;
-          height: 70%;
+          @include width_height(100%, 70%);
           display: flex;
           overflow-x: auto;
 
@@ -226,8 +185,7 @@
           }
 
           .create-my-boards {
-            width: 310px;
-            height: 95%;
+            @include width_height(310px, 95%);
             margin-left: 20px;
             cursor: pointer;
             background: url("/src/png/add.png") no-repeat center center;
@@ -243,16 +201,13 @@
           }
 
           .saved-notes {
-            width: 310px;
-            height: 95%;
+            @include width_height(310px, 95%);
+            @include flexCenterSpaceBetween(flex, center, space-between);
             background-color: #fafafa;
             margin-left: 10px;
             cursor: pointer;
             min-width: 310px;
-            display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
             transition: 1s;
 
             &:hover {
@@ -262,24 +217,19 @@
             }
 
             .load-seves-notes {
-              height: 65%;
-              width: 100%;
+              @include width_height(65%, 100%);
             }
 
             &-title {
-              width: 100%;
-              height: 20%;
+              @include width_height(100%, 20%);
               text-align: center;
               padding-top: 15px;
             }
 
             &:hover .open-delete-board {
-              width: 100%;
-              height: 15%;
+              @include width_height(100%, 15%);
+              @include flexCenterSpaceBetween(flex, center, space-around);
               opacity: 0.5;
-              display: flex;
-              justify-content: space-around;
-              align-items: center;
               background: url("/src/png/multiply-2-48.png") no-repeat center
                 center;
               background-size: 3%;
@@ -297,20 +247,17 @@
       }
 
       .my-group {
-        width: 95%;
-        height: 35%;
+        @include width_height(95%, 35%);
         border-bottom: 1px solid #e4dede;
 
         .my-group-title {
-          width: 100%;
-          height: 25%;
+          @include width_height(100%, 25%);
           padding: 20px;
           font-size: 1.4em;
         }
 
         .create-my-group {
-          width: 310px;
-          height: 70%;
+          @include width_height(310px, 70%);
           margin-left: 20px;
           cursor: pointer;
           background: url("/src/png/add.png") no-repeat center center;
@@ -322,10 +269,8 @@
   }
 
   .wrapper-modal {
+    @include width_height(40%, 150px);
     display: none;
-    width: 40%;
-    height: 150px;
-    position: absolute;
     position: absolute;
     bottom: 500px;
     left: 35%;
@@ -336,8 +281,7 @@
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
     @media screen and(max-width: 1600px) {
-      bottom: 400px;
-      width: 44%;
+      @include width_height(400px, 44%);
       height: 140px;
       left: 30%;
     }
@@ -352,13 +296,11 @@
       margin: 0px auto;
 
       input {
-        width: 100%;
-        height: 23px;
+        @include width_height(100%, 23px);
+        @include paddingTopLeft(20px, 20px);
         border-radius: 4px;
         outline: none;
         border: #c4c4c4 1px solid;
-        padding-left: 20px;
-        padding-right: 20px;
         font-size: 0.9em;
 
         &::placeholder {
@@ -367,18 +309,16 @@
         }
       }
       .error-messege-inp-add-new-board {
-        color: red;
-        font-size: 0.7em;
-        padding-left: 20px;
         display: none;
         position: absolute;
+        padding-left: 20px;
+        color: red;
+        font-size: 0.7em;
       }
     }
     .modal-btn {
+      @include flexCenterSpaceBetween(flex, center, space-between);
       width: 75%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       margin: 17px auto;
 
       .cancel {
@@ -400,11 +340,9 @@
   }
 }
 .wrapper-spinner {
+  @include width_height(100%, 100%);
+  @include absoluteTopLeft(0px, 0px);
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
   background-color: rgb(179, 175, 175);
   opacity: 0.3;
   z-index: 2;
@@ -412,11 +350,9 @@
   visibility: visible;
 
   .spinner {
-    width: 75px;
-    height: 75px;
+    @include width_height(75px, 75px);
+    @include absoluteTopLeft(50%, 50%);
     position: absolute;
-    left: 50%;
-    top: 50%;
     transform: translate(-50%, -50%);
     animation: 1s spin infinite linear;
     background: url("/src/png/logo.png") no-repeat center center;

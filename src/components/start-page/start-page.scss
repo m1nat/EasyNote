@@ -1,38 +1,86 @@
 .wrapper-start-page {
-  margin: 0px;
-  padding: 0px;
+  @include width_height(100vw, 100vh);
+  @include marginPadding(0px, 0px);
   box-sizing: border-box;
   background-color: #f3f3f3;
-  width: 100vw;
-  height: 100vh;
 
   .header {
-    width: 100%;
-    height: 4%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    @include width_height(100%, 4%);
+    @include flexCenterSpaceBetween(flex, center, flex-end);
     font-size: 1.1em;
     font-weight: bolder;
     letter-spacing: 1px;
 
     .start-login {
-      width: 7%;
-      height: 100%;
+      @include width_height(5%, 100%);
       padding: 5px;
 
       &:hover {
         opacity: 0.6;
       }
+
+      @media screen and(max-width: 1187px) {
+        @include width_height(15%, 100%);
+      }
+
+      @media screen and(max-width: 1024px) {
+        font-size: 1.2em;
+        @include width_height(15%, 100%);
+      }
+
+      @media screen and(max-width: 768px) {
+        @include width_height(auto, auto);
+      }
+
+      @media screen and(max-width: 540px) {
+        font-size: 0.9em;
+      }
+
+      @media screen and(max-width: 414px) {
+        font-size: 0.8em;
+        @include width_height(auto, auto);
+      }
+
+      @media screen and(max-width: 375px) {
+        font-size: 0.7em;
+        width: auto;
+      }
     }
 
     .start-sign-up {
-      width: 7%;
-      height: 100%;
+      @include width_height(5%, 100%);
       padding: 5px;
 
       &:hover {
         opacity: 0.6;
+      }
+
+      @media screen and(max-width: 1187px) {
+        @include width_height(25%, 100%);
+      }
+
+      @media screen and(max-width: 1024px) {
+        font-size: 1.2em;
+        @include width_height(15%, 100%);
+      }
+
+      @media screen and(max-width: 768px) {
+        @include width_height(auto, auto);
+        padding-right: 35px;
+      }
+
+      @media screen and(max-width: 540px) {
+        font-size: 0.9em;
+      }
+
+      @media screen and(max-width: 414px) {
+        font-size: 0.8em;
+        @include width_height(auto, auto);
+      }
+
+      @media screen and(max-width: 375px) {
+        font-size: 0.7em;
+        width: auto;
       }
     }
 
@@ -43,31 +91,54 @@
   }
 
   .logo-start-wrapper {
-    width: 650px;
-    height: 650px;
+    @include width_height(650px, 650px);
+    @include flexCenterSpaceBetween(flex, center, space-evenly);
     margin: 7% auto;
     border: 1px solid #dcd3d3;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
 
     @media screen and(max-width: 1500px) {
-      width: 600px;
-      height: 600px;
+      @include width_height(600px, 600px);
       margin: 5% auto;
     }
 
     @media screen and(max-width: 1400px) {
-      width: 590px;
-      height: 590px;
+      @include width_height(590px, 590px);
       margin: 4% auto;
     }
 
+    @media screen and(max-width: 1024px) {
+      @include width_height(924px, 1200px);
+    }
+
+    @media screen and(max-width: 768px) {
+      @include width_height(711px, 895px);
+    }
+
+    @media screen and(max-width: 540px) {
+      @include width_height(479px, 642px);
+      font-size: 0.9em;
+    }
+
+    @media screen and(max-width: 414px) {
+      @include width_height(392px, 679px);
+    }
+
+    @media screen and(max-width: 411px) {
+      @include width_height(392px, 679px);
+    }
+
+    @media screen and(max-width: 375px) {
+      @include width_height(352px, 589px);
+    }
+
+    @media screen and(max-width: 320px) {
+      @include width_height(312px, 509px);
+    }
+
     .title {
+      @include width_height(70%, 15%);
       margin: 10px auto;
-      width: 70%;
-      height: 15%;
       border: 1px solid #eeebeb;
       background-color: #d7eeef;
       color: black;
@@ -77,17 +148,53 @@
       border-radius: 4px;
 
       @media screen and(max-width: 1500px) {
-        width: 65%;
-        height: 12%;
+        @include width_height(65%, 12%);
         padding-top: 0px;
+      }
+
+      @media screen and(max-width: 1024px) {
+        @include width_height(65%, 7%);
+      }
+      
+      @media screen and(max-width: 768px) {
+        @include width_height(65%, 8%);
+        font-size: 2.5em;
+      }
+
+      @media screen and(max-width: 540px) {
+        font-size: 2em;
+      }
+
+
+      @media screen and(max-width: 414px) {
+        @include width_height(65%, 8%);
+        font-size: 1.7em;
+      }
+
+      @media screen and(max-width: 375px) {
+        @include width_height(65%, 8%);
+        font-size: 1.6em;
+        align-self: center;
+        justify-self: center;
       }
     }
 
     .logo-start {
-      width: 281px;
-      height: 297px;
+      @include width_height(281px, 297px);
       background: url("/src/png/logo.png") no-repeat center center;
       background-size: cover;
+
+      @media screen and(max-width: 1024px) {
+        @include width_height(499px, 529px);
+      }
+
+      @media screen and(max-width: 540px) {
+        @include width_height(323px, 294px);
+      }
+
+      @media screen and(max-width: 375px) {
+        @include width_height(201px, 217px);
+      }
     }
 
     .text {
