@@ -27,19 +27,25 @@
       @include width_height(660px, 632px);
     }
 
-    @media screen and(max-height: 812px){
-      width: 360px !important;
-      height: 800px !important;
+    @media screen and(max-width: 1440px) {
+      width: 660px !important;
+      height: 632px !important;
+
     }
 
-    @media screen and(max-width: 540px) {
-      width: 520px !important;
+    @media screen and(max-width: 812px){
+      width: 560px !important;
+      height: 600px !important;
+    }
+
+    @media screen and(max-width: 566px) {
+      width: 510px !important;
       height: 690px !important;
     }
 
-    @media screen and(max-width: 414px) {
-      width: 396px !important;
-      height: 706px !important;
+    @media screen and(max-width: 514px) {
+      width: 366px !important;
+      height: 606px !important;
     }
 
     @media screen and (max-width: 375px) {

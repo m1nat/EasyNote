@@ -19,8 +19,12 @@
         opacity: 0.6;
       }
 
+      @media screen and(max-width: 1440px) {
+        @include width_height(8%, 100%);
+      }
+
       @media screen and(max-width: 1187px) {
-        @include width_height(15%, 100%);
+        @include width_height(8%, 100%);
       }
 
       @media screen and(max-width: 1024px) {
@@ -55,8 +59,12 @@
         opacity: 0.6;
       }
 
+      @media screen and(max-width: 1440px) {
+        @include width_height(8%, 100%);
+      }
+
       @media screen and(max-width: 1187px) {
-        @include width_height(25%, 100%);
+        @include width_height(10%, 100%);
       }
 
       @media screen and(max-width: 1024px) {
