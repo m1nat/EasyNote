@@ -4,7 +4,7 @@
   box-sizing: border-box;
   position: relative;
 
-  header {
+  .header-saved {
     @include width_height(100%, 6%);
     @include flexCenterSpaceBetween(flex, center, space-between);
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -25,6 +25,23 @@
         @media screen and(max-width: 1600px) {
           margin-left: 70px;
         }
+
+        @media screen and(max-width: 1024px) {
+          margin-left: 40px;
+          text-align: center;
+        }
+
+        @media screen and(max-width: 928px) {
+          margin-left: 30px;
+        }
+
+        @media screen and(max-width: 745px) {
+          margin-left: 10px !important;
+        }
+
+        @media screen and(max-width: 633px) {
+          display: none;
+        }
       }
 
       &-title {
@@ -32,8 +49,41 @@
         padding-top: 3px;
         font-size: 1.9em;
 
+        
         @media screen and(max-width: 1600px) {
           font-size: 1.5em;
+        }
+
+        @media screen and(max-width: 1024px) {
+          padding-top: 18px !important;
+        }
+
+        @media screen and(max-width: 745px) {
+          font-size: 1.2em;
+          margin-left: 10px;
+          padding: 10px !important;
+        }
+
+        @media screen and(max-width: 633px) {
+          font-size: 1.1em;
+          padding-top: 5px;
+        }
+
+        @media screen and(max-width: 500px) {
+          font-size: 1em;
+          padding-top: 8px !important;
+          font-weight: bold;
+          width: 100% !important;
+        }
+
+        @media screen and( max-width: 414px) {
+          margin-left: 5px !important;
+          padding-top: 9px !important;
+        }
+
+        @media screen and( max-width: 375px) {
+          margin-left: 0px !important;
+          padding-top: 7px !important;
         }
       }
     }
@@ -55,20 +105,59 @@
         cursor: pointer;
 
         @media screen and(max-width: 1600px) {
-          padding-top: 1px;
+          padding-top: 5px;
           font-size: 1.2em;
           margin-left: 20px;
           border-radius: 5px;
           letter-spacing: 1px;
         }
 
+        @media screen and(max-width: 1440px) {
+          padding: 2px !important;
+        }
+
         @media screen and(max-width: 1300px) {
-          padding-top: 3px;
+          padding-top: 5px !important;
           font-size: 1em;
           margin-left: 20px;
           border-radius: 5px;
           letter-spacing: 1px;
-          width: 14%;
+          width: 16%;
+        }
+
+        @media screen and(max-width: 1024px) {
+          height: 50% !important;
+        }
+
+        @media screen and(max-width: 850px) {
+          font-size: 1em;
+          margin-left: 10px;
+          border-radius: 5px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          width: 19% !important;
+          padding-top: 7px;
+        }
+
+        @media screen and(max-width: 745px) {
+          width: 21% !important;
+          font-size: 0.9em;
+        }
+
+        @media screen and(max-width: 594px) {
+          width: 25% !important;
+          height: 60%;
+        }
+
+        @media screen and(max-width: 427px) {
+          width: 35% !important;
+          height: 62% !important;
+          padding: 2px !important;
+        }
+
+        @media screen and(max-width: 375px) {
+          padding: 2px !important;
+          height: 70% !important;
         }
       }
 
@@ -100,6 +189,27 @@
       transition: 1s;
       position: relative;
 
+      @media screen and(max-width: 768px) {
+        width: 34% !important;
+      }
+
+      @media screen and(max-width: 414px) {
+        @include width_height(35%, 94%);
+        @include flexCenterSpaceBetween(none, flex-start, center);
+        border: 1px solid rgb(187, 187, 187);
+        overflow-y: auto;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        transition: 1s;
+        position: absolute;
+        z-index: 2;
+        left: 48px;
+      }
+
+      @media screen and(max-width: 375px) {
+        left: 42px;
+      }
+
       &::-webkit-scrollbar {
         width: 10px;
         cursor: pointer;
@@ -128,6 +238,10 @@
           border-radius: 3px;
           margin-top: 10px;
           cursor: pointer;
+
+          @media screen and(max-width: 414px) {
+            height: 80px;
+          }
         }
 
         .hand-loves {
@@ -203,6 +317,10 @@
           border-radius: 3px;
           margin-top: 10px;
           cursor: pointer;
+
+          @media screen and(max-width: 414px) {
+            height: 80px;
+          }
         }
 
         .seass {
@@ -272,6 +390,21 @@
         @include absoluteTopLeft(95%, 80px);
         background: url("/src/png/arrow-97-48.png") no-repeat center center;
         background-size: cover;
+        z-index: 3;
+
+        @media screen and(max-width: 1024px) {
+          margin-top: 121%;
+          margin-left: -96px;
+          width: 30px;
+          height: 30px;
+        }
+
+        @media screen and(max-width: 414px) {
+          width: 30px;
+          height: 30px;
+          margin-top: 0%;
+          margin-left: -32px !important;
+        }
 
         &:hover {
           background-color: rgba(143, 137, 137, 0.604);
@@ -280,12 +413,11 @@
       }
     }
 
-    .aside-board {
+    .aside-boards {
       @include width_height(4%, 100%);
       @include flexCenterSpaceBetween(flex, center, space-between);
       flex-direction: column;
       background-color: rgb(48, 46, 46);
-
 
       @media screen and(max-width: 1600px) {
         width: 4.5%;
@@ -293,6 +425,26 @@
 
       @media screen and(max-width: 1200px) {
         width: 5%;
+      }
+
+      @media screen and(max-width: 1000px) {
+        width: 6% !important;
+      }
+
+      @media screen and(max-width: 859px) {
+        width: 7% !important;
+      }
+
+      @media screen and(max-width: 714px) {
+        width: 8% !important;
+      }
+
+      @media screen and(max-width: 668px) {
+        width: 10% !important;
+      }
+
+      @media screen and(max-width: 490px) {
+        width: 13% !important;
       }
 
       &-items {
@@ -337,6 +489,14 @@
         @include flexCenterSpaceBetween(flex, center, flex-start);
         flex-direction: column;
         position: relative;
+
+        @media screen and(max-width: 916px) {
+          width: 85% !important;
+        }
+
+        @media screen and(max-width: 777px) {
+          width: 100% !important;
+        }
 
         .menu-item {
           @include width_height(90%, 5%);
@@ -419,9 +579,32 @@
           animation-timing-function: ease;
           animation-iteration-count: 5;
 
+          @media screen and(max-width: 846px) {
+            left: 94% !important;
+          }
+
+          @media screen and(max-width: 645px) {
+            left: 93% !important;
+            width: 20px;
+            height: 20px;
+          }
+
+          @media screen and(max-width: 414px) {
+            left: 90% !important;
+            width: 20px;
+            height: 20px;
+          }
+
+          @media screen and(max-width: 375px) {
+            left: 89% !important;
+            width: 20px;
+            height: 20px;
+          }
+
           &:hover {
             animation-play-state: paused;
           }
+
           @keyframes zoom {
             0% {
               @include width_height(30px, 30px);
@@ -454,6 +637,10 @@
               margin-bottom: 5px;
               background-color: #c4c4c4;
 
+              @media screen and(max-width: 360px) {
+                overflow: hidden;
+              }
+
               .emoji-line-first {
                 @include width_height(100%, 50%);
                 display: flex;
@@ -482,6 +669,10 @@
                   font-weight: bolder;
                   padding-left: 7px;
                   transition-duration: 0.5s;
+
+                  @media screen and(max-width: 414px) {
+                    padding-left: 2px;
+                  }
 
                   &:hover {
                     border: 1px solid white;
@@ -521,6 +712,10 @@
                   @include width_height(13%, 100%);
                   transition-duration: 0.5s;
 
+                  @media screen and(max-width: 414px) {
+                    width: 22px;
+                  }
+
                   &:hover {
                     border: 1px solid white;
                   }
@@ -533,6 +728,10 @@
                   background-size: 63%;
                   transition-duration: 0.5s;
 
+                  @media screen and(max-width: 414px) {
+                    margin-left: 6px;
+                  }
+
                   &:hover {
                     border: 1px solid white;
                   }
@@ -543,6 +742,12 @@
                   padding-left: 8px;
                   transition-duration: 0.5s;
                   position: relative;
+
+                  @media screen and(max-width: 414px) {
+                    padding-left: 2px;
+                    padding-top: 3px;
+                    font-size: 0.6em;
+                  }
 
                   .fz-wrapper {
                     @include width_height(80px, 120px);
@@ -581,6 +786,11 @@
               margin: 0 10px 20px;
               box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
               cursor: pointer;
+
+              @media screen and(max-width: 414px) {
+                width: 195px;
+                height: 190px !important;
+              }
 
               .tc-note-header {
                 padding: 10px 16px 0;
@@ -627,6 +837,18 @@
                 border: none;
                 padding: 15px;
                 outline: none;
+
+                @media screen and(max-width: 550px) {
+                  width: 90% !important;
+                  height: 50%;
+                  font-size: 0.8em;
+                  padding: 5px 10px 10px;
+                }
+
+                @media screen and(max-width: 414px) {
+                  width: 94% !important;
+                  height: 45% !important;
+                }
 
                 &::-webkit-scrollbar {
                   width: 10px;

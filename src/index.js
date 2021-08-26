@@ -43,8 +43,6 @@ window.onload = () => {
       showPasswordSignUP();
       break;
     case paths.create_board:
-      responsive414px();
-      responsive375px();
       createNoteHandlers();
       break;
     case paths.reset_password:

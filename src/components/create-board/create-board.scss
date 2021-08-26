@@ -811,10 +811,6 @@
               @include flexCenterSpaceBetween(flex, center, center);
               background-color: #c4c4c4;
 
-              @media screen and(max-width: 414px) {
-                // font-size: 0.5em;
-              }
-
               .font-waight {
                 @include width_height(13%, 100%);
                 font-weight: bolder;
