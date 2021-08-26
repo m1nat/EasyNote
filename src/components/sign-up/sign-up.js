@@ -22,6 +22,8 @@ const incorrectlyPassword = document.querySelector('.incorrectly-password');
 const secondEye = document.querySelector('.second-eye');
 const firstEye = document.querySelector('.first-eye');
 
+
+
 const formCheck = {
   username: {
     isValid: false
