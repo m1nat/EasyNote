@@ -49,7 +49,6 @@
         padding-top: 3px;
         font-size: 1.9em;
 
-        
         @media screen and(max-width: 1600px) {
           font-size: 1.5em;
         }
@@ -637,10 +636,6 @@
               margin-bottom: 5px;
               background-color: #c4c4c4;
 
-              @media screen and(max-width: 360px) {
-                overflow: hidden;
-              }
-
               .emoji-line-first {
                 @include width_height(100%, 50%);
                 display: flex;
@@ -649,6 +644,12 @@
               .emoji-line-second {
                 @include width_height(100%, 50%);
                 display: flex;
+              }
+              @media screen and(max-width: 360px) {
+                overflow: hidden;
+              }
+              @media screen and(max-width: 414px) {
+                overflow: hidden;
               }
             }
 
@@ -840,14 +841,15 @@
 
                 @media screen and(max-width: 550px) {
                   width: 90% !important;
-                  height: 50%;
+                  height: 48%;
                   font-size: 0.8em;
                   padding: 5px 10px 10px;
                 }
 
                 @media screen and(max-width: 414px) {
                   width: 94% !important;
-                  height: 45% !important;
+                  height: 40% !important;
+                  margin-left: 10px !important;
                 }
 
                 &::-webkit-scrollbar {
