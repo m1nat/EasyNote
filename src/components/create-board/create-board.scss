@@ -735,6 +735,9 @@
         width: 201px !important;
         margin-left: 123px !important;
       }
+      @media screen and(max-width: 360px) {
+        width: 188px !important;
+      }
 
       .color {
         @include width_height(30px, 30px);
