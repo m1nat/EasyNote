@@ -293,7 +293,9 @@
           font-size: 1.4em;
 
           @media screen and(max-width: 1024px) {
-            height: 23% !important;
+            padding: 0px;
+            height: 20% !important;
+            font-size: 1.2em;
           }
 
           @media screen and(max-width: 540px) {
@@ -339,6 +341,10 @@
             background-color: #fafafa;
             min-width: 310px;
 
+            @media screen and(max-width: 1440px) {
+              min-width: 250px
+            }
+
             @media screen and(max-width: 768px) {
               min-width: 240px;
             }
@@ -363,6 +369,10 @@
             min-width: 310px;
             flex-direction: column;
             transition: 1s;
+
+            @media screen and(max-width: 1440px) {
+              min-width: 250px
+            }
 
             @media screen and(max-width: 768px) {
               min-width: 240px;
@@ -437,13 +447,18 @@
           background: url("/src/png/add.png") no-repeat center center;
           background-size: 4%;
           background-color: #fafafa;
+          min-width: 310px;
+
+          @media screen and(max-width: 1440px) {
+            min-width: 250px
+          }
 
           @media screen and(max-width: 768px) {
-            width: 240px;
+            min-width: 240px;
           }
 
           @media screen and(max-width: 540px) {
-            width: 150px;
+            min-width: 150px;
           }
         }
       }

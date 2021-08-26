@@ -11,9 +11,10 @@ import { renderBoarder } from './DOM-render/render-border-list/render-main-page-
 import { renderNotes } from './DOM-render/render-border-list/render-notes.js';
 import { savedNotesHandlers } from './components/saved-nostes/saved-notes.js';
 import { preloaderMainPage } from './DOM-render/preloader/preloader.js';
+import { profileEdit } from './components/edit-profile/edit-profile.js';
+import { responsive, responsive375px, responsive414px } from './shared/responsive/responsive.js';
 
 import './styles/style.scss';
-import { profileEdit } from './components/edit-profile/edit-profile.js';
 
 initAPI();
 
@@ -42,6 +43,8 @@ window.onload = () => {
       showPasswordSignUP();
       break;
     case paths.create_board:
+      responsive414px();
+      responsive375px();
       createNoteHandlers();
       break;
     case paths.reset_password:

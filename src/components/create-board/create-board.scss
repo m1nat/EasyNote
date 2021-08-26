@@ -86,15 +86,19 @@
         cursor: pointer;
 
         @media screen and(max-width: 1600px) {
-          padding-top: 1px;
+          padding-top: 5px;
           font-size: 1.2em;
           margin-left: 20px;
           border-radius: 5px;
           letter-spacing: 1px;
         }
 
+        @media screen and(max-width: 1440px) {
+          padding: 2px !important;
+        }
+
         @media screen and(max-width: 1300px) {
-          padding-top: 8px !important;
+          padding-top: 5px !important;
           font-size: 1em;
           margin-left: 20px;
           border-radius: 5px;
@@ -125,6 +129,12 @@
         @media screen and(max-width: 427px) {
           width: 35% !important;
           height: 55%;
+          padding: 0px !important;
+        }
+
+        @media screen and(max-width: 375px) {
+          padding: 2px !important;
+
         }
       }
 
@@ -189,6 +199,11 @@
         @media screen and(max-width: 1600px) {
           @include width_height(39px, 39px);
         }
+
+        @media screen and(max-width: 375px) {
+          width: 32px !important;
+          height: 32px !important;
+        }
       }
 
       .aside-actions {
@@ -215,6 +230,11 @@
       border-top-right-radius: 5px;
       transition: 1s;
       position: relative;
+
+      @media screen and(max-width: 414px) {
+        width: 60% !important;
+      }
+
 
       &::-webkit-scrollbar {
         width: 10px;
@@ -244,6 +264,10 @@
           border-radius: 3px;
           margin-top: 10px;
           cursor: pointer;
+
+          @media screen and(max-width: 414px) {
+            height: 80px;
+          }
         }
 
         .hand-love {
@@ -319,6 +343,10 @@
           border-radius: 3px;
           margin-top: 10px;
           cursor: pointer;
+
+          @media screen and(max-width: 414px) {
+            height: 80px;
+          }
         }
 
         .sea {
@@ -389,6 +417,13 @@
         background: url("/src/png/arrow-97-48.png") no-repeat center center;
         background-size: cover;
 
+        @media screen and(max-width: 414px) {
+          width: 30px;
+          height: 30px;
+          margin-top: 157%;
+          margin-left: -81px;
+        }
+
         &:hover {
           background-color: rgba(143, 137, 137, 0.604);
           border-radius: 5px;
@@ -423,6 +458,11 @@
 
       @media screen and(max-width: 663px) {
         width: 39% !important;
+      }
+      
+      @media screen and(max-width: 375px) {
+        width: 43% !important;
+
       }
 
       .menu-list {
@@ -484,11 +524,17 @@
             font-size: 0.7em;
           }
 
+          @media screen and(max-width: 414px) {
+            margin-top: 25px !important ;
+            height: 8% !important;
+          }
+
           #add-img {
             @include width_height(90%, 5%);
             @include marginTopLeft(40px, 5px);
+            margin-left: 0px;
             transition: 0.5s;
-            padding: 10px;
+            padding: 6px;
             position: relative;
           }
 
@@ -554,6 +600,11 @@
       -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
       -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
       box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+      @media screen and(max-width: 414px) {
+        @include width_height(190px, 40px);
+
+      }
 
       .color {
         @include width_height(30px, 30px);
@@ -621,6 +672,12 @@
           height: 20px;
         }
 
+        @media screen and(max-width: 375px) {
+          left: 89% !important;
+          width: 20px;
+          height: 20px;
+        }
+
         &:hover {
           animation-play-state: paused;
         }
@@ -657,6 +714,10 @@
             margin-bottom: 0px;
             background-color: #c4c4c4;
 
+            @media screen and(max-width: 414px) {
+              overflow: hidden;
+            }
+
             .emoji-line-first {
               @include width_height(100%, 50%);
               display: flex;
@@ -680,11 +741,19 @@
               @include flexCenterSpaceBetween(flex, center, center);
               background-color: #c4c4c4;
 
+              @media screen and(max-width: 414px) {
+                // font-size: 0.5em;
+              }
+
               .font-waight {
                 @include width_height(13%, 100%);
                 font-weight: bolder;
                 padding-left: 7px;
                 transition-duration: 0.5s;
+
+                @media screen and(max-width: 414px) {
+                  padding-left: 2px;
+                }
 
                 &:hover {
                   border: 1px solid white;
@@ -724,6 +793,10 @@
                 @include width_height(13%, 100%);
                 transition-duration: 0.5s;
 
+                @media screen and(max-width: 414px) {
+                  width: 22px;
+                }
+
                 &:hover {
                   border: 1px solid white;
                 }
@@ -736,16 +809,28 @@
                 background-size: 63%;
                 transition-duration: 0.5s;
 
+                @media screen and(max-width: 414px) {
+                  margin-left: 6px;
+                }
+
                 &:hover {
                   border: 1px solid white;
                 }
               }
+
               .font-size {
                 @include width_height(35%, 100%);
                 font-size: 0.8em;
                 padding-left: 8px;
                 transition-duration: 0.5s;
                 position: relative;
+
+                @media screen and(max-width: 414px) {
+                  padding-left: 2px;
+                  padding-top: 3px;
+                                  font-size: 0.6em;
+
+                }
 
                 .fz-wrapper {
                   @include width_height(80px, 120px);
@@ -785,6 +870,11 @@
             box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
             transition: all 0.5s;
             cursor: pointer;
+
+            @media screen and(max-width: 414px) {
+              width: 195px;
+              height: 190px !important;
+            }
 
             .tc-note-header {
               padding: 10px 16px 0;
@@ -838,6 +928,11 @@
                 padding: 5px 10px 10px;
               }
 
+              @media screen and(max-width: 414px) {
+                width: 94% !important;
+                height: 45% !important;
+              }
+
               .order-list {
                 width: 100%;
                 height: auto;
@@ -874,9 +969,14 @@
       margin: 0px auto;
       display: none;
 
+      @media screen and(max-width: 414px) {
+        @include width_height(92%, 5%);
+      }
+
       .blockButtonsCreateNote {
         @include width_height(100%, 100%);
         @include flexCenterSpaceBetween(flex, center, flex-end);
+
 
         .wrapperRemoveNote {
           .del-note {
