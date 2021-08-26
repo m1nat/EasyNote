@@ -335,7 +335,7 @@
             }
 
             .first-inp-red {
-              @include width_height(94%, 100%);
+              @include width_height(95%, 100%);
               background-color: #ffffff;
               outline: none;
               padding-left: 15px;
@@ -345,7 +345,10 @@
               color: black;
               font-size: 1.1em;
               font-weight: bolder;
+              border-top-right-radius: none;
+              border-bottom-right-radius: none;
             }
+
             .first-inp {
               @include width_height(94%, 100%);
               background-color: #ffffff;
