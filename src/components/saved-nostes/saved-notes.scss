@@ -917,6 +917,26 @@
   -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
+  @media screen and(max-width: 768px) {
+    top: 177px;
+    left: 27%;
+    width: 318px !important;
+  }
+
+  @media screen and(max-width: 414px) {
+    top: 177px;
+    left: 17%;
+    width: 318px !important;
+  }
+
+  @media screen and(max-width: 375px) {
+    top: 177px;
+    left: 14%;
+    width: 311px !important;
+  }
+
+
+
   h6 {
     text-align: center;
     text-shadow: 4px 3px 2px rgba(206, 190, 182, 0.98);
@@ -927,6 +947,14 @@
     width: 60%;
     justify-content: space-between;
     margin: 10px auto !important;
+
+    @media screen and(max-width: 768px) {
+      width: 80%;
+    }
+
+    @media screen and(max-width: 414px) {
+      width: 88% !important;
+    }
 
     .errNoteSave-btns-cancels {
       @include width_height(170px, 25px);
@@ -976,6 +1004,18 @@
   -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
+  @media screen and(max-width: 414px) {
+    top: 177px;
+    left: 17%;
+    width: 318px !important;
+  }
+
+  @media screen and(max-width: 375px) {
+    top: 177px;
+    left: 14%;
+    width: 311px !important;
+  }
+
   h6 {
     text-align: center;
     text-shadow: 4px 3px 2px rgba(206, 190, 182, 0.98);
@@ -987,8 +1027,13 @@
     justify-content: space-between;
     margin: 10px auto !important;
 
+    @media screen and(max-width: 414px) {
+      width: 90% !important;
+
+    }
+
     .incorrect-board-btn-cancel {
-      @include width_height(23px, 170px);
+      @include width_height(170px, 23px);
       background-color: #c4c4c4;
       text-align: center;
       border-radius: 4px;
@@ -1003,7 +1048,7 @@
     }
 
     .incorrect-board-btn-save {
-      @include width_height(70px, 25px);
+      @include width_height(70px, 23px);
       background-color: #d7eeef;
       border-radius: 4px;
       box-shadow: 5px 5px 8px rgba(43, 42, 42, 0.693);
