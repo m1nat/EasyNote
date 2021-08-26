@@ -92,6 +92,13 @@
             display: none;
             margin-top: 2px;
             height: 15px;
+
+            @media screen and(max-width: 414px) {
+              font-size: 0.6em !important;
+              padding-left: 1px;
+              margin-top: 2px;
+              height: 15px;
+            }
           }
 
           #email-sign-up {
@@ -335,7 +342,7 @@
             }
 
             .first-inp-red {
-              @include width_height(94%, 100%);
+              @include width_height(95%, 100%);
               background-color: #ffffff;
               outline: none;
               padding-left: 15px;
@@ -345,7 +352,10 @@
               color: black;
               font-size: 1.1em;
               font-weight: bolder;
+              border-top-right-radius: none;
+              border-bottom-right-radius: none;
             }
+
             .first-inp {
               @include width_height(94%, 100%);
               background-color: #ffffff;
@@ -393,7 +403,6 @@
                   font-size: 0.6em;
                   height: 90px;
                 }
-                
               }
 
               &:hover .notification {
@@ -408,6 +417,11 @@
               color: red;
               font-weight: bold;
               display: none;
+
+              @media screen and(max-width: 414px) {
+                left: 0%;
+                font-size: 0.6em;
+              }
             }
           }
 
@@ -501,9 +515,21 @@
   font-weight: bolder;
   display: none;
 
+  
   @media screen and(max-width: 536px) {
     font-size: 0.6em;
     left: 0% !important;
+  }
+  @media screen and(max-width: 414px) {
+    width: 100%;
+    height: 10px;
+    top: 108%;
+    left: 3%;
+    font-size: 0.6em;
+    color: red;
+    position: absolute;
+    font-weight: bolder;
+    display: none;
   }
 }
 

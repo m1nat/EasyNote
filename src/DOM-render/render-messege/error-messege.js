@@ -5,35 +5,38 @@ const emailInput = document.getElementById('email-sign-up');
 const recoveryMessage = document.querySelector('.email-recovery-error-messege');
 
 
+
+
 export const showErrorEmailSignUP = () => {
   const errorMessege = document.querySelector('.messege-error-email-signup');
-  errorMessege.style.display = 'block'
+  errorMessege.style.display = 'block';
+  errorMessege.innerHTML = 'Sorry, We dont recognize this email';
 };
 
 export const hideErrorEmailSignUP = () => {
   const errorMessege = document.querySelector('.messege-error-email-signup');
-  errorMessege.style.display = 'none'
+  errorMessege.style.display = 'none';
 };
 
 
 export const showErrorMessegePasswordSignUP = () => {
   const passwordMessege = document.querySelector('.incorrectly-password');
-  passwordMessege.style.display = 'block'
+  passwordMessege.style.display = 'block';
 };
 
 export const hideErrorMessegePasswordSignUP = () => {
   const passwordMessege = document.querySelector('.incorrectly-password');
-  passwordMessege.style.display = 'none'
+  passwordMessege.style.display = 'none';
 };
 
 export const showErrorMessegeUsername = () => {
   const usernameMessege = document.querySelector('.username-messege');
-  usernameMessege.style.display = 'block'
+  usernameMessege.style.display = 'block';
 };
 
 export const hideErrorMessegeUsername = () => {
   const usernameMessege = document.querySelector('.username-messege');
-  usernameMessege.style.display = 'none'
+  usernameMessege.style.display = 'none';
 };
 
 export const showErrorNotification = errors => {
@@ -69,14 +72,14 @@ export const showErrorNotificationRecovery = errors => {
 export const showErrorNotificationSignUp = errors => {
 
   if(errors){
-    emailAlready.innerText = 'The email address is already in use by another account.'
+    emailAlready.innerText = errors
     emailAlready.className = 'error-email'
     emailAlready.style.display = 'block'
     emailInput.className ='border-red-email';
     setTimeout( () => {
       emailInput.className ='reg';
       emailAlready.style.display = 'none';
-    },5000)
+    },3000)
   }
 
 };
