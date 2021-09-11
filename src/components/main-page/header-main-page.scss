@@ -337,13 +337,13 @@
             @include width_height(310px, 95%);
             margin-left: 20px;
             cursor: pointer;
-            background: url("/src/png/add.png") no-repeat center center;
-            background-size: 4%;
+            background: url("https://i.dlpng.com/static/png/6969269_preview.png") no-repeat center center;
+            background-size: contain;
             background-color: #fafafa;
             min-width: 310px;
 
             @media screen and(max-width: 1440px) {
-              min-width: 250px
+              min-width: 250px;
             }
 
             @media screen and(max-width: 768px) {
@@ -369,10 +369,11 @@
             cursor: pointer;
             min-width: 310px;
             flex-direction: column;
+            border-radius: 5px;
             transition: 1s;
 
             @media screen and(max-width: 1440px) {
-              min-width: 250px
+              min-width: 250px;
             }
 
             @media screen and(max-width: 768px) {
@@ -390,6 +391,16 @@
 
             .load-seves-notes {
               @include width_height(65%, 100%);
+
+              .date {
+                width: 50%;
+                height: 10px;
+                margin-top: 60%;
+                margin-left: 65%;
+                color: #046811;
+                font-size: 1.1em;
+                font-weight: bold
+              }
             }
 
             &-title {
@@ -484,8 +495,8 @@
     }
 
     @media screen and(max-width: 942px) {
-        width: 55% !important;
-        height: 120px !important;
+      width: 55% !important;
+      height: 120px !important;
     }
 
     @media screen and(max-width: 768px) {
@@ -506,7 +517,7 @@
 
       @media screen and(max-width: 942px) {
         font-size: 1em;
-    }
+      }
     }
 
     .form-wrapper {

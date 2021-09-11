@@ -1,8 +1,11 @@
+import moment from "moment";
+
 import { createNotes } from "../../api/api-handlers";
 import { addImages } from "../../DOM-render/add-img/add-img";
 import { routs } from "../../shared/constants/paths";
 import { getImageUrl, getLocalId, getNameOfBoard, removeImageUrl, removeNameOfBoard } from "../../shared/ls-services/localStorage";
 import { addNewBoards } from "../../shared/validators/check-inputs";
+
 
 const btn = document.querySelector('.aside-actions');
 const menu = document.querySelector('.menu-show');
@@ -23,9 +26,18 @@ const validatorNameBoard = document.querySelector('.validatorNameBoard');
 const closeIncorrectBoardName = document.querySelector('.close');
 const btnRountMainPage = document.querySelector('.errNoteSave-btns-cancel');
 const saveBoard = document.querySelector('.errNoteSave-btns-save');
+const dateReminder = document.getElementById('date-of-board');
 const localId = getLocalId();
 
 export const createNoteHandlers = () => {
+  // moment().format('YYYY-MM-DD')
+  let addDateOfReminder;
+
+  dateReminder.oninput = () => {
+    if( dateReminder.value ) {
+      addDateOfReminder = dateReminder.value;
+    }
+  }
 
   addImages();
 
@@ -41,7 +53,6 @@ export const createNoteHandlers = () => {
   colorList.style.display = 'none';
 
   addNewSticker.onclick = () => {
-    // addImages();
     const holder = document.createElement('div');
     const holderPanel = document.createElement('div');
     const fontWaight = document.createElement('div');
@@ -575,7 +586,8 @@ export const createNoteHandlers = () => {
       style: arrFontStyle,
       underln: underlineArr,
       fontSize: fontSizeArr,
-      image: getImageUrl()
+      image: getImageUrl(),
+      date: addDateOfReminder
     }
 
     if (addNewBoards(boardName.value)) {
@@ -646,7 +658,8 @@ export const createNoteHandlers = () => {
       style: arrFontStyle,
       underln: underlineArr,
       fontSize: fontSizeArr,
-      image: getImageUrl()
+      image: getImageUrl(),
+      date: addDateOfReminder 
     }
 
     await createNotes(createNewNotes)

@@ -26,7 +26,7 @@ export const signIn = (email, password) => {
 
 export const createNotes = ( createNewNotes ) => {
 
-  const { name, notes, localId, boardColor, weight, cursive, style, underln, fontSize, image} = createNewNotes; 
+  const { name, notes, localId, boardColor, weight, cursive, style, underln, fontSize, image, date } = createNewNotes; 
 
   return fetch(`${databaseURL}/notes.json`, {
     method: 'POST',
@@ -43,7 +43,8 @@ export const createNotes = ( createNewNotes ) => {
       style, 
       underln, 
       fontSize,
-      image
+      image,
+      date
     })
   })
 };

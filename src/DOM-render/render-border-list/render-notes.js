@@ -27,7 +27,6 @@ export const renderNotes = async () => {
     .then(response => {
       if (response) {
 
-        
         const check = document.querySelector('.change-colors-board');
         const tcNotes = document.querySelector('.notesWrapper-tc');
         const textarea = document.querySelector('.board-name');
@@ -59,7 +58,7 @@ export const renderNotes = async () => {
             size = el.fontSize;
             textsNote =  el.notes;
             setIdNotes(el.id);
-
+            
             if (el.image) {
               setResponseURLimage(el.image)
               setURL(el.image)
@@ -71,12 +70,12 @@ export const renderNotes = async () => {
           }
         })
 
+
         board.style.backgroundSize = 'cover';
         board.style.backgroundRepeat = 'no-repeat';
         board.style.backgroundPosition = 'center';
 
         textsNote.forEach(el => {
-          
           const holder = document.createElement('div');
           const holderPanel = document.createElement('div');
           const fontWaight = document.createElement('div');
