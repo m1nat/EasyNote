@@ -403,9 +403,24 @@
             }
 
             .load-seves-notes {
-              @include width_height(65%, 100%);
+              @include width_height(90%, 100%);
               position: relative;
               margin-bottom: 10px;
+              display: flex;
+              flex-wrap: wrap;
+              align-items: flex-start;
+              justify-content: space-around;
+
+              .render-moke-notes {
+                width: 79px;
+                height: 54px;
+                border-radius: 3px;
+                background-color: #fffacb;
+                margin-left: 10px;
+                padding: 5px;
+                font-size: 0.6em;
+                margin-top: 5px;
+              }
 
               .date {
                 width: 50%;
@@ -413,7 +428,7 @@
                 color: #046811;
                 font-size: 0.8em;
                 position: absolute;
-                left: 92%;
+                left: 81%;
                 top: -23%;
                 display: flex;
               }
@@ -424,8 +439,8 @@
                   center;
                 background-size: cover;
                 position: absolute;
-                left: 80%;
-                top: -22%;
+                left: 73%;
+                top: -23%;
               }
             }
 
