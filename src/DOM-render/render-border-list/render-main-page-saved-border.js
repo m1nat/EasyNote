@@ -1,3 +1,5 @@
+import moment from "moment";
+
 import { getBoard, removeBoard } from "../../api/api-handlers";
 import { routs } from "../../shared/constants/paths";
 import { getLocalId, setIdNotes, setNameBoadrd, setNotes } from "../../shared/ls-services/localStorage";
@@ -23,7 +25,6 @@ export const renderBoarder = () => {
           BGCimg.push(el.image)
         }
       })
-      console.log(BGCimg);
 
       findName.forEach((el, i) => {
 
@@ -32,25 +33,31 @@ export const renderBoarder = () => {
         const titleBoardSavedBoard = document.createElement('h6');
         const loadSevesNotes = document.createElement('div');
         const hoverDel = document.createElement('div');
+        const bells = document.createElement('div');
 
         titleBoardSavedBoard.className = 'saved-notes-title';
         savedBoard.className = 'saved-notes';
         loadSevesNotes.className = 'load-seves-notes';
         hoverDel.className = 'open-delete-board';
-        dateDiv.className = 'date'
+        dateDiv.className = 'date';
+        bells.className = 'bells';
+
         
         containerBoards.after(savedBoard);
         savedBoard.append(titleBoardSavedBoard);
         titleBoardSavedBoard.after(loadSevesNotes);
         loadSevesNotes.append(dateDiv);
         loadSevesNotes.after(hoverDel);
-
+        
         if (date[i]) {
-          dateDiv.innerHTML = date[i].split('-').join('.')
+          loadSevesNotes.prepend(bells);
+          dateDiv.innerHTML = date[i].split('-').join('.');
+            moment().format('YYYY-MM-DD') === date[i] ? savedBoard.classList.add('shadow-notification') : null;
+            moment().format('YYYY-MM-DD') === date[i] ?  bells.classList.add('bellNotification') : null;
         };
 
         titleBoardSavedBoard.innerText = el;
-        savedBoard.style.backgroundSize = 'cover';
+        savedBoard.style.backgroundSize = '100% 80%'
         savedBoard.style.backgroundRepeat = 'no-repeat';
         savedBoard.style.backgroundPosition = 'center';
         savedBoard.style.backgroundImage = `url("${BGCimg[i]}")`
