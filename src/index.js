@@ -12,7 +12,6 @@ import { renderNotes } from './DOM-render/render-border-list/render-notes.js';
 import { savedNotesHandlers } from './components/saved-nostes/saved-notes.js';
 import { preloaderMainPage } from './DOM-render/preloader/preloader.js';
 import { profileEdit } from './components/edit-profile/edit-profile.js';
-import { responsive, responsive375px, responsive414px } from './shared/responsive/responsive.js';
 
 import './styles/style.scss';
 
@@ -29,7 +28,7 @@ window.onload = () => {
       logoutHandlers();
       mainPageHandlers();
       renderBoarder();
-      preloaderMainPage()
+      preloaderMainPage();
       if (!lsToken) {
         window.location.href = routs.start_page;
       }

@@ -147,3 +147,27 @@ export const updateNotes = patchBoard => {
       }
     })
 }
+
+export const changeUserName = (userIdInfo, userName) => {
+  return fetch(`${databaseURL}/users/${userIdInfo}.json`, {
+    method: 'PATCH', 
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      userName: userName
+    })
+  })
+}
+
+export const getUserInfo = () => {
+  return axios.get(`${databaseURL}/users.json`)
+  .then(response => {
+    if (response) {
+      return Object.keys(response.data).map( key => ({
+        ...response.data[key], 
+        id: key
+      }))
+    }
+  })
+}

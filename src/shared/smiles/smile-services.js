@@ -67,7 +67,6 @@ export const addSmilesToNote = () => {
 
     orderList.onclick = () => {
       let tcNoteBody;
-      console.log(routs.saved_notes , '  ',window.location.pathname);
       if (window.location.pathname === routs.saved_notes) {
         tcNoteBody = document.querySelector('.tc-note-bodys');
       } else {

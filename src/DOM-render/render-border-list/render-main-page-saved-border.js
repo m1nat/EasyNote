@@ -53,7 +53,7 @@ export const renderBoarder = () => {
           dateDiv.innerHTML = date[i].split('-').join('.');
           moment().format('YYYY-MM-DD') === date[i] ? savedBoard.classList.add('shadow-notification') : null;
           moment().format('YYYY-MM-DD') === date[i] ? bells.classList.add('bellNotification') : null;
-          moment().format('YYYY-MM-DD') > date[i] ? savedBoard.style.backgroundColor = '#f7bcc2' : console.log(false);
+          moment().format('YYYY-MM-DD') > date[i] ? savedBoard.style.backgroundColor = '#f7bcc2' : null;
         };
 
         titleBoardSavedBoard.innerText = el;

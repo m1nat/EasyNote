@@ -42,7 +42,7 @@ export const responsive375px = () => {
   // const galery = document.querySelector('.galery');
 
   // menu.onclick = () => {
-  //   console.log('check');
+  //   ('check');
   //   if (body.clientWidth == 375) {
   //     board.style.width = '166px';
   //   } 
