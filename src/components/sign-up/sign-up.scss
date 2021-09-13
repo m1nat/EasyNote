@@ -155,7 +155,7 @@
               background-size: 60%;
 
               .notification-username {
-                @include width_height(250px, 112px);
+                @include width_height(250px, 132px);
                 @include absoluteTopLeft(25%, 75%);
                 position: absolute;
                 font-size: 0.9em;
