@@ -1,6 +1,6 @@
 import { getEmailLs, getLocalId, getToken, getUserNameLocalStorage, setEmailLs, setUserNameLocalStorage } from "../../shared/ls-services/localStorage";
 import { routs } from '../../shared/constants/paths.js';
-import { changeEmail, changeUserName, getUserInfo, updateEmail, updateEmaildb } from "../../api/api-handlers";
+import { changeEmail, changeUserName, getUserInfo, updateEmaildb } from "../../api/api-handlers";
 
 const userName = document.querySelector('.aside-name');
 const urerEmail = document.querySelector('.aside-email');
@@ -57,11 +57,11 @@ const changeUserEmail = (id) => {
     console.log(getToken());
     changeEmail(userEmail.value)
     .then ( response => {
-      let newEmail = response.data.email
+      let newEmail = response.data.email;
       updateEmaildb(id, newEmail)
-      .then(result => {
-        setEmailLs(userEmail.value)
-        showEmail.innerHTML = getEmailLs()
+      .then( () => {
+        setEmailLs(userEmail.value);
+        showEmail.innerHTML = getEmailLs();
       })
     })
   }
