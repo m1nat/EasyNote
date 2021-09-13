@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/storage';
 import axios from 'axios';
+import { getAuth, updateEmail } from "firebase/auth";
 require('firebase/auth');
 
 import { FIREBASE_CONFIG, authURL, databaseURL } from './api-config';
@@ -171,3 +172,6 @@ export const getUserInfo = () => {
     }
   })
 }
+
+
+
