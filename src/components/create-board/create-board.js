@@ -1,12 +1,9 @@
-import moment from "moment";
-
 import { createNotes } from "../../api/api-handlers";
 import { addImages } from "../../DOM-render/add-img/add-img";
 import { routs } from "../../shared/constants/paths";
 import { getImageUrl, getLocalId, getNameOfBoard, removeImageUrl, removeNameOfBoard } from "../../shared/ls-services/localStorage";
 import { addSmilesToNote } from "../../shared/smiles/smile-services";
 import { addNewBoards } from "../../shared/validators/check-inputs";
-
 
 const btn = document.querySelector('.aside-actions');
 const menu = document.querySelector('.menu-show');

@@ -17,8 +17,6 @@ export const renderBoarder = () => {
       let BGCimg = [];
       let renderNotesIndex = [];
 
-
-
       response.forEach(el => {
         if (el.localId === uuid) {
           findName.push(el.name);
@@ -55,13 +53,8 @@ export const renderBoarder = () => {
           dateDiv.innerHTML = date[i].split('-').join('.');
           moment().format('YYYY-MM-DD') === date[i] ? savedBoard.classList.add('shadow-notification') : null;
           moment().format('YYYY-MM-DD') === date[i] ? bells.classList.add('bellNotification') : null;
+          moment().format('YYYY-MM-DD') > date[i] ? savedBoard.style.backgroundColor = '#f7bcc2' : console.log(false);
         };
-
-        // renderNotesIndex.forEach(el => {
-        //   // let notes = document.createElement('div');
-        //   // loadSevesNotes.append(notes);
-        //   // notes.className = 'render-moke-notes'
-        // })
 
         titleBoardSavedBoard.innerText = el;
         savedBoard.style.backgroundSize = '100% 80%'

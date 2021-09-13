@@ -1,3 +1,4 @@
+import { routs } from "../constants/paths";
 
 export const addSmilesToNote = () => {
 
@@ -5,7 +6,6 @@ export const addSmilesToNote = () => {
   const emojiLineFirst = document.querySelector('.emoji-line-first');
   const emojiLineSecond = document.querySelector('.emoji-line-second');
   const wrapperEmoji = document.querySelector('.wrapper-emoji');
-  const tcNoteBody = document.querySelector('.tc-note-bodys') || document.querySelector('.tc-note-bodys');
   const deleteSaveBoard = document.querySelector('.delete-save-board');
 
   const smile_1 = document.createElement('div');
@@ -66,6 +66,13 @@ export const addSmilesToNote = () => {
     emojiLineSecond.append(smile_14, smile_15, smile_16, smile_17, smile_18, smile_19, smile_20, smile_21, smile_22, smile_23, smile_24, smile_25, smile_26);
 
     orderList.onclick = () => {
+      let tcNoteBody;
+      console.log(routs.saved_notes , '  ',window.location.pathname);
+      if (window.location.pathname === routs.saved_notes) {
+        tcNoteBody = document.querySelector('.tc-note-bodys');
+      } else {
+        tcNoteBody = document.querySelector('.tc-note-body')
+      }
 
       orderList.setAttribute('clicked', true);
       wrapperEmoji.style.display = 'flex';
