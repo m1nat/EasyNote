@@ -11,4 +11,6 @@ export const databaseURL = 'https://minilab-badae-default-rtdb.firebaseio.com';
 
 export const authURL = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${FIREBASE_CONFIG.apiKey}`;
 
+export const emailURl = `https://identitytoolkit.googleapis.com/v1/accounts:update?key=${FIREBASE_CONFIG.apiKey}`;
+
 

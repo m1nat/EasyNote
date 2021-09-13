@@ -4,10 +4,10 @@ import axios from 'axios';
 import { getAuth, updateEmail } from "firebase/auth";
 require('firebase/auth');
 
-import { FIREBASE_CONFIG, authURL, databaseURL } from './api-config';
+import { FIREBASE_CONFIG, authURL, databaseURL, emailURl } from './api-config';
 import { showErrorNotification, showErrorNotificationRecovery, showErrorNotificationSignUp } from '../DOM-render/render-messege/error-messege';
 import { routs } from '../shared/constants/paths';
-import { setUIDLS, getUIDLS, setUserId, removeImageUrl, removeResponseURLimage, removeIdNotes } from '../shared/ls-services/localStorage';
+import { setUIDLS, getUIDLS, setUserId, removeImageUrl, removeResponseURLimage, removeIdNotes, getLocalId, getToken } from '../shared/ls-services/localStorage';
 
 export const initAPI = () => {
   firebase.initializeApp(FIREBASE_CONFIG);
@@ -173,5 +173,22 @@ export const getUserInfo = () => {
   })
 }
 
+export const changeEmail = ( email ) => {
+  return axios.post (emailURl, {
+    idToken: getToken(),
+    email,
+    returnSecureToken: true
+  })
+}
 
-
+export const updateEmaildb = (userIdInfo, email) => {
+  return fetch(`${databaseURL}/users/${userIdInfo}.json`, {
+    method: 'PATCH', 
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email
+    })
+  })
+}
