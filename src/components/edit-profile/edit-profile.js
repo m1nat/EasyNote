@@ -39,8 +39,8 @@ export const changeUser = (userID) => {
           getUserInfo()
             .then(result => {
               let userID = Object.values(result).find(email => email.email === getEmailLs());
-              asideName.innerHTML = userID.userName
-              setUserNameLocalStorage(userID.userName)
+              asideName.innerHTML = userID.userName;
+              setUserNameLocalStorage(userID.userName);
             })
         }
       })
